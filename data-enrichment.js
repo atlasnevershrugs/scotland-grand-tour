@@ -450,8 +450,8 @@ window.TRIP_ENRICH = {
         type: "bnb",
         url: "https://raasaydistillery.com/visit/borodale-house/",
         confirmed: true,
-        why: "Booking in progress: 6 boutique rooms at the working distillery — single malts on tap, dramatic Cuillin views across the sound, in-house restaurant. The Skye-area solve.",
-        price: "3 nights · approx £335/night avg"
+        why: "Booked: check-in Sat 25 Jul, checkout Tue 28 Jul (3 nights). 6-room boutique at the working distillery — single malts on tap, Cuillin views across the sound, in-house restaurant. Address: Borodale House, Isle of Raasay, IV40 8PB.",
+        price: "3 nights · booked"
       },
       {
         title: "Raasay House (alternative — activity centre with rooms)",

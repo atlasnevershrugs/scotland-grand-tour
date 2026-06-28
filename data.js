@@ -65,7 +65,7 @@ window.TRIP = {
 
   priorityBookings: [
     { rank: 1,  what: "Portree, Skye",                 dates: "Tue 28 Jul → Fri 31 Jul · 3 nights",  why: "Hardest booking in Scotland",                       url: "https://www.cuillinhills-hotel-skye.co.uk" },
-    { rank: 2,  what: "Isle of Raasay Distillery",     dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the distillery — book NOW",        url: "https://raasaydistillery.com/visit/borodale-house/" },
+    { rank: 2,  what: "Isle of Raasay Distillery",     dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the distillery — booked",          url: "https://raasaydistillery.com/visit/borodale-house/", done: true },
     { rank: 3,  what: "Clachaig Inn, Glencoe",         dates: "Fri 31 Jul → Sat 1 Aug · 1 night",    why: "Sells out 3–4 months ahead",                         url: "https://www.clachaig.com" },
     { rank: 4,  what: "CalMac Sconser↔Raasay ferry",   dates: "Sat 25 Jul out · Tue 28 Jul return",  why: "Vehicle ferry — book in advance, tight in summer",  url: "https://www.calmac.co.uk/sconser-raasay" },
     { rank: 5,  what: "Pitlochry",                     dates: "Wed 22 Jul → Thu 23 Jul · 1 night",   why: "Rosemount Hotel — booked",                           url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/", done: true },
@@ -221,10 +221,10 @@ window.TRIP = {
       leg: "A82 · A87 · Eilean Donan · Skye Bridge · Sconser ferry",
       route: "A82 · A87",
       miles: "140", drive: "4 hrs + 25 min ferry",
-      overnight: "Raasay — Borodale House (distillery)",
+      overnight: "Raasay — Borodale House ✓",
       checkin: "2026-07-25", checkout: "2026-07-28",
       hero: "Isle_of_Raasay",
-      blurb: "The long drive west — A82 south then A87 through Kintail. Pause for Eilean Donan in the morning light and the Five Sisters of Kintail through the windscreen. Over the Skye Bridge, down to Sconser, and the 25-minute CalMac ferry across to Raasay. Welcome dram waiting at the distillery.",
+      blurb: "The long drive west — A82 south then A87 through Kintail. Pause for Eilean Donan in the morning light and the Five Sisters of Kintail through the windscreen. Over the Skye Bridge, down to Sconser, and the 25-minute CalMac ferry across to Raasay. Borodale House at the distillery is booked for three nights.",
       attractions: [
         { name: "Eilean Donan Castle",     wiki: "Eilean_Donan",            desc: "The most photographed castle in Scotland, on a tidal island where three sea lochs meet. Allow 1.5 hours — perfect mid-morning break on the long drive.", url: "https://www.eileandonancastle.com", locale: "Dornie" },
         { name: "Five Sisters of Kintail", wiki: "Five_Sisters_of_Kintail", desc: "Scotland's most dramatic mountain drive — the scenery from the car IS the experience. Slow down on the A87 through Glen Shiel.", locale: "Glen Shiel" },
