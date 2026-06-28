@@ -8,10 +8,62 @@
 
   /* ---------- url helpers (external sources) ---------- */
   const enc = encodeURIComponent;
+  const P = T.party || { adults: 2, children: 0, rooms: 1, priceMax: 250, currency: "GBP" };
+
+  // Attractions (no dates): plain search.
   const tripadvisorSearch = q => `https://www.tripadvisor.com/Search?q=${enc(q)}`;
-  const bookingSearch     = q => `https://www.booking.com/searchresults.html?ss=${enc(q)}`;
-  const airbnbSearch      = loc => `https://www.airbnb.com/s/${enc(loc)}/homes`;
-  const wikiPage          = title => `https://en.wikipedia.org/wiki/${title}`;
+
+  // Hotel-specific TripAdvisor search supports dates + guests.
+  function tripadvisorHotelSearch(q, checkin, checkout) {
+    const params = new URLSearchParams({
+      q,
+      ssrcs: "hotels",
+      adults: String(P.adults),
+      rooms: String(P.rooms)
+    });
+    if (checkin)  params.set("checkIn",  checkin);
+    if (checkout) params.set("checkOut", checkout);
+    return `https://www.tripadvisor.com/SearchForHotels?${params.toString()}`;
+  }
+
+  function bookingSearch(q, checkin, checkout) {
+    const params = new URLSearchParams({
+      ss: q,
+      group_adults: String(P.adults),
+      group_children: String(P.children),
+      no_rooms: String(P.rooms),
+      // Booking's price filter param: nflt=price=GBP-min-max-1
+      nflt: `price=${P.currency}-0-${P.priceMax}-1`,
+      selected_currency: P.currency
+    });
+    if (checkin)  params.set("checkin",  checkin);
+    if (checkout) params.set("checkout", checkout);
+    return `https://www.booking.com/searchresults.html?${params.toString()}`;
+  }
+
+  function airbnbSearch(loc, checkin, checkout) {
+    const params = new URLSearchParams({
+      adults:    String(P.adults),
+      children:  String(P.children),
+      price_max: String(P.priceMax),
+      currency:  P.currency
+    });
+    if (checkin)  params.set("checkin",  checkin);
+    if (checkout) params.set("checkout", checkout);
+    return `https://www.airbnb.com/s/${enc(loc)}/homes?${params.toString()}`;
+  }
+
+  const wikiPage = title => `https://en.wikipedia.org/wiki/${title}`;
+
+  // Format an ISO date as e.g. "Mon 20 Jul"
+  function fmtDate(iso) {
+    if (!iso) return "";
+    const [y, m, d] = iso.split("-").map(Number);
+    const days   = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    const dt = new Date(Date.UTC(y, m - 1, d));
+    return `${days[dt.getUTCDay()]} ${d} ${months[m - 1]}`;
+  }
 
   /* ---------- Wikipedia image fetcher with cache ---------- */
   const imageCache = {};
@@ -311,11 +363,11 @@
     return card;
   }
 
-  function hotelCard(h) {
+  function hotelCard(h, checkin, checkout) {
     const card = document.createElement('article');
     card.className = 'hotel-card';
-    const taQ = `${h.name} ${h.locale || ''}`.trim();
-    const bkQ = `${h.name} ${h.locale || ''}`.trim();
+    const taQ  = `${h.name} ${h.locale || ''}`.trim();
+    const bkQ  = `${h.name} ${h.locale || ''}`.trim();
     const airQ = h.locale || h.name;
 
     card.innerHTML = `
@@ -327,9 +379,9 @@
         <span class="hotel-price-value">${h.price}</span>
       </div>
       <div class="hotel-links">
-        <a class="chip chip-ta" href="${tripadvisorSearch(taQ)}" target="_blank" rel="noopener">TripAdvisor</a>
-        <a class="chip chip-bk" href="${bookingSearch(bkQ)}" target="_blank" rel="noopener">Booking.com</a>
-        <a class="chip chip-airbnb" href="${airbnbSearch(airQ)}" target="_blank" rel="noopener">Airbnb area</a>
+        <a class="chip chip-ta" href="${tripadvisorHotelSearch(taQ, checkin, checkout)}" target="_blank" rel="noopener">TripAdvisor</a>
+        <a class="chip chip-bk" href="${bookingSearch(bkQ, checkin, checkout)}" target="_blank" rel="noopener">Booking.com</a>
+        <a class="chip chip-airbnb" href="${airbnbSearch(airQ, checkin, checkout)}" target="_blank" rel="noopener">Airbnb</a>
         ${h.url ? `<a class="chip chip-site" href="${h.url}" target="_blank" rel="noopener">Hotel site</a>` : ''}
       </div>`;
     return card;
@@ -406,9 +458,20 @@
       label.className = 'day-section-label';
       label.textContent = 'Where to stay';
       sec.appendChild(label);
+
+      if (d.checkin && d.checkout) {
+        const meta = document.createElement('p');
+        meta.className = 'stay-meta';
+        meta.innerHTML = `
+          <span class="stay-meta-dates">${fmtDate(d.checkin)} → ${fmtDate(d.checkout)}</span>
+          <span class="stay-meta-sep">·</span>
+          <span class="stay-meta-party">${P.label || `${P.adults} guests · ${P.rooms} room · max ${P.currency} ${P.priceMax}/night`}</span>`;
+        sec.appendChild(meta);
+      }
+
       const grid = document.createElement('div');
       grid.className = 'hotels-grid';
-      d.hotels.forEach(h => grid.appendChild(hotelCard(h)));
+      d.hotels.forEach(h => grid.appendChild(hotelCard(h, d.checkin, d.checkout)));
       sec.appendChild(grid);
     }
 

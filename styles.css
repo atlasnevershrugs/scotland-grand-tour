@@ -463,6 +463,23 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--serif); font-weight: 500; letter-
 .chip-site  { background: rgba(44,95,102,.10); color: var(--loch); border-color: rgba(44,95,102,.18); }
 .chip-site:hover { background: var(--loch); color: white; }
 
+/* ------ hotel section caption ------ */
+.stay-meta {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
+  margin: -8px 0 22px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+.stay-meta-dates {
+  font-family: var(--serif); font-style: italic; font-size: 17px;
+  color: var(--loch); font-weight: 500;
+}
+.stay-meta-sep { color: var(--line); }
+.stay-meta-party {
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--stone); font-weight: 600;
+}
+
 /* ------ hotels ------ */
 .hotels-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

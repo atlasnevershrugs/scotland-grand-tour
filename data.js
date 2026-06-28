@@ -11,6 +11,18 @@ window.TRIP = {
   travellers: "2 adults",
   pickup: "Edinburgh Airport",
   dropoff: "Oxford city centre",
+
+  // Search-link defaults — applied to every hotel/Airbnb link via script.js.
+  // 15-year-old counts as adult on Airbnb (their policy: 13+ = adult).
+  party: {
+    adults: 3,
+    children: 0,
+    rooms: 1,
+    priceMax: 250,
+    currency: "GBP",
+    label: "2 adults + 1 teen (15) · 1 room · under £250/night"
+  },
+
   stats: [
     { label: "Days", value: "14" },
     { label: "Driving days", value: "12" },
@@ -88,6 +100,7 @@ window.TRIP = {
       route: "—",
       miles: "10", drive: "20 min",
       overnight: "Edinburgh",
+      checkin: "2026-07-20", checkout: "2026-07-22",
       hero: "Edinburgh",
       blurb: "Pick up the hire car at Edinburgh Airport and drive to your city centre hotel. Park it — you will not need it for two days. Walk the Royal Mile in the evening and have dinner in the Grassmarket.",
       attractions: [
@@ -134,6 +147,7 @@ window.TRIP = {
       route: "A93",
       miles: "85", drive: "2–2.5 hrs",
       overnight: "Pitlochry",
+      checkin: "2026-07-22", checkout: "2026-07-23",
       hero: "Pitlochry",
       blurb: "Take the A93 through Braemar instead of the A9. The Hermitage waterfall and Queen's View are unmissable; Balmoral and Blair Castle are picks based on your appetite.",
       attractions: [
@@ -158,6 +172,7 @@ window.TRIP = {
       route: "A9",
       miles: "75", drive: "1.5 hrs",
       overnight: "Inverness",
+      checkin: "2026-07-23", checkout: "2026-07-25",
       hero: "Inverness",
       blurb: "The A9 climbs to 460m — the highest point on any A-road in the UK. Break the drive at Rothiemurchus, ride the Cairngorm funicular on a clear day, and arrive in Inverness in time for the river walk.",
       attractions: [
@@ -207,6 +222,7 @@ window.TRIP = {
       route: "A835",
       miles: "60", drive: "1.5 hrs",
       overnight: "Ullapool",
+      checkin: "2026-07-25", checkout: "2026-07-26",
       hero: "Ullapool",
       blurb: "The drive leaves populated Highlands behind and enters genuine wilderness. Corrieshalloch Gorge is a ten-minute stop you must not miss.",
       attractions: [
@@ -231,6 +247,7 @@ window.TRIP = {
       route: "A832 · A896",
       miles: "65", drive: "2 hrs",
       overnight: "Gairloch",
+      checkin: "2026-07-26", checkout: "2026-07-27",
       hero: "Torridon",
       blurb: "One of Scotland's most spectacular drives, beneath An Teallach and through Glen Torridon. The rock here is 750-million-year-old sandstone — among the oldest exposed on Earth.",
       attractions: [
@@ -254,6 +271,7 @@ window.TRIP = {
       route: "A896 · Bealach na Bà",
       miles: "80", drive: "3 hrs",
       overnight: "Portree, Isle of Skye",
+      checkin: "2026-07-27", checkout: "2026-07-29",
       hero: "Bealach_na_B%C3%A0",
       blurb: "From Tornapress, the road climbs 626 metres in tight hairpin bends — the highest road pass in the UK outside the Cairngorms. Lunch at the Applecross Inn (book ahead), then north to the Skye Bridge.",
       attractions: [
@@ -301,6 +319,7 @@ window.TRIP = {
       route: "A87 · A82",
       miles: "100", drive: "2.5 hrs",
       overnight: "Glencoe / Ballachulish",
+      checkin: "2026-07-29", checkout: "2026-07-30",
       hero: "Eilean_Donan",
       blurb: "Eilean Donan in the morning light, the Five Sisters of Kintail through the windscreen, lunch in Fort William under Ben Nevis, and the Three Sisters of Glencoe by late afternoon.",
       attractions: [
@@ -325,6 +344,7 @@ window.TRIP = {
       route: "A82 · A830",
       miles: "100", drive: "3 hrs",
       overnight: "Glasgow",
+      checkin: "2026-07-30", checkout: "2026-08-02",
       hero: "Glenfinnan_Viaduct",
       blurb: "Optional dawn detour up Glen Etive (Bond's Skyfall), the Glenfinnan Viaduct of Harry Potter fame, the Jacobite Steam Train if you booked it, and Loch Lomond on the run-in to Glasgow.",
       attractions: [
