@@ -146,6 +146,23 @@ h1, h2, h3, h4, h5 { margin: 0; font-family: var(--serif); font-weight: 500; let
 .priority-grid { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
 .priority-card { display: block; background: var(--cream); border: 1px solid var(--line); border-left: 3px solid var(--heather); border-radius: var(--radius-lg); padding: 22px 24px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 .priority-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-left-color: var(--whisky); }
+.priority-card-done {
+  border-left-color: #0b6e4f !important;
+  background: linear-gradient(180deg, rgba(11,110,79,.05) 0%, var(--cream) 80%);
+}
+.priority-card-done:hover { border-left-color: #0b6e4f !important; }
+.priority-card-done .priority-link { color: #0b6e4f; }
+.priority-rank-row {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 10px;
+}
+.priority-rank-row .priority-rank { margin-bottom: 0; }
+.priority-done-badge {
+  font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  background: #0b6e4f; color: white;
+  padding: 4px 10px; border-radius: 20px; font-weight: 700;
+  font-family: var(--sans);
+  white-space: nowrap;
+}
 .priority-rank { font-family: var(--serif); font-size: 14px; color: var(--whisky); font-weight: 600; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
 .priority-rank::before {
   content: attr(data-rank);
@@ -424,6 +441,24 @@ h1, h2, h3, h4, h5 { margin: 0; font-family: var(--serif); font-weight: 500; let
 .stay-card-airbnb-area { border-left: 3px solid #ff385c; }
 .stay-card-airbnb      { border-left: 3px solid #ff385c; }
 .stay-card-bnb         { border-left: 3px solid var(--loch); }
+.stay-card-confirmed   { border-left: 3px solid #0b6e4f !important; background: linear-gradient(180deg, rgba(11,110,79,.04) 0%, var(--cream) 30%); }
+.stay-card-confirmed:hover { border-color: #0b6e4f; }
+
+.stay-header-row {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 4px;
+}
+.stay-badge-confirmed {
+  font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  background: #0b6e4f; color: white;
+  padding: 4px 10px; border-radius: 20px; font-weight: 700;
+  white-space: nowrap;
+  font-family: var(--sans);
+}
+.stay-card-confirmed .stay-type { color: #0b6e4f; }
+.stay-card-confirmed .stay-cta { color: #0b6e4f; }
+.stay-card-confirmed .stay-image-fallback {
+  background: linear-gradient(135deg, rgba(11,110,79,.85), rgba(44,95,102,.85));
+}
 
 .stay-image {
   aspect-ratio: 16 / 10;

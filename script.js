@@ -302,12 +302,17 @@
     const c = document.getElementById('priority-grid');
     T.priorityBookings.forEach(p => {
       const li = document.createElement('li');
+      const doneClass = p.done ? ' priority-card-done' : '';
+      const doneBadge = p.done ? `<span class="priority-done-badge">✓ Done</span>` : '';
       li.innerHTML = `
-        <a class="priority-card" href="${p.url}" target="_blank" rel="noopener">
-          <div class="priority-rank" data-rank="${p.rank}">Priority ${p.rank}</div>
+        <a class="priority-card${doneClass}" href="${p.url}" target="_blank" rel="noopener">
+          <div class="priority-rank-row">
+            <div class="priority-rank" data-rank="${p.rank}">Priority ${p.rank}</div>
+            ${doneBadge}
+          </div>
           <h3 class="priority-what">${p.what}</h3>
           <p class="priority-why">${p.why}</p>
-          <span class="priority-link">Book direct</span>
+          <span class="priority-link">${p.done ? 'View booking' : 'Book direct'}</span>
         </a>`;
       c.appendChild(li);
     });
@@ -486,27 +491,37 @@
   function stayCard(pick) {
     const a = document.createElement('a');
     a.className = 'stay-card stay-card-' + (pick.type || 'airbnb');
+    if (pick.confirmed) a.className += ' stay-card-confirmed';
     a.href = pick.url; a.target = '_blank'; a.rel = 'noopener';
 
-    const typeLabel = {
-      'airbnb':       'Airbnb · property',
-      'airbnb-area':  'Airbnb · curated area search',
-      'bnb':          'Independent B&B'
-    }[pick.type] || 'Stay';
+    const typeLabel = pick.confirmed
+      ? 'Booked stay'
+      : ({
+          'airbnb':       'Airbnb · property',
+          'airbnb-area':  'Airbnb · curated area search',
+          'bnb':          'Independent B&B'
+        }[pick.type] || 'Stay');
 
     const imgHtml = pick.image
       ? `<div class="stay-image"><img loading="lazy" src="${pick.image}" alt="${pick.title}"/></div>`
       : `<div class="stay-image stay-image-fallback"><span>${pick.title}</span></div>`;
 
+    const confirmedBadge = pick.confirmed
+      ? `<span class="stay-badge-confirmed" title="${pick.reference ? 'Ref ' + pick.reference : 'Booking confirmed'}">✓ Booked${pick.reference ? ` · ${pick.reference}` : ''}</span>`
+      : '';
+
     a.innerHTML = `
       ${imgHtml}
       <div class="stay-body">
-        <span class="stay-type">${typeLabel}</span>
+        <div class="stay-header-row">
+          <span class="stay-type">${typeLabel}</span>
+          ${confirmedBadge}
+        </div>
         <h4 class="stay-title">${pick.title}</h4>
         <p class="stay-why">${pick.why || ''}</p>
         <div class="stay-meta-row">
           ${pick.price ? `<span class="stay-price">${pick.price}</span>` : ''}
-          <span class="stay-cta">View →</span>
+          <span class="stay-cta">${pick.confirmed ? 'Booking details' : 'View'} →</span>
         </div>
       </div>`;
     return a;
