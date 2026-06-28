@@ -1,14 +1,12 @@
-// Scotland Grand Tour — Trip Data
-// All attractions, hotels, restaurants and route waypoints for the 14-day itinerary.
-// Image strategy: `wiki` field is a Wikipedia page title. script.js fetches the
-// page's lead image via the Wikipedia REST summary API at runtime (no API key).
-// Search URLs are composed from name + locale at render time.
+// Scotland Grand Tour — Trip Data (v3: rebalanced)
+// 14 calendar days · 13 overnights · 9 main driving days · ~1,150 miles
+// Rebalance: trimmed Glasgow 3→1, extended Skye 2→3 and Gairloch/Torridon 1→2.
 
 window.TRIP = {
   title: "Scotland Grand Tour",
-  subtitle: "Edinburgh to Oxford, by the long way round",
+  subtitle: "Edinburgh to Oxford, the long way round",
   dates: "Monday 20 July – Sunday 2 August 2026",
-  travellers: "2 adults",
+  travellers: "2 adults + 1 teen (15)",
   pickup: "Edinburgh Airport",
   dropoff: "Oxford city centre",
 
@@ -25,9 +23,9 @@ window.TRIP = {
 
   stats: [
     { label: "Days", value: "14" },
-    { label: "Driving days", value: "12" },
-    { label: "Total miles", value: "~1,100" },
-    { label: "Overnight stops", value: "8" }
+    { label: "Overnight stops", value: "8" },
+    { label: "Total miles", value: "~1,150" },
+    { label: "Driving days", value: "9" }
   ],
 
   // Ordered overnight + handover waypoints for the route line
@@ -36,24 +34,30 @@ window.TRIP = {
     { lat: 56.7058, lng: -3.7290, label: "Pitlochry",   nights: "3",     day: 3  },
     { lat: 57.4778, lng: -4.2247, label: "Inverness",   nights: "4–5",   day: 4  },
     { lat: 57.8954, lng: -5.1592, label: "Ullapool",    nights: "6",     day: 6  },
-    { lat: 57.7264, lng: -5.6843, label: "Gairloch",    nights: "7",     day: 7  },
-    { lat: 57.4126, lng: -6.1959, label: "Portree (Skye)", nights: "8–9", day: 8 },
-    { lat: 56.6863, lng: -5.0987, label: "Glencoe",     nights: "10",    day: 10 },
-    { lat: 55.8642, lng: -4.2518, label: "Glasgow",     nights: "11–13", day: 11 },
+    { lat: 57.7264, lng: -5.6843, label: "Gairloch",    nights: "7–8",   day: 7  },
+    { lat: 57.4126, lng: -6.1959, label: "Portree (Skye)", nights: "9–11", day: 9 },
+    { lat: 56.6863, lng: -5.0987, label: "Glencoe",     nights: "12",    day: 12 },
+    { lat: 55.8642, lng: -4.2518, label: "Glasgow",     nights: "13",    day: 13 },
     { lat: 51.7520, lng: -1.2577, label: "Oxford",      nights: "drop-off", day: 14 }
   ],
 
   // Detour pins worth showing on the map (key day-trip waypoints)
   detours: [
-    { lat: 57.4806, lng: -4.4925, label: "Culloden",         day: 5 },
-    { lat: 57.3239, lng: -4.4426, label: "Urquhart Castle",  day: 5 },
-    { lat: 57.5747, lng: -4.0936, label: "Chanonry Point",   day: 5 },
-    { lat: 57.7589, lng: -4.8597, label: "Corrieshalloch",   day: 6 },
-    { lat: 57.4344, lng: -5.8160, label: "Applecross",       day: 8 },
-    { lat: 57.4150, lng: -5.6300, label: "Bealach na Bà",    day: 8 },
-    { lat: 57.2740, lng: -5.5161, label: "Eilean Donan",     day: 10 },
-    { lat: 56.8728, lng: -5.4357, label: "Glenfinnan",       day: 11 },
-    { lat: 56.0959, lng: -4.6356, label: "Luss",             day: 11 }
+    { lat: 57.4806, lng: -4.4925, label: "Culloden",            day: 5  },
+    { lat: 57.3239, lng: -4.4426, label: "Urquhart Castle",     day: 5  },
+    { lat: 57.5747, lng: -4.0936, label: "Chanonry Point",      day: 5  },
+    { lat: 57.7589, lng: -4.8597, label: "Corrieshalloch",      day: 6  },
+    { lat: 57.6900, lng: -5.4700, label: "Loch Maree",          day: 8  },
+    { lat: 57.7750, lng: -5.5970, label: "Inverewe Garden",     day: 8  },
+    { lat: 57.5483, lng: -5.6770, label: "Lower Diabaig",       day: 8  },
+    { lat: 57.4344, lng: -5.8160, label: "Applecross",          day: 9  },
+    { lat: 57.4150, lng: -5.6300, label: "Bealach na Bà",       day: 9  },
+    { lat: 57.3025, lng: -6.3919, label: "Talisker Distillery", day: 11 },
+    { lat: 57.2493, lng: -6.7724, label: "Neist Point",         day: 11 },
+    { lat: 57.1928, lng: -6.1144, label: "Elgol / Loch Coruisk",day: 11 },
+    { lat: 57.2740, lng: -5.5161, label: "Eilean Donan",        day: 12 },
+    { lat: 56.8728, lng: -5.4357, label: "Glenfinnan",          day: 13 },
+    { lat: 56.0959, lng: -4.6356, label: "Luss",                day: 13 }
   ],
 
   carRental: [
@@ -63,32 +67,33 @@ window.TRIP = {
   ],
 
   priorityBookings: [
-    { rank: 1,  what: "Portree, Skye (Nights 8–9)",      why: "Fewest beds in Scotland in July",   url: "https://www.cuillinhills-hotel-skye.co.uk" },
-    { rank: 2,  what: "Clachaig Inn, Glencoe (Night 10)", why: "Sells out 3–4 months ahead",         url: "https://www.clachaig.com" },
-    { rank: 3,  what: "Ullapool (Night 6)",               why: "Tiny village, very few rooms",       url: "https://www.theceilidhplace.com" },
-    { rank: 4,  what: "Gairloch (Night 7)",               why: "Remote, very limited stock",         url: "https://www.theoldinn.net" },
-    { rank: 5,  what: "Jacobite Steam Train (Day 11)",    why: "Sells out months ahead in summer",   url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
-    { rank: 6,  what: "Applecross Inn lunch (Day 8)",     why: "Famous pub, books up fast",          url: "https://www.applecross.uk.com/inn/" },
-    { rank: 7,  what: "Inverness (Nights 4–5)",           why: "Popular city, book early",           url: "https://www.rocpool.com/rocpool-reserve-hotel-inverness/" },
-    { rank: 8,  what: "Car rental",                       why: "Peak summer, automatics go fast",    url: "https://www.enterprise.co.uk" },
-    { rank: 9,  what: "Edinburgh (Nights 1–2)",           why: "City centre fills up in July",       url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
-    { rank: 10, what: "Scorrybreac, Skye (Day 9 dinner)", why: "Best restaurant on Skye",            url: "https://www.scorrybreac.com" }
+    { rank: 1,  what: "Portree, Skye (Nights 9–11)",      why: "Hardest booking in Scotland; now 3 nights",      url: "https://www.cuillinhills-hotel-skye.co.uk" },
+    { rank: 2,  what: "Clachaig Inn, Glencoe (Night 12)", why: "Sells out 3–4 months ahead",                      url: "https://www.clachaig.com" },
+    { rank: 3,  what: "Gairloch (Nights 7–8)",            why: "Remote, very limited stock, now 2 nights",        url: "https://www.theoldinn.net" },
+    { rank: 4,  what: "Ullapool (Night 6)",               why: "Tiny village, very few rooms",                    url: "https://www.theceilidhplace.com" },
+    { rank: 5,  what: "Jacobite Steam Train (Day 13)",    why: "Sells out months ahead in summer",                url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
+    { rank: 6,  what: "Applecross Inn lunch (Day 9)",     why: "Famous pub, books up fast",                       url: "https://www.applecross.uk.com/inn/" },
+    { rank: 7,  what: "Elgol boat trip (Day 11)",         why: "Loch Coruisk — small boats, limited daily slots", url: "https://bellajane.co.uk/" },
+    { rank: 8,  what: "Inverness (Nights 4–5)",           why: "Popular city, book early",                        url: "https://www.rocpool.com/rocpool-reserve-hotel-inverness/" },
+    { rank: 9,  what: "Edinburgh (Nights 1–2)",           why: "City centre fills up in July",                    url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
+    { rank: 10, what: "Scorrybreac, Skye (Day 10 dinner)",why: "Best restaurant on Skye",                         url: "https://www.scorrybreac.com" }
   ],
 
   practical: [
     { title: "Fuel",            body: "Fill up at every petrol station in the Highlands. Stations can be 30–40 miles apart and close by 6–7pm. Top up without fail in Inverness, Ullapool, Gairloch, Portree and Fort William." },
     { title: "Midges",          body: "July and August are peak midge season. Buy Smidge spray on arrival (pharmacies and outdoor shops). Worst at dawn and dusk in still, humid air." },
     { title: "Single-track roads", body: "Pull into passing places on your left when meeting oncoming traffic. Do not drive onto the grass verge — it is often soft. A small wave to other drivers is customary." },
-    { title: "Bealach na Bà",   body: "Day 8. Single-track with 20% gradients and tight hairpin bends. Manageable in a standard hire car at low speed. In poor conditions, take the coastal road via Lochcarron instead." },
+    { title: "Bealach na Bà",   body: "Day 9. Single-track with 20% gradients and tight hairpin bends. Manageable in a standard hire car at low speed. In poor conditions, take the coastal road via Lochcarron instead." },
     { title: "Weather",         body: "Pack waterproof layers regardless of forecast. The west coast catches significantly more rain than the east. Misty days in Glencoe and on Skye are atmospheric, not a disappointment." },
     { title: "Oxford LEZ",      body: "Oxford city centre has a Low Emission Zone. Most modern hire cars comply, but confirm with your rental company before drop-off." }
   ],
 
   restaurantsToBook: [
-    { name: "Applecross Inn",       when: "Day 8 lunch",   url: "https://www.applecross.uk.com/inn/" },
-    { name: "Scorrybreac, Skye",    when: "Day 9 dinner",  url: "https://www.scorrybreac.com" },
-    { name: "Cail Bruich, Glasgow", when: "Day 12 dinner", url: "https://www.cailbruich.co.uk" },
-    { name: "Jacobite Steam Train", when: "Day 11",        url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" }
+    { name: "Applecross Inn",       when: "Day 9 lunch",   url: "https://www.applecross.uk.com/inn/" },
+    { name: "Scorrybreac, Skye",    when: "Day 10 dinner", url: "https://www.scorrybreac.com" },
+    { name: "Elgol boat trip",      when: "Day 11 — book ahead", url: "https://bellajane.co.uk/" },
+    { name: "Cail Bruich, Glasgow", when: "Day 13 dinner", url: "https://www.cailbruich.co.uk" },
+    { name: "Jacobite Steam Train", when: "Day 13",        url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" }
   ],
 
   // === DAY BY DAY =============================================================
@@ -108,10 +113,10 @@ window.TRIP = {
         { name: "Grassmarket",      wiki: "Grassmarket",     desc: "Historic market square below the Castle rock — pubs, bistros, and the evening crowd.", locale: "Edinburgh" }
       ],
       hotels: [
-        { name: "The Balmoral Hotel",   style: "5-star landmark on Princes Street", price: "£200–£250", url: "https://www.booking.com/hotel/gb/the-balmoral.html", locale: "Edinburgh" },
-        { name: "Nira Caledonia",       style: "Boutique townhouse, New Town",      price: "£160–£200", url: "https://www.niracaledonia.com", locale: "Edinburgh" },
-        { name: "Hotel du Vin Edinburgh", style: "Boutique with a great wine bar",  price: "£130–£170", url: "https://www.hotelduvin.com/locations/edinburgh/", locale: "Edinburgh" },
-        { name: "Grassmarket Hotel",    style: "Central, good value",               price: "£110–£150", url: "https://www.grassmarkethotel.co.uk", locale: "Edinburgh" }
+        { name: "The Balmoral Hotel",     style: "5-star landmark on Princes Street", price: "£200–£250", url: "https://www.booking.com/hotel/gb/the-balmoral.html", locale: "Edinburgh" },
+        { name: "Nira Caledonia",         style: "Boutique townhouse, New Town",      price: "£160–£200", url: "https://www.niracaledonia.com", locale: "Edinburgh" },
+        { name: "Hotel du Vin Edinburgh", style: "Boutique with a great wine bar",    price: "£130–£170", url: "https://www.hotelduvin.com/locations/edinburgh/", locale: "Edinburgh" },
+        { name: "Grassmarket Hotel",      style: "Central, good value",               price: "£110–£150", url: "https://www.grassmarkethotel.co.uk", locale: "Edinburgh" }
       ],
       restaurants: []
     },
@@ -181,10 +186,10 @@ window.TRIP = {
         { name: "Leakey's Bookshop",         wiki: "Leakey%27s_Bookshop", desc: "Largest second-hand bookshop in Scotland, in a converted church.", url: "https://www.leakeysbookshop.com", locale: "Inverness" }
       ],
       hotels: [
-        { name: "Rocpool Reserve Hotel", style: "5-star boutique",          price: "£180–£230", url: "https://www.rocpool.com/rocpool-reserve-hotel-inverness/", locale: "Inverness" },
-        { name: "Ness Walk Hotel",       style: "5-star riverside",         price: "£200–£250", url: "https://www.nesswalk.com",                                locale: "Inverness" },
-        { name: "Heathmount Hotel",      style: "Boutique with great restaurant", price: "£120–£150", url: "https://www.heathmounthotel.com",                  locale: "Inverness" },
-        { name: "Ballifeary Guest House", style: "Victorian B&B",           price: "£90–£120",  url: "https://www.ballifeary.co.uk",                            locale: "Inverness" }
+        { name: "Rocpool Reserve Hotel", style: "5-star boutique",                price: "£180–£230", url: "https://www.rocpool.com/rocpool-reserve-hotel-inverness/", locale: "Inverness" },
+        { name: "Ness Walk Hotel",       style: "5-star riverside",               price: "£200–£250", url: "https://www.nesswalk.com",                                locale: "Inverness" },
+        { name: "Heathmount Hotel",      style: "Boutique with great restaurant", price: "£120–£150", url: "https://www.heathmounthotel.com",                          locale: "Inverness" },
+        { name: "Ballifeary Guest House", style: "Victorian B&B",                 price: "£90–£120",  url: "https://www.ballifeary.co.uk",                            locale: "Inverness" }
       ],
       restaurants: [
         { name: "Rocpool Restaurant", note: "Inverness's modern bistro by the river — book ahead.", url: "https://www.rocpool.com/rocpool-restaurant-inverness/" }
@@ -247,14 +252,14 @@ window.TRIP = {
       route: "A832 · A896",
       miles: "65", drive: "2 hrs",
       overnight: "Gairloch",
-      checkin: "2026-07-26", checkout: "2026-07-27",
+      checkin: "2026-07-26", checkout: "2026-07-28",
       hero: "Torridon",
-      blurb: "One of Scotland's most spectacular drives, beneath An Teallach and through Glen Torridon. The rock here is 750-million-year-old sandstone — among the oldest exposed on Earth.",
+      blurb: "One of the most spectacular drives in Scotland, beneath An Teallach and through Glen Torridon. The rock here is 750-million-year-old sandstone — among the oldest exposed on Earth. Today is the scenic transit; tomorrow you walk in it.",
       attractions: [
-        { name: "Beinn Eighe National Nature Reserve", wiki: "Beinn_Eighe", desc: "Free, short waymarked walks through ancient Caledonian pinewoods.", url: "https://www.nnr.scot/nnr/beinn-eighe/", locale: "Kinlochewe" },
-        { name: "Shieldaig village", wiki: "Shieldaig", desc: "Small fishing village on Loch Torridon — excellent coffee or lunch stop.", locale: "Shieldaig" },
-        { name: "Gairloch beach",    wiki: "Gairloch",  desc: "White sand, turquoise water, views to the Outer Hebrides on a clear day.", locale: "Gairloch" },
-        { name: "An Teallach",       wiki: "An_Teallach", desc: "Among the finest mountains in Scotland — the road passes right beneath it.", locale: "Dundonnell" }
+        { name: "Beinn Eighe National Nature Reserve", wiki: "Beinn_Eighe", desc: "Drive-by stop today on the short waymarked Woodland Trail — save the proper Mountain Trail for tomorrow.", url: "https://www.nnr.scot/nnr/beinn-eighe/", locale: "Kinlochewe" },
+        { name: "Shieldaig village", wiki: "Shieldaig", desc: "Small fishing village on Loch Torridon — excellent coffee or lunch stop, Nanny's tea room recommended.", locale: "Shieldaig" },
+        { name: "An Teallach",       wiki: "An_Teallach", desc: "Among the finest mountains in Scotland — the road passes right beneath it. Pull over at the Dundonnell viewpoint.", locale: "Dundonnell" },
+        { name: "Gairloch beach",    wiki: "Gairloch",  desc: "White sand, turquoise water, views to the Outer Hebrides on a clear day. Big Sand Beach to the west is even better.", locale: "Gairloch" }
       ],
       hotels: [
         { name: "Shieldaig Lodge Hotel", style: "Victorian hunting lodge, luxury",  price: "£180–£220", url: "https://www.shieldaiglodge.com", locale: "Gairloch" },
@@ -266,14 +271,37 @@ window.TRIP = {
 
     {
       num: 8, date: "Mon 27 Jul", weekday: "Monday",
+      title: "A day in the Torridons",
+      leg: "Walking and west-coast drives based at Gairloch",
+      route: "Local · 60-mile flex",
+      miles: "60", drive: "—",
+      overnight: "Gairloch",
+      hero: "Beinn_Eighe",
+      blurb: "A full day in one of Scotland's most ancient landscapes. Walk the Beinn Eighe Mountain Trail in the morning, drift to Inverewe's strange tropical garden by lunch, and finish with the single-track drive to Lower Diabaig — true west-coast remoteness.",
+      attractions: [
+        { name: "Beinn Eighe Mountain Trail", wiki: "Beinn_Eighe", desc: "The proper waymarked walk — 4 miles, climbing to 550m for some of the finest views of the Torridons. 3–4 hours, well-marked. Different from the woodland trail you passed yesterday.", locale: "Kinlochewe" },
+        { name: "Loch Maree",                  wiki: "Loch_Maree", desc: "One of Scotland's most beautiful lochs, with ancient Caledonian pine islands and Slioch rising on the far shore. Drive the A832 along its length.", locale: "Wester Ross" },
+        { name: "Inverewe Garden",             wiki: "Inverewe_Garden", desc: "NTS — world-renowned subtropical garden in the Highlands, made possible by the Gulf Stream and a century of patient planting.", url: "https://www.nts.org.uk/visit/places/inverewe", locale: "Poolewe" },
+        { name: "Lower Diabaig coastal road",  wiki: "Diabaig", desc: "Single-track 8-mile drive to a tiny coastal hamlet — extreme west-coast remoteness. 90-min round trip with viewpoints over Loch Torridon.", locale: "Diabaig" },
+        { name: "Big Sand Beach",              wiki: null, desc: "Two miles of white sand 5 km west of Gairloch — extraordinary on a clear day. Free, with the campsite road giving easy access.", locale: "Gairloch" },
+        { name: "Gairloch Marine Wildlife Centre", wiki: null, desc: "Whale and dolphin boat trips from Gairloch harbour with Hebridean Whale Cruises — minke whales, dolphins, porpoises, basking sharks in season.", url: "https://www.hebridean-whale-cruises.co.uk/", locale: "Gairloch" }
+      ],
+      hotels: [],
+      restaurants: [
+        { name: "The Old Inn, Gairloch", note: "Traditional Highland gastropub — venison, langoustines, locally brewed ale.", url: "https://www.theoldinn.net" }
+      ]
+    },
+
+    {
+      num: 9, date: "Tue 28 Jul", weekday: "Tuesday",
       title: "Gairloch → Skye via Applecross",
       leg: "Bealach na Bà and the Pass of the Cattle",
       route: "A896 · Bealach na Bà",
       miles: "80", drive: "3 hrs",
       overnight: "Portree, Isle of Skye",
-      checkin: "2026-07-27", checkout: "2026-07-29",
+      checkin: "2026-07-28", checkout: "2026-07-31",
       hero: "Bealach_na_B%C3%A0",
-      blurb: "From Tornapress, the road climbs 626 metres in tight hairpin bends — the highest road pass in the UK outside the Cairngorms. Lunch at the Applecross Inn (book ahead), then north to the Skye Bridge.",
+      blurb: "From Tornapress, the road climbs 626 metres in tight hairpin bends — the highest road pass in the UK outside the Cairngorms. Lunch at the Applecross Inn (book ahead), then north to the Skye Bridge and three nights on the island.",
       attractions: [
         { name: "Bealach na Bà",     wiki: "Bealach_na_B%C3%A0", desc: "The Pass of the Cattle — 20% gradients, hairpins, and on a clear day a view to the Outer Hebrides.", locale: "Applecross" },
         { name: "Applecross village", wiki: "Applecross",        desc: "Tiny west-coast village reached by mountain pass or coastal road. Famous pub, famous langoustines.", locale: "Applecross" },
@@ -290,20 +318,18 @@ window.TRIP = {
     },
 
     {
-      num: 9, date: "Tue 28 Jul", weekday: "Tuesday",
-      title: "Isle of Skye — full day",
-      leg: "Island day trip from Portree",
-      route: "80-mile island loop",
-      miles: "80", drive: "—",
+      num: 10, date: "Wed 29 Jul", weekday: "Wednesday",
+      title: "Skye Day 1 — Trotternish",
+      leg: "The dramatic north — Quiraing, Storr, Kilt Rock",
+      route: "Island loop · north",
+      miles: "60", drive: "—",
       overnight: "Portree, Isle of Skye",
       hero: "Old_Man_of_Storr",
-      blurb: "Quiraing and Kilt Rock in the morning, Fairy Pools or Dunvegan in the afternoon. Arrive early at every car park — Skye gets very busy by mid-morning.",
+      blurb: "Start with Trotternish in the morning before crowds arrive. Quiraing and Old Man of Storr are both genuinely worth a 2-3 hour walk each. Kilt Rock is a five-minute viewpoint on the way back south.",
       attractions: [
         { name: "The Quiraing",        wiki: "Quiraing",       desc: "Dramatic landslip landscape of pinnacles and hidden plateaus — arrive before 9am.", locale: "Staffin" },
         { name: "Old Man of Storr",    wiki: "Old_Man_of_Storr", desc: "Iconic rock pinnacle — 45-minute walk up, well worth the climb.", locale: "Trotternish" },
-        { name: "Kilt Rock & Mealt Falls", wiki: "Kilt_Rock", desc: "Columnar basalt sea cliff that genuinely looks like a kilt. Five-minute viewpoint walk.", locale: "Trotternish" },
-        { name: "Fairy Pools",         wiki: "Fairy_Pools",    desc: "Crystal-clear turquoise pools and waterfalls at the foot of the Cuillin. Arrive early.", locale: "Glenbrittle" },
-        { name: "Dunvegan Castle",     wiki: "Dunvegan_Castle", desc: "Oldest continuously inhabited castle in Scotland, seat of Clan MacLeod. Allow two hours.", url: "https://www.dunvegancastle.com", locale: "Dunvegan" }
+        { name: "Kilt Rock & Mealt Falls", wiki: "Kilt_Rock", desc: "Columnar basalt sea cliff that genuinely looks like a kilt. Five-minute viewpoint walk.", locale: "Trotternish" }
       ],
       hotels: [],
       restaurants: [
@@ -313,15 +339,38 @@ window.TRIP = {
     },
 
     {
-      num: 10, date: "Wed 29 Jul", weekday: "Wednesday",
+      num: 11, date: "Thu 30 Jul", weekday: "Thursday",
+      title: "Skye Day 2 — Cuillin & West",
+      leg: "Fairy Pools · Talisker · Dunvegan · Neist Point",
+      route: "Island loop · west",
+      miles: "75", drive: "—",
+      overnight: "Portree, Isle of Skye",
+      hero: "Neist_Point",
+      blurb: "The Cuillin side of Skye. Fairy Pools first thing (arrive before 9am), Talisker Distillery for the peat-smoke tour, Dunvegan Castle and the Coral Beaches, and Neist Point Lighthouse on the westernmost tip for sunset. The Elgol boat to Loch Coruisk is an alternative half-day.",
+      attractions: [
+        { name: "Fairy Pools",             wiki: "Fairy_Pools",    desc: "Crystal-clear turquoise pools and waterfalls at the foot of the Cuillin. 30-min walk each way. Arrive early — extremely popular.", locale: "Glenbrittle" },
+        { name: "Talisker Distillery",     wiki: "Talisker_distillery", desc: "Skye's only single malt distillery, on the shores of Loch Harport. The peat-smoke standard tour is excellent — book ahead.", url: "https://www.malts.com/en-row/distilleries/talisker/", locale: "Carbost" },
+        { name: "Dunvegan Castle",         wiki: "Dunvegan_Castle", desc: "Oldest continuously inhabited castle in Scotland, seat of Clan MacLeod. Allow two hours.", url: "https://www.dunvegancastle.com", locale: "Dunvegan" },
+        { name: "Claigan Coral Beaches",   wiki: "Claigan",         desc: "Crushed white coralline algae makes these beaches glow against turquoise sea. 30-min walk from the car park near Dunvegan.", locale: "Dunvegan" },
+        { name: "Neist Point Lighthouse",  wiki: "Neist_Point",     desc: "The westernmost point of Skye, with a clifftop lighthouse and views to the Outer Hebrides. 25-min walk each way — best at sunset.", locale: "Glendale" },
+        { name: "Elgol & Loch Coruisk boat trip", wiki: "Loch_Coruisk", desc: "Small boat from Elgol pier into Loch Coruisk — surrounded by the Black Cuillin, the most dramatic anchorage in Britain. ~4 hours round trip. Book ahead.", url: "https://bellajane.co.uk/", locale: "Elgol" }
+      ],
+      hotels: [],
+      restaurants: [
+        { name: "Loch Bay Restaurant", note: "Michelin-starred seafood in Stein, Waternish — 30 min north of Portree. Book weeks ahead.", url: "https://www.lochbay-restaurant.co.uk/" }
+      ]
+    },
+
+    {
+      num: 12, date: "Fri 31 Jul", weekday: "Friday",
       title: "Skye → Glencoe via Eilean Donan",
       leg: "Skye Bridge · Glen Shiel · Fort William · Glencoe",
       route: "A87 · A82",
       miles: "100", drive: "2.5 hrs",
       overnight: "Glencoe / Ballachulish",
-      checkin: "2026-07-29", checkout: "2026-07-30",
+      checkin: "2026-07-31", checkout: "2026-08-01",
       hero: "Eilean_Donan",
-      blurb: "Eilean Donan in the morning light, the Five Sisters of Kintail through the windscreen, lunch in Fort William under Ben Nevis, and the Three Sisters of Glencoe by late afternoon.",
+      blurb: "Leave Portree in good time. Eilean Donan in the morning light, the Five Sisters of Kintail through the windscreen, lunch in Fort William under Ben Nevis, and the Three Sisters of Glencoe by late afternoon.",
       attractions: [
         { name: "Eilean Donan Castle", wiki: "Eilean_Donan",    desc: "The most photographed castle in Scotland, on a tidal island where three sea lochs meet.", url: "https://www.eileandonancastle.com", locale: "Dornie" },
         { name: "Five Sisters of Kintail", wiki: "Five_Sisters_of_Kintail", desc: "One of Scotland's great mountain drives — the scenery from the car is the experience.", locale: "Glen Shiel" },
@@ -338,17 +387,17 @@ window.TRIP = {
     },
 
     {
-      num: 11, date: "Thu 30 Jul", weekday: "Thursday",
+      num: 13, date: "Sat 1 Aug", weekday: "Saturday",
       title: "Glencoe → Glasgow via Glenfinnan",
       leg: "Glen Etive · Glenfinnan Viaduct · Loch Lomond",
       route: "A82 · A830",
-      miles: "100", drive: "3 hrs",
+      miles: "130", drive: "3.5 hrs",
       overnight: "Glasgow",
-      checkin: "2026-07-30", checkout: "2026-08-02",
+      checkin: "2026-08-01", checkout: "2026-08-02",
       hero: "Glenfinnan_Viaduct",
-      blurb: "Optional dawn detour up Glen Etive (Bond's Skyfall), the Glenfinnan Viaduct of Harry Potter fame, the Jacobite Steam Train if you booked it, and Loch Lomond on the run-in to Glasgow.",
+      blurb: "Last day in the Highlands. Glen Etive at dawn for the Skyfall view, the Glenfinnan Viaduct (or the Jacobite Steam Train if you booked it), and Loch Lomond's western shore at Luss before pulling into Glasgow for one well-earned final dinner.",
       attractions: [
-        { name: "Glen Etive",            wiki: "Glen_Etive",         desc: "12-mile dead-end road into a remote, beautiful glen used in James Bond Skyfall. Allow an hour.", locale: "Glencoe" },
+        { name: "Glen Etive",            wiki: "Glen_Etive",         desc: "12-mile dead-end road into a remote, beautiful glen used in James Bond Skyfall. Allow an hour for the round trip.", locale: "Glencoe" },
         { name: "Glenfinnan Viaduct",    wiki: "Glenfinnan_Viaduct", desc: "21-arch Victorian railway viaduct featured in the Harry Potter films. 15-minute walk to the viewpoint.", locale: "Glenfinnan" },
         { name: "Glenfinnan Monument",   wiki: "Glenfinnan_Monument", desc: "Marks where Bonnie Prince Charlie raised his standard in 1745.", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument", locale: "Glenfinnan" },
         { name: "Jacobite Steam Train",  wiki: "Jacobite_(train)",   desc: "Fort William to Mallaig and back — one of the great railway journeys in the world. Book months ahead.", url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip", locale: "Fort William" },
@@ -359,51 +408,9 @@ window.TRIP = {
         { name: "Hotel du Vin Glasgow",      style: "Boutique, great wine bar",                price: "£120–£160", url: "https://www.hotelduvin.com/locations/glasgow/", locale: "Glasgow" },
         { name: "Dakota Glasgow",            style: "Design hotel, excellent service",         price: "£130–£170", url: "https://www.dakotahotels.co.uk/glasgow/",       locale: "Glasgow" }
       ],
-      restaurants: []
-    },
-
-    {
-      num: 12, date: "Fri 31 Jul", weekday: "Friday",
-      title: "Glasgow day trip",
-      leg: "Eastern Loch Lomond · Trossachs",
-      route: "Variable",
-      miles: "60–90", drive: "—",
-      overnight: "Glasgow",
-      hero: "Loch_Lomond",
-      blurb: "Final day with the car. The eastern shore of Loch Lomond and the Trossachs is the recommended use — quieter than the western road, and a Loch Katrine steamship at the heart of it. Stirling or Culzean are good alternatives.",
-      attractions: [
-        { name: "Loch Lomond eastern shore", wiki: "Loch_Lomond", desc: "Through Balmaha and Rowardennan — accessible only by car, far quieter than the western shore.", locale: "Balmaha" },
-        { name: "Loch Katrine steamship",    wiki: "Loch_Katrine", desc: "Cruise on the Sir Walter Scott steamship at the heart of the Trossachs.", url: "https://www.lochkatrine.com", locale: "Trossachs" },
-        { name: "Stirling Castle",           wiki: "Stirling_Castle", desc: "One of Scotland's greatest castles, where Mary Queen of Scots was crowned.", url: "https://www.historicenvironment.scot/visit-a-place/places/stirling-castle/", locale: "Stirling" },
-        { name: "Culzean Castle",            wiki: "Culzean_Castle", desc: "Dramatic clifftop castle on the Ayrshire coast, one hour south of Glasgow.", url: "https://www.nts.org.uk/visit/places/culzean-castle-and-country-park", locale: "Ayrshire" }
-      ],
-      hotels: [],
       restaurants: [
-        { name: "Cail Bruich",       note: "Michelin Bib Gourmand — book well ahead.", url: "https://www.cailbruich.co.uk" },
-        { name: "Ubiquitous Chip",   note: "Glasgow institution, beautiful courtyard.", url: "https://www.ubiquitouschip.co.uk" }
-      ]
-    },
-
-    {
-      num: 13, date: "Sat 1 Aug", weekday: "Saturday",
-      title: "Glasgow — last day in Scotland",
-      leg: "City day — keep the car at the hotel",
-      route: "—",
-      miles: "—", drive: "—",
-      overnight: "Glasgow",
-      hero: "Kelvingrove_Art_Gallery_and_Museum",
-      blurb: "Pick two from the museums, the cathedral and the West End. End with a final Scottish dinner before the long drive south tomorrow.",
-      attractions: [
-        { name: "Burrell Collection",    wiki: "Burrell_Collection",          desc: "Free, in Pollok Country Park — one of Britain's great private art collections, recently reopened.", url: "https://www.glasgowlife.org.uk/museums/venues/the-burrell-collection", locale: "Glasgow" },
-        { name: "Kelvingrove Art Gallery", wiki: "Kelvingrove_Art_Gallery_and_Museum", desc: "Free, world-class collection inside a Spanish Baroque palace.", url: "https://www.glasgowlife.org.uk/museums/venues/kelvingrove-art-gallery-and-museum", locale: "Glasgow" },
-        { name: "Glasgow Cathedral",     wiki: "Glasgow_Cathedral",           desc: "12th-century cathedral; the Victorian Necropolis on the hill behind it has the best city view.", url: "https://www.historicenvironment.scot/visit-a-place/places/glasgow-cathedral/", locale: "Glasgow" },
-        { name: "Ashton Lane",           wiki: "Ashton_Lane",                  desc: "Cobbled West End lane of bars and bistros, classic Glasgow night out.", locale: "Glasgow" },
-        { name: "Glasgow Science Centre", wiki: "Glasgow_Science_Centre",      desc: "On the Clyde, with a 127m rotating tower.", url: "https://www.glasgowsciencecentre.org", locale: "Glasgow" }
-      ],
-      hotels: [],
-      restaurants: [
-        { name: "Ox and Finch", note: "Small plates, West End — buzzing.", url: "https://www.oxandfinch.com" },
-        { name: "The Gannet",   note: "Modern Scottish in Finnieston.",     url: "https://www.thegannetgla.com" }
+        { name: "Cail Bruich",     note: "Michelin Bib Gourmand — book well ahead.",          url: "https://www.cailbruich.co.uk" },
+        { name: "Ubiquitous Chip", note: "Glasgow institution, beautiful courtyard.",         url: "https://www.ubiquitouschip.co.uk" }
       ]
     },
 
@@ -415,7 +422,7 @@ window.TRIP = {
       miles: "350", drive: "5–5.5 hrs",
       overnight: "Oxford",
       hero: "Oxford",
-      blurb: "Depart Glasgow 07:00–07:30. M74 is clear on Sunday mornings. Join M6 at Carlisle, M40 at Birmingham, exit at J8A (Wheatley) for Oxford. Arrive 12:30–13:30 — comfortable for the afternoon check-in. Drop the car in Oxford city centre or Headington.",
+      blurb: "Depart Glasgow 07:00–07:30. M74 is clear on Sunday mornings. Join M6 at Carlisle, M40 at Birmingham, exit at J8A (Wheatley) for Oxford. Arrive 12:30–13:30 — comfortable for the afternoon check-in. Glasgow can be revisited from Oxford any weekend; the Highlands can't.",
       attractions: [
         { name: "Oxford city centre", wiki: "Oxford", desc: "Walk to your daughter's college, find lunch, drop the car.", locale: "Oxford" }
       ],
