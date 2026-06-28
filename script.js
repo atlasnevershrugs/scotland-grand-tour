@@ -304,6 +304,7 @@
       const li = document.createElement('li');
       const doneClass = p.done ? ' priority-card-done' : '';
       const doneBadge = p.done ? `<span class="priority-done-badge">✓ Done</span>` : '';
+      const datesLine = p.dates ? `<p class="priority-dates">${p.dates}</p>` : '';
       li.innerHTML = `
         <a class="priority-card${doneClass}" href="${p.url}" target="_blank" rel="noopener">
           <div class="priority-rank-row">
@@ -311,6 +312,7 @@
             ${doneBadge}
           </div>
           <h3 class="priority-what">${p.what}</h3>
+          ${datesLine}
           <p class="priority-why">${p.why}</p>
           <span class="priority-link">${p.done ? 'View booking' : 'Book direct'}</span>
         </a>`;
@@ -691,6 +693,114 @@
 
   const dayList = document.getElementById('day-list');
   T.days.forEach(d => dayList.appendChild(buildDay(d)));
+
+  /* ===================================================================
+     BOOKINGS GUIDE — every stop, every option, in one place
+     =================================================================== */
+  function bookingsLocale(d) {
+    return d.overnight.split(/[—\/,]/)[0].trim();
+  }
+  function nightsBetween(ci, co) {
+    if (!ci || !co) return 0;
+    const a = new Date(ci + 'T00:00:00Z'), b = new Date(co + 'T00:00:00Z');
+    return Math.round((b - a) / 86400000);
+  }
+  function buildBookingGuide() {
+    const grid = document.getElementById('bookings-grid');
+    if (!grid) return;
+    T.days.filter(d => d.checkin && d.checkout).forEach(d => {
+      const loc = bookingsLocale(d);
+      const stays = (E.stays && E.stays[d.num]) || [];
+      const confirmedStay = stays.find(s => s.confirmed);
+      const nights = nightsBetween(d.checkin, d.checkout);
+
+      const card = document.createElement('article');
+      card.className = 'bk-stop';
+      if (confirmedStay) card.className += ' bk-stop-confirmed';
+
+      const header = `
+        <header class="bk-head">
+          <div class="bk-head-text">
+            <h3 class="bk-title">${loc}</h3>
+            <p class="bk-dates">
+              <span class="bk-dates-range">${fmtDate(d.checkin)} → ${fmtDate(d.checkout)}</span>
+              <span class="bk-dates-sep">·</span>
+              <span class="bk-nights">${nights} night${nights === 1 ? '' : 's'}</span>
+            </p>
+          </div>
+          ${confirmedStay
+            ? `<span class="bk-status bk-status-done">✓ Booked</span>`
+            : `<span class="bk-status bk-status-todo">To book</span>`}
+        </header>`;
+
+      const confirmedPanel = confirmedStay
+        ? `<div class="bk-confirmed-panel">
+             <span class="bk-confirmed-label">Confirmed stay</span>
+             <strong class="bk-confirmed-name">${confirmedStay.title}</strong>
+             <p class="bk-confirmed-why">${confirmedStay.why || ''}</p>
+           </div>`
+        : '';
+
+      const searchRow = `
+        <div class="bk-search-row">
+          <a class="bk-search-btn bk-search-airbnb" href="${airbnbSearch(loc, d.checkin, d.checkout)}" target="_blank" rel="noopener">
+            Search Airbnb<small>${nights} night${nights === 1 ? '' : 's'}, 3 adults, ≤£250</small>
+          </a>
+          <a class="bk-search-btn bk-search-booking" href="${bookingSearch(loc, d.checkin, d.checkout)}" target="_blank" rel="noopener">
+            Search Booking.com<small>${nights} night${nights === 1 ? '' : 's'}, 3 adults, ≤£250</small>
+          </a>
+        </div>`;
+
+      // Hotels block
+      let hotelsBlock = '';
+      if (d.hotels && d.hotels.length) {
+        const rows = d.hotels.map(h => `
+          <tr>
+            <td class="bk-prop-name">${h.name}</td>
+            <td class="bk-prop-style">${h.style}</td>
+            <td class="bk-prop-price">${h.price}</td>
+            <td class="bk-prop-link"><a href="${h.url}" target="_blank" rel="noopener">Book →</a></td>
+          </tr>`).join('');
+        hotelsBlock = `
+          <div class="bk-block">
+            <h4 class="bk-block-title">Hotels</h4>
+            <div class="bk-table-wrap">
+              <table class="bk-table">
+                <thead><tr><th>Name</th><th>Style</th><th>Per night</th><th></th></tr></thead>
+                <tbody>${rows}</tbody>
+              </table>
+            </div>
+          </div>`;
+      }
+
+      // B&Bs / unique stays block (exclude airbnb-area; that's covered by the Airbnb button above)
+      const bnbs = stays.filter(s => s.type !== 'airbnb-area');
+      let bnbsBlock = '';
+      if (bnbs.length) {
+        const rows = bnbs.map(s => `
+          <tr${s.confirmed ? ' class="bk-row-confirmed"' : ''}>
+            <td class="bk-prop-name">${s.confirmed ? '✓ ' : ''}${s.title}</td>
+            <td class="bk-prop-style">${(s.why || '').replace(/Booked: ?/, '')}</td>
+            <td class="bk-prop-price">${s.price || ''}</td>
+            <td class="bk-prop-link"><a href="${s.url}" target="_blank" rel="noopener">${s.confirmed ? 'View →' : 'Book →'}</a></td>
+          </tr>`).join('');
+        bnbsBlock = `
+          <div class="bk-block">
+            <h4 class="bk-block-title">B&amp;Bs &amp; unique stays</h4>
+            <div class="bk-table-wrap">
+              <table class="bk-table">
+                <thead><tr><th>Name</th><th>Notes</th><th>Per night</th><th></th></tr></thead>
+                <tbody>${rows}</tbody>
+              </table>
+            </div>
+          </div>`;
+      }
+
+      card.innerHTML = header + confirmedPanel + searchRow + hotelsBlock + bnbsBlock;
+      grid.appendChild(card);
+    });
+  }
+  buildBookingGuide();
 
   /* ---------- PRACTICAL NOTES (unchanged) ---------- */
   function buildPractical() {

@@ -69,16 +69,16 @@ window.TRIP = {
   ],
 
   priorityBookings: [
-    { rank: 1,  what: "Portree, Skye (Nights 9–11)",       why: "Hardest booking in Scotland — 3 nights",     url: "https://www.cuillinhills-hotel-skye.co.uk" },
-    { rank: 2,  what: "Gairloch (Nights 7–8)",             why: "Remote, very limited stock, 2 nights",        url: "https://www.theoldinn.net" },
-    { rank: 3,  what: "Clachaig Inn, Glencoe (Night 12)",  why: "Sells out 3–4 months ahead",                   url: "https://www.clachaig.com" },
-    { rank: 4,  what: "Ullapool (Night 6)",                why: "Tiny village, very few rooms",                 url: "https://www.theceilidhplace.com" },
-    { rank: 5,  what: "Pitlochry (Night 3)",               why: "Rosemount Hotel — booked",                     url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/", done: true },
-    { rank: 6,  what: "Drumnadrochit (Nights 4–5)",        why: "Cherrytrees Airbnb — booked",                  url: "https://www.airbnb.com", done: true },
-    { rank: 7,  what: "Jacobite Steam Train (Day 13)",     why: "Sells out months ahead in summer",             url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
-    { rank: 8,  what: "Applecross Inn lunch (Day 9)",      why: "Famous pub, books up fast",                    url: "https://www.applecross.uk.com/inn/" },
-    { rank: 9,  what: "Elgol boat trip (Day 11)",          why: "Loch Coruisk — small boats, limited slots",    url: "https://bellajane.co.uk/" },
-    { rank: 10, what: "Edinburgh (Nights 1–2)",            why: "City centre fills up in July",                 url: "https://www.booking.com/searchresults.html?ss=Edinburgh" }
+    { rank: 1,  what: "Portree, Skye",         dates: "Tue 28 Jul → Fri 31 Jul · 3 nights",     why: "Hardest booking in Scotland",                  url: "https://www.cuillinhills-hotel-skye.co.uk" },
+    { rank: 2,  what: "Gairloch",              dates: "Sun 26 Jul → Tue 28 Jul · 2 nights",     why: "Remote, very limited stock",                   url: "https://www.theoldinn.net" },
+    { rank: 3,  what: "Clachaig Inn, Glencoe", dates: "Fri 31 Jul → Sat 1 Aug · 1 night",       why: "Sells out 3–4 months ahead",                   url: "https://www.clachaig.com" },
+    { rank: 4,  what: "Ullapool",              dates: "Sat 25 Jul → Sun 26 Jul · 1 night",      why: "Tiny village, very few rooms",                 url: "https://www.theceilidhplace.com" },
+    { rank: 5,  what: "Pitlochry",             dates: "Wed 22 Jul → Thu 23 Jul · 1 night",      why: "Rosemount Hotel — booked",                     url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/", done: true },
+    { rank: 6,  what: "Drumnadrochit",         dates: "Thu 23 Jul → Sat 25 Jul · 2 nights",     why: "Cherrytrees Airbnb — booked",                  url: "https://www.airbnb.com", done: true },
+    { rank: 7,  what: "Jacobite Steam Train",  dates: "Sat 1 Aug · Day 13 morning",             why: "Sells out months ahead in summer",             url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
+    { rank: 8,  what: "Applecross Inn lunch",  dates: "Tue 28 Jul · Day 9 lunch",               why: "Famous pub, books up fast",                    url: "https://www.applecross.uk.com/inn/" },
+    { rank: 9,  what: "Elgol boat trip",       dates: "Thu 30 Jul · Day 11",                    why: "Loch Coruisk — small boats, limited slots",    url: "https://bellajane.co.uk/" },
+    { rank: 10, what: "Edinburgh",             dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",     why: "City centre fills up in July",                 url: "https://www.booking.com/searchresults.html?ss=Edinburgh" }
   ],
 
   practical: [
