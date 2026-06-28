@@ -73,7 +73,7 @@ window.TRIP = {
     { rank: 2,  what: "Gairloch (Nights 7–8)",             why: "Remote, very limited stock, 2 nights",        url: "https://www.theoldinn.net" },
     { rank: 3,  what: "Clachaig Inn, Glencoe (Night 12)",  why: "Sells out 3–4 months ahead",                   url: "https://www.clachaig.com" },
     { rank: 4,  what: "Ullapool (Night 6)",                why: "Tiny village, very few rooms",                 url: "https://www.theceilidhplace.com" },
-    { rank: 5,  what: "Pitlochry (Night 3)",               why: "Rosemount Hotel — booked, ref WTB1AA5B1B",     url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/", done: true },
+    { rank: 5,  what: "Pitlochry (Night 3)",               why: "Rosemount Hotel — booked",                     url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/", done: true },
     { rank: 6,  what: "Drumnadrochit (Nights 4–5)",        why: "Cherrytrees Airbnb — booked",                  url: "https://www.airbnb.com", done: true },
     { rank: 7,  what: "Jacobite Steam Train (Day 13)",     why: "Sells out months ahead in summer",             url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
     { rank: 8,  what: "Applecross Inn lunch (Day 9)",      why: "Famous pub, books up fast",                    url: "https://www.applecross.uk.com/inn/" },

@@ -1,7 +1,7 @@
 // Scotland Grand Tour — Enrichment data (v5: optimum after Munro's Pod cancel)
-// Bookings confirmed: Rosemount Hotel (Pitlochry, ref WTB1AA5B1B),
-// Cherrytrees Drumnadrochit (Airbnb, 2 nights at Loch Ness).
-// Maximum-wilderness shape: Skye 3 nights, Gairloch 2, Glasgow 1.
+// Two bookings confirmed (refs/details deliberately not stored in this file
+// since it ships to the public site). Maximum-wilderness shape:
+// Skye 3 nights, Gairloch 2, Glasgow 1.
 
 window.TRIP_ENRICH = {
 
@@ -434,9 +434,8 @@ window.TRIP_ENRICH = {
         type: "bnb",
         url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/",
         confirmed: true,
-        reference: "WTB1AA5B1B",
-        why: "Booked: ground floor suite with king + single (or 3 singles), en suite, breakfast included. 'Early book 2026 Midwk' discount applied. Payment due on arrival.",
-        price: "£192 total · 1 night"
+        why: "Booked: ground floor suite with king + single (or 3 singles), en suite, breakfast included. Payment due on arrival.",
+        price: "1 night · B&B"
       },
       {
         title: "Pitlochry cottages on Airbnb (alternatives)",
@@ -454,8 +453,8 @@ window.TRIP_ENRICH = {
         type: "airbnb",
         url: "https://www.airbnb.com",
         confirmed: true,
-        why: "Booked: entire home/flat hosted by Heather, on Loch Ness 5 min from Urquhart Castle. Check-in Thu 23 Jul after 3pm, checkout Sat 25 Jul by 10am. 3 adults.",
-        price: "Booked — 2 nights"
+        why: "Booked: entire flat on Loch Ness, 5 min drive from Urquhart Castle. 2 nights for 3 adults.",
+        price: "2 nights"
       },
       {
         title: "Inverness city alternatives",

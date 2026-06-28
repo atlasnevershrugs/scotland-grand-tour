@@ -506,8 +506,10 @@
       ? `<div class="stay-image"><img loading="lazy" src="${pick.image}" alt="${pick.title}"/></div>`
       : `<div class="stay-image stay-image-fallback"><span>${pick.title}</span></div>`;
 
+    // NOTE: we intentionally do NOT render booking reference numbers — this
+    // file ships to the public site. Keep refs out of data-enrichment.js.
     const confirmedBadge = pick.confirmed
-      ? `<span class="stay-badge-confirmed" title="${pick.reference ? 'Ref ' + pick.reference : 'Booking confirmed'}">✓ Booked${pick.reference ? ` · ${pick.reference}` : ''}</span>`
+      ? `<span class="stay-badge-confirmed" title="Booking confirmed">✓ Booked</span>`
       : '';
 
     a.innerHTML = `
