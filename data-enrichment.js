@@ -1,7 +1,10 @@
-// Scotland Grand Tour — Enrichment data (v5: optimum after Munro's Pod cancel)
-// Two bookings confirmed (refs/details deliberately not stored in this file
-// since it ships to the public site). Maximum-wilderness shape:
-// Skye 3 nights, Gairloch 2, Glasgow 1.
+// Scotland Grand Tour — Enrichment data (v6: Raasay swap)
+// Three bookings confirmed at time of writing (refs/details deliberately
+// kept out of this file since it ships to the public site):
+//   - Rosemount Hotel, Pitlochry (Night 3)
+//   - Cherrytrees Airbnb, Drumnadrochit (Nights 4–5)
+//   - Isle of Raasay Distillery / Borodale House (Nights 6–8) — being booked
+// Skye 3 nights (28–31 Jul) still to lock in.
 
 window.TRIP_ENRICH = {
 
@@ -149,104 +152,19 @@ window.TRIP_ENRICH = {
       blogs: [{ title: "Wildlife watching on the Black Isle", source: "North Coast 500", url: "https://www.northcoast500.com/see-do/wildlife-nature/a-highlands-hidden-gem-wildlife-watching-on-the-black-isle/" }]
     },
 
-    // ---- Day 6: Drumnadrochit → Ullapool ------------------------------------
-    "Corrieshalloch Gorge": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g316004-d519833-Reviews-Corrieshalloch_Gorge_National_Nature_Reserve-Ullapool_Scottish_Highlands_Scotland.html",
+    // ---- Day 6: Drumnadrochit → Raasay (drive day) --------------------------
+    "Eilean Donan Castle": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186547-d189549-Reviews-Eilean_Donan_Castle-Kyle_of_Lochalsh_Lochalsh_Scottish_Highlands_Scotland.html",
       blogs: [
-        { title: "Corrieshalloch Gorge", source: "National Trust for Scotland", url: "https://www.nts.org.uk/visit/places/corrieshalloch-gorge" },
-        { title: "Corrieshalloch Gorge, Braemore Junction", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/ullapool/corrieshalloch.shtml" }
+        { title: "Eilean Donan Castle Visitor Centre", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/eilean-donan-castle-visitor-centre-p248371" },
+        { title: "Eilean Donan Castle (official)", source: "eileandonancastle.com", url: "https://www.eileandonancastle.com/" }
       ]
     },
-    "Ullapool harbour": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g316004-d21295971-Reviews-Loch_Broom-Ullapool_Scottish_Highlands_Scotland.html",
+    "Five Sisters of Kintail": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1021314-d194066-Reviews-Kintail_Lodge_Hotel-Shiel_Bridge_Lochalsh_Scottish_Highlands_Scotland.html",
       blogs: [
-        { title: "Ullapool feature page", source: "Undiscovered Scotland", url: "https://www.undiscoveredscotland.co.uk/ullapool/ullapool/index.html" },
-        { title: "Ullapool and Dundonnell walks", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/ullapool/ullapool.shtml" }
-      ]
-    },
-    "Ullapool Museum": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g316004-d8445116-Reviews-Ullapool_Museum-Ullapool_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "Ullapool Museum", source: "Official site", url: "https://www.ullapoolmuseum.co.uk/" },
-        { title: "Ullapool Museum feature page", source: "Undiscovered Scotland", url: "https://www.undiscoveredscotland.co.uk/ullapool/ullapoolmuseum/index.html" }
-      ]
-    },
-
-    // ---- Day 7: Ullapool → Gairloch -----------------------------------------
-    "Beinn Eighe National Nature Reserve": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1147549-d1021175-Reviews-Beinn_Eighe_National_Nature_Reserve-Kinlochewe_Ross_and_Cromarty_Scottish_Highla.html",
-      blogs: [
-        { title: "Beinn Eighe and Loch Maree Islands NNR", source: "NatureScot", url: "https://www.nature.scot/enjoying-outdoors/visit-our-nature-reserves/beinn-eighe-and-loch-maree-islands-national-nature-reserve" },
-        { title: "Mountain Trail, Beinn Eighe NNR", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/torridon/Mountaintrail.shtml" }
-      ]
-    },
-    "Shieldaig village": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g551819-d519798-Reviews-Glen_Torridon-Shieldaig_Ross_and_Cromarty_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "Shieldaig", source: "Visit Scotland", url: "https://www.visitscotland.com/info/towns-villages/shieldaig-p254381" },
-        { title: "Shieldaig peninsula walk", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/torridon/Shieldaig.shtml" }
-      ]
-    },
-    "Gairloch beach": {
-      tripadvisor: "https://www.tripadvisor.co.uk/Attraction_Review-g315988-d23597455-Reviews-Gairloch_Beach-Gairloch_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "Big Sand Beach", source: "Visit Scotland", url: "https://www.visitscotland.com/info/towns-villages/big-sand-beach-p245581" },
-        { title: "Gairloch walks", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/torridon/gairloch.shtml" }
-      ]
-    },
-    "An Teallach": {
-      blogs: [{ title: "An Teallach, Dundonnell", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/ullapool/anteallach.shtml" }]
-    },
-
-    // ---- Day 8: Torridon walking day ----------------------------------------
-    "Beinn Eighe Mountain Trail": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1147549-d1021173-Reviews-Beinn_Eighe_Mountain_Trail-Kinlochewe_Ross_and_Cromarty_Scottish_Highlands_Scotl.html",
-      blogs: [
-        { title: "Mountain Trail, Beinn Eighe NNR", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/torridon/Mountaintrail.shtml" },
-        { title: "Beinn Eighe NNR — visiting the reserve", source: "NatureScot", url: "https://www.nature.scot/enjoying-outdoors/visit-our-nature-reserves/beinn-eighe-and-loch-maree-islands-nnr/beinn-eighe-and-loch-maree-islands-nnr-visiting-reserve" }
-      ]
-    },
-    "Loch Maree": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g315988-d519794-Reviews-Loch_Maree-Gairloch_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "Loch Maree Islands National Nature Reserve", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/loch-maree-islands-p333771" },
-        { title: "Beautiful lochs in Scotland", source: "Visit Scotland", url: "https://www.visitscotland.com/things-to-do/landscapes-nature/lochs" }
-      ]
-    },
-    "Inverewe Garden": {
-      tripadvisor: "https://www.tripadvisor.co.uk/Attraction_Review-g551903-d484569-Reviews-Inverewe_Garden-Poolewe_Ross_and_Cromarty_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "Inverewe", source: "National Trust for Scotland", url: "https://www.nts.org.uk/visit/places/inverewe" },
-        { title: "Inverewe Garden and Estate", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/inverewe-garden-and-estate-p255481" }
-      ]
-    },
-    "Lower Diabaig coastal road": {
-      blogs: [
-        { title: "Diabaig Coastal Circuit", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/torridon/Diabaig.shtml" },
-        { title: "Discovering Torridon", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/news/discovering-torridon/0016427/" }
-      ]
-    },
-    "Big Sand Beach": {
-      blogs: [{ title: "West Highland beaches — our pick", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/news/our-pick-scotlands-west-highland-beaches/" }]
-    },
-    "Gairloch Marine Wildlife Centre": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g315988-d2279784-Reviews-Hebridean_Whale_Cruises-Gairloch_Scottish_Highlands_Scotland.html",
-      blogs: []
-    },
-
-    // ---- Day 9: Gairloch → Skye via Applecross ------------------------------
-    "Bealach na Bà": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g551815-d4106283-Reviews-Bealach_na_Ba_Road-Applecross_Ross_and_Cromarty_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "How to drive Scotland's best road", source: "Scotland's Stories", url: "https://scotlands-stories.com/visiting-applecross/" },
-        { title: "Applecross walks", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/torridon/applecross.shtml" }
-      ]
-    },
-    "Applecross village": {
-      tripadvisor: "https://www.tripadvisor.com/Tourism-g551815-Applecross_Ross_and_Cromarty_Scottish_Highlands_Scotland-Vacations.html",
-      blogs: [
-        { title: "Why I visit Applecross every year", source: "Scotland's Stories", url: "https://scotlands-stories.com/visiting-applecross/" },
-        { title: "Applecross walks", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/torridon/applecross.shtml" }
+        { title: "Kintail", source: "National Trust for Scotland", url: "https://www.nts.org.uk/visit/places/kintail" },
+        { title: "Five Sisters of Kintail", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/kintail/Fivesisters.shtml" }
       ]
     },
     "Skye Bridge": {
@@ -254,6 +172,73 @@ window.TRIP_ENRICH = {
       blogs: [
         { title: "Isle of Skye", source: "Visit Scotland", url: "https://www.visitscotland.com/places-to-go/islands/isle-skye" },
         { title: "Skye Bridge", source: "isleofskye.com", url: "https://www.isleofskye.com/skye-guide/skye-places/skye-bridge" }
+      ]
+    },
+    "Sconser ferry pier": {
+      blogs: [
+        { title: "Sconser to Raasay ferry", source: "CalMac (official)", url: "https://www.calmac.co.uk/sconser-raasay" }
+      ]
+    },
+
+    // ---- Days 7-8: Raasay ---------------------------------------------------
+    "Isle of Raasay Distillery": {
+      blogs: [
+        { title: "Isle of Raasay Distillery (official)", source: "raasaydistillery.com", url: "https://raasaydistillery.com/" },
+        { title: "Borodale House — stay at the distillery", source: "raasaydistillery.com", url: "https://raasaydistillery.com/visit/borodale-house/" },
+        { title: "Visit & tours — Isle of Raasay Distillery", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/isle-of-raasay-distillery-p2412961" }
+      ]
+    },
+    "Dùn Caan": {
+      blogs: [
+        { title: "Dùn Caan, Raasay", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/skye/duncaan.shtml" },
+        { title: "Dùn Caan walk", source: "Raasay House", url: "https://www.raasay-house.co.uk/things-to-do" }
+      ]
+    },
+    "Raasay House": {
+      blogs: [
+        { title: "Raasay House (official)", source: "raasay-house.co.uk", url: "https://www.raasay-house.co.uk/" },
+        { title: "Raasay House", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/raasay-house-p251281" }
+      ]
+    },
+    "Inverarish & shore walk": {
+      blogs: [
+        { title: "Raasay", source: "Visit Scotland", url: "https://www.visitscotland.com/places-to-go/islands/raasay" }
+      ]
+    },
+    "Calum's Road": {
+      blogs: [
+        { title: "Calum's Road, Raasay", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/news/calums-road-raasay/" },
+        { title: "Calum's Road", source: "Atlas Obscura", url: "https://www.atlasobscura.com/places/calums-road" }
+      ]
+    },
+    "Brochel Castle": {
+      blogs: [
+        { title: "Brochel Castle", source: "Canmore", url: "https://canmore.org.uk/site/11522/raasay-brochel-castle" }
+      ]
+    },
+    "Hallaig": {
+      blogs: [
+        { title: "Hallaig, Raasay", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/skye/hallaig.shtml" },
+        { title: "Hallaig — Sorley MacLean's poem", source: "Scottish Poetry Library", url: "https://www.scottishpoetrylibrary.org.uk/poem/hallaig/" }
+      ]
+    },
+    "North Raasay walks": {
+      blogs: [
+        { title: "Walks on Raasay", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/skye/raasay/" }
+      ]
+    },
+
+    // ---- Day 9: Raasay → Skye -----------------------------------------------
+    "Sligachan Old Bridge": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g4422085-d8459998-Reviews-Sligachan_Old_Bridge-Sligachan_Isle_of_Skye_The_Hebrides_Scotland.html",
+      blogs: [
+        { title: "Sligachan", source: "isleofskye.com", url: "https://www.isleofskye.com/skye-guide/skye-places/sligachan" }
+      ]
+    },
+    "Portree harbour": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g551883-d240398-Reviews-Portree_Harbour-Portree_Isle_of_Skye_The_Hebrides_Scotland.html",
+      blogs: [
+        { title: "Portree", source: "isleofskye.com", url: "https://www.isleofskye.com/skye-guide/towns-villages/portree" }
       ]
     },
 
@@ -322,20 +307,6 @@ window.TRIP_ENRICH = {
     },
 
     // ---- Day 12: Skye → Glencoe ---------------------------------------------
-    "Eilean Donan Castle": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186547-d189549-Reviews-Eilean_Donan_Castle-Kyle_of_Lochalsh_Lochalsh_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "Eilean Donan Castle Visitor Centre", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/eilean-donan-castle-visitor-centre-p248371" },
-        { title: "Eilean Donan Castle (official)", source: "eileandonancastle.com", url: "https://www.eileandonancastle.com/" }
-      ]
-    },
-    "Five Sisters of Kintail": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1021314-d194066-Reviews-Kintail_Lodge_Hotel-Shiel_Bridge_Lochalsh_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "Kintail", source: "National Trust for Scotland", url: "https://www.nts.org.uk/visit/places/kintail" },
-        { title: "Five Sisters of Kintail", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/kintail/Fivesisters.shtml" }
-      ]
-    },
     "Ben Nevis": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186545-d194657-Reviews-Ben_Nevis-Fort_William_Lochaber_Scottish_Highlands_Scotland.html",
       blogs: [
@@ -472,57 +443,33 @@ window.TRIP_ENRICH = {
       }
     ],
 
-    // ---- Day 6: Ullapool (night 6) ------------------------------------------
+    // ---- Day 6: Raasay — BORODALE HOUSE (DISTILLERY) ------------------------
     6: [
       {
-        title: "Ullapool Airbnbs",
+        title: "Borodale House at Isle of Raasay Distillery",
+        type: "bnb",
+        url: "https://raasaydistillery.com/visit/borodale-house/",
+        confirmed: true,
+        why: "Booking in progress: 6 boutique rooms at the working distillery — single malts on tap, dramatic Cuillin views across the sound, in-house restaurant. The Skye-area solve.",
+        price: "3 nights · approx £335/night avg"
+      },
+      {
+        title: "Raasay House (alternative — activity centre with rooms)",
+        type: "bnb",
+        url: "https://www.raasay-house.co.uk/",
+        why: "Backup option — Georgian house turned activity centre, dormitory + private rooms, great café/restaurant. Family rooms available.",
+        price: "£120–£200/night"
+      },
+      {
+        title: "Raasay cottages on Airbnb",
         type: "airbnb-area",
-        url: "https://www.airbnb.co.uk/s/Ullapool--United-Kingdom/homes?checkin=2026-07-25&checkout=2026-07-26&adults=3&price_max=250&currency=GBP",
-        why: "Ullapool stays average 4.9 stars on Airbnb — harbour-area apartments and small cottages. Pre-filtered for your dates and party.",
-        price: "under £250/night"
-      },
-      {
-        title: "Westlea House B&B",
-        type: "bnb",
-        url: "https://westlea-ullapool.co.uk/",
-        why: "5-star independent B&B on Market Street, steps from the harbour and ferry, with a triple room option from ~£69pp including breakfast.",
-        price: "£140–£200/night"
-      },
-      {
-        title: "Ardvreck House",
-        type: "bnb",
-        url: "https://www.ardvreckhouse.com/book",
-        why: "Family-run B&B on the hillside above Loch Broom with sweeping village and water views — short drive to the harbour.",
-        price: "£130–£200/night"
+        url: "https://www.airbnb.co.uk/s/Raasay--United-Kingdom/homes?checkin=2026-07-25&checkout=2026-07-28&adults=3&price_max=250&currency=GBP",
+        why: "Tiny inventory (Raasay has fewer than 20 listings total) but the filter gives you the current available stock.",
+        price: "£100–£200/night"
       }
     ],
 
-    // ---- Day 7: Gairloch (nights 7-8) ---------------------------------------
-    7: [
-      {
-        title: "Gairloch & Wester Ross Airbnbs",
-        type: "airbnb-area",
-        url: "https://www.airbnb.co.uk/s/Gairloch--United-Kingdom/homes?checkin=2026-07-26&checkout=2026-07-28&adults=3&price_max=250&currency=GBP",
-        why: "Pre-filtered Gairloch search for the two-night Torridon base. Coastal cottages and crofts — book early, stock is thin.",
-        price: "£90–£240/night"
-      },
-      {
-        title: "Dry Island, Badachro",
-        type: "bnb",
-        url: "https://www.dryisland.co.uk",
-        why: "Independent property on a private island in Badachro Bay — luxury cabins and an apartment (Airbnb Superhost rated 4.68). Uniquely remote.",
-        price: "£150–£230/night"
-      },
-      {
-        title: "Shieldaig Cottage & Pier House",
-        type: "bnb",
-        url: "https://www.shieldaig.scot/",
-        why: "Seafront self-catering in Corran, Shieldaig — perfectly placed for the Torridon mountains and Day 8's Beinn Eighe walk.",
-        price: "£140–£220/night"
-      }
-    ],
-
-    // ---- Day 9: Skye (nights 9-11) — 3 NIGHTS, BIGGEST UPGRADE --------------
+    // ---- Day 9: Skye (nights 9-11) — 3 NIGHTS, STILL TO BOOK ----------------
     9: [
       {
         title: "Portree & Skye self-catering (Airbnb)",
