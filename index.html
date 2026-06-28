@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scotland Grand Tour · 20 Jul – 2 Aug 2026</title>
+  <meta name="description" content="A 14-day road trip from Edinburgh to Oxford via the Highlands, Skye, Glencoe and Glasgow." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- =================== TOP NAV =================== -->
+<header class="topnav" id="topnav">
+  <a class="brand" href="#top">
+    <span class="brand-mark">⛰</span>
+    <span class="brand-text">Scotland Grand Tour</span>
+  </a>
+  <nav class="topnav-links">
+    <a href="#map">Map</a>
+    <a href="#priority">Bookings</a>
+    <a href="#days">Itinerary</a>
+    <a href="#practical">Notes</a>
+  </nav>
+</header>
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <p class="kicker">A road trip · 20 Jul – 2 Aug 2026</p>
+    <h1 class="hero-title">
+      <span class="serif italic">Scotland</span><br/>
+      Grand Tour
+    </h1>
+    <p class="hero-sub">Edinburgh to Oxford, by the long way round —
+      Cairngorms, the far northwest, Skye, Glencoe and Glasgow.</p>
+
+    <div class="hero-stats" id="hero-stats"></div>
+
+    <div class="hero-meta">
+      <div><span class="meta-label">Pickup</span><span class="meta-value">Edinburgh Airport · Mon 20 Jul</span></div>
+      <div><span class="meta-label">Drop-off</span><span class="meta-value">Oxford city centre · Sun 2 Aug</span></div>
+      <div><span class="meta-label">Travellers</span><span class="meta-value">2 adults</span></div>
+    </div>
+
+    <a href="#map" class="hero-cta">See the route ↓</a>
+  </div>
+</section>
+
+<!-- =================== ROUTE MAP =================== -->
+<section class="map-section" id="map">
+  <div class="section-head">
+    <p class="section-kicker">The route</p>
+    <h2 class="section-title">~1,100 miles · 12 driving days</h2>
+    <p class="section-lede">An illustrated overview, then a real interactive map to plan from.</p>
+  </div>
+
+  <!-- Stylised SVG hero map -->
+  <div class="illustrated-map" id="illustrated-map" aria-label="Illustrated route schematic"></div>
+
+  <!-- Interactive Leaflet map -->
+  <div class="leaflet-wrap">
+    <div id="leaflet" role="region" aria-label="Interactive route map"></div>
+    <p class="map-caption">Click a pin to jump to that day. Map © OpenStreetMap contributors.</p>
+  </div>
+
+  <!-- Quick reference table -->
+  <div class="quick-ref">
+    <h3>Day-by-day driving overview</h3>
+    <div class="qref-table-wrap">
+      <table class="qref-table" id="qref-table"></table>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PRIORITY BOOKINGS =================== -->
+<section class="priority" id="priority">
+  <div class="section-head">
+    <p class="section-kicker">Act now</p>
+    <h2 class="section-title">Booking priority</h2>
+    <p class="section-lede">Ten things to lock in before anything else — the Highlands in July go fast.</p>
+  </div>
+  <ol class="priority-grid" id="priority-grid"></ol>
+
+  <div class="car-rental">
+    <h3>Car rental</h3>
+    <p>Recommended: <strong>Skoda Octavia Estate or Ford Kuga, automatic, diesel.</strong> Edinburgh Airport pickup, Oxford city-centre drop-off — one-way fee typically £80–£150.</p>
+    <ul class="car-list" id="car-list"></ul>
+  </div>
+</section>
+
+<!-- =================== DAY BY DAY =================== -->
+<section class="days" id="days">
+  <div class="section-head">
+    <p class="section-kicker">Day by day</p>
+    <h2 class="section-title">The itinerary</h2>
+    <p class="section-lede">Each day shows the drive, the stops, where to stay, and where to eat.
+      Every link opens an external site — TripAdvisor, Booking.com, Airbnb, or the venue's own page.</p>
+  </div>
+
+  <div id="day-list"></div>
+</section>
+
+<!-- =================== PRACTICAL NOTES =================== -->
+<section class="practical" id="practical">
+  <div class="section-head">
+    <p class="section-kicker">Before you go</p>
+    <h2 class="section-title">Practical notes</h2>
+  </div>
+  <div class="practical-grid" id="practical-grid"></div>
+
+  <div class="restaurant-checklist">
+    <h3>Restaurant &amp; train bookings to make from home</h3>
+    <ol id="restaurant-checklist"></ol>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-title">Have a brilliant trip.</p>
+    <p class="footer-sub">
+      External links to TripAdvisor, Booking.com, Airbnb and venue sites.<br/>
+      Images via Wikimedia Commons &amp; Wikipedia. Map data © OpenStreetMap contributors.
+    </p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
