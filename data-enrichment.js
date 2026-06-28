@@ -1,9 +1,7 @@
-// Scotland Grand Tour — Enrichment data (v3: Option 2 with Corpach pod)
-// - attractions: keyed by exact attraction `name` from data.js. Direct
-//   TripAdvisor URLs and reputable blog/guide URLs.
-// - stays: keyed by day number from data.js. Curated Airbnb / B&B picks
-//   for each overnight stop. Entries with confirmed: true render with a
-//   green "Booked" badge.
+// Scotland Grand Tour — Enrichment data (v5: optimum after Munro's Pod cancel)
+// Bookings confirmed: Rosemount Hotel (Pitlochry, ref WTB1AA5B1B),
+// Cherrytrees Drumnadrochit (Airbnb, 2 nights at Loch Ness).
+// Maximum-wilderness shape: Skye 3 nights, Gairloch 2, Glasgow 1.
 
 window.TRIP_ENRICH = {
 
@@ -38,9 +36,7 @@ window.TRIP_ENRICH = {
     },
     "The Real Mary King's Close": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186525-d191321-Reviews-The_Real_Mary_King_s_Close-Edinburgh_Scotland.html",
-      blogs: [
-        { title: "The Real Mary King's Close", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/the-real-mary-kings-close-p2460951" }
-      ]
+      blogs: [{ title: "The Real Mary King's Close", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/the-real-mary-kings-close-p2460951" }]
     },
     "St Giles' Cathedral": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186525-d187655-Reviews-St_Giles_Cathedral-Edinburgh_Scotland.html",
@@ -51,21 +47,15 @@ window.TRIP_ENRICH = {
     },
     "Calton Hill": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186525-d190124-Reviews-Calton_Hill-Edinburgh_Scotland.html",
-      blogs: [
-        { title: "12 fascinating things to do in Edinburgh", source: "Visit Scotland", url: "https://www.visitscotland.com/places-to-go/edinburgh/things-to-do" }
-      ]
+      blogs: [{ title: "12 fascinating things to do in Edinburgh", source: "Visit Scotland", url: "https://www.visitscotland.com/places-to-go/edinburgh/things-to-do" }]
     },
     "National Museum of Scotland": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186525-d2359701-Reviews-National_Museum_of_Scotland-Edinburgh_Scotland.html",
-      blogs: [
-        { title: "National Museum of Scotland", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/national-museum-of-scotland-p246591" }
-      ]
+      blogs: [{ title: "National Museum of Scotland", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/national-museum-of-scotland-p246591" }]
     },
     "Arthur's Seat": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186525-d195211-Reviews-Arthur_s_Seat-Edinburgh_Scotland.html",
-      blogs: [
-        { title: "Holyrood Park and Arthur's Seat", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/holyrood-park-and-arthurs-seat-p914341" }
-      ]
+      blogs: [{ title: "Holyrood Park and Arthur's Seat", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/holyrood-park-and-arthurs-seat-p914341" }]
     },
 
     // ---- Day 3: Edinburgh → Pitlochry ---------------------------------------
@@ -85,21 +75,15 @@ window.TRIP_ENRICH = {
     },
     "Balmoral Castle": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g190738-d212160-Reviews-Balmoral_Castle-Ballater_Aberdeenshire_Scotland.html",
-      blogs: [
-        { title: "Balmoral Castle", source: "Lonely Planet", url: "https://www.lonelyplanet.com/scotland/central-scotland/deeside-and-donside/attractions/balmoral-castle/a/poi-sig/1122895/360597" }
-      ]
+      blogs: [{ title: "Balmoral Castle", source: "Lonely Planet", url: "https://www.lonelyplanet.com/scotland/central-scotland/deeside-and-donside/attractions/balmoral-castle/a/poi-sig/1122895/360597" }]
     },
     "Blair Castle": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g946548-d318884-Reviews-Blair_Castle_Gardens-Blair_Atholl_Pitlochry_Perth_and_Kinross_Scotland.html",
-      blogs: [
-        { title: "Blair Castle", source: "Lonely Planet", url: "https://www.lonelyplanet.com/scotland/blair-atholl/attractions/blair-castle/a/poi-sig/1122570/1318977" }
-      ]
+      blogs: [{ title: "Blair Castle", source: "Lonely Planet", url: "https://www.lonelyplanet.com/scotland/blair-atholl/attractions/blair-castle/a/poi-sig/1122570/1318977" }]
     },
     "Pitlochry Dam Fish Ladder": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186566-d4236412-Reviews-Pitlochry_Dam_Power_Station_And_Fish_Ladder-Pitlochry_Perth_and_Kinross_Scotland.html",
-      blogs: [
-        { title: "Loch Faskally and the salmon ladder", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/perthshire/salmon-ladder.shtml" }
-      ]
+      blogs: [{ title: "Loch Faskally and the salmon ladder", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/perthshire/salmon-ladder.shtml" }]
     },
 
     // ---- Day 4: Pitlochry → Drumnadrochit -----------------------------------
@@ -162,9 +146,7 @@ window.TRIP_ENRICH = {
       ]
     },
     "Moray Firth": {
-      blogs: [
-        { title: "Wildlife watching on the Black Isle", source: "North Coast 500", url: "https://www.northcoast500.com/see-do/wildlife-nature/a-highlands-hidden-gem-wildlife-watching-on-the-black-isle/" }
-      ]
+      blogs: [{ title: "Wildlife watching on the Black Isle", source: "North Coast 500", url: "https://www.northcoast500.com/see-do/wildlife-nature/a-highlands-hidden-gem-wildlife-watching-on-the-black-isle/" }]
     },
 
     // ---- Day 6: Drumnadrochit → Ullapool ------------------------------------
@@ -190,7 +172,7 @@ window.TRIP_ENRICH = {
       ]
     },
 
-    // ---- Day 7: Ullapool → Gairloch (drive day) -----------------------------
+    // ---- Day 7: Ullapool → Gairloch -----------------------------------------
     "Beinn Eighe National Nature Reserve": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1147549-d1021175-Reviews-Beinn_Eighe_National_Nature_Reserve-Kinlochewe_Ross_and_Cromarty_Scottish_Highla.html",
       blogs: [
@@ -213,9 +195,7 @@ window.TRIP_ENRICH = {
       ]
     },
     "An Teallach": {
-      blogs: [
-        { title: "An Teallach, Dundonnell", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/ullapool/anteallach.shtml" }
-      ]
+      blogs: [{ title: "An Teallach, Dundonnell", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/ullapool/anteallach.shtml" }]
     },
 
     // ---- Day 8: Torridon walking day ----------------------------------------
@@ -247,9 +227,7 @@ window.TRIP_ENRICH = {
       ]
     },
     "Big Sand Beach": {
-      blogs: [
-        { title: "West Highland beaches — our pick", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/news/our-pick-scotlands-west-highland-beaches/" }
-      ]
+      blogs: [{ title: "West Highland beaches — our pick", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/news/our-pick-scotlands-west-highland-beaches/" }]
     },
     "Gairloch Marine Wildlife Centre": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g315988-d2279784-Reviews-Hebridean_Whale_Cruises-Gairloch_Scottish_Highlands_Scotland.html",
@@ -279,7 +257,7 @@ window.TRIP_ENRICH = {
       ]
     },
 
-    // ---- Day 10: Skye Trotternish day ---------------------------------------
+    // ---- Day 10: Skye Day 1 — Trotternish -----------------------------------
     "The Quiraing": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g551883-d196764-Reviews-Quiraing-Portree_Isle_of_Skye_The_Hebrides_Scotland.html",
       blogs: [
@@ -296,26 +274,10 @@ window.TRIP_ENRICH = {
     },
     "Kilt Rock & Mealt Falls": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186585-d1426039-Reviews-Kilt_Rock-Isle_of_Skye_The_Hebrides_Scotland.html",
-      blogs: [
-        { title: "Kilt Rock | Staffin", source: "isleofskye.com", url: "https://www.isleofskye.com/skye-guide/skye-places/kilt-rock" }
-      ]
-    },
-    "Neist Point Lighthouse": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g635693-d661598-Reviews-Neist_Point-Glendale_Isle_of_Skye_The_Hebrides_Scotland.html",
-      blogs: [
-        { title: "Neist Point", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/skye/neistpoint.shtml" },
-        { title: "Neist Point Lighthouse walk", source: "isleofskye.com", url: "https://www.isleofskye.com/skye-guide/top-ten-skye-walks/neist-point-lighthouse" }
-      ]
-    },
-    "Dunvegan Castle": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g551875-d191357-Reviews-Dunvegan_Castle_Gardens-Dunvegan_Isle_of_Skye_The_Hebrides_Scotland.html",
-      blogs: [
-        { title: "Dunvegan Castle & Gardens", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/dunvegan-castle-gardens-p248681" },
-        { title: "Dunvegan Castle (official)", source: "dunvegancastle.com", url: "https://www.dunvegancastle.com/" }
-      ]
+      blogs: [{ title: "Kilt Rock | Staffin", source: "isleofskye.com", url: "https://www.isleofskye.com/skye-guide/skye-places/kilt-rock" }]
     },
 
-    // ---- Day 11: Skye → Corpach (drive day) ---------------------------------
+    // ---- Day 11: Skye Day 2 — Cuillin & West --------------------------------
     "Fairy Pools": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186585-d2335113-Reviews-Fairy_Pools-Isle_of_Skye_The_Hebrides_Scotland.html",
       blogs: [
@@ -330,6 +292,36 @@ window.TRIP_ENRICH = {
         { title: "Hebridean Whisky Trail — Talisker", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/hebridean-whisky-trail-talisker-distillery-p2689801" }
       ]
     },
+    "Dunvegan Castle": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g551875-d191357-Reviews-Dunvegan_Castle_Gardens-Dunvegan_Isle_of_Skye_The_Hebrides_Scotland.html",
+      blogs: [
+        { title: "Dunvegan Castle & Gardens", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/dunvegan-castle-gardens-p248681" },
+        { title: "Dunvegan Castle (official)", source: "dunvegancastle.com", url: "https://www.dunvegancastle.com/" }
+      ]
+    },
+    "Claigan Coral Beaches": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186585-d2706995-Reviews-Claigan_Coral_Beach-Isle_of_Skye_The_Hebrides_Scotland.html",
+      blogs: [
+        { title: "Coral Beaches, Claigan near Dunvegan", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/skye/coralbeaches.shtml" },
+        { title: "Coral Beach walk, Claigan, Dunvegan", source: "isleofskye.com", url: "https://www.isleofskye.com/skye-guide/top-ten-skye-walks/coral-beach" }
+      ]
+    },
+    "Neist Point Lighthouse": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g635693-d661598-Reviews-Neist_Point-Glendale_Isle_of_Skye_The_Hebrides_Scotland.html",
+      blogs: [
+        { title: "Neist Point", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/skye/neistpoint.shtml" },
+        { title: "Neist Point Lighthouse walk", source: "isleofskye.com", url: "https://www.isleofskye.com/skye-guide/top-ten-skye-walks/neist-point-lighthouse" }
+      ]
+    },
+    "Elgol & Loch Coruisk boat trip": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1224708-d2287003-Reviews-Bella_Jane_Boat_Trips_AquaXplore-Elgol_Isle_of_Skye_The_Hebrides_Scotland.html",
+      blogs: [
+        { title: "Bella Jane Boat Trips, Elgol", source: "isleofskye.com", url: "https://www.isleofskye.com/activities/boat-trips/skye-boat-trips/bella-jane-boat-trips" },
+        { title: "Misty Isle Boat Trips, Elgol to Loch Coruisk", source: "isleofskye.com", url: "https://www.isleofskye.com/activities/boat-trips/skye-boat-trips/misty-isle-boat-trips" }
+      ]
+    },
+
+    // ---- Day 12: Skye → Glencoe ---------------------------------------------
     "Eilean Donan Castle": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186547-d189549-Reviews-Eilean_Donan_Castle-Kyle_of_Lochalsh_Lochalsh_Scottish_Highlands_Scotland.html",
       blogs: [
@@ -344,20 +336,18 @@ window.TRIP_ENRICH = {
         { title: "Five Sisters of Kintail", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/kintail/Fivesisters.shtml" }
       ]
     },
-
-    // ---- Day 12: Corpach base — Glencoe, Ben Nevis, Glenfinnan --------------
-    "Glen Nevis gorge walk": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186545-d10832664-Reviews-Glen_Nevis_Visitor_Center-Fort_William_Lochaber_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "Steall Falls and the Nevis Gorge", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/fortwilliam/steallfalls.shtml" },
-        { title: "Steall Falls and Nevis Gorge walk", source: "Countryfile", url: "https://www.countryfile.com/go-outdoors/walks/walk-steall-falls-and-the-nevis-gorge-highland" }
-      ]
-    },
     "Ben Nevis": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186545-d194657-Reviews-Ben_Nevis-Fort_William_Lochaber_Scottish_Highlands_Scotland.html",
       blogs: [
         { title: "Ben Nevis — Scotland's iconic mountain", source: "Visit Scotland", url: "https://www.visitscotland.com/things-to-do/outdoor-activities/walking/mountains-hills/ben-nevis" },
         { title: "Ben Nevis by the Mountain Path", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/fortwilliam/bennevis.shtml" }
+      ]
+    },
+    "Glen Nevis gorge walk": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186545-d10832664-Reviews-Glen_Nevis_Visitor_Center-Fort_William_Lochaber_Scottish_Highlands_Scotland.html",
+      blogs: [
+        { title: "Steall Falls and the Nevis Gorge", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/fortwilliam/steallfalls.shtml" },
+        { title: "Steall Falls and Nevis Gorge walk", source: "Countryfile", url: "https://www.countryfile.com/go-outdoors/walks/walk-steall-falls-and-the-nevis-gorge-highland" }
       ]
     },
     "Glencoe Visitor Centre": {
@@ -374,11 +364,18 @@ window.TRIP_ENRICH = {
         { title: "Glencoe National Nature Reserve", source: "National Trust for Scotland", url: "https://www.nts.org.uk/visit/places/glencoe" }
       ]
     },
+
+    // ---- Day 13: Glencoe → Glasgow ------------------------------------------
+    "Glen Etive": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g656902-d3315620-Reviews-Glen_Etive-Glencoe_Village_Glencoe_Scottish_Highlands_Scotland.html",
+      blogs: [
+        { title: "Skyfall filming locations in Scotland", source: "Visit Scotland", url: "https://www.visitscotland.com/things-to-do/attractions/tv-film/skyfall" },
+        { title: "Buachaille Etive Mòr", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/fortwilliam/buachailleetivemor.shtml" }
+      ]
+    },
     "Glenfinnan Viaduct": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1029082-d2643233-Reviews-Glenfinnan_Viaduct-Glenfinnan_Lochaber_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "Glenfinnan Viaduct", source: "National Trust for Scotland", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument/highlights/viaduct" }
-      ]
+      blogs: [{ title: "Glenfinnan Viaduct", source: "National Trust for Scotland", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument/highlights/viaduct" }]
     },
     "Glenfinnan Monument": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1029082-d536268-Reviews-Glenfinnan_Monument-Glenfinnan_Lochaber_Scottish_Highlands_Scotland.html",
@@ -389,30 +386,16 @@ window.TRIP_ENRICH = {
     },
     "Jacobite Steam Train": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g186545-d656785-Reviews-Jacobite_Steam_Train-Fort_William_Lochaber_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "The Jacobite Steam Train", source: "West Coast Railways", url: "https://westcoastrailways.co.uk/jacobite/steam-train-trip" }
-      ]
-    },
-
-    // ---- Day 13: Corpach → Glasgow ------------------------------------------
-    "Glen Etive": {
-      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g656902-d3315620-Reviews-Glen_Etive-Glencoe_Village_Glencoe_Scottish_Highlands_Scotland.html",
-      blogs: [
-        { title: "Skyfall filming locations in Scotland", source: "Visit Scotland", url: "https://www.visitscotland.com/things-to-do/attractions/tv-film/skyfall" },
-        { title: "Buachaille Etive Mòr", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/fortwilliam/buachailleetivemor.shtml" }
-      ]
+      blogs: [{ title: "The Jacobite Steam Train", source: "West Coast Railways", url: "https://westcoastrailways.co.uk/jacobite/steam-train-trip" }]
     },
     "Luss village": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g551943-d2704523-Reviews-Luss_Visitor_Centre-Luss_Loch_Lomond_and_The_Trossachs_National_Park_Scotland.html",
-      blogs: [
-        { title: "Luss", source: "Loch Lomond & The Trossachs National Park", url: "https://www.lochlomond-trossachs.org/discover-the-park/towns-villages/luss/" }
-      ]
+      blogs: [{ title: "Luss", source: "Loch Lomond & The Trossachs National Park", url: "https://www.lochlomond-trossachs.org/discover-the-park/towns-villages/luss/" }]
     }
   },
 
   /* ======================================================================
-   * STAYS — keyed by day number (the day the user CHECKS IN)
-   * Entries with confirmed: true render with a green "Booked" badge.
+   * STAYS — keyed by day number. confirmed: true → green "Booked" badge.
    * ====================================================================== */
   stays: {
 
@@ -444,7 +427,7 @@ window.TRIP_ENRICH = {
       }
     ],
 
-    // ---- Day 3: Pitlochry (night 3) — ROSEMOUNT BOOKED ✓ --------------------
+    // ---- Day 3: Pitlochry — ROSEMOUNT BOOKED ✓ ------------------------------
     3: [
       {
         title: "Rosemount Hotel — Ground Floor Suite B&B",
@@ -464,7 +447,7 @@ window.TRIP_ENRICH = {
       }
     ],
 
-    // ---- Day 4: Drumnadrochit (nights 4-5) — CHERRYTREES BOOKED ✓ -----------
+    // ---- Day 4: Drumnadrochit — CHERRYTREES BOOKED ✓ ------------------------
     4: [
       {
         title: "Cherrytrees, Drumnadrochit, Loch Ness — entire flat",
@@ -540,58 +523,57 @@ window.TRIP_ENRICH = {
       }
     ],
 
-    // ---- Day 9: Skye (nights 9-10) — 2 nights -------------------------------
+    // ---- Day 9: Skye (nights 9-11) — 3 NIGHTS, BIGGEST UPGRADE --------------
     9: [
       {
         title: "Portree & Skye self-catering (Airbnb)",
         type: "airbnb-area",
-        url: "https://www.airbnb.com/s/Portree--Isle-of-Skye--United-Kingdom/homes?checkin=2026-07-28&checkout=2026-07-30&adults=3&price_max=250&currency=GBP&room_types%5B%5D=Entire%20home%2Fapt",
-        why: "Skye in late July is the hardest bed in Scotland — pre-filter for your two-night window. Aim for Portree or close to it for shortest Trotternish drive.",
+        url: "https://www.airbnb.com/s/Portree--Isle-of-Skye--United-Kingdom/homes?checkin=2026-07-28&checkout=2026-07-31&adults=3&price_max=250&currency=GBP&room_types%5B%5D=Entire%20home%2Fapt",
+        why: "Skye in late July is the hardest bed in Scotland — pre-filter for your three-night window. With three nights you can split between Portree, Carbost (near Talisker) or Sleat without committing to one base.",
         price: "£150–£250/night"
       },
       {
         title: "Roskhill House",
         type: "bnb",
         url: "https://www.roskhillhouse.co.uk/",
-        why: "Award-winning independent 5-room guesthouse 4km from Dunvegan. 94% five-star reviews. Call ahead to confirm a third bed.",
+        why: "Award-winning independent 5-room guesthouse 4km from Dunvegan — well-positioned for Day 11's Cuillin & west loop. 94% five-star reviews. Call ahead to confirm a third bed.",
         price: "£130–£200/night"
       },
       {
         title: "Grenitote B&B, Portree",
         type: "bnb",
         url: "https://www.grenitote.co.uk/",
-        why: "Family-run independent B&B in central Portree, 30+ years of hosting, 3 ensuite rooms, fibre Wi-Fi and free parking.",
+        why: "Family-run independent B&B in central Portree, 30+ years of hosting, 3 ensuite rooms, fibre Wi-Fi and free parking. Books fast for a three-night stay in late July.",
         price: "from £131/night"
       }
     ],
 
-    // ---- Day 11: Corpach (nights 11-12) — MUNRO'S POD ✓ (pending rebook) ---
-    11: [
+    // ---- Day 12: Glencoe (night 12) -----------------------------------------
+    12: [
       {
-        title: "Munro's Deluxe Pod with hot tub — Ben Nevis view",
-        type: "airbnb",
-        url: "https://www.airbnb.com",
-        confirmed: true,
-        why: "Booked: tiny home with hot tub, hosted by Martin at 20 Caledonian Road, Corpach PH33 7LF. ⚠ Pending rebook from Mon 27 → Wed 29 Jul to Thu 30 Jul → Sat 1 Aug. 3 adults.",
-        price: "Booked — 2 nights"
-      },
-      {
-        title: "Corpach / Fort William cottages on Airbnb (backup)",
+        title: "Glencoe cottages on Airbnb",
         type: "airbnb-area",
-        url: "https://www.airbnb.com/s/Corpach--Fort-William--United-Kingdom/homes?checkin=2026-07-30&checkout=2026-08-01&adults=3&price_max=250&currency=GBP",
-        why: "Backup options if the pod's new dates fall through. Corpach has limited stock but Fort William proper has more.",
-        price: "£120–£230/night"
-      },
-      {
-        title: "Glencoe-side cottages (alternative base)",
-        type: "airbnb-area",
-        url: "https://www.airbnb.co.uk/glencoe-united-kingdom/stays/cottages?checkin=2026-07-30&checkout=2026-08-01&adults=3&price_max=250&currency=GBP",
-        why: "If you'd rather base south of Fort William, Glencoe village puts you closer to the Three Sisters but further from Glenfinnan.",
+        url: "https://www.airbnb.co.uk/glencoe-united-kingdom/stays/cottages?checkin=2026-07-31&checkout=2026-08-01&adults=3&price_max=250&currency=GBP",
+        why: "Filtered Airbnb area search for whole cottages in Glencoe village. The mountain-view stays go first — book the moment you decide.",
         price: "£100–£250/night"
+      },
+      {
+        title: "Ballachulish lochside cottages (Airbnb)",
+        type: "airbnb-area",
+        url: "https://www.airbnb.co.uk/ballachulish-united-kingdom/stays/cottages?checkin=2026-07-31&checkout=2026-08-01&adults=3&price_max=250&currency=GBP",
+        why: "Ballachulish sits on Loch Leven minutes from Glencoe — lochside cottages and studios (incl. the well-reviewed Lochside Studio) sized for three.",
+        price: "£120–£250/night"
+      },
+      {
+        title: "Scorrybreac Guest House",
+        type: "bnb",
+        url: "https://www.scorrybreacglencoe.com/",
+        why: "Independent 4-star family-run B&B in private grounds above Glencoe village with panoramic mountain views. Call ahead to confirm a room for 3.",
+        price: "£120–£180/night"
       }
     ],
 
-    // ---- Day 13: Glasgow (night 13) -----------------------------------------
+    // ---- Day 13: Glasgow (night 13 only) ------------------------------------
     13: [
       {
         title: "Merchant City apartments (Airbnb)",
