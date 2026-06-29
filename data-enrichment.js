@@ -1,10 +1,7 @@
 // Scotland Grand Tour — Enrichment data (v6: Raasay swap)
-// Three bookings confirmed at time of writing (refs/details deliberately
-// kept out of this file since it ships to the public site):
-//   - Rosemount Hotel, Pitlochry (Night 3)
-//   - Cherrytrees Airbnb, Drumnadrochit (Nights 4–5)
-//   - Isle of Raasay Distillery / Borodale House (Nights 6–8) — being booked
-// Skye 3 nights (28–31 Jul) still to lock in.
+// This file ships to the public site. Personal booking details
+// (references, paid prices, host names, exact arrival times) must not
+// be added here. Only publicly-listed property info belongs in this file.
 
 window.TRIP_ENRICH = {
 
@@ -366,7 +363,7 @@ window.TRIP_ENRICH = {
   },
 
   /* ======================================================================
-   * STAYS — keyed by day number. confirmed: true → green "Booked" badge.
+   * STAYS — keyed by day number. Each stop lists 2-3 accommodation options.
    * ====================================================================== */
   stays: {
 
@@ -398,73 +395,70 @@ window.TRIP_ENRICH = {
       }
     ],
 
-    // ---- Day 3: Pitlochry — ROSEMOUNT BOOKED ✓ ------------------------------
+    // ---- Day 3: Pitlochry --------------------------------------------------
     3: [
       {
-        title: "Rosemount Hotel — Ground Floor Suite B&B",
+        title: "Rosemount Hotel",
         type: "bnb",
         url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/",
-        confirmed: true,
-        why: "Booked: ground floor suite with king + single (or 3 singles), en suite, breakfast included. Payment due on arrival.",
-        price: "1 night · B&B"
+        why: "Long-standing family-style independent B&B at 12 Higher Oakfield, just above Pitlochry centre. Mid-range rates, breakfast included.",
+        price: "£95–£160/night"
       },
       {
-        title: "Pitlochry cottages on Airbnb (alternatives)",
+        title: "Pitlochry cottages on Airbnb",
         type: "airbnb-area",
         url: "https://www.airbnb.com/s/Pitlochry--United-Kingdom/homes?checkin=2026-07-22&checkout=2026-07-23&adults=3&price_max=250&currency=GBP",
-        why: "Backup options if you ever need to switch — Pitlochry averages 4.8/5 on Airbnb.",
+        why: "Self-catering alternatives — Pitlochry averages 4.8/5 on Airbnb.",
         price: "£90–£220/night"
       }
     ],
 
-    // ---- Day 4: Drumnadrochit — CHERRYTREES BOOKED ✓ ------------------------
+    // ---- Day 4: Drumnadrochit (Loch Ness) ----------------------------------
     4: [
       {
-        title: "Cherrytrees, Drumnadrochit, Loch Ness — entire flat",
-        type: "airbnb",
-        url: "https://www.airbnb.com",
-        confirmed: true,
-        why: "Booked: entire flat on Loch Ness, 5 min drive from Urquhart Castle. 2 nights for 3 adults.",
-        price: "2 nights"
+        title: "Drumnadrochit & Loch Ness self-catering (Airbnb)",
+        type: "airbnb-area",
+        url: "https://www.airbnb.co.uk/s/Drumnadrochit--Inverness--United-Kingdom/homes?checkin=2026-07-23&checkout=2026-07-25&adults=3&price_max=250&currency=GBP",
+        why: "Entire flats and cottages on the loch shore — closest base to Urquhart Castle and the Loch Ness cruise pier.",
+        price: "£120–£230/night"
       },
       {
         title: "Inverness city alternatives",
         type: "airbnb-area",
         url: "https://www.airbnb.co.uk/s/Inverness--Scotland--United-Kingdom/homes?checkin=2026-07-23&checkout=2026-07-25&adults=3&price_max=250&currency=GBP",
-        why: "Backup options closer to Inverness centre if anything happens to the primary booking.",
+        why: "Closer to Inverness centre — 25 min drive from Urquhart Castle but more dining options nearby.",
         price: "£100–£230/night"
       },
       {
         title: "Loch Ness Lodge",
         type: "bnb",
         url: "https://www.loch-ness-lodge.com",
-        why: "Backup luxury option — boutique lodge overlooking Loch Ness, walking distance from Urquhart Castle.",
+        why: "Boutique lodge overlooking Loch Ness, walking distance from Urquhart Castle.",
         price: "£200–£250/night"
       }
     ],
 
-    // ---- Day 6: Raasay — BORODALE HOUSE (DISTILLERY) ------------------------
+    // ---- Day 6: Raasay -----------------------------------------------------
     6: [
       {
         title: "Borodale House at Isle of Raasay Distillery",
         type: "bnb",
         url: "https://raasaydistillery.com/visit/borodale-house/",
-        confirmed: true,
-        why: "Booked: check-in Sat 25 Jul, checkout Tue 28 Jul (3 nights). 6-room boutique at the working distillery — single malts on tap, Cuillin views across the sound, in-house restaurant. Address: Borodale House, Isle of Raasay, IV40 8PB.",
-        price: "3 nights · booked"
+        why: "6-room boutique hotel at the working distillery, on the south-east of Raasay (IV40 8PB). Single malts on tap, in-house restaurant, Cuillin views across the Sound of Raasay.",
+        price: "from ~£220/night"
       },
       {
-        title: "Raasay House (alternative — activity centre with rooms)",
+        title: "Raasay House",
         type: "bnb",
         url: "https://www.raasay-house.co.uk/",
-        why: "Backup option — Georgian house turned activity centre, dormitory + private rooms, great café/restaurant. Family rooms available.",
+        why: "Georgian house turned activity centre, dormitory + private rooms, café and restaurant. Family rooms available, kayaks and bike hire on site.",
         price: "£120–£200/night"
       },
       {
         title: "Raasay cottages on Airbnb",
         type: "airbnb-area",
         url: "https://www.airbnb.co.uk/s/Raasay--United-Kingdom/homes?checkin=2026-07-25&checkout=2026-07-28&adults=3&price_max=250&currency=GBP",
-        why: "Tiny inventory (Raasay has fewer than 20 listings total) but the filter gives you the current available stock.",
+        why: "Tiny inventory (Raasay has fewer than 20 listings total) — filtered for your dates and party.",
         price: "£100–£200/night"
       }
     ],
