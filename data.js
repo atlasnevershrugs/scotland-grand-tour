@@ -33,8 +33,7 @@ window.TRIP = {
     { lat: 57.3315, lng: -4.4733, label: "Drumnadrochit", nights: "4–5",   day: 4  },
     { lat: 57.3700, lng: -6.0676, label: "Raasay",        nights: "6–8",   day: 6  },
     { lat: 57.5470, lng: -5.5100, label: "Torridon",      nights: "9",     day: 9  },
-    { lat: 56.8198, lng: -5.1052, label: "Fort William",  nights: "10",    day: 10 },
-    { lat: 56.6863, lng: -5.0987, label: "Glencoe",       nights: "11–12", day: 11 },
+    { lat: 56.8198, lng: -5.1052, label: "Fort William",  nights: "10–12", day: 10 },
     { lat: 55.8642, lng: -4.2518, label: "Glasgow",       nights: "13",    day: 13 },
     { lat: 51.7520, lng: -1.2577, label: "Oxford",        nights: "drop-off", day: 14 }
   ],
@@ -58,6 +57,7 @@ window.TRIP = {
     { lat: 57.6900, lng: -5.4700, label: "Loch Maree",          day: 10 },
     { lat: 56.8728, lng: -5.4357, label: "Glenfinnan",          day: 11 },
     { lat: 56.7969, lng: -5.0037, label: "Ben Nevis",           day: 11 },
+    { lat: 56.6813, lng: -5.1006, label: "Glencoe (Three Sisters)", day: 12 },
     { lat: 56.6164, lng: -5.0034, label: "Glen Etive",          day: 12 },
     { lat: 56.0959, lng: -4.6356, label: "Luss",                day: 13 }
   ],
@@ -71,11 +71,10 @@ window.TRIP = {
   // Pending items render first (numbered by urgency); booked items carry
   // done:true and are grouped at the end with a "Booked" badge, no specifics.
   priorityBookings: [
-    { what: "Clachaig Inn, Glencoe",       dates: "Thu 30 Jul → Sat 1 Aug · 2 nights",   why: "Sells out 3–4 months ahead",                       url: "https://www.clachaig.com" },
-    { what: "CalMac Sconser↔Raasay ferry", dates: "Sat 25 Jul + day-trips + Tue 28 out", why: "Foot passengers — book/verify Sconser parking",   url: "https://www.calmac.co.uk/en-gb/route-information/sconser-raasay/" },
+    { what: "Fort William — 3-night base", dates: "Wed 29 Jul → Sat 1 Aug · 3 nights",   why: "One base for Torridon arrival, Glenfinnan/Jacobite & Glencoe day-trip", url: "https://www.booking.com/searchresults.html?ss=Fort+William" },
+    { what: "CalMac Sconser↔Raasay ferry", dates: "Sat 25 Jul + day-trips + Tue 28 out", why: "Foot passengers — book/verify Sconser parking",   url: "https://ticketing.calmac.co.uk/B2C-Calmac/#/desktop/step1/destinations/single" },
     { what: "Jacobite Steam Train",        dates: "Thu 30 Jul · Day 11 morning",         why: "Sells out months ahead in summer",                 url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
     { what: "Torridon area",               dates: "Tue 28 Jul → Wed 29 Jul · 1 night",   why: "Remote, tiny stock — book early",                  url: "https://www.thetorridon.com" },
-    { what: "Fort William",                dates: "Wed 29 Jul → Thu 30 Jul · 1 night",   why: "Busy hub for the Jacobite train — book early",     url: "https://www.booking.com/searchresults.html?ss=Fort+William" },
     { what: "Applecross Inn lunch",        dates: "Tue 28 Jul · Day 9 lunch",            why: "Famous pub, books up fast",                        url: "https://www.applecross.uk.com/inn/" },
     { what: "Edinburgh",                   dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",  why: "City centre fills up in July",                     url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
     { what: "Glasgow",                     dates: "Sat 1 Aug → Sun 2 Aug · 1 night",     why: "Last night before the Oxford drive",               url: "https://www.booking.com/searchresults.html?ss=Glasgow" },
@@ -109,7 +108,19 @@ window.TRIP = {
     lede: "You sleep on Raasay but tour Skye by day. The smart move — park the car on Skye at Sconser and cross as foot passengers. The car stays exactly where you need it each morning, and you skip the car-ferry fare entirely.",
     operator: "CalMac · MV Hallaig (23-car ferry) · 25-min crossing · Turn Up & Go",
     bookingUrl: "https://www.calmac.co.uk/en-gb/route-information/sconser-raasay/",
+    ticketingUrl: "https://ticketing.calmac.co.uk/B2C-Calmac/#/desktop/step1/destinations/single",
     timetableUrl: "https://assets.calmac.co.uk/media/ekkepavl/stt-17-sconser-raasay-27-03.pdf",
+    // Every Sconser⇄Raasay crossing needed across the 3 Raasay nights (foot
+    // passengers — car stays parked free at Sconser). 6 crossings = 3 returns.
+    bookings: [
+      { ref: "A", route: "Sconser → Raasay", date: "Sat 25 Jul", note: "Arrival — park car at Sconser, cross with luggage", who: "Foot × 3" },
+      { ref: "A", route: "Raasay → Sconser", date: "Tue 28 Jul", note: "Departure — collect car, drive to Torridon", who: "Foot × 3" },
+      { ref: "B", route: "Raasay → Sconser", date: "Sun 26 Jul", note: "Skye Day 1 (Trotternish) — out (Sun first sailing 10:00)", who: "Foot × 3" },
+      { ref: "B", route: "Sconser → Raasay", date: "Sun 26 Jul", note: "Skye Day 1 — back (Sun last sailing 17:00)", who: "Foot × 3" },
+      { ref: "C", route: "Raasay → Sconser", date: "Mon 27 Jul", note: "Skye Day 2 (Cuillin & West) — out (07:55)", who: "Foot × 3" },
+      { ref: "C", route: "Sconser → Raasay", date: "Mon 27 Jul", note: "Skye Day 2 — back (last 18:45)", who: "Foot × 3" }
+    ],
+    bookingsNote: "6 crossings = 3 return tickets, all foot passengers (2 adults £5.30 + teen £2.70 per return ≈ £13.30/return, ~£40 total). It's a Turn Up & Go route so you don't reserve a specific sailing — buy at ticketing.calmac.co.uk or at the Sconser slipway. The car stays parked free at Sconser the whole time.",
     steps: [
       { n: 1, title: "Drive to Sconser", body: "From Drumnadrochit ~4 hrs via Eilean Donan and the Skye Bridge. The Sconser slipway is right on the A87, about 6 miles south of Portree." },
       { n: 2, title: "Park free at Sconser", body: "The distillery confirms you can leave the car free in the Sconser slipway car park and cross on foot. No official CalMac limit on multi-day parking is published, so give them a quick call to confirm 3 nights is fine." },
@@ -350,81 +361,81 @@ window.TRIP = {
     {
       num: 10, date: "Wed 29 Jul", weekday: "Wednesday",
       title: "Torridon walking day → Fort William",
-      leg: "Beinn Eighe · Loch Maree · drive south",
+      leg: "Beinn Eighe · Loch Maree · drive south to your 3-night base",
       route: "A896 · A87 · A82",
       miles: "95", drive: "2.5 hrs (after walks)",
-      overnight: "Fort William",
-      checkin: "2026-07-29", checkout: "2026-07-30",
+      overnight: "Fort William (nights 1 of 3)",
+      checkin: "2026-07-29", checkout: "2026-08-01",
       hero: "Beinn_Eighe",
-      blurb: "The morning is the recovered Torridon walking day — the Beinn Eighe Mountain Trail climbs to 550m through 750-million-year-old sandstone for some of Scotland's finest mountain views. Drive the length of Loch Maree, then head south to Fort William for the night, ready for the Jacobite train.",
+      blurb: "The morning is the recovered Torridon walking day — the Beinn Eighe Mountain Trail climbs to 550m through 750-million-year-old sandstone for some of Scotland's finest mountain views. Drive the length of Loch Maree, then head south to Fort William, your single base for the next THREE nights — one unpack for Glenfinnan, the Jacobite train and the Glencoe day-trip.",
       attractions: [
         { name: "Beinn Eighe Mountain Trail", wiki: "Beinn_Eighe", desc: "The proper waymarked walk — 4 miles, climbing to 550m. 3–4 hours, well-marked, from the Coille na Glas-Leitire car park near Kinlochewe.", url: "https://www.nnr.scot/nnr/beinn-eighe/", locale: "Kinlochewe" },
         { name: "Loch Maree",                 wiki: "Loch_Maree", desc: "One of Scotland's most beautiful lochs, with ancient Caledonian pine islands and Slioch rising on the far shore. Drive the A832 along its length.", locale: "Wester Ross" }
       ],
       hotels: [
-        { name: "The Lime Tree",         style: "Art-gallery hotel in an old manse",    price: "£130–£170", url: "https://www.limetreefortwilliam.co.uk/", locale: "Fort William" },
-        { name: "Glenfinnan House Hotel", style: "Historic country house by Loch Shiel", price: "£160–£210", url: "https://www.glenfinnanhouse.com/", locale: "Glenfinnan" },
-        { name: "Fort William centre (Airbnb/hotels)", style: "Wide choice near the High Street & station", price: "£110–£200", url: "https://www.booking.com/searchresults.html?ss=Fort+William", locale: "Fort William" }
+        { name: "Clan Macduff Hotel",   style: "4★ family-run, Loch Linnhe views, breakfast incl.", price: "£150–£200", url: "https://www.clanmacduff.co.uk/", locale: "Fort William" },
+        { name: "The Lime Tree",         style: "Boutique art-gallery hotel in an old manse",        price: "£130–£170", url: "https://www.limetreefortwilliam.co.uk/", locale: "Fort William" },
+        { name: "Cruachan Hotel",        style: "Central, triple/family rooms, breakfast incl.",     price: "£120–£170", url: "https://www.cruachanhotel.co.uk/", locale: "Fort William" },
+        { name: "Onich Hotel (alt — closer to the glen)", style: "Lochside, family rooms, 15 min south toward Glencoe", price: "£90–£150", url: "https://www.onichhotel.co.uk/", locale: "Onich" }
       ],
       restaurants: [
-        { name: "Crannog Restaurant", note: "Loch-side seafood on Fort William's old pier.", url: "https://crannog.net/" }
+        { name: "Crannog Restaurant", note: "Loch-side seafood on Fort William's old pier.", url: "https://crannog.net/" },
+        { name: "The Lime Tree", note: "Well-regarded modern Scottish in the hotel of the same name.", url: "https://www.limetreefortwilliam.co.uk/" }
       ]
     },
 
     {
       num: 11, date: "Thu 30 Jul", weekday: "Thursday",
-      title: "Glenfinnan & the Jacobite → Glencoe",
-      leg: "Jacobite Steam Train · Glenfinnan · Ben Nevis · A82 south",
-      route: "A830 · A82",
-      miles: "50", drive: "1.5 hrs",
-      overnight: "Glencoe / Ballachulish",
-      checkin: "2026-07-30", checkout: "2026-08-01",
+      title: "Glenfinnan & the Jacobite Steam Train",
+      leg: "Day out from Fort William · Glenfinnan · Ben Nevis",
+      route: "A830 loop",
+      miles: "40", drive: "—",
+      overnight: "Fort William (night 2 of 3)",
       hero: "Glenfinnan_Viaduct",
-      blurb: "The Jacobite Steam Train departs Fort William 10:15 and crosses the Glenfinnan Viaduct — one of the great railway journeys in the world (book months ahead). If you'd rather drive, the Glenfinnan viewpoint gives the classic shot. Ben Nevis and Glen Nevis are on the doorstep. Then the short drive south to Glencoe for two nights.",
+      blurb: "No packing today — you're based in Fort William. The Jacobite Steam Train departs Fort William 10:15 and crosses the Glenfinnan Viaduct (book months ahead). If you'd rather drive, the Glenfinnan viewpoint gives the classic shot, 20 min up the road. Ben Nevis and the Glen Nevis gorge walk are on the doorstep for the afternoon.",
       attractions: [
         { name: "Jacobite Steam Train",  wiki: "Jacobite_(train)",   desc: "Fort William to Mallaig and back, crossing the viaduct. Departs 10:15, returns 16:00. Book months ahead.", url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip", locale: "Fort William" },
         { name: "Glenfinnan Viaduct",    wiki: "Glenfinnan_Viaduct", desc: "21-arch Victorian railway viaduct featured in the Harry Potter films. 15-minute walk to the viewpoint if you're not on the train.", locale: "Glenfinnan" },
         { name: "Glenfinnan Monument",   wiki: "Glenfinnan_Monument", desc: "Marks where Bonnie Prince Charlie raised his standard in 1745.", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument", locale: "Glenfinnan" },
         { name: "Ben Nevis",             wiki: "Ben_Nevis",       desc: "Britain's highest mountain at 1,345m. View it from the Glen Nevis road at the foot of the mountain.", locale: "Fort William" },
-        { name: "Glen Nevis gorge walk", wiki: "Glen_Nevis",     desc: "1–2 hour walk through a dramatic gorge to Steall Falls — no equipment needed. If the train ate the morning, save this for another trip.", locale: "Fort William" }
+        { name: "Glen Nevis gorge walk", wiki: "Glen_Nevis",     desc: "1–2 hour walk through a dramatic gorge to Steall Falls — no equipment needed. Perfect afternoon if you drove Glenfinnan rather than taking the train.", locale: "Fort William" }
       ],
-      hotels: [
-        { name: "Clachaig Inn",        style: "Legendary walkers' inn, in the glen itself", price: "£110–£150", url: "https://www.clachaig.com",            locale: "Glencoe" },
-        { name: "Ballachulish Hotel",  style: "Lochside, outstanding views",                 price: "£130–£170", url: "https://www.ballachulish-hotel.co.uk", locale: "Ballachulish" }
-      ],
-      restaurants: []
+      hotels: [],
+      restaurants: [
+        { name: "Lochaber Larder / Fort William High St", note: "Plenty of casual dinner options back in town after the train.", url: "https://www.visitscotland.com/places-to-go/fort-william" }
+      ]
     },
 
     {
       num: 12, date: "Fri 31 Jul", weekday: "Friday",
-      title: "Glencoe day",
-      leg: "Three Sisters · Glen Etive · Lost Valley walk",
-      route: "Local · A82 · Glen Etive",
-      miles: "40", drive: "—",
-      overnight: "Glencoe / Ballachulish",
+      title: "Glencoe day-trip",
+      leg: "Day out from Fort William · Three Sisters · Glen Etive · Lost Valley",
+      route: "A82 · 30 min each way",
+      miles: "60", drive: "—",
+      overnight: "Fort William (night 3 of 3)",
       hero: "Glen_Coe",
-      blurb: "A full day in the glen. The Three Sisters viewpoint on the A82 is unmissable. Walk the Lost Valley (Coire Gabhail, 2–3 hrs) where the MacDonalds hid their cattle, drive the dead-end Glen Etive road (the Skyfall location), and get context at the Glencoe Visitor Centre.",
+      blurb: "Glencoe is a 30-minute drive south down the A82 — easily a day-trip from your Fort William base. The Three Sisters viewpoint is unmissable. Walk the Lost Valley (Coire Gabhail, 2–3 hrs) where the MacDonalds hid their cattle, drive the dead-end Glen Etive road (the Skyfall location), and get the story at the Glencoe Visitor Centre. Back to Fort William for the night. You could stop at the Clachaig Inn for a legendary walkers' lunch even though you're not sleeping there.",
       attractions: [
-        { name: "Three Sisters of Glencoe", wiki: "Glen_Coe",    desc: "The unmissable viewpoint on the A82 — pull over and take it in.", locale: "Glencoe" },
+        { name: "Three Sisters of Glencoe", wiki: "Glen_Coe",    desc: "The unmissable viewpoint on the A82 — pull over and take it in. 30 min south of Fort William.", locale: "Glencoe" },
         { name: "Glencoe Visitor Centre",   wiki: "Glen_Coe",    desc: "Context on the 1692 Massacre of Glencoe. Walk the Signal Rock loop afterwards.", url: "https://www.nts.org.uk/visit/places/glencoe", locale: "Glencoe" },
         { name: "Glen Etive",               wiki: "Glen_Etive",  desc: "12-mile dead-end road into a remote, beautiful glen used in James Bond Skyfall. Allow an hour for the round trip.", locale: "Glencoe" }
       ],
       hotels: [],
       restaurants: [
-        { name: "Clachaig Inn (Boots Bar)", note: "The classic Glencoe walkers' dinner — ales, hearty food, mountain company.", url: "https://www.clachaig.com" }
+        { name: "Clachaig Inn (Boots Bar)", note: "Legendary Glencoe walkers' pub — perfect lunch stop mid-day-trip even though you're based in Fort William.", url: "https://www.clachaig.com" }
       ]
     },
 
     {
       num: 13, date: "Sat 1 Aug", weekday: "Saturday",
-      title: "Glencoe → Glasgow via Loch Lomond",
-      leg: "A82 · Loch Lomond · Luss",
+      title: "Fort William → Glasgow via Loch Lomond",
+      leg: "A82 · Glencoe · Rannoch Moor · Loch Lomond · Luss",
       route: "A82",
-      miles: "95", drive: "2.5 hrs",
+      miles: "105", drive: "2.5–3 hrs",
       overnight: "Glasgow",
       checkin: "2026-08-01", checkout: "2026-08-02",
       hero: "Loch_Lomond",
-      blurb: "Drop down the A82 past Rannoch Moor and along the western shore of Loch Lomond. Lunch at Luss, then into Glasgow late afternoon for one final Scottish dinner — Cail Bruich or the Ubiquitous Chip.",
+      blurb: "Leave Fort William and drop down the A82 — back through Glencoe (one last look at the Three Sisters), across Rannoch Moor, then along the western shore of Loch Lomond. Lunch at Luss, then into Glasgow late afternoon for one final Scottish dinner — Cail Bruich or the Ubiquitous Chip.",
       attractions: [
         { name: "Luss village", wiki: "Luss", desc: "Picturesque estate cottages on the western shore of Loch Lomond. Pub lunch at the Luss Inn, short shoreline walk.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond" }
       ],

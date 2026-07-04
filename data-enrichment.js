@@ -527,53 +527,42 @@ window.TRIP_ENRICH = {
       }
     ],
 
-    // ---- Day 10: Fort William (night 10) ------------------------------------
+    // ---- Day 10: Fort William — 3-NIGHT BASE (Days 10-12) -------------------
     10: [
+      {
+        title: "Clan Macduff Hotel",
+        type: "bnb",
+        url: "https://www.clanmacduff.co.uk/",
+        why: "4★ family-run hotel on Loch Linnhe just south of Fort William, with triple/family rooms, buffet Scottish breakfast and plentiful stock — the reliable 3-night base. ~25 min to Glencoe, on the road you'll drive anyway.",
+        price: "£150–£200/night"
+      },
       {
         title: "The Lime Tree — hotel & art gallery",
         type: "bnb",
         url: "https://www.limetreefortwilliam.co.uk/",
-        why: "Boutique hotel in a converted manse with its own art gallery, a short walk from Fort William centre and the Jacobite departure — the town's most characterful stay.",
+        why: "Boutique hotel in a converted manse with its own art gallery and well-regarded restaurant, walk from Fort William centre and the Jacobite departure — the town's most characterful stay.",
         price: "£130–£170/night"
       },
       {
-        title: "Glenfinnan House Hotel",
+        title: "Cruachan Hotel",
         type: "bnb",
-        url: "https://www.glenfinnanhouse.com/",
-        why: "Historic country house on Loch Shiel, 5 min from the viaduct — perfect if you want to be right by Glenfinnan for the morning.",
-        price: "£160–£210/night"
+        url: "https://www.cruachanhotel.co.uk/",
+        why: "Central Fort William, explicitly offers triple and family rooms with loch views, 500 m from the High Street restaurants and the train station — breakfast included.",
+        price: "£120–£170/night"
       },
       {
-        title: "Fort William centre (Airbnb & hotels)",
+        title: "Fort William self-catering (Airbnb) — whole place for 3 nights",
         type: "airbnb-area",
-        url: "https://www.airbnb.co.uk/s/Fort-William--United-Kingdom/homes?checkin=2026-07-29&checkout=2026-07-30&adults=3&price_max=250&currency=GBP",
-        why: "Widest choice on the whole trip — apartments and B&Bs near the High Street and train station. Book early: Fort William is a busy Highland hub in summer.",
-        price: "£110–£200/night"
-      }
-    ],
-
-    // ---- Day 11: Glencoe (nights 11-12) -------------------------------------
-    11: [
-      {
-        title: "Clachaig Inn",
-        type: "bnb",
-        url: "https://www.clachaig.com",
-        why: "The legendary walkers' inn in the glen itself — ales, hearty food, mountain company. The classic Glencoe stay, and the whole reason to give Glencoe two nights. Sells out months ahead.",
-        price: "£110–£150/night"
+        url: "https://www.airbnb.co.uk/s/Fort-William--United-Kingdom/homes?checkin=2026-07-29&checkout=2026-08-01&adults=3&price_max=250&currency=GBP",
+        why: "Widest choice on the trip — apartments and houses near the centre, filtered for your 3-night window. Good if you'd rather self-cater and have a washing machine mid-trip.",
+        price: "£110–£220/night"
       },
       {
-        title: "Ballachulish & Glencoe cottages (Airbnb)",
-        type: "airbnb-area",
-        url: "https://www.airbnb.co.uk/s/Glencoe--United-Kingdom/homes?checkin=2026-07-30&checkout=2026-08-01&adults=3&price_max=250&currency=GBP",
-        why: "Whole cottages in Glencoe village and lochside Ballachulish — filtered for your two-night window. The mountain-view stays go first.",
-        price: "£100–£250/night"
-      },
-      {
-        title: "Scorrybreac Guest House",
+        title: "Onich Hotel (alternative — closer to the glen)",
         type: "bnb",
-        url: "https://www.scorrybreacglencoe.com/",
-        why: "Independent 4-star family-run B&B in private grounds above Glencoe village with panoramic mountain views. Call ahead to confirm a room for 3.",
-        price: "£120–£180/night"
+        url: "https://www.onichhotel.co.uk/",
+        why: "If you'd rather shave the Glencoe day-trip, this lochside hotel is ~15 min south of Fort William toward the glen (10 min to Glencoe), with family rooms at the trip's best value.",
+        price: "£90–£150/night"
       }
     ],
 

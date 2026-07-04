@@ -913,11 +913,36 @@
 
     const tips = (F.tips || []).map(t => `<li>${t}</li>`).join('');
 
+    const bookings = (F.bookings || []).map(b => `
+      <tr>
+        <td class="ferry-bk-ref">${b.ref}</td>
+        <td class="ferry-bk-route">${b.route}</td>
+        <td class="ferry-bk-date">${b.date}</td>
+        <td class="ferry-bk-note">${b.note}</td>
+        <td class="ferry-bk-who">${b.who}</td>
+      </tr>`).join('');
+
+    const bookingsBlock = (F.bookings && F.bookings.length) ? `
+      <div class="ferry-block ferry-block-full">
+        <h4 class="ferry-block-title">Ferry crossings to book — Sconser ⇄ Raasay</h4>
+        <div class="ferry-table-wrap">
+          <table class="ferry-table">
+            <thead><tr><th>Ret.</th><th>Route</th><th>When</th><th>What it's for</th><th>Tickets</th></tr></thead>
+            <tbody>${bookings}</tbody>
+          </table>
+        </div>
+        <p class="ferry-fine">${F.bookingsNote || ''}</p>
+        <a class="bk-search-btn ferry-book-btn" href="${F.ticketingUrl || F.bookingUrl}" target="_blank" rel="noopener">
+          Book crossings on CalMac<small>ticketing.calmac.co.uk · Turn Up &amp; Go route</small>
+        </a>
+      </div>` : '';
+
     panel.innerHTML = `
       <div class="ferry-operator">
         <span>${F.operator}</span>
         <span class="ferry-cta-row">
-          <a class="chip chip-site" href="${F.bookingUrl}" target="_blank" rel="noopener">Route &amp; tickets ↗</a>
+          <a class="chip chip-site" href="${F.ticketingUrl || F.bookingUrl}" target="_blank" rel="noopener">Book tickets ↗</a>
+          <a class="chip" href="${F.bookingUrl}" target="_blank" rel="noopener">Route info ↗</a>
           <a class="chip" href="${F.timetableUrl}" target="_blank" rel="noopener">Timetable PDF ↗</a>
         </span>
       </div>
@@ -946,7 +971,9 @@
           </div>
           <ul class="ferry-tips">${tips}</ul>
         </div>
-      </div>`;
+      </div>
+
+      ${bookingsBlock}`;
   }
   buildFerry();
 
