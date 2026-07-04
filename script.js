@@ -238,12 +238,16 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-    const latlngs = T.route.map(s => [s.lat, s.lng]);
+    // Scotland stops only — Oxford is the handover drive and would force the
+    // whole map to zoom out to fit England. The illustrated hero map above
+    // shows Oxford as an off-scale node instead.
+    const scot = T.route.filter(s => s.label !== 'Oxford');
+    const latlngs = scot.map(s => [s.lat, s.lng]);
     L.polyline(latlngs, { color: '#6B4E8C', weight: 3, opacity: 0.85, dashArray: '6 8', lineCap: 'round' }).addTo(map);
-    T.route.forEach((s, i) => {
+    scot.forEach((s, i) => {
       const icon = L.divIcon({ className: '', html: `<div class="route-pin">${i+1}</div>`, iconSize: [30,30], iconAnchor: [15,15] });
       L.marker([s.lat, s.lng], { icon }).addTo(map).bindPopup(
-        `<b>${s.label}</b>${s.nights === 'drop-off' ? 'Drop-off' : 'Night ' + s.nights}<br/>
+        `<b>${s.label}</b>${s.nights === 'drop-off' ? 'Drop-off' : 'Nights ' + s.nights}<br/>
          <a href="#day-${s.day}">Jump to day ${s.day} →</a>`);
     });
     T.detours.forEach(d => {
@@ -341,24 +345,48 @@
   /* ---------- PRIORITY BOOKINGS ---------- */
   function buildPriority() {
     const c = document.getElementById('priority-grid');
-    T.priorityBookings.forEach(p => {
+    const pending = T.priorityBookings.filter(p => !p.done);
+    const booked  = T.priorityBookings.filter(p => p.done);
+
+    pending.forEach((p, i) => {
+      const n = i + 1;
       const li = document.createElement('li');
-      const doneClass = p.done ? ' priority-card-done' : '';
-      const doneBadge = p.done ? `<span class="priority-done-badge">✓ Done</span>` : '';
       const datesLine = p.dates ? `<p class="priority-dates">${p.dates}</p>` : '';
       li.innerHTML = `
-        <a class="priority-card${doneClass}" href="${p.url}" target="_blank" rel="noopener">
+        <a class="priority-card" href="${p.url}" target="_blank" rel="noopener">
           <div class="priority-rank-row">
-            <div class="priority-rank" data-rank="${p.rank}">Priority ${p.rank}</div>
-            ${doneBadge}
+            <div class="priority-rank" data-rank="${n}">To book ${n}</div>
           </div>
           <h3 class="priority-what">${p.what}</h3>
           ${datesLine}
           <p class="priority-why">${p.why}</p>
-          <span class="priority-link">${p.done ? 'View booking' : 'Book direct'}</span>
+          <span class="priority-link">Book direct</span>
         </a>`;
       c.appendChild(li);
     });
+
+    if (booked.length) {
+      const divider = document.createElement('li');
+      divider.className = 'priority-divider';
+      divider.innerHTML = `<span>Already booked</span>`;
+      c.appendChild(divider);
+
+      booked.forEach(p => {
+        const li = document.createElement('li');
+        const datesLine = p.dates ? `<p class="priority-dates">${p.dates}</p>` : '';
+        li.innerHTML = `
+          <a class="priority-card priority-card-done" href="${p.url}" target="_blank" rel="noopener">
+            <div class="priority-rank-row">
+              <span class="priority-booked-tag">✓ Booked</span>
+            </div>
+            <h3 class="priority-what">${p.what}</h3>
+            ${datesLine}
+            <p class="priority-why">${p.why}</p>
+            <span class="priority-link">View property</span>
+          </a>`;
+        c.appendChild(li);
+      });
+    }
   }
   buildPriority();
 
@@ -752,35 +780,18 @@
     T.days.filter(d => d.checkin && d.checkout).forEach(d => {
       const loc = bookingsLocale(d);
       const stays = (E.stays && E.stays[d.num]) || [];
-      const confirmedStay = stays.find(s => s.confirmed);
+      const isBooked = !!d.booked;
       const nights = nightsBetween(d.checkin, d.checkout);
 
-      const card = document.createElement('article');
-      card.className = 'bk-stop';
-      if (confirmedStay) card.className += ' bk-stop-confirmed';
-
-      const header = `
-        <header class="bk-head">
-          <div class="bk-head-text">
-            <h3 class="bk-title">${loc}</h3>
-            <p class="bk-dates">
-              <span class="bk-dates-range">${fmtDate(d.checkin)} → ${fmtDate(d.checkout)}</span>
-              <span class="bk-dates-sep">·</span>
-              <span class="bk-nights">${nights} night${nights === 1 ? '' : 's'}</span>
-            </p>
-          </div>
-          ${confirmedStay
-            ? `<span class="bk-status bk-status-done">✓ Booked</span>`
-            : `<span class="bk-status bk-status-todo">To book</span>`}
-        </header>`;
-
-      const confirmedPanel = confirmedStay
-        ? `<div class="bk-confirmed-panel">
-             <span class="bk-confirmed-label">Confirmed stay</span>
-             <strong class="bk-confirmed-name">${confirmedStay.title}</strong>
-             <p class="bk-confirmed-why">${confirmedStay.why || ''}</p>
-           </div>`
-        : '';
+      const datesInner = `
+        <div class="bk-head-text">
+          <h3 class="bk-title">${loc}</h3>
+          <p class="bk-dates">
+            <span class="bk-dates-range">${fmtDate(d.checkin)} → ${fmtDate(d.checkout)}</span>
+            <span class="bk-dates-sep">·</span>
+            <span class="bk-nights">${nights} night${nights === 1 ? '' : 's'}</span>
+          </p>
+        </div>`;
 
       const searchRow = `
         <div class="bk-search-row">
@@ -819,11 +830,11 @@
       let bnbsBlock = '';
       if (bnbs.length) {
         const rows = bnbs.map(s => `
-          <tr${s.confirmed ? ' class="bk-row-confirmed"' : ''}>
-            <td class="bk-prop-name">${s.confirmed ? '✓ ' : ''}${s.title}</td>
-            <td class="bk-prop-style">${(s.why || '').replace(/Booked: ?/, '')}</td>
+          <tr>
+            <td class="bk-prop-name">${s.title}</td>
+            <td class="bk-prop-style">${s.why || ''}</td>
             <td class="bk-prop-price">${s.price || ''}</td>
-            <td class="bk-prop-link"><a href="${s.url}" target="_blank" rel="noopener">${s.confirmed ? 'View →' : 'Book →'}</a></td>
+            <td class="bk-prop-link"><a href="${s.url}" target="_blank" rel="noopener">Book →</a></td>
           </tr>`).join('');
         bnbsBlock = `
           <div class="bk-block">
@@ -837,11 +848,107 @@
           </div>`;
       }
 
-      card.innerHTML = header + confirmedPanel + searchRow + hotelsBlock + bnbsBlock;
-      grid.appendChild(card);
+      const body = searchRow + hotelsBlock + bnbsBlock;
+
+      if (isBooked) {
+        // Booked stops: green badge + collapsed by default (options tucked inside)
+        const details = document.createElement('details');
+        details.className = 'bk-stop bk-stop-confirmed';
+        details.innerHTML = `
+          <summary class="bk-summary">
+            ${datesInner}
+            <span class="bk-status bk-status-done">✓ Booked</span>
+            <span class="bk-expand-hint">options</span>
+          </summary>
+          <div class="bk-details-body">${body}</div>`;
+        grid.appendChild(details);
+      } else {
+        const card = document.createElement('article');
+        card.className = 'bk-stop';
+        card.innerHTML = `
+          <header class="bk-head">
+            ${datesInner}
+            <span class="bk-status bk-status-todo">To book</span>
+          </header>
+          ${body}`;
+        grid.appendChild(card);
+      }
     });
   }
   buildBookingGuide();
+
+  /* ---------- FERRY & SKYE DAY-TRIP LOGISTICS ---------- */
+  function buildFerry() {
+    const F = T.ferry;
+    if (!F) return;
+    const titleEl = document.getElementById('ferry-title');
+    const ledeEl = document.getElementById('ferry-lede');
+    const panel = document.getElementById('ferry-panel');
+    if (!panel) return;
+    if (titleEl) titleEl.textContent = F.title;
+    if (ledeEl) ledeEl.textContent = F.lede;
+
+    const steps = (F.steps || []).map(s => `
+      <li class="ferry-step">
+        <span class="ferry-step-n">${s.n}</span>
+        <div>
+          <h4 class="ferry-step-title">${s.title}</h4>
+          <p class="ferry-step-body">${s.body}</p>
+        </div>
+      </li>`).join('');
+
+    const fares = (F.fares || []).map(f => `
+      <tr>
+        <td class="ferry-fare-who">${f.who}</td>
+        <td class="ferry-fare-num">${f.single}</td>
+        <td class="ferry-fare-num">${f.ret}</td>
+      </tr>`).join('');
+
+    const sched = (F.schedule || []).map(s => `
+      <tr>
+        <td class="ferry-sched-day">${s.day}</td>
+        <td>${s.offRaasay}</td>
+        <td>${s.backToRaasay}</td>
+      </tr>`).join('');
+
+    const tips = (F.tips || []).map(t => `<li>${t}</li>`).join('');
+
+    panel.innerHTML = `
+      <div class="ferry-operator">
+        <span>${F.operator}</span>
+        <span class="ferry-cta-row">
+          <a class="chip chip-site" href="${F.bookingUrl}" target="_blank" rel="noopener">Route &amp; tickets ↗</a>
+          <a class="chip" href="${F.timetableUrl}" target="_blank" rel="noopener">Timetable PDF ↗</a>
+        </span>
+      </div>
+
+      <ol class="ferry-steps">${steps}</ol>
+
+      <div class="ferry-tables">
+        <div class="ferry-block">
+          <h4 class="ferry-block-title">Fares — cross on foot, leave the car at Sconser</h4>
+          <div class="ferry-table-wrap">
+            <table class="ferry-table">
+              <thead><tr><th>Ticket</th><th>Single</th><th>Return</th></tr></thead>
+              <tbody>${fares}</tbody>
+            </table>
+          </div>
+          <p class="ferry-fine">${F.faresNote}</p>
+        </div>
+
+        <div class="ferry-block">
+          <h4 class="ferry-block-title">Sailings — plan your Skye day around these</h4>
+          <div class="ferry-table-wrap">
+            <table class="ferry-table">
+              <thead><tr><th>Day</th><th>Off Raasay (to your car)</th><th>Back to Raasay</th></tr></thead>
+              <tbody>${sched}</tbody>
+            </table>
+          </div>
+          <ul class="ferry-tips">${tips}</ul>
+        </div>
+      </div>`;
+  }
+  buildFerry();
 
   /* ---------- PRACTICAL NOTES (unchanged) ---------- */
   function buildPractical() {

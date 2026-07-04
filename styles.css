@@ -377,6 +377,123 @@ h1, h2, h3, h4, h5 { margin: 0; font-family: var(--serif); font-weight: 500; let
   .bk-prop-style { font-size: 12px; }
 }
 
+/* Booked stops: collapsed details */
+details.bk-stop { padding: 0; }
+details.bk-stop .bk-details-body { padding: 0 32px 30px; }
+.bk-summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 24px 32px;
+}
+.bk-summary::-webkit-details-marker { display: none; }
+.bk-summary .bk-head-text { flex: 1; min-width: 0; }
+.bk-summary .bk-status { margin-left: auto; }
+.bk-expand-hint {
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--stone); font-weight: 600;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.bk-expand-hint::after { content: '▾'; font-size: 13px; transition: transform .2s ease; }
+details[open] .bk-expand-hint::after { transform: rotate(180deg); }
+details.bk-stop[open] .bk-summary { border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+@media (max-width: 720px) { .bk-summary { padding: 20px 22px; } details.bk-stop .bk-details-body { padding: 0 22px 24px; } }
+
+/* Priority: divider + booked tag */
+.priority-divider {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 16px;
+  margin: 20px 0 4px;
+  font-family: var(--serif); font-style: italic; font-size: 18px;
+  color: var(--ink-soft);
+}
+.priority-divider::before, .priority-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--line);
+}
+.priority-booked-tag {
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  background: #0b6e4f; color: white;
+  padding: 4px 12px; border-radius: 100px; font-weight: 700;
+  font-family: var(--sans);
+}
+
+/* =========================================================================
+   FERRY & SKYE DAY-TRIP LOGISTICS
+   ========================================================================= */
+.ferry {
+  padding: clamp(60px, 9vh, 110px) 0 clamp(70px, 11vh, 130px);
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+.ferry-panel {
+  max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter);
+}
+.ferry-operator {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--loch);
+  border-radius: var(--radius-lg);
+  padding: 16px 22px;
+  margin-bottom: 24px;
+  font-family: var(--serif); font-size: 15px; color: var(--ink);
+}
+.ferry-cta-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.ferry-steps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px; margin-bottom: 30px;
+}
+.ferry-step {
+  display: flex; gap: 14px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+}
+.ferry-step-n {
+  flex: 0 0 auto;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--loch); color: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-weight: 600; font-size: 15px;
+}
+.ferry-step-title { font-family: var(--serif); font-size: 17px; color: var(--ink); margin: 2px 0 6px; }
+.ferry-step-body { font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
+
+.ferry-tables {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+@media (max-width: 820px) { .ferry-tables { grid-template-columns: 1fr; } }
+.ferry-block-title {
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--whisky); font-weight: 700; font-family: var(--sans);
+  margin: 0 0 10px;
+}
+.ferry-table-wrap {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  overflow-x: auto; background: var(--cream);
+}
+.ferry-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.ferry-table thead { background: var(--bg-alt); }
+.ferry-table th {
+  padding: 9px 13px; text-align: left;
+  font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600; border-bottom: 1px solid var(--line);
+}
+.ferry-table td { padding: 10px 13px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.ferry-table tr:last-child td { border-bottom: none; }
+.ferry-fare-who { font-family: var(--serif); font-size: 15px; color: var(--ink); }
+.ferry-fare-num { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--ink-soft); }
+.ferry-sched-day { font-family: var(--serif); font-size: 15px; color: var(--heather); white-space: nowrap; }
+.ferry-fine { font-size: 12px; color: var(--ink-soft); line-height: 1.5; margin: 10px 2px 0; }
+.ferry-tips { margin: 12px 0 0; padding: 0; }
+.ferry-tips li {
+  font-size: 13px; color: var(--ink-soft); line-height: 1.5;
+  padding-left: 18px; position: relative; margin-bottom: 7px;
+}
+.ferry-tips li::before { content: '→'; position: absolute; left: 0; color: var(--whisky); font-weight: 700; }
+
 /* =========================================================================
    DAYS — new dense visual-first layout
    ========================================================================= */

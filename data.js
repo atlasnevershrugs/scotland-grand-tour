@@ -68,17 +68,22 @@ window.TRIP = {
     { name: "Rentalcars.com", note: "Compare all providers, one-way fees shown upfront.", url: "https://www.rentalcars.com" }
   ],
 
+  // Pending items render first (numbered by urgency); booked items carry
+  // done:true and are grouped at the end with a "Booked" badge, no specifics.
   priorityBookings: [
-    { rank: 1,  what: "Isle of Raasay Distillery",     dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the working distillery — your Skye base",   url: "https://raasaydistillery.com/visit/borodale-house/" },
-    { rank: 2,  what: "Clachaig Inn, Glencoe",         dates: "Thu 30 Jul → Sat 1 Aug · 2 nights",    why: "Sells out 3–4 months ahead",                                  url: "https://www.clachaig.com" },
-    { rank: 3,  what: "CalMac Sconser↔Raasay ferry",   dates: "Sat 25 Jul + day-trips + Tue 28 out",  why: "Foot passengers — book/verify Sconser parking",              url: "https://www.calmac.co.uk/sconser-raasay" },
-    { rank: 4,  what: "Jacobite Steam Train",          dates: "Thu 30 Jul · Day 11 morning",          why: "Sells out months ahead in summer",                            url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
-    { rank: 5,  what: "Torridon area",                 dates: "Tue 28 Jul → Wed 29 Jul · 1 night",    why: "Remote, tiny stock — book early",                             url: "https://www.thetorridon.com" },
-    { rank: 6,  what: "Fort William",                  dates: "Wed 29 Jul → Thu 30 Jul · 1 night",    why: "Busy hub for the Jacobite train — book early",                url: "https://www.booking.com/searchresults.html?ss=Fort+William" },
-    { rank: 7,  what: "Applecross Inn lunch",          dates: "Tue 28 Jul · Day 9 lunch",             why: "Famous pub, books up fast",                                   url: "https://www.applecross.uk.com/inn/" },
-    { rank: 8,  what: "Edinburgh",                     dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",   why: "City centre fills up in July",                                url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
-    { rank: 9,  what: "Glasgow",                        dates: "Sat 1 Aug → Sun 2 Aug · 1 night",      why: "Last night before the Oxford drive",                          url: "https://www.booking.com/searchresults.html?ss=Glasgow" },
-    { rank: 10, what: "Elgol boat trip (optional)",    dates: "Mon 27 Jul · Day 8",                   why: "Loch Coruisk — small boats, limited slots",                   url: "https://bellajane.co.uk/" }
+    { what: "Clachaig Inn, Glencoe",       dates: "Thu 30 Jul → Sat 1 Aug · 2 nights",   why: "Sells out 3–4 months ahead",                       url: "https://www.clachaig.com" },
+    { what: "CalMac Sconser↔Raasay ferry", dates: "Sat 25 Jul + day-trips + Tue 28 out", why: "Foot passengers — book/verify Sconser parking",   url: "https://www.calmac.co.uk/en-gb/route-information/sconser-raasay/" },
+    { what: "Jacobite Steam Train",        dates: "Thu 30 Jul · Day 11 morning",         why: "Sells out months ahead in summer",                 url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
+    { what: "Torridon area",               dates: "Tue 28 Jul → Wed 29 Jul · 1 night",   why: "Remote, tiny stock — book early",                  url: "https://www.thetorridon.com" },
+    { what: "Fort William",                dates: "Wed 29 Jul → Thu 30 Jul · 1 night",   why: "Busy hub for the Jacobite train — book early",     url: "https://www.booking.com/searchresults.html?ss=Fort+William" },
+    { what: "Applecross Inn lunch",        dates: "Tue 28 Jul · Day 9 lunch",            why: "Famous pub, books up fast",                        url: "https://www.applecross.uk.com/inn/" },
+    { what: "Edinburgh",                   dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",  why: "City centre fills up in July",                     url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
+    { what: "Glasgow",                     dates: "Sat 1 Aug → Sun 2 Aug · 1 night",     why: "Last night before the Oxford drive",               url: "https://www.booking.com/searchresults.html?ss=Glasgow" },
+    { what: "Elgol boat trip (optional)",  dates: "Mon 27 Jul · Day 8",                  why: "Loch Coruisk — small boats, limited slots",        url: "https://bellajane.co.uk/" },
+
+    { what: "Isle of Raasay Distillery",   dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the distillery — your Skye base", url: "https://raasaydistillery.com/visit/borodale-house/", done: true },
+    { what: "Pitlochry",                   dates: "Wed 22 Jul → Thu 23 Jul · 1 night",   why: "First Highland overnight",                         url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/", done: true },
+    { what: "Drumnadrochit",               dates: "Thu 23 Jul → Sat 25 Jul · 2 nights",  why: "Loch Ness base",                                   url: "https://www.airbnb.com", done: true }
   ],
 
   practical: [
@@ -96,6 +101,39 @@ window.TRIP = {
     { name: "Jacobite Steam Train", when: "Thu 30 Jul · Day 11 morning", url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
     { name: "Cail Bruich, Glasgow", when: "Sat 1 Aug · Day 13 dinner",  url: "https://www.cailbruich.co.uk" }
   ],
+
+  // Ferry logistics for the Raasay base + Skye day-trips (Days 6–9).
+  // Verified against the CalMac summer 2026 timetable & fares (valid 27 Mar–18 Oct 2026).
+  ferry: {
+    title: "Raasay ferry & the Skye day-trips",
+    lede: "You sleep on Raasay but tour Skye by day. The smart move — park the car on Skye at Sconser and cross as foot passengers. The car stays exactly where you need it each morning, and you skip the car-ferry fare entirely.",
+    operator: "CalMac · MV Hallaig (23-car ferry) · 25-min crossing · Turn Up & Go",
+    bookingUrl: "https://www.calmac.co.uk/en-gb/route-information/sconser-raasay/",
+    timetableUrl: "https://assets.calmac.co.uk/media/ekkepavl/stt-17-sconser-raasay-27-03.pdf",
+    steps: [
+      { n: 1, title: "Drive to Sconser", body: "From Drumnadrochit ~4 hrs via Eilean Donan and the Skye Bridge. The Sconser slipway is right on the A87, about 6 miles south of Portree." },
+      { n: 2, title: "Park free at Sconser", body: "The distillery confirms you can leave the car free in the Sconser slipway car park and cross on foot. No official CalMac limit on multi-day parking is published, so give them a quick call to confirm 3 nights is fine." },
+      { n: 3, title: "Cross as foot passengers", body: "25-minute crossing. Adult return £5.30, teen (5–15) £2.70 — versus £17.50 to take the car. Turn up and go; no sailing to reserve." },
+      { n: 4, title: "Walk up to Borodale House", body: "The distillery is a ~10-min walk (or 2-min drive) uphill from Raasay pier. No shuttle is advertised — email Borodale ahead about a luggage pickup for your arrival on Day 6." }
+    ],
+    fares: [
+      { who: "Adult — foot passenger", single: "£2.65", ret: "£5.30" },
+      { who: "Teen 5–15 — foot passenger", single: "£1.35", ret: "£2.70" },
+      { who: "Under 5 · bicycle", single: "free", ret: "free" },
+      { who: "Car (only if you bring it)", single: "£8.75", ret: "£17.50" }
+    ],
+    faresNote: "RET (Road Equivalent Tariff) fares. Passenger and car tickets are separate — a car ticket does not cover the people in it. Buy foot tickets online, by phone, or at the port.",
+    schedule: [
+      { day: "Mon–Sat", offRaasay: "First 07:55, then roughly hourly (~11 sailings)", backToRaasay: "Last from Sconser 18:45 (Sat 20:00)" },
+      { day: "Sunday", offRaasay: "Only 10:00 · 12:15 · 16:30", backToRaasay: "Last from Sconser 17:00 (only 10:30 · 13:00 · 17:00)" }
+    ],
+    tips: [
+      "Day 7 is a Sunday — the first boat off Raasay isn't until 10:00 and the last back is 17:00, so keep that Skye day (Trotternish) tighter or start slow.",
+      "Day 8 is a weekday — catch the 07:55 off Raasay to be on Skye by ~08:25 and hit the Fairy Pools before the crowds.",
+      "Be at the slipway to board no later than 10 minutes before departure.",
+      "Timetable valid 27 Mar – 18 Oct 2026 — re-check at calmac.co.uk close to travel."
+    ]
+  },
 
   // === DAY BY DAY =============================================================
   days: [
@@ -153,7 +191,7 @@ window.TRIP = {
       route: "A93",
       miles: "85", drive: "2–2.5 hrs",
       overnight: "Pitlochry",
-      checkin: "2026-07-22", checkout: "2026-07-23",
+      checkin: "2026-07-22", checkout: "2026-07-23", booked: true,
       hero: "Pitlochry",
       blurb: "Take the A93 through Braemar instead of the A9. The Hermitage waterfall and Queen's View are unmissable; Balmoral and Blair Castle are picks based on your appetite.",
       attractions: [
@@ -178,7 +216,7 @@ window.TRIP = {
       route: "A9 · A82",
       miles: "90", drive: "2 hrs",
       overnight: "Drumnadrochit",
-      checkin: "2026-07-23", checkout: "2026-07-25",
+      checkin: "2026-07-23", checkout: "2026-07-25", booked: true,
       hero: "Inverness",
       blurb: "The A9 climbs over the Pass of Drumochter (highest A-road in the UK at 460m). Continue past Inverness down the western shore of Loch Ness to Drumnadrochit — base for the next two nights, with Urquhart Castle a short drive away.",
       attractions: [
@@ -227,7 +265,7 @@ window.TRIP = {
       route: "A82 · A87",
       miles: "140", drive: "4 hrs + 25 min ferry",
       overnight: "Raasay",
-      checkin: "2026-07-25", checkout: "2026-07-28",
+      checkin: "2026-07-25", checkout: "2026-07-28", booked: true,
       hero: "Isle_of_Raasay",
       blurb: "The long drive west — A82 south then A87 through Kintail. Pause for Eilean Donan in the morning light and the Five Sisters through the windscreen. Over the Skye Bridge to Sconser, park the car, and cross to Raasay as foot passengers. Distillery tour and dinner on-site tonight.",
       attractions: [
