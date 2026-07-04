@@ -225,7 +225,46 @@ window.TRIP_ENRICH = {
       ]
     },
 
-    // ---- Day 9: Raasay → Skye -----------------------------------------------
+    // ---- Day 9: Raasay → Torridon via Bealach na Bà -------------------------
+    "Bealach na Bà": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g551815-d4106283-Reviews-Bealach_na_Ba_Road-Applecross_Ross_and_Cromarty_Scottish_Highlands_Scotland.html",
+      blogs: [
+        { title: "How to drive Scotland's best road", source: "Scotland's Stories", url: "https://scotlands-stories.com/visiting-applecross/" },
+        { title: "Applecross walks", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/torridon/applecross.shtml" }
+      ]
+    },
+    "Applecross village": {
+      tripadvisor: "https://www.tripadvisor.com/Tourism-g551815-Applecross_Ross_and_Cromarty_Scottish_Highlands_Scotland-Vacations.html",
+      blogs: [
+        { title: "The Applecross Inn (official)", source: "applecross.uk.com", url: "https://www.applecross.uk.com/inn/" },
+        { title: "Why I visit Applecross every year", source: "Scotland's Stories", url: "https://scotlands-stories.com/visiting-applecross/" }
+      ]
+    },
+    "Shieldaig village": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g551819-d519798-Reviews-Glen_Torridon-Shieldaig_Ross_and_Cromarty_Scottish_Highlands_Scotland.html",
+      blogs: [
+        { title: "Shieldaig", source: "Visit Scotland", url: "https://www.visitscotland.com/info/towns-villages/shieldaig-p254381" },
+        { title: "Shieldaig peninsula walk", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/torridon/Shieldaig.shtml" }
+      ]
+    },
+
+    // ---- Day 10: Torridon walking day ---------------------------------------
+    "Beinn Eighe Mountain Trail": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1147549-d1021173-Reviews-Beinn_Eighe_Mountain_Trail-Kinlochewe_Ross_and_Cromarty_Scottish_Highlands_Scotl.html",
+      blogs: [
+        { title: "Mountain Trail, Beinn Eighe NNR", source: "Walkhighlands", url: "https://www.walkhighlands.co.uk/torridon/Mountaintrail.shtml" },
+        { title: "Beinn Eighe NNR — visiting the reserve", source: "NatureScot", url: "https://www.nature.scot/enjoying-outdoors/visit-our-nature-reserves/beinn-eighe-and-loch-maree-islands-national-nature-reserve" }
+      ]
+    },
+    "Loch Maree": {
+      tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g315988-d519794-Reviews-Loch_Maree-Gairloch_Scottish_Highlands_Scotland.html",
+      blogs: [
+        { title: "Loch Maree Islands National Nature Reserve", source: "Visit Scotland", url: "https://www.visitscotland.com/info/see-do/loch-maree-islands-p333771" },
+        { title: "Beautiful lochs in Scotland", source: "Visit Scotland", url: "https://www.visitscotland.com/things-to-do/landscapes-nature/lochs" }
+      ]
+    },
+
+    // ---- Skye day-trip stops (Days 7-8) -------------------------------------
     "Sligachan Old Bridge": {
       tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g4422085-d8459998-Reviews-Sligachan_Old_Bridge-Sligachan_Isle_of_Skye_The_Hebrides_Scotland.html",
       blogs: [
@@ -463,46 +502,71 @@ window.TRIP_ENRICH = {
       }
     ],
 
-    // ---- Day 9: Skye (nights 9-11) — 3 NIGHTS, STILL TO BOOK ----------------
+    // ---- Day 9: Torridon (night 9) ------------------------------------------
     9: [
       {
-        title: "Portree & Skye self-catering (Airbnb)",
+        title: "The Torridon Inn",
+        type: "bnb",
+        url: "https://www.thetorridon.com/the-inn/",
+        why: "Relaxed sister to the 5-star Torridon lodge — a walkers' and road-trippers' favourite at the head of Upper Loch Torridon, with a good bar and mountain views. Family rooms available.",
+        price: "£120–£160/night"
+      },
+      {
+        title: "The Torridon (5-star lodge)",
+        type: "bnb",
+        url: "https://www.thetorridon.com",
+        why: "Victorian shooting lodge on the loch — Scotland's finest Highland country-house hotel if you want to splurge for one remote night.",
+        price: "£220–£250/night"
+      },
+      {
+        title: "Torridon & Shieldaig cottages (Airbnb)",
         type: "airbnb-area",
-        url: "https://www.airbnb.com/s/Portree--Isle-of-Skye--United-Kingdom/homes?checkin=2026-07-28&checkout=2026-07-31&adults=3&price_max=250&currency=GBP&room_types%5B%5D=Entire%20home%2Fapt",
-        why: "Skye in late July is the hardest bed in Scotland — pre-filter for your three-night window. With three nights you can split between Portree, Carbost (near Talisker) or Sleat without committing to one base.",
-        price: "£150–£250/night"
-      },
-      {
-        title: "Roskhill House",
-        type: "bnb",
-        url: "https://www.roskhillhouse.co.uk/",
-        why: "Award-winning independent 5-room guesthouse 4km from Dunvegan — well-positioned for Day 11's Cuillin & west loop. 94% five-star reviews. Call ahead to confirm a third bed.",
-        price: "£130–£200/night"
-      },
-      {
-        title: "Grenitote B&B, Portree",
-        type: "bnb",
-        url: "https://www.grenitote.co.uk/",
-        why: "Family-run independent B&B in central Portree, 30+ years of hosting, 3 ensuite rooms, fibre Wi-Fi and free parking. Books fast for a three-night stay in late July.",
-        price: "from £131/night"
+        url: "https://www.airbnb.co.uk/s/Torridon--United-Kingdom/homes?checkin=2026-07-28&checkout=2026-07-29&adults=3&price_max=250&currency=GBP",
+        why: "Tiny inventory in this remote glen — filtered for your night and party. Shieldaig village a few miles west has a little more stock.",
+        price: "£110–£220/night"
       }
     ],
 
-    // ---- Day 12: Glencoe (night 12) -----------------------------------------
-    12: [
+    // ---- Day 10: Fort William (night 10) ------------------------------------
+    10: [
       {
-        title: "Glencoe cottages on Airbnb",
-        type: "airbnb-area",
-        url: "https://www.airbnb.co.uk/glencoe-united-kingdom/stays/cottages?checkin=2026-07-31&checkout=2026-08-01&adults=3&price_max=250&currency=GBP",
-        why: "Filtered Airbnb area search for whole cottages in Glencoe village. The mountain-view stays go first — book the moment you decide.",
-        price: "£100–£250/night"
+        title: "The Lime Tree — hotel & art gallery",
+        type: "bnb",
+        url: "https://www.limetreefortwilliam.co.uk/",
+        why: "Boutique hotel in a converted manse with its own art gallery, a short walk from Fort William centre and the Jacobite departure — the town's most characterful stay.",
+        price: "£130–£170/night"
       },
       {
-        title: "Ballachulish lochside cottages (Airbnb)",
+        title: "Glenfinnan House Hotel",
+        type: "bnb",
+        url: "https://www.glenfinnanhouse.com/",
+        why: "Historic country house on Loch Shiel, 5 min from the viaduct — perfect if you want to be right by Glenfinnan for the morning.",
+        price: "£160–£210/night"
+      },
+      {
+        title: "Fort William centre (Airbnb & hotels)",
         type: "airbnb-area",
-        url: "https://www.airbnb.co.uk/ballachulish-united-kingdom/stays/cottages?checkin=2026-07-31&checkout=2026-08-01&adults=3&price_max=250&currency=GBP",
-        why: "Ballachulish sits on Loch Leven minutes from Glencoe — lochside cottages and studios (incl. the well-reviewed Lochside Studio) sized for three.",
-        price: "£120–£250/night"
+        url: "https://www.airbnb.co.uk/s/Fort-William--United-Kingdom/homes?checkin=2026-07-29&checkout=2026-07-30&adults=3&price_max=250&currency=GBP",
+        why: "Widest choice on the whole trip — apartments and B&Bs near the High Street and train station. Book early: Fort William is a busy Highland hub in summer.",
+        price: "£110–£200/night"
+      }
+    ],
+
+    // ---- Day 11: Glencoe (nights 11-12) -------------------------------------
+    11: [
+      {
+        title: "Clachaig Inn",
+        type: "bnb",
+        url: "https://www.clachaig.com",
+        why: "The legendary walkers' inn in the glen itself — ales, hearty food, mountain company. The classic Glencoe stay, and the whole reason to give Glencoe two nights. Sells out months ahead.",
+        price: "£110–£150/night"
+      },
+      {
+        title: "Ballachulish & Glencoe cottages (Airbnb)",
+        type: "airbnb-area",
+        url: "https://www.airbnb.co.uk/s/Glencoe--United-Kingdom/homes?checkin=2026-07-30&checkout=2026-08-01&adults=3&price_max=250&currency=GBP",
+        why: "Whole cottages in Glencoe village and lochside Ballachulish — filtered for your two-night window. The mountain-view stays go first.",
+        price: "£100–£250/night"
       },
       {
         title: "Scorrybreac Guest House",

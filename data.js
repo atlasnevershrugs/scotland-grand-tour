@@ -1,14 +1,11 @@
-// Scotland Grand Tour — Trip Data (v6: Raasay swap)
-// 14 calendar days · 13 overnights · 8 overnight stops · ~1,100 miles
-// Bookings confirmed: Rosemount Hotel (Pitlochry), Cherrytrees (Drumnadrochit),
-// Isle of Raasay Distillery / Borodale House (Raasay, booking in progress).
-// Swap from v5: Ullapool + Gairloch (3 nights) → Raasay (3 nights via Sconser
-// ferry). Loses NW Highlands + Bealach na Bà; gains a confirmed quality
-// distillery hotel during the impossible-to-book Skye-area week.
+// Scotland Grand Tour — Trip Data (v7: recover the lost Highlands)
+// 14 calendar days · 13 overnights · 8 Scotland stops · ~1,150 miles
+// Skye is done as day-trips from Raasay (no Skye accommodation needed).
+// The freed nights recover Bealach na Bà, Torridon, Fort William + Glencoe.
 
 window.TRIP = {
   title: "Scotland Grand Tour",
-  subtitle: "Edinburgh to Oxford via Loch Ness, Raasay, Skye and Glencoe",
+  subtitle: "Edinburgh to Oxford via Loch Ness, Raasay, Skye, Torridon and Glencoe",
   dates: "Monday 20 July – Sunday 2 August 2026",
   travellers: "2 adults + 1 teen (15)",
   pickup: "Edinburgh Airport",
@@ -26,19 +23,20 @@ window.TRIP = {
   stats: [
     { label: "Days", value: "14" },
     { label: "Overnight stops", value: "8" },
-    { label: "Total miles", value: "~1,100" },
+    { label: "Total miles", value: "~1,150" },
     { label: "Driving days", value: "9" }
   ],
 
   route: [
-    { lat: 55.9533, lng: -3.1883, label: "Edinburgh",        nights: "1–2",   day: 1  },
-    { lat: 56.7058, lng: -3.7290, label: "Pitlochry",        nights: "3",     day: 3  },
-    { lat: 57.3315, lng: -4.4733, label: "Drumnadrochit",    nights: "4–5",   day: 4  },
-    { lat: 57.3700, lng: -6.0676, label: "Raasay",           nights: "6–8",   day: 6  },
-    { lat: 57.4126, lng: -6.1959, label: "Portree (Skye)",   nights: "9–11",  day: 9  },
-    { lat: 56.6863, lng: -5.0987, label: "Glencoe",          nights: "12",    day: 12 },
-    { lat: 55.8642, lng: -4.2518, label: "Glasgow",          nights: "13",    day: 13 },
-    { lat: 51.7520, lng: -1.2577, label: "Oxford",           nights: "drop-off", day: 14 }
+    { lat: 55.9533, lng: -3.1883, label: "Edinburgh",     nights: "1–2",   day: 1  },
+    { lat: 56.7058, lng: -3.7290, label: "Pitlochry",     nights: "3",     day: 3  },
+    { lat: 57.3315, lng: -4.4733, label: "Drumnadrochit", nights: "4–5",   day: 4  },
+    { lat: 57.3700, lng: -6.0676, label: "Raasay",        nights: "6–8",   day: 6  },
+    { lat: 57.5470, lng: -5.5100, label: "Torridon",      nights: "9",     day: 9  },
+    { lat: 56.8198, lng: -5.1052, label: "Fort William",  nights: "10",    day: 10 },
+    { lat: 56.6863, lng: -5.0987, label: "Glencoe",       nights: "11–12", day: 11 },
+    { lat: 55.8642, lng: -4.2518, label: "Glasgow",       nights: "13",    day: 13 },
+    { lat: 51.7520, lng: -1.2577, label: "Oxford",        nights: "drop-off", day: 14 }
   ],
 
   detours: [
@@ -47,13 +45,20 @@ window.TRIP = {
     { lat: 57.5747, lng: -4.0936, label: "Chanonry Point",      day: 5  },
     { lat: 57.2740, lng: -5.5161, label: "Eilean Donan",        day: 6  },
     { lat: 57.3236, lng: -6.1083, label: "Sconser ferry",       day: 6  },
-    { lat: 57.4400, lng: -6.0700, label: "Calum's Road",        day: 8  },
-    { lat: 57.2877, lng: -6.1747, label: "Sligachan",           day: 9  },
-    { lat: 57.2493, lng: -6.7724, label: "Neist Point",         day: 11 },
-    { lat: 57.2438, lng: -6.2599, label: "Fairy Pools",         day: 11 },
-    { lat: 57.3025, lng: -6.3919, label: "Talisker Distillery", day: 11 },
-    { lat: 57.1928, lng: -6.1144, label: "Elgol",               day: 11 },
-    { lat: 56.8728, lng: -5.4357, label: "Glenfinnan",          day: 13 },
+    { lat: 57.6437, lng: -6.2680, label: "Quiraing",            day: 7  },
+    { lat: 57.5070, lng: -6.1836, label: "Old Man of Storr",    day: 7  },
+    { lat: 57.6083, lng: -6.1636, label: "Kilt Rock",           day: 7  },
+    { lat: 57.2493, lng: -6.2599, label: "Fairy Pools",         day: 8  },
+    { lat: 57.3025, lng: -6.3919, label: "Talisker",            day: 8  },
+    { lat: 57.4256, lng: -6.7876, label: "Neist Point",         day: 8  },
+    { lat: 57.1450, lng: -6.1130, label: "Elgol",               day: 8  },
+    { lat: 57.4200, lng: -5.7000, label: "Bealach na Bà",       day: 9  },
+    { lat: 57.4344, lng: -5.8160, label: "Applecross",          day: 9  },
+    { lat: 57.6100, lng: -5.3500, label: "Beinn Eighe",         day: 10 },
+    { lat: 57.6900, lng: -5.4700, label: "Loch Maree",          day: 10 },
+    { lat: 56.8728, lng: -5.4357, label: "Glenfinnan",          day: 11 },
+    { lat: 56.7969, lng: -5.0037, label: "Ben Nevis",           day: 11 },
+    { lat: 56.6164, lng: -5.0034, label: "Glen Etive",          day: 12 },
     { lat: 56.0959, lng: -4.6356, label: "Luss",                day: 13 }
   ],
 
@@ -64,31 +69,31 @@ window.TRIP = {
   ],
 
   priorityBookings: [
-    { rank: 1,  what: "Portree, Skye",                 dates: "Tue 28 Jul → Fri 31 Jul · 3 nights",  why: "Hardest booking in Scotland",                       url: "https://www.cuillinhills-hotel-skye.co.uk" },
-    { rank: 2,  what: "Isle of Raasay Distillery",     dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the working distillery",          url: "https://raasaydistillery.com/visit/borodale-house/" },
-    { rank: 3,  what: "Clachaig Inn, Glencoe",         dates: "Fri 31 Jul → Sat 1 Aug · 1 night",    why: "Sells out 3–4 months ahead",                         url: "https://www.clachaig.com" },
-    { rank: 4,  what: "CalMac Sconser↔Raasay ferry",   dates: "Sat 25 Jul out · Tue 28 Jul return",  why: "Vehicle ferry — book in advance, tight in summer",  url: "https://www.calmac.co.uk/sconser-raasay" },
-    { rank: 5,  what: "Pitlochry",                     dates: "Wed 22 Jul → Thu 23 Jul · 1 night",   why: "Small town, summer demand",                          url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/" },
-    { rank: 6,  what: "Drumnadrochit",                 dates: "Thu 23 Jul → Sat 25 Jul · 2 nights",  why: "Loch Ness side — limited stock",                     url: "https://www.airbnb.com" },
-    { rank: 7,  what: "Jacobite Steam Train",          dates: "Sat 1 Aug · Day 13 morning",          why: "Sells out months ahead in summer",                   url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
-    { rank: 8,  what: "Edinburgh",                     dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",  why: "City centre fills up in July",                       url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
-    { rank: 9,  what: "Elgol boat trip",               dates: "Thu 30 Jul · Day 11",                 why: "Loch Coruisk — small boats, limited slots",          url: "https://bellajane.co.uk/" },
-    { rank: 10, what: "Scorrybreac, Skye dinner",      dates: "Wed 29 Jul · Day 10 evening",         why: "Best restaurant on Skye",                            url: "https://www.scorrybreac.com" }
+    { rank: 1,  what: "Isle of Raasay Distillery",     dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the working distillery — your Skye base",   url: "https://raasaydistillery.com/visit/borodale-house/" },
+    { rank: 2,  what: "Clachaig Inn, Glencoe",         dates: "Thu 30 Jul → Sat 1 Aug · 2 nights",    why: "Sells out 3–4 months ahead",                                  url: "https://www.clachaig.com" },
+    { rank: 3,  what: "CalMac Sconser↔Raasay ferry",   dates: "Sat 25 Jul + day-trips + Tue 28 out",  why: "Foot passengers — book/verify Sconser parking",              url: "https://www.calmac.co.uk/sconser-raasay" },
+    { rank: 4,  what: "Jacobite Steam Train",          dates: "Thu 30 Jul · Day 11 morning",          why: "Sells out months ahead in summer",                            url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
+    { rank: 5,  what: "Torridon area",                 dates: "Tue 28 Jul → Wed 29 Jul · 1 night",    why: "Remote, tiny stock — book early",                             url: "https://www.thetorridon.com" },
+    { rank: 6,  what: "Fort William",                  dates: "Wed 29 Jul → Thu 30 Jul · 1 night",    why: "Busy hub for the Jacobite train — book early",                url: "https://www.booking.com/searchresults.html?ss=Fort+William" },
+    { rank: 7,  what: "Applecross Inn lunch",          dates: "Tue 28 Jul · Day 9 lunch",             why: "Famous pub, books up fast",                                   url: "https://www.applecross.uk.com/inn/" },
+    { rank: 8,  what: "Edinburgh",                     dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",   why: "City centre fills up in July",                                url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
+    { rank: 9,  what: "Glasgow",                        dates: "Sat 1 Aug → Sun 2 Aug · 1 night",      why: "Last night before the Oxford drive",                          url: "https://www.booking.com/searchresults.html?ss=Glasgow" },
+    { rank: 10, what: "Elgol boat trip (optional)",    dates: "Mon 27 Jul · Day 8",                   why: "Loch Coruisk — small boats, limited slots",                   url: "https://bellajane.co.uk/" }
   ],
 
   practical: [
-    { title: "Fuel",            body: "Fill up at every petrol station in the Highlands. Stations can be 30–40 miles apart and close by 6–7pm. Top up without fail in Inverness, on Skye (Portree, Broadford), and at Fort William." },
-    { title: "Midges",          body: "July and August are peak midge season. Buy Smidge spray on arrival (pharmacies and outdoor shops). Worst at dawn and dusk in still, humid air — Raasay can be particularly midgy on still evenings." },
-    { title: "Single-track roads", body: "Pull into passing places on your left when meeting oncoming traffic. Do not drive onto the grass verge — it is often soft. A small wave to other drivers is customary. Most of Raasay's roads are single-track." },
-    { title: "Sconser ↔ Raasay ferry", body: "CalMac vehicle ferry, 25-min crossing, ~9 services daily 7am–6pm. Book the car in advance via calmac.co.uk — Saturday and Sunday capacity is tight in July. Arrive 15 min before departure with your booking reference." },
-    { title: "Weather",         body: "Pack waterproof layers regardless of forecast. The west coast catches significantly more rain than the east. Misty days on Raasay and Skye are atmospheric, not a disappointment." },
-    { title: "Oxford LEZ",      body: "Oxford city centre has a Low Emission Zone. Most modern hire cars comply, but confirm with your rental company before drop-off." }
+    { title: "Leave the car on Skye", body: "Borodale is a 12-min walk from the Raasay pier and you tour Skye every day — so park the car at Sconser and cross as foot passengers (~£4 return vs ~£16 for the car). Confirm multi-day Sconser parking with CalMac / the distillery, and ask Borodale about a luggage pickup at the pier." },
+    { title: "Sconser ↔ Raasay ferry", body: "CalMac, 25-min crossing, ~9 sailings/day on weekdays (fewer on Sundays — first ~10am). As foot passengers you can turn up and go, but verify the timetable for your Skye day-trips at calmac.co.uk." },
+    { title: "Fuel", body: "Fill up at every petrol station in the Highlands. Stations can be 30–40 miles apart and close by 6–7pm. Top up in Inverness, on Skye (Portree/Broadford), Lochcarron, and at Fort William." },
+    { title: "Midges", body: "July and August are peak midge season. Buy Smidge spray on arrival (pharmacies and outdoor shops). Worst at dawn and dusk in still, humid air." },
+    { title: "Bealach na Bà", body: "Day 9. Single-track with 20% gradients and tight hairpin bends. Manageable in a standard hire car at low speed. In poor conditions, take the coastal road via Lochcarron instead." },
+    { title: "Oxford LEZ", body: "Oxford city centre has a Low Emission Zone. Most modern hire cars comply, but confirm with your rental company before drop-off." }
   ],
 
   restaurantsToBook: [
     { name: "Isle of Raasay Distillery dinner", when: "Days 6–8 — for hotel guests; arrange at check-in", url: "https://raasaydistillery.com/" },
-    { name: "Scorrybreac, Skye",    when: "Wed 29 Jul · Day 10 dinner", url: "https://www.scorrybreac.com" },
-    { name: "Jacobite Steam Train", when: "Sat 1 Aug · Day 13 morning", url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
+    { name: "Applecross Inn",       when: "Tue 28 Jul · Day 9 lunch", url: "https://www.applecross.uk.com/inn/" },
+    { name: "Jacobite Steam Train", when: "Thu 30 Jul · Day 11 morning", url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
     { name: "Cail Bruich, Glasgow", when: "Sat 1 Aug · Day 13 dinner",  url: "https://www.cailbruich.co.uk" }
   ],
 
@@ -201,7 +206,7 @@ window.TRIP = {
       hero: "Loch_Ness",
       blurb: "From Drumnadrochit, Urquhart Castle and a Loch Ness cruise are a 5-minute drive. Add Culloden (25 min via Inverness) and a chance at wild dolphins at Chanonry Point in the afternoon (35 min).",
       attractions: [
-        { name: "Urquhart Castle",      wiki: "Urquhart_Castle",    desc: "Dramatic ruined castle on the shore of Loch Ness — 5-minute drive from Cherrytrees. Best views from the tower.", url: "https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/", locale: "Drumnadrochit" },
+        { name: "Urquhart Castle",      wiki: "Urquhart_Castle",    desc: "Dramatic ruined castle on the shore of Loch Ness — 5-minute drive from Drumnadrochit. Best views from the tower.", url: "https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/", locale: "Drumnadrochit" },
         { name: "Loch Ness Cruise",     wiki: "Loch_Ness",          desc: "Jacobite Cruises depart from Drumnadrochit pier (and Tomnahurich Bridge in Inverness) — see the loch from the water.", url: "https://www.jacobite.co.uk", locale: "Loch Ness" },
         { name: "Culloden Battlefield", wiki: "Battle_of_Culloden", desc: "Site of the last battle on British soil (1746). Outstanding visitor centre — book online, allow two hours.", url: "https://www.nts.org.uk/visit/places/culloden", locale: "Inverness" },
         { name: "Inverness Castle",     wiki: "Inverness_Castle",   desc: "Recently reopened visitor attraction with panoramic city views.", url: "https://www.invernesscastle.com", locale: "Inverness" },
@@ -210,7 +215,7 @@ window.TRIP = {
       ],
       hotels: [],
       restaurants: [
-        { name: "Fiddler's, Drumnadrochit", note: "Local highland pub with proper portions and an absurd whisky list, 2 min from the Airbnb.", url: "https://fiddledrum.co.uk/" },
+        { name: "Fiddler's, Drumnadrochit", note: "Local highland pub with proper portions and an absurd whisky list.", url: "https://fiddledrum.co.uk/" },
         { name: "The Mustard Seed (Inverness)", note: "Riverside, good value, locally driven menu.", url: "https://www.mustardseedrestaurant.co.uk" }
       ]
     },
@@ -224,12 +229,12 @@ window.TRIP = {
       overnight: "Raasay",
       checkin: "2026-07-25", checkout: "2026-07-28",
       hero: "Isle_of_Raasay",
-      blurb: "The long drive west — A82 south then A87 through Kintail. Pause for Eilean Donan in the morning light and the Five Sisters of Kintail through the windscreen. Over the Skye Bridge, down to Sconser, and the 25-minute CalMac ferry across to Raasay. Three nights based at the distillery.",
+      blurb: "The long drive west — A82 south then A87 through Kintail. Pause for Eilean Donan in the morning light and the Five Sisters through the windscreen. Over the Skye Bridge to Sconser, park the car, and cross to Raasay as foot passengers. Distillery tour and dinner on-site tonight.",
       attractions: [
-        { name: "Eilean Donan Castle",     wiki: "Eilean_Donan",            desc: "The most photographed castle in Scotland, on a tidal island where three sea lochs meet. Allow 1.5 hours — perfect mid-morning break on the long drive.", url: "https://www.eileandonancastle.com", locale: "Dornie" },
+        { name: "Eilean Donan Castle",     wiki: "Eilean_Donan",            desc: "The most photographed castle in Scotland, on a tidal island where three sea lochs meet. Perfect mid-morning break on the long drive.", url: "https://www.eileandonancastle.com", locale: "Dornie" },
         { name: "Five Sisters of Kintail", wiki: "Five_Sisters_of_Kintail", desc: "Scotland's most dramatic mountain drive — the scenery from the car IS the experience. Slow down on the A87 through Glen Shiel.", locale: "Glen Shiel" },
-        { name: "Skye Bridge",             wiki: "Skye_Bridge",             desc: "Free crossing onto Skye at Kyle of Lochalsh — your first taste of the island.", locale: "Kyle of Lochalsh" },
-        { name: "Sconser ferry pier",      wiki: null,                       desc: "CalMac ferry departure to Raasay. 25-minute crossing, ~9 services a day. Book the car in advance via calmac.co.uk.", url: "https://www.calmac.co.uk/sconser-raasay", locale: "Sconser" }
+        { name: "Skye Bridge",             wiki: "Skye_Bridge",             desc: "Free crossing onto Skye at Kyle of Lochalsh — you'll cross this several times over the coming days.", locale: "Kyle of Lochalsh" },
+        { name: "Isle of Raasay Distillery", wiki: null, desc: "Your base for three nights — a working single-malt distillery opened 2017, the first on Raasay in 170+ years. Evening tour and tastings for guests.", url: "https://raasaydistillery.com/", locale: "Raasay" }
       ],
       hotels: [],
       restaurants: []
@@ -237,129 +242,113 @@ window.TRIP = {
 
     {
       num: 7, date: "Sun 26 Jul", weekday: "Sunday",
-      title: "Raasay — Distillery and Dùn Caan",
-      leg: "Full day on Raasay",
-      route: "Local · 20 miles",
-      miles: "20", drive: "—",
-      overnight: "Raasay — Borodale House",
-      hero: "Isle_of_Raasay",
-      blurb: "A full day on Raasay. Start at the distillery (your hotel) for the morning tour — single malt at sea level. After lunch, walk Dùn Caan, the flat-topped summit at 444m — four to five hours return, classic Hebridean views over to the Cuillin. Evening dram in front of the fire.",
-      attractions: [
-        { name: "Isle of Raasay Distillery", wiki: null, desc: "Working single-malt distillery opened 2017 — first on Raasay in 170+ years. Standard 90-min tour with tastings, available daily. Restaurant and dramming room for guests.", url: "https://raasaydistillery.com/", locale: "Raasay" },
-        { name: "Dùn Caan",                  wiki: "Dùn_Caan", desc: "Raasay's flat-topped summit, 444m. 4–5 hour return walk from Inverarish, well-trodden path. Boswell and Johnson danced on the top in 1773.", locale: "Raasay" },
-        { name: "Raasay House",              wiki: "Raasay_House", desc: "Georgian mansion turned activity centre — café/restaurant, kayaks, bike hire, walking maps.", url: "https://www.raasay-house.co.uk/", locale: "Raasay" },
-        { name: "Inverarish & shore walk",   wiki: null, desc: "Raasay's main village — small shop, primary school, distillery on the hill. Walk south along the shore for the iron mining ruins.", locale: "Raasay" }
-      ],
-      hotels: [],
-      restaurants: [
-        { name: "Borodale House restaurant", note: "On-site at the distillery — for hotel residents, with the full Raasay-aged whisky list.", url: "https://raasaydistillery.com/" },
-        { name: "Raasay House café",         note: "Casual lunch and dinner option in the Georgian house — the alternative on Raasay.", url: "https://www.raasay-house.co.uk/" }
-      ]
-    },
-
-    {
-      num: 8, date: "Mon 27 Jul", weekday: "Monday",
-      title: "Raasay — Calum's Road and the wild north",
-      leg: "Drive Inverarish → Arnish via Calum's Road",
-      route: "Local · 30 miles round-trip",
-      miles: "30", drive: "—",
-      overnight: "Raasay — Borodale House",
-      hero: "Isle_of_Raasay",
-      blurb: "Today is about Calum's Road — the two-mile single-track to Arnish, built by one man, Calum MacLeod, over ten years after the council refused. Brochel Castle ruins at the southern end. Wild north Raasay walks, otters at dusk on the shore, and a third evening with a Hebridean malt.",
-      attractions: [
-        { name: "Calum's Road",     wiki: "Calum's_Road", desc: "The famous single-track road to Arnish, hand-built by Calum MacLeod between 1964–74. Drive it slowly. Memorial cairn at the Arnish end.", locale: "Raasay" },
-        { name: "Brochel Castle",   wiki: "Brochel_Castle", desc: "Ruined 15th-century clifftop castle of the MacLeods of Raasay — at the start of Calum's Road. Free, dramatic views.", locale: "Raasay" },
-        { name: "Hallaig",          wiki: "Hallaig", desc: "Cleared village on the east coast, immortalised in Sorley MacLean's Gaelic poem. Two-hour walk down through woodland from the road.", locale: "Raasay" },
-        { name: "North Raasay walks", wiki: null, desc: "Wild walks beyond Arnish — Fladda viewpoint, the lighthouse at Eyre, otter-spotting along the shoreline.", locale: "Raasay" }
-      ],
-      hotels: [],
-      restaurants: [
-        { name: "Borodale House restaurant", note: "Final Raasay dinner — the tasting menu pairs each course with a Raasay-aged whisky.", url: "https://raasaydistillery.com/" }
-      ]
-    },
-
-    {
-      num: 9, date: "Tue 28 Jul", weekday: "Tuesday",
-      title: "Raasay → Skye",
-      leg: "Inverarish ferry → Sconser → Portree",
-      route: "Ferry + A87",
-      miles: "20", drive: "25-min ferry + 30 min",
-      overnight: "Portree, Isle of Skye",
-      checkin: "2026-07-28", checkout: "2026-07-31",
-      hero: "Sligachan",
-      blurb: "Pack up after a leisurely distillery breakfast. Morning ferry from Inverarish back to Sconser, then a short drive north — pause at Sligachan Old Bridge for the iconic Cuillin view before checking in at Portree. Afternoon free for the harbour, a Storr scouting drive, or simply Portree café crawling.",
-      attractions: [
-        { name: "Sligachan Old Bridge",  wiki: "Sligachan", desc: "The classic Skye photograph — the old stone bridge with the Cuillin Black ridge behind. Five minutes from Sconser, on the A87.", locale: "Sligachan" },
-        { name: "Portree harbour",       wiki: "Portree",   desc: "Pastel-painted houses around the harbour — Skye's main town. Afternoon walking, shops, dinner spots all here.", locale: "Portree" }
-      ],
-      hotels: [
-        { name: "Cuillin Hills Hotel", style: "Victorian country house with bay views", price: "£140–£180", url: "https://www.cuillinhills-hotel-skye.co.uk", locale: "Portree" },
-        { name: "Bosville Hotel",      style: "Boutique, central Portree",              price: "£120–£160", url: "https://www.bosvillehotel.co.uk",          locale: "Portree" },
-        { name: "Rosedale Hotel",      style: "Harbourfront, traditional",              price: "£110–£140", url: "https://www.rosedalehotelskye.co.uk",      locale: "Portree" }
-      ],
-      restaurants: []
-    },
-
-    {
-      num: 10, date: "Wed 29 Jul", weekday: "Wednesday",
-      title: "Skye Day 1 — Trotternish",
-      leg: "The dramatic north — Quiraing, Storr, Kilt Rock",
-      route: "Island loop · north",
-      miles: "60", drive: "—",
-      overnight: "Portree, Isle of Skye",
+      title: "Skye day-trip — Trotternish",
+      leg: "Foot ferry to Sconser · north Skye",
+      route: "Ferry + Skye A855 loop",
+      miles: "70", drive: "—",
+      overnight: "Raasay",
       hero: "Old_Man_of_Storr",
-      blurb: "Start with Trotternish in the morning before crowds arrive. Quiraing and Old Man of Storr are both genuinely worth a 2–3 hour walk each. Kilt Rock is a five-minute viewpoint on the way back south.",
+      blurb: "Ferry across to your Skye-parked car and drive north to the Trotternish peninsula. Quiraing and Old Man of Storr are both worth a 2–3 hour walk each; Kilt Rock is a five-minute viewpoint. Sunday ferries are limited (first ~10am, last back ~6pm) so keep an eye on the return sailing.",
       attractions: [
-        { name: "The Quiraing",            wiki: "Quiraing",            desc: "Dramatic landslip landscape of pinnacles and hidden plateaus — arrive before 9am.", locale: "Staffin" },
+        { name: "The Quiraing",            wiki: "Quiraing",            desc: "Dramatic landslip landscape of pinnacles and hidden plateaus. About 1 hr from Sconser.", locale: "Staffin" },
         { name: "Old Man of Storr",        wiki: "Old_Man_of_Storr",    desc: "Iconic rock pinnacle — 45-minute walk up, well worth the climb.", locale: "Trotternish" },
         { name: "Kilt Rock & Mealt Falls", wiki: "Kilt_Rock",           desc: "Columnar basalt sea cliff that genuinely looks like a kilt. Five-minute viewpoint walk.", locale: "Trotternish" }
       ],
       hotels: [],
       restaurants: [
-        { name: "Scorrybreac",      note: "Finest restaurant on Skye — tasting menu, local produce. Book weeks ahead.", url: "https://www.scorrybreac.com" },
-        { name: "Dulse and Brose",  note: "Dependable bistro inside the Bosville Hotel.",                                url: "https://www.bosvillehotel.co.uk/eat-drink/" }
+        { name: "Borodale House restaurant", note: "Back on Raasay for dinner — the full Raasay-aged whisky list.", url: "https://raasaydistillery.com/" }
+      ]
+    },
+
+    {
+      num: 8, date: "Mon 27 Jul", weekday: "Monday",
+      title: "Skye day-trip — Cuillin & West",
+      leg: "Foot ferry to Sconser · west Skye",
+      route: "Ferry + Skye west loop",
+      miles: "90", drive: "—",
+      overnight: "Raasay",
+      hero: "Neist_Point",
+      blurb: "Weekday early ferry means you can beat the crowds. Fairy Pools first thing, Talisker Distillery, Dunvegan Castle and the Coral Beaches, and Neist Point Lighthouse on the westernmost tip. The Elgol boat to Loch Coruisk is an alternative half-day.",
+      attractions: [
+        { name: "Fairy Pools",             wiki: "Fairy_Pools",    desc: "Crystal-clear turquoise pools and waterfalls at the foot of the Cuillin. Arrive before 9am — get the early ferry.", locale: "Glenbrittle" },
+        { name: "Talisker Distillery",     wiki: "Talisker_distillery", desc: "Skye's only single malt distillery, on the shores of Loch Harport. The peat-smoke standard tour is excellent — book ahead.", url: "https://www.malts.com/en-row/distilleries/talisker/", locale: "Carbost" },
+        { name: "Dunvegan Castle",         wiki: "Dunvegan_Castle", desc: "Oldest continuously inhabited castle in Scotland, seat of Clan MacLeod. Allow two hours.", url: "https://www.dunvegancastle.com", locale: "Dunvegan" },
+        { name: "Claigan Coral Beaches",   wiki: "Claigan",         desc: "Crushed white coralline algae makes these beaches glow against turquoise sea. 30-min walk from the car park near Dunvegan.", locale: "Dunvegan" },
+        { name: "Neist Point Lighthouse",  wiki: "Neist_Point",     desc: "The westernmost point of Skye, with a clifftop lighthouse and views to the Outer Hebrides. 25-min walk each way.", locale: "Glendale" },
+        { name: "Elgol & Loch Coruisk boat trip", wiki: "Loch_Coruisk", desc: "Small boat from Elgol pier into Loch Coruisk — surrounded by the Black Cuillin. ~4 hours round trip. Book ahead.", url: "https://bellajane.co.uk/", locale: "Elgol" }
+      ],
+      hotels: [],
+      restaurants: [
+        { name: "Scorrybreac (Portree)", note: "Finest restaurant on Skye — tasting menu. If you want a Skye dinner, book this and take a later ferry back.", url: "https://www.scorrybreac.com" }
+      ]
+    },
+
+    {
+      num: 9, date: "Tue 28 Jul", weekday: "Tuesday",
+      title: "Raasay → Torridon via Bealach na Bà",
+      leg: "Ferry off · Skye Bridge · Bealach na Bà · Applecross",
+      route: "A87 · A896 · Bealach na Bà",
+      miles: "95", drive: "3.5 hrs",
+      overnight: "Torridon",
+      checkin: "2026-07-28", checkout: "2026-07-29",
+      hero: "Bealach_na_B%C3%A0",
+      blurb: "A quick Raasay morning (Calum's Road drive, distillery shop), then the final ferry to Sconser and off the island. Over the Skye Bridge to the mainland and the legendary Bealach na Bà — the Pass of the Cattle — climbing 626m in hairpin bends. Lunch at the Applecross Inn, then north into Torridon.",
+      attractions: [
+        { name: "Calum's Road",     wiki: "Calum's_Road", desc: "Quick morning drive before the ferry — the two-mile single-track to Arnish, hand-built by one man over ten years. Brochel Castle ruins at the start.", locale: "Raasay" },
+        { name: "Bealach na Bà",    wiki: "Bealach_na_B%C3%A0", desc: "The Pass of the Cattle — 20% gradients, hairpins, and on a clear day a view back to Skye and the Outer Hebrides.", locale: "Applecross" },
+        { name: "Applecross village", wiki: "Applecross", desc: "Tiny west-coast village at the foot of the pass. The Applecross Inn is one of the most famous pubs in Scotland — langoustines, crab, haddock. Book lunch ahead.", url: "https://www.applecross.uk.com/inn/", locale: "Applecross" },
+        { name: "Shieldaig village", wiki: "Shieldaig", desc: "Small fishing village on Loch Torridon — a good coffee or photo stop as you come into Torridon.", locale: "Shieldaig" }
+      ],
+      hotels: [
+        { name: "The Torridon",        style: "5-star Victorian shooting lodge, lochside", price: "£220–£250", url: "https://www.thetorridon.com", locale: "Torridon" },
+        { name: "The Torridon Inn",    style: "Relaxed sister inn, walkers' favourite",   price: "£120–£160", url: "https://www.thetorridon.com/the-inn/", locale: "Torridon" },
+        { name: "Tigh an Eilean, Shieldaig", style: "Seafront hotel in Shieldaig village", price: "£140–£180", url: "https://www.tighaneilean.co.uk", locale: "Shieldaig" }
+      ],
+      restaurants: [
+        { name: "Applecross Inn", note: "The Day 9 lunch highlight — book a table ahead.", url: "https://www.applecross.uk.com/inn/" }
+      ]
+    },
+
+    {
+      num: 10, date: "Wed 29 Jul", weekday: "Wednesday",
+      title: "Torridon walking day → Fort William",
+      leg: "Beinn Eighe · Loch Maree · drive south",
+      route: "A896 · A87 · A82",
+      miles: "95", drive: "2.5 hrs (after walks)",
+      overnight: "Fort William",
+      checkin: "2026-07-29", checkout: "2026-07-30",
+      hero: "Beinn_Eighe",
+      blurb: "The morning is the recovered Torridon walking day — the Beinn Eighe Mountain Trail climbs to 550m through 750-million-year-old sandstone for some of Scotland's finest mountain views. Drive the length of Loch Maree, then head south to Fort William for the night, ready for the Jacobite train.",
+      attractions: [
+        { name: "Beinn Eighe Mountain Trail", wiki: "Beinn_Eighe", desc: "The proper waymarked walk — 4 miles, climbing to 550m. 3–4 hours, well-marked, from the Coille na Glas-Leitire car park near Kinlochewe.", url: "https://www.nnr.scot/nnr/beinn-eighe/", locale: "Kinlochewe" },
+        { name: "Loch Maree",                 wiki: "Loch_Maree", desc: "One of Scotland's most beautiful lochs, with ancient Caledonian pine islands and Slioch rising on the far shore. Drive the A832 along its length.", locale: "Wester Ross" }
+      ],
+      hotels: [
+        { name: "The Lime Tree",         style: "Art-gallery hotel in an old manse",    price: "£130–£170", url: "https://www.limetreefortwilliam.co.uk/", locale: "Fort William" },
+        { name: "Glenfinnan House Hotel", style: "Historic country house by Loch Shiel", price: "£160–£210", url: "https://www.glenfinnanhouse.com/", locale: "Glenfinnan" },
+        { name: "Fort William centre (Airbnb/hotels)", style: "Wide choice near the High Street & station", price: "£110–£200", url: "https://www.booking.com/searchresults.html?ss=Fort+William", locale: "Fort William" }
+      ],
+      restaurants: [
+        { name: "Crannog Restaurant", note: "Loch-side seafood on Fort William's old pier.", url: "https://crannog.net/" }
       ]
     },
 
     {
       num: 11, date: "Thu 30 Jul", weekday: "Thursday",
-      title: "Skye Day 2 — Cuillin & West",
-      leg: "Fairy Pools · Talisker · Dunvegan · Neist Point",
-      route: "Island loop · west",
-      miles: "75", drive: "—",
-      overnight: "Portree, Isle of Skye",
-      hero: "Neist_Point",
-      blurb: "The Cuillin side of Skye. Fairy Pools first thing (arrive before 9am), Talisker Distillery for the peat-smoke tour, Dunvegan Castle and the Coral Beaches, and Neist Point Lighthouse on the westernmost tip for sunset. The Elgol boat to Loch Coruisk is an alternative half-day.",
-      attractions: [
-        { name: "Fairy Pools",             wiki: "Fairy_Pools",    desc: "Crystal-clear turquoise pools and waterfalls at the foot of the Cuillin. 30-min walk each way. Arrive early — extremely popular.", locale: "Glenbrittle" },
-        { name: "Talisker Distillery",     wiki: "Talisker_distillery", desc: "Skye's only single malt distillery, on the shores of Loch Harport. The peat-smoke standard tour is excellent — book ahead.", url: "https://www.malts.com/en-row/distilleries/talisker/", locale: "Carbost" },
-        { name: "Dunvegan Castle",         wiki: "Dunvegan_Castle", desc: "Oldest continuously inhabited castle in Scotland, seat of Clan MacLeod. Allow two hours.", url: "https://www.dunvegancastle.com", locale: "Dunvegan" },
-        { name: "Claigan Coral Beaches",   wiki: "Claigan",         desc: "Crushed white coralline algae makes these beaches glow against turquoise sea. 30-min walk from the car park near Dunvegan.", locale: "Dunvegan" },
-        { name: "Neist Point Lighthouse",  wiki: "Neist_Point",     desc: "The westernmost point of Skye, with a clifftop lighthouse and views to the Outer Hebrides. 25-min walk each way — best at sunset.", locale: "Glendale" },
-        { name: "Elgol & Loch Coruisk boat trip", wiki: "Loch_Coruisk", desc: "Small boat from Elgol pier into Loch Coruisk — surrounded by the Black Cuillin, the most dramatic anchorage in Britain. ~4 hours round trip. Book ahead.", url: "https://bellajane.co.uk/", locale: "Elgol" }
-      ],
-      hotels: [],
-      restaurants: [
-        { name: "Loch Bay Restaurant", note: "Michelin-starred seafood in Stein, Waternish — 30 min north of Portree. Book weeks ahead.", url: "https://www.lochbay-restaurant.co.uk/" }
-      ]
-    },
-
-    {
-      num: 12, date: "Fri 31 Jul", weekday: "Friday",
-      title: "Skye → Glencoe",
-      leg: "Skye Bridge · Glen Shiel · Fort William · Glencoe",
-      route: "A87 · A82",
-      miles: "100", drive: "2.5 hrs",
+      title: "Glenfinnan & the Jacobite → Glencoe",
+      leg: "Jacobite Steam Train · Glenfinnan · Ben Nevis · A82 south",
+      route: "A830 · A82",
+      miles: "50", drive: "1.5 hrs",
       overnight: "Glencoe / Ballachulish",
-      checkin: "2026-07-31", checkout: "2026-08-01",
-      hero: "Three_Sisters_of_Glencoe",
-      blurb: "Leave Portree in good time. Back across the Skye Bridge and south through Glen Shiel (Eilean Donan already done on Day 6). Lunch in Fort William under Ben Nevis, then the Three Sisters of Glencoe in late afternoon and a walkers' inn dinner at the Clachaig.",
+      checkin: "2026-07-30", checkout: "2026-08-01",
+      hero: "Glenfinnan_Viaduct",
+      blurb: "The Jacobite Steam Train departs Fort William 10:15 and crosses the Glenfinnan Viaduct — one of the great railway journeys in the world (book months ahead). If you'd rather drive, the Glenfinnan viewpoint gives the classic shot. Ben Nevis and Glen Nevis are on the doorstep. Then the short drive south to Glencoe for two nights.",
       attractions: [
-        { name: "Five Sisters of Kintail", wiki: "Five_Sisters_of_Kintail", desc: "One of Scotland's great mountain drives — second pass through, now southbound. The scenery from the car is the experience.", locale: "Glen Shiel" },
-        { name: "Ben Nevis",                wiki: "Ben_Nevis",       desc: "Britain's highest mountain at 1,345m. Drive into Glen Nevis for the view from the foot of the mountain.", locale: "Fort William" },
-        { name: "Glen Nevis gorge walk",    wiki: "Glen_Nevis",     desc: "1–2 hour walk through dramatic gorge — no equipment needed.", locale: "Fort William" },
-        { name: "Glencoe Visitor Centre",   wiki: "Glen_Coe",      desc: "Context on the 1692 Massacre of Glencoe. Walk the Signal Rock loop afterwards.", url: "https://www.nts.org.uk/visit/places/glencoe", locale: "Glencoe" },
-        { name: "Three Sisters of Glencoe", wiki: "Glen_Coe",      desc: "The unmissable viewpoint on the A82 — pull over and take it in.", locale: "Glencoe" }
+        { name: "Jacobite Steam Train",  wiki: "Jacobite_(train)",   desc: "Fort William to Mallaig and back, crossing the viaduct. Departs 10:15, returns 16:00. Book months ahead.", url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip", locale: "Fort William" },
+        { name: "Glenfinnan Viaduct",    wiki: "Glenfinnan_Viaduct", desc: "21-arch Victorian railway viaduct featured in the Harry Potter films. 15-minute walk to the viewpoint if you're not on the train.", locale: "Glenfinnan" },
+        { name: "Glenfinnan Monument",   wiki: "Glenfinnan_Monument", desc: "Marks where Bonnie Prince Charlie raised his standard in 1745.", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument", locale: "Glenfinnan" },
+        { name: "Ben Nevis",             wiki: "Ben_Nevis",       desc: "Britain's highest mountain at 1,345m. View it from the Glen Nevis road at the foot of the mountain.", locale: "Fort William" },
+        { name: "Glen Nevis gorge walk", wiki: "Glen_Nevis",     desc: "1–2 hour walk through a dramatic gorge to Steall Falls — no equipment needed. If the train ate the morning, save this for another trip.", locale: "Fort William" }
       ],
       hotels: [
         { name: "Clachaig Inn",        style: "Legendary walkers' inn, in the glen itself", price: "£110–£150", url: "https://www.clachaig.com",            locale: "Glencoe" },
@@ -369,21 +358,37 @@ window.TRIP = {
     },
 
     {
+      num: 12, date: "Fri 31 Jul", weekday: "Friday",
+      title: "Glencoe day",
+      leg: "Three Sisters · Glen Etive · Lost Valley walk",
+      route: "Local · A82 · Glen Etive",
+      miles: "40", drive: "—",
+      overnight: "Glencoe / Ballachulish",
+      hero: "Glen_Coe",
+      blurb: "A full day in the glen. The Three Sisters viewpoint on the A82 is unmissable. Walk the Lost Valley (Coire Gabhail, 2–3 hrs) where the MacDonalds hid their cattle, drive the dead-end Glen Etive road (the Skyfall location), and get context at the Glencoe Visitor Centre.",
+      attractions: [
+        { name: "Three Sisters of Glencoe", wiki: "Glen_Coe",    desc: "The unmissable viewpoint on the A82 — pull over and take it in.", locale: "Glencoe" },
+        { name: "Glencoe Visitor Centre",   wiki: "Glen_Coe",    desc: "Context on the 1692 Massacre of Glencoe. Walk the Signal Rock loop afterwards.", url: "https://www.nts.org.uk/visit/places/glencoe", locale: "Glencoe" },
+        { name: "Glen Etive",               wiki: "Glen_Etive",  desc: "12-mile dead-end road into a remote, beautiful glen used in James Bond Skyfall. Allow an hour for the round trip.", locale: "Glencoe" }
+      ],
+      hotels: [],
+      restaurants: [
+        { name: "Clachaig Inn (Boots Bar)", note: "The classic Glencoe walkers' dinner — ales, hearty food, mountain company.", url: "https://www.clachaig.com" }
+      ]
+    },
+
+    {
       num: 13, date: "Sat 1 Aug", weekday: "Saturday",
-      title: "Glencoe → Glasgow via Glenfinnan",
-      leg: "Glen Etive · Glenfinnan Viaduct · Loch Lomond",
-      route: "A82 · A830",
-      miles: "130", drive: "3.5 hrs",
+      title: "Glencoe → Glasgow via Loch Lomond",
+      leg: "A82 · Loch Lomond · Luss",
+      route: "A82",
+      miles: "95", drive: "2.5 hrs",
       overnight: "Glasgow",
       checkin: "2026-08-01", checkout: "2026-08-02",
-      hero: "Glenfinnan_Viaduct",
-      blurb: "Last day in the Highlands. Glen Etive at dawn for the Skyfall view, the Glenfinnan Viaduct (or the Jacobite Steam Train if you booked it), and Loch Lomond's western shore at Luss before pulling into Glasgow for one well-earned final dinner.",
+      hero: "Loch_Lomond",
+      blurb: "Drop down the A82 past Rannoch Moor and along the western shore of Loch Lomond. Lunch at Luss, then into Glasgow late afternoon for one final Scottish dinner — Cail Bruich or the Ubiquitous Chip.",
       attractions: [
-        { name: "Glen Etive",            wiki: "Glen_Etive",         desc: "12-mile dead-end road into a remote, beautiful glen used in James Bond Skyfall. Allow an hour for the round trip.", locale: "Glencoe" },
-        { name: "Glenfinnan Viaduct",    wiki: "Glenfinnan_Viaduct", desc: "21-arch Victorian railway viaduct featured in the Harry Potter films. 15-minute walk to the viewpoint.", locale: "Glenfinnan" },
-        { name: "Glenfinnan Monument",   wiki: "Glenfinnan_Monument", desc: "Marks where Bonnie Prince Charlie raised his standard in 1745.", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument", locale: "Glenfinnan" },
-        { name: "Jacobite Steam Train",  wiki: "Jacobite_(train)",   desc: "Fort William to Mallaig and back — one of the great railway journeys in the world. Book months ahead.", url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip", locale: "Fort William" },
-        { name: "Luss village",          wiki: "Luss",               desc: "Picturesque estate cottages on the western shore of Loch Lomond. Pub lunch at the Luss Inn.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond" }
+        { name: "Luss village", wiki: "Luss", desc: "Picturesque estate cottages on the western shore of Loch Lomond. Pub lunch at the Luss Inn, short shoreline walk.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond" }
       ],
       hotels: [
         { name: "Kimpton Blythswood Square", style: "5-star, 10-min walk to Glasgow Central", price: "£180–£230", url: "https://www.kimptonblythswoodsquare.com",        locale: "Glasgow" },

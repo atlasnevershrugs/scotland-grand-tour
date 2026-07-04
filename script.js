@@ -110,19 +110,25 @@
     heroStats.appendChild(d);
   });
 
-  /* ---------- ILLUSTRATED SVG MAP (overview, unchanged) ---------- */
+  /* ---------- ILLUSTRATED SVG MAP (Scotland highlighted, Oxford off-scale) ---------- */
   function buildIllustratedMap() {
-    const stops = T.route;
-    const W = 1100, H = 720;
-    const lats = stops.map(s => s.lat), lngs = stops.map(s => s.lng);
+    const W = 1100, H = 800;
+    const scot = T.route.filter(s => s.label !== 'Oxford');
+    const oxford = T.route.find(s => s.label === 'Oxford');
+
+    // Project ONLY the Scotland stops so Scotland fills the frame (not to scale
+    // versus England — Oxford is drawn separately below as an off-map node).
+    const lats = scot.map(s => s.lat), lngs = scot.map(s => s.lng);
     const latMin = Math.min(...lats), latMax = Math.max(...lats);
     const lngMin = Math.min(...lngs), lngMax = Math.max(...lngs);
-    const pad = 90;
+    const REGION = { x0: 175, x1: W - 130, y0: 150, y1: 560 };
     const project = (lat, lng) => [
-      pad + ((lng - lngMin) / (lngMax - lngMin)) * (W - 2*pad),
-      pad + ((latMax - lat) / (latMax - latMin)) * (H - 2*pad - 60)
+      REGION.x0 + ((lng - lngMin) / (lngMax - lngMin)) * (REGION.x1 - REGION.x0),
+      REGION.y0 + ((latMax - lat) / (latMax - latMin)) * (REGION.y1 - REGION.y0)
     ];
-    const points = stops.map(s => ({ ...s, xy: project(s.lat, s.lng) }));
+    const points = scot.map(s => ({ ...s, xy: project(s.lat, s.lng) }));
+
+    // Route line through the Scottish stops
     let pathD = '';
     points.forEach((p, i) => {
       const [x, y] = p.xy;
@@ -133,29 +139,44 @@
         pathD += ` Q ${mx} ${my} ${x} ${y}`;
       }
     });
+
+    // Highlighted "Scotland" panel behind the pins
+    const xs = points.map(p => p.xy[0]), ys = points.map(p => p.xy[1]);
+    const hx0 = Math.min(...xs) - 90, hx1 = Math.max(...xs) + 105;
+    const hy0 = Math.min(...ys) - 78, hy1 = Math.max(...ys) + 55;
+    const highlight = `
+      <g>
+        <rect x="${hx0}" y="${hy0}" width="${hx1 - hx0}" height="${hy1 - hy0}" rx="28"
+              fill="var(--heather)" opacity="0.08" />
+        <rect x="${hx0}" y="${hy0}" width="${hx1 - hx0}" height="${hy1 - hy0}" rx="28"
+              fill="none" stroke="var(--heather)" stroke-width="1.5" stroke-dasharray="2 7" opacity="0.55" />
+        <text x="${hx0 + 22}" y="${hy0 + 40}" style="font: italic 30px Fraunces, serif" fill="var(--heather)" opacity="0.6">Scotland</text>
+      </g>`;
+
     const coast = `
-      <path class="coast" d="M 120 540 Q 80 470 110 410 Q 70 330 130 270 Q 100 200 160 150 Q 200 110 270 100 Q 360 90 430 130" />
-      <path class="coast" d="M 800 540 Q 870 480 860 410 Q 900 340 870 270 Q 920 210 880 150" />
-      <path class="coast" d="M 250 600 Q 360 620 470 600 Q 600 590 710 600" />
+      <path class="coast" d="M 150 540 Q 110 470 140 410 Q 100 330 160 270 Q 130 200 190 150 Q 230 110 300 100" />
+      <path class="coast" d="M 820 540 Q 890 480 880 410 Q 920 340 890 270 Q 940 210 900 150" />
     `;
     const compass = `
-      <g class="compass" transform="translate(990,90)">
+      <g class="compass" transform="translate(1010,100)">
         <circle r="22" fill="none" stroke="currentColor" stroke-width="1"/>
         <path d="M 0 -18 L 4 0 L 0 18 L -4 0 Z" />
         <text x="0" y="-26" text-anchor="middle" fill="currentColor" style="font: italic 11px Fraunces, serif">N</text>
       </g>
     `;
+
     const pinSvg = points.map((p, i) => {
       const [x, y] = p.xy;
-      const fill = p.label === 'Oxford' ? 'var(--whisky)' : 'var(--heather)';
+      const anchorLeft = x > W * 0.72;
       return `
         <g class="pin" data-day="${p.day}" style="cursor:pointer" transform="translate(${x},${y})">
-          <circle class="pin-circle" r="14" style="fill:${fill}" />
+          <circle class="pin-circle" r="14" />
           <text class="pin-number" text-anchor="middle" dy="4">${i + 1}</text>
-          <text class="pin-label" text-anchor="${x > W*0.7 ? 'end' : 'start'}" x="${x > W*0.7 ? -20 : 20}" y="-2">${p.label}</text>
-          <text class="pin-nights" text-anchor="${x > W*0.7 ? 'end' : 'start'}" x="${x > W*0.7 ? -20 : 20}" y="14">${p.nights === 'drop-off' ? 'Drop-off' : 'Night ' + p.nights}</text>
+          <text class="pin-label" text-anchor="${anchorLeft ? 'end' : 'start'}" x="${anchorLeft ? -20 : 20}" y="-2">${p.label}</text>
+          <text class="pin-nights" text-anchor="${anchorLeft ? 'end' : 'start'}" x="${anchorLeft ? -20 : 20}" y="14">${p.nights === 'drop-off' ? 'Drop-off' : 'Nights ' + p.nights}</text>
         </g>`;
     }).join('');
+
     const detourSvg = T.detours.map(d => {
       const [x, y] = project(d.lat, d.lng);
       return `<g class="detour" transform="translate(${x},${y})">
@@ -163,23 +184,43 @@
         <text class="pin-nights" text-anchor="start" x="8" y="3">${d.label}</text>
       </g>`;
     }).join('');
+
+    // Oxford as an off-scale node at the bottom, linked by a long dashed "drive"
+    const glasgow = points[points.length - 1].xy; // Glasgow is the last Scottish stop
+    const oxX = W * 0.5, oxY = 728;
+    const oxfordSvg = `
+      <g>
+        <line x1="${glasgow[0]}" y1="${glasgow[1] + 18}" x2="${oxX}" y2="${oxY - 20}"
+              stroke="var(--whisky)" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" opacity="0.8" />
+        <text x="${(glasgow[0] + oxX) / 2 + 18}" y="${(glasgow[1] + oxY) / 2}" style="font: italic 13px Fraunces, serif" fill="var(--whisky)">350 mi · ~5½ hrs south</text>
+        <g class="pin" data-day="${oxford.day}" style="cursor:pointer" transform="translate(${oxX},${oxY})">
+          <circle r="13" fill="var(--whisky)" stroke="var(--cream)" stroke-width="2" />
+          <text text-anchor="middle" dy="4" style="font: 700 11px Inter, sans-serif" fill="var(--cream)">★</text>
+          <text text-anchor="middle" x="0" y="34" style="font: 500 15px Fraunces, serif" fill="var(--ink)">Oxford</text>
+          <text text-anchor="middle" x="0" y="52" style="font: italic 11px Fraunces, serif" fill="var(--stone)">Drop-off · England</text>
+        </g>
+      </g>`;
+
     document.getElementById('illustrated-map').innerHTML = `
-      <svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img">
+      <svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Route through Scotland ending at Oxford">
         <rect width="${W}" height="${H}" fill="var(--cream)" />
-        <g opacity=".5">${coast}</g>
+        <g opacity=".45">${coast}</g>
+        ${highlight}
         <g>${detourSvg}</g>
         <path class="route-line" d="${pathD}" />
+        ${oxfordSvg}
         <g>${pinSvg}</g>
         ${compass}
-        <text x="60" y="60" class="title-serif">Edinburgh → Oxford</text>
-        <text x="60" y="82" class="meta">14 days · ~1,100 miles · 12 driving days</text>
-        <g transform="translate(60, ${H - 60})">
+        <text x="60" y="62" class="title-serif">Edinburgh → Oxford</text>
+        <text x="60" y="84" class="meta">14 days · ~1,150 miles · 8 Highland &amp; island stops</text>
+        <g transform="translate(60, ${H - 46})">
           <circle r="6" fill="var(--heather)"/>
           <text x="14" y="4" class="legend">Overnight stop</text>
           <circle cx="160" r="4" fill="var(--whisky)"/>
-          <text x="170" y="4" class="legend">Key day-trip waypoint</text>
+          <text x="170" y="4" class="legend">Day-trip waypoint</text>
         </g>
       </svg>`;
+
     document.querySelectorAll('.illustrated-map .pin').forEach(g => {
       g.addEventListener('click', () => {
         const day = g.getAttribute('data-day');
