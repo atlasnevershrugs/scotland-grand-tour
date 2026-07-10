@@ -264,6 +264,16 @@ h1, h2, h3, h4, h5 { margin: 0; font-family: var(--serif); font-weight: 500; let
   white-space: nowrap;
 }
 .bk-status-done { background: #0b6e4f; color: white; }
+.bk-status-partial { background: var(--whisky); color: var(--cream); }
+.bk-stop-partial { border-left: 4px solid var(--whisky); }
+.bk-partial-note {
+  margin: 0 0 18px;
+  padding: 12px 16px;
+  background: rgba(184,118,62,.08);
+  border: 1px solid rgba(184,118,62,.25);
+  border-radius: var(--radius);
+  font-size: 13.5px; line-height: 1.5; color: var(--ink-soft);
+}
 .bk-status-todo {
   background: var(--bg-alt); color: var(--whisky);
   border: 1px solid rgba(184,118,62,.25);

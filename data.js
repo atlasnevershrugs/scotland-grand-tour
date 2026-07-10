@@ -71,6 +71,7 @@ window.TRIP = {
   // Pending items render first (numbered by urgency); booked items carry
   // done:true and are grouped at the end with a "Booked" badge, no specifics.
   priorityBookings: [
+    { what: "Fort William — nights 2 & 3",  dates: "Thu 30 Jul → Sat 1 Aug · 2 nights",  why: "Lawriestone cancelled (no bed for 3); night 1 held at Clan MacDuff — need a triple/family room", url: "https://www.booking.com/searchresults.html?ss=Fort+William" },
     { what: "CalMac Sconser↔Raasay ferry", dates: "Sat 25 Jul + day-trips + Tue 28 out", why: "Foot passengers — book/verify Sconser parking",   url: "https://ticketing.calmac.co.uk/B2C-Calmac/#/desktop/step1/destinations/single" },
     { what: "Jacobite Steam Train",        dates: "Thu 30 Jul · Day 11 morning",         why: "Sells out months ahead in summer",                 url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
     { what: "Torridon area",               dates: "Tue 28 Jul → Wed 29 Jul · 1 night",   why: "Remote, tiny stock — book early",                  url: "https://www.thetorridon.com" },
@@ -81,8 +82,7 @@ window.TRIP = {
 
     { what: "Isle of Raasay Distillery",   dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the distillery — your Skye base", url: "https://raasaydistillery.com/visit/borodale-house/", done: true },
     { what: "Pitlochry",                   dates: "Wed 22 Jul → Thu 23 Jul · 1 night",   why: "First Highland overnight",                         url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/", done: true },
-    { what: "Drumnadrochit",               dates: "Thu 23 Jul → Sat 25 Jul · 2 nights",  why: "Loch Ness base",                                   url: "https://www.airbnb.com", done: true },
-    { what: "Fort William",                dates: "Wed 29 Jul → Sat 1 Aug · 3 nights",   why: "Clan MacDuff (Wed) + Lawriestone (Thu–Fri) — both on Achintore Rd", url: "https://www.clanmacduff.co.uk/", done: true }
+    { what: "Drumnadrochit",               dates: "Thu 23 Jul → Sat 25 Jul · 2 nights",  why: "Loch Ness base",                                   url: "https://www.airbnb.com", done: true }
   ],
 
   practical: [
@@ -365,7 +365,8 @@ window.TRIP = {
       route: "A896 · A87 · A82",
       miles: "95", drive: "2.5 hrs (after walks)",
       overnight: "Fort William",
-      checkin: "2026-07-29", checkout: "2026-08-01", booked: true,
+      checkin: "2026-07-29", checkout: "2026-08-01", partial: true,
+      partialNote: "Night 1 (Wed 29 Jul) is booked at Clan MacDuff. Nights 2 & 3 (Thu–Fri 30–31 Jul) still need booking — the Lawriestone booking was cancelled as they couldn't provide a bed for three. Book a triple/family room for those two nights (simplest: extend Clan MacDuff, whose triple already fits the party).",
       hero: "Beinn_Eighe",
       blurb: "The morning is the recovered Torridon walking day — the Beinn Eighe Mountain Trail climbs to 550m through 750-million-year-old sandstone for some of Scotland's finest mountain views. Drive the length of Loch Maree, then head south to Fort William, your single base for the next THREE nights — one unpack for Glenfinnan, the Jacobite train and the Glencoe day-trip.",
       attractions: [

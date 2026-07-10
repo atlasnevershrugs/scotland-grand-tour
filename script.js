@@ -781,6 +781,7 @@
       const loc = bookingsLocale(d);
       const stays = (E.stays && E.stays[d.num]) || [];
       const isBooked = !!d.booked;
+      const isPartial = !!d.partial;
       const nights = nightsBetween(d.checkin, d.checkout);
 
       const datesInner = `
@@ -864,12 +865,19 @@
         grid.appendChild(details);
       } else {
         const card = document.createElement('article');
-        card.className = 'bk-stop';
+        card.className = 'bk-stop' + (isPartial ? ' bk-stop-partial' : '');
+        const statusBadge = isPartial
+          ? `<span class="bk-status bk-status-partial">◐ Part-booked</span>`
+          : `<span class="bk-status bk-status-todo">To book</span>`;
+        const noteBlock = (isPartial && d.partialNote)
+          ? `<p class="bk-partial-note">${d.partialNote}</p>`
+          : '';
         card.innerHTML = `
           <header class="bk-head">
             ${datesInner}
-            <span class="bk-status bk-status-todo">To book</span>
+            ${statusBadge}
           </header>
+          ${noteBlock}
           ${body}`;
         grid.appendChild(card);
       }
