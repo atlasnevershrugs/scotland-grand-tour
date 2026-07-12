@@ -74,6 +74,19 @@ h1, h2, h3, h4, h5 { margin: 0; font-family: var(--serif); font-weight: 500; let
 }
 .topnav-links a:hover::after { transform: scaleX(1); }
 @media (max-width: 640px) { .topnav-links { gap: 16px; } .topnav-links a { font-size: 13px; } }
+.topnav-lock { color: var(--heather) !important; font-weight: 600; }
+.topnav-lock::after { display: none !important; }
+
+/* private booking dossier link (in Bookings section) */
+.doss-link-wrap { margin-top: 20px; }
+.doss-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--cream); border: 1px solid var(--heather);
+  border-radius: 100px; padding: 11px 22px;
+  font-size: 14px; font-weight: 600; color: var(--heather);
+  transition: background .2s ease, color .2s ease;
+}
+.doss-link:hover { background: var(--heather); color: var(--cream); }
 
 /* ------- hero ------- */
 .hero {

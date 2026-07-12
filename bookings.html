@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Booking dossier · Scotland Grand Tour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F4EFE6; --paper:#FBF7EE; --cream:#FFFCF4; --ink:#1A1F2B; --ink-soft:#4A5161;
+      --line:#D8CFBC; --bg-alt:#ECE4D4; --heather:#6B4E8C; --loch:#2C5F66; --whisky:#B8763E; --stone:#8B8478;
+      --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,system-ui,sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--sans);color:var(--ink);background:
+      radial-gradient(ellipse at 80% 0%,rgba(107,78,140,.10),transparent 55%),
+      radial-gradient(ellipse at 0% 100%,rgba(44,95,102,.10),transparent 55%),var(--bg);
+      line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+    .wrap{max-width:1000px;margin:0 auto;padding:28px clamp(18px,4vw,48px) 80px}
+    .back{display:inline-block;margin-bottom:28px;font-size:14px;font-weight:600;color:var(--heather);text-decoration:none}
+    .back:hover{color:var(--ink)}
+
+    /* lock screen */
+    .lock{min-height:56vh;display:flex;align-items:center;justify-content:center}
+    .lock-card{background:var(--cream);border:1px solid var(--line);border-radius:16px;
+      box-shadow:0 18px 50px rgba(26,31,43,.10);padding:40px 34px;max-width:420px;width:100%;text-align:center}
+    .lock-emoji{font-size:40px;margin-bottom:8px}
+    .lock-card h1{font-family:var(--serif);font-weight:500;font-size:28px;margin:0 0 8px}
+    .lock-card p{font-size:14px;color:var(--ink-soft);margin:0 0 22px}
+    #f{display:flex;flex-direction:column;gap:12px}
+    #pw{padding:13px 16px;border:1px solid var(--line);border-radius:10px;font-size:16px;font-family:var(--sans);
+      background:var(--paper);color:var(--ink);width:100%}
+    #pw:focus{outline:none;border-color:var(--heather);box-shadow:0 0 0 3px rgba(107,78,140,.15)}
+    #f button{padding:13px 16px;border:0;border-radius:10px;background:var(--heather);color:var(--cream);
+      font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;transition:filter .2s}
+    #f button:hover{filter:brightness(1.08)}
+    #f button:disabled{opacity:.6;cursor:wait}
+    .err{color:#b03636;font-size:13px;margin-top:14px !important;font-weight:600}
+    .hint{font-size:12px;color:var(--stone);margin-top:18px !important}
+
+    /* dossier */
+    .doss{background:var(--cream);border:1px solid var(--line);border-radius:16px;
+      box-shadow:0 12px 40px rgba(26,31,43,.08);padding:clamp(24px,4vw,48px)}
+    .doss-title{font-family:var(--serif);font-weight:500;font-size:clamp(30px,5vw,46px);letter-spacing:-.02em;margin:0 0 6px}
+    .doss-sub{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-soft);margin:0 0 28px}
+    .doss-h2{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--loch);
+      margin:34px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+    .doss-tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+    .doss-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+    .doss-table thead{background:var(--bg-alt)}
+    .doss-table th{text-align:left;padding:11px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--ink-soft);font-weight:600;border-bottom:1px solid var(--line)}
+    .doss-table td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+    .doss-table tr:last-child td{border-bottom:none}
+    .doss-table td small{color:var(--stone)}
+    .doss-list{margin:0;padding-left:20px}
+    .doss-list li{font-size:14.5px;color:var(--ink-soft);margin-bottom:8px;line-height:1.55}
+    .doss-list strong{color:var(--ink)}
+    .doss-foot{margin-top:30px;font-size:12px;color:var(--stone);font-style:italic}
+    .print{display:inline-block;margin:22px 0 0;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+      font-weight:600;color:var(--loch);background:none;border:1px solid var(--line);border-radius:100px;
+      padding:8px 16px;cursor:pointer;font-family:var(--sans)}
+    @media print{.back,.print{display:none}body{background:#fff}.doss{border:0;box-shadow:none;padding:0}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="index.html">← Back to itinerary</a>
+
+    <section id="lock" class="lock">
+      <div class="lock-card">
+        <div class="lock-emoji">🔒</div>
+        <h1>Private booking details</h1>
+        <p>Enter the password to view references, addresses and confirmations.</p>
+        <form id="f" autocomplete="off">
+          <input id="pw" type="password" placeholder="Password" autocomplete="current-password" autofocus />
+          <button type="submit" id="go">Unlock</button>
+        </form>
+        <p id="err" class="err" hidden>Wrong password — try again.</p>
+        <p class="hint">These details are AES-encrypted; nothing is readable without the password.</p>
+      </div>
+    </section>
+
+    <section id="content" class="doss" hidden></section>
+    <button id="print" class="print" hidden onclick="window.print()">Print / save as PDF</button>
+  </main>
+
+  <script src="bookings-blob.js"></script>
+  <script>
+    (function(){
+      var form = document.getElementById('f');
+      var pw = document.getElementById('pw');
+      var err = document.getElementById('err');
+      var go = document.getElementById('go');
+
+      function b64ToBytes(b64){
+        var raw = atob(b64), out = new Uint8Array(raw.length);
+        for (var i=0;i<raw.length;i++) out[i] = raw.charCodeAt(i);
+        return out;
+      }
+
+      async function unlock(password){
+        if (!window.BOOKINGS_BLOB || !window.crypto || !crypto.subtle){
+          throw new Error('unavailable');
+        }
+        var bytes = b64ToBytes(window.BOOKINGS_BLOB);
+        var salt = bytes.slice(0,16), iv = bytes.slice(16,28), data = bytes.slice(28);
+        var enc = new TextEncoder();
+        var keyMat = await crypto.subtle.importKey('raw', enc.encode(password), 'PBKDF2', false, ['deriveKey']);
+        var key = await crypto.subtle.deriveKey(
+          {name:'PBKDF2', salt:salt, iterations: window.BOOKINGS_ITER||250000, hash:'SHA-256'},
+          keyMat, {name:'AES-GCM', length:256}, false, ['decrypt']);
+        var plain = await crypto.subtle.decrypt({name:'AES-GCM', iv:iv}, key, data);
+        return new TextDecoder().decode(plain);
+      }
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        err.hidden = true; go.disabled = true; go.textContent = 'Unlocking…';
+        try {
+          var html = await unlock(pw.value);
+          document.getElementById('content').innerHTML = html;
+          document.getElementById('content').hidden = false;
+          document.getElementById('print').hidden = false;
+          document.getElementById('lock').hidden = true;
+        } catch (ex) {
+          err.hidden = false; pw.value = ''; pw.focus();
+        } finally {
+          go.disabled = false; go.textContent = 'Unlock';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
