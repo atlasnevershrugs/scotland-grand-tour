@@ -71,7 +71,6 @@ window.TRIP = {
   // Pending items render first (numbered by urgency); booked items carry
   // done:true and are grouped at the end with a "Booked" badge, no specifics.
   priorityBookings: [
-    { what: "CalMac Sconser↔Raasay ferry", dates: "Sat 25 Jul + day-trips + Tue 28 out", why: "Foot passengers — book/verify Sconser parking",   url: "https://ticketing.calmac.co.uk/B2C-Calmac/#/desktop/step1/destinations/single" },
     { what: "Jacobite Steam Train",        dates: "Thu 30 Jul · Day 11 morning",         why: "Sells out months ahead in summer",                 url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
     { what: "Torridon area",               dates: "Tue 28 Jul → Wed 29 Jul · 1 night",   why: "Remote, tiny stock — book early",                  url: "https://www.thetorridon.com" },
     { what: "Applecross Inn lunch",        dates: "Tue 28 Jul · Day 9 lunch",            why: "Famous pub, books up fast",                        url: "https://www.applecross.uk.com/inn/" },
@@ -83,7 +82,8 @@ window.TRIP = {
     { what: "Pitlochry",                   dates: "Wed 22 Jul → Thu 23 Jul · 1 night",   why: "First Highland overnight",                         url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/", done: true },
     { what: "Drumnadrochit",               dates: "Thu 23 Jul → Sat 25 Jul · 2 nights",  why: "Loch Ness base",                                   url: "https://www.airbnb.com", done: true },
     { what: "Fort William",                dates: "Wed 29 Jul → Sat 1 Aug · 3 nights",   why: "Clan MacDuff (night 1) + Beinn Brèagha 2-bed house (nights 2–3)", url: "https://www.clanmacduff.co.uk/", done: true },
-    { what: "Car rental",                  dates: "Mon 20 Jul → Sun 2 Aug",              why: "Enterprise — Edinburgh Airport pickup, Oxford drop-off", url: "https://www.enterprise.co.uk", done: true }
+    { what: "Car rental",                  dates: "Mon 20 Jul → Sun 2 Aug",              why: "Enterprise — Edinburgh Airport pickup, Oxford drop-off", url: "https://www.enterprise.co.uk", done: true },
+    { what: "CalMac Sconser⇄Raasay ferry", dates: "Round trip · Sat 25 + Tue 28 Jul",     why: "Foot round trip booked (3 adults); day-trip hops 26/27 are turn-up-and-go", url: "https://ticketing.calmac.co.uk/B2C-Calmac/#/desktop/step1/destinations/single", done: true }
   ],
 
   practical: [
