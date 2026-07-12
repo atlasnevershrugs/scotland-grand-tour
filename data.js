@@ -72,7 +72,6 @@ window.TRIP = {
   // done:true and are grouped at the end with a "Booked" badge, no specifics.
   priorityBookings: [
     { what: "Jacobite Steam Train",        dates: "Thu 30 Jul · Day 11 morning",         why: "Sells out months ahead in summer",                 url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
-    { what: "Torridon area",               dates: "Tue 28 Jul → Wed 29 Jul · 1 night",   why: "Remote, tiny stock — book early",                  url: "https://www.thetorridon.com" },
     { what: "Applecross Inn lunch",        dates: "Tue 28 Jul · Day 9 lunch",            why: "Famous pub, books up fast",                        url: "https://www.applecross.uk.com/inn/" },
     { what: "Edinburgh",                   dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",  why: "City centre fills up in July",                     url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
     { what: "Glasgow",                     dates: "Sat 1 Aug → Sun 2 Aug · 1 night",     why: "Last night before the Oxford drive",               url: "https://www.booking.com/searchresults.html?ss=Glasgow" },
@@ -81,6 +80,7 @@ window.TRIP = {
     { what: "Isle of Raasay Distillery",   dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the distillery — your Skye base", url: "https://raasaydistillery.com/visit/borodale-house/", done: true },
     { what: "Pitlochry",                   dates: "Wed 22 Jul → Thu 23 Jul · 1 night",   why: "First Highland overnight",                         url: "https://www.rosemount-hotel.co.uk/b-and-b-pitlochry/", done: true },
     { what: "Drumnadrochit",               dates: "Thu 23 Jul → Sat 25 Jul · 2 nights",  why: "Loch Ness base",                                   url: "https://www.airbnb.com", done: true },
+    { what: "Torridon (Ledgowan Lodge)",   dates: "Tue 28 Jul → Wed 29 Jul · 1 night",   why: "Four Poster + rollout bed, breakfast (Achnasheen)", url: "https://www.ledgowanlodge.co.uk/", done: true },
     { what: "Fort William",                dates: "Wed 29 Jul → Sat 1 Aug · 3 nights",   why: "Clan MacDuff (night 1) + Beinn Brèagha 2-bed house (nights 2–3)", url: "https://www.clanmacduff.co.uk/", done: true },
     { what: "Car rental",                  dates: "Mon 20 Jul → Sun 2 Aug",              why: "Enterprise — Edinburgh Airport pickup, Oxford drop-off", url: "https://www.enterprise.co.uk", done: true },
     { what: "CalMac Sconser⇄Raasay ferry", dates: "Round trip · Sat 25 + Tue 28 Jul",     why: "Foot round trip booked (3 adults); day-trip hops 26/27 are turn-up-and-go", url: "https://ticketing.calmac.co.uk/B2C-Calmac/#/desktop/step1/destinations/single", done: true }
@@ -340,7 +340,7 @@ window.TRIP = {
       route: "A87 · A896 · Bealach na Bà",
       miles: "95", drive: "3.5 hrs",
       overnight: "Torridon",
-      checkin: "2026-07-28", checkout: "2026-07-29",
+      checkin: "2026-07-28", checkout: "2026-07-29", booked: true,
       hero: "Bealach_na_B%C3%A0",
       blurb: "A quick Raasay morning (Calum's Road drive, distillery shop), then the final ferry to Sconser and off the island. Over the Skye Bridge to the mainland and the legendary Bealach na Bà — the Pass of the Cattle — climbing 626m in hairpin bends. Lunch at the Applecross Inn, then north into Torridon.",
       attractions: [
