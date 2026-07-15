@@ -566,30 +566,28 @@ window.TRIP_ENRICH = {
       }
     ],
 
-    // ---- Day 13: Glasgow (night 13 only) ------------------------------------
+    // ---- Day 13: Lake District (night 13 only, en route to Oxford) ----------
     13: [
       {
-        title: "Merchant City apartments (Airbnb)",
+        title: "Windermere & Ambleside stays (Airbnb)",
         type: "airbnb-area",
-        url: "https://www.airbnb.co.uk/merchant-city-glasgow-city-united-kingdom/stays/apartments?checkin=2026-08-01&checkout=2026-08-02&adults=3&price_max=250&currency=GBP",
-        why: "One-night Glasgow handover before the long drive south. Merchant City keeps you central for dinner at Cail Bruich or Ubiquitous Chip.",
-        price: "£90–£220/night"
+        url: "https://www.airbnb.co.uk/s/Windermere--Cumbria--United-Kingdom/homes?checkin=2026-08-01&checkout=2026-08-02&adults=3&price_max=250&currency=GBP",
+        why: "The central Lakes towns hold the most stock — apartments and cottages that sleep 3, with single-night stays possible (rural cottages tend to be weekly lets).",
+        price: "£110–£230/night"
       },
       {
-        title: "No.15 Boutique B&B — Mackintosh Suite",
+        title: "The Waterhead, Ambleside",
         type: "bnb",
-        url: "https://www.15glasgow.com/",
-        image: "https://www.15glasgow.com/wp-content/uploads/2019/05/Mackintosh-Room-1.jpg",
-        why: "A-listed Victorian townhouse on Woodside Place with a genuine Charles Rennie Mackintosh-themed suite. Michelin and Good Hotel Guide recommended.",
-        price: "£140–£200/night"
+        url: "https://www.englishlakes.co.uk/hotels/waterhead-hotel/",
+        why: "Lakeside inn right at Waterhead pier on Windermere — family rooms, restaurant, park up and walk to dinner. Ideal one-night stop.",
+        price: "£160–£230/night"
       },
       {
-        title: "Boutique 50",
+        title: "Ambleside Salutation Hotel",
         type: "bnb",
-        url: "https://www.boutique50.co.uk/",
-        image: "https://www.boutique50.co.uk/wp-content/uploads/2021/03/boutique-50-glasgow-exterior.jpg",
-        why: "Independent 10-room boutique on a quiet West End street near Kelvingrove and Finnieston. Family room from £133/night.",
-        price: "£133–£210/night"
+        url: "https://www.hotelambleside.uk.com/",
+        why: "Central Ambleside with family rooms and a small spa — walkable to pubs, shops and the pier.",
+        price: "£130–£200/night"
       }
     ]
   }

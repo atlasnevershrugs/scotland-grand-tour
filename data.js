@@ -6,7 +6,7 @@
 window.TRIP = {
   title: "Scotland Grand Tour",
   subtitle: "Edinburgh to Oxford via Loch Ness, Raasay, Skye, Torridon and Glencoe",
-  dates: "Monday 20 July – Saturday 1 August 2026",
+  dates: "Monday 20 July – Sunday 2 August 2026",
   travellers: "2 adults + 1 teen (15)",
   pickup: "Edinburgh Airport",
   dropoff: "Oxford city centre",
@@ -21,10 +21,10 @@ window.TRIP = {
   },
 
   stats: [
-    { label: "Days", value: "13" },
-    { label: "Overnight stops", value: "7" },
+    { label: "Days", value: "14" },
+    { label: "Overnight stops", value: "8" },
     { label: "Total miles", value: "~1,250" },
-    { label: "Driving days", value: "9" }
+    { label: "Driving days", value: "10" }
   ],
 
   route: [
@@ -34,7 +34,8 @@ window.TRIP = {
     { lat: 57.3700, lng: -6.0676, label: "Raasay",        nights: "6–8",   day: 6  },
     { lat: 57.5470, lng: -5.5100, label: "Torridon",      nights: "9",     day: 9  },
     { lat: 56.8198, lng: -5.1052, label: "Fort William",  nights: "10–12", day: 10 },
-    { lat: 51.7520, lng: -1.2577, label: "Oxford",        nights: "drop-off", day: 13 }
+    { lat: 54.3807, lng: -2.9063, label: "Lake District", nights: "13",    day: 13 },
+    { lat: 51.7520, lng: -1.2577, label: "Oxford",        nights: "drop-off", day: 14 }
   ],
 
   detours: [
@@ -73,6 +74,7 @@ window.TRIP = {
     { what: "Jacobite Steam Train",        dates: "Thu 30 Jul · Day 11 morning",         why: "Sells out months ahead in summer",                 url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
     { what: "Applecross Inn lunch",        dates: "Tue 28 Jul · Day 9 lunch",            why: "Famous pub, books up fast",                        url: "https://www.applecross.uk.com/inn/" },
     { what: "Edinburgh",                   dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",  why: "City centre fills up in July",                     url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
+    { what: "Lake District",               dates: "Sat 1 Aug → Sun 2 Aug · 1 night",     why: "Overnight breaking the Fort William → Oxford drive — book a room for 3", url: "https://www.booking.com/searchresults.html?ss=Lake+District" },
     { what: "Elgol boat trip (optional)",  dates: "Mon 27 Jul · Day 8",                  why: "Loch Coruisk — small boats, limited slots",        url: "https://bellajane.co.uk/" },
 
     { what: "Isle of Raasay Distillery",   dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the distillery — your Skye base", url: "https://raasaydistillery.com/visit/borodale-house/", done: true },
@@ -426,15 +428,36 @@ window.TRIP = {
 
     {
       num: 13, date: "Sat 1 Aug", weekday: "Saturday",
-      title: "Fort William → Oxford",
-      leg: "A82 · Loch Lomond · M74 · M6 · M40 — the long drive south",
-      route: "A82 · M74 · M6 · M40",
-      miles: "~555", drive: "9–9.5 hrs",
+      title: "Fort William → Lake District",
+      leg: "A82 · Loch Lomond · M74 · M6 — halfway south to Cumbria",
+      route: "A82 · M74 · M6",
+      miles: "~250", drive: "4–4.5 hrs",
+      overnight: "Lake District",
+      checkin: "2026-08-01", checkout: "2026-08-02",
+      hero: "Lake_District",
+      blurb: "Break the long haul south. Down the A82 through Glencoe and along Loch Lomond (leg-stretch at Luss), then M74/M6 into Cumbria. An easy afternoon arrival in the Lake District — Windermere or Ambleside — for a lakeside evening before the final push to Oxford tomorrow.",
+      attractions: [
+        { name: "Luss village", wiki: "Luss", desc: "Loch Lomond leg-stretch on the way south — pretty estate cottages and a quick shoreline walk before the motorway.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond" },
+        { name: "Windermere & Ambleside", wiki: "Windermere", desc: "England's largest lake. Late-afternoon arrival — a lakeside stroll or short cruise, then dinner in Ambleside or Bowness.", locale: "Lake District" }
+      ],
+      hotels: [
+        { name: "The Waterhead, Ambleside",       style: "Lakeside inn at Waterhead pier, family rooms", price: "£160–£230", url: "https://www.englishlakes.co.uk/hotels/waterhead-hotel/", locale: "Ambleside" },
+        { name: "Ambleside Salutation Hotel",     style: "Central Ambleside, family rooms + small spa",  price: "£130–£200", url: "https://www.hotelambleside.uk.com/", locale: "Ambleside" },
+        { name: "Lindeth Howe, Bowness",          style: "Country-house hotel above Windermere",         price: "£150–£220", url: "https://www.lindeth-howe.co.uk/", locale: "Bowness" }
+      ],
+      restaurants: []
+    },
+
+    {
+      num: 14, date: "Sun 2 Aug", weekday: "Sunday",
+      title: "Lake District → Oxford",
+      leg: "M6 · M40 — the final leg",
+      route: "M6 · M40",
+      miles: "~270", drive: "4.5–5 hrs",
       overnight: "Oxford",
       hero: "Oxford",
-      blurb: "The big one — an early start. South down the A82 through Glencoe and along Loch Lomond (stretch your legs at Luss before the motorways), then the long haul: M74 past Glasgow, M6 to Birmingham, M40 into Oxford. The Highland road trip ends here — your daughter's residential course begins the next day.",
+      blurb: "The last stretch — M6 south, M40 into Oxford, arriving early-to-mid afternoon, comfortable for your daughter's course check-in. The Highland road trip ends here; the relaxed Oxford fortnight begins.",
       attractions: [
-        { name: "Luss village", wiki: "Luss", desc: "Loch Lomond leg-stretch to break the first hour — pretty estate cottages and a quick shoreline walk before the motorway grind.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond" },
         { name: "Oxford", wiki: "Oxford", desc: "Journey's end. Settle in ahead of your daughter's residential course (2–15 Aug).", locale: "Oxford" }
       ],
       hotels: [],
