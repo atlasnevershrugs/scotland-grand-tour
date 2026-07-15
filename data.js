@@ -6,7 +6,7 @@
 window.TRIP = {
   title: "Scotland Grand Tour",
   subtitle: "Edinburgh to Oxford via Loch Ness, Raasay, Skye, Torridon and Glencoe",
-  dates: "Monday 20 July – Sunday 2 August 2026",
+  dates: "Monday 20 July – Saturday 1 August 2026",
   travellers: "2 adults + 1 teen (15)",
   pickup: "Edinburgh Airport",
   dropoff: "Oxford city centre",
@@ -21,9 +21,9 @@ window.TRIP = {
   },
 
   stats: [
-    { label: "Days", value: "14" },
-    { label: "Overnight stops", value: "8" },
-    { label: "Total miles", value: "~1,150" },
+    { label: "Days", value: "13" },
+    { label: "Overnight stops", value: "7" },
+    { label: "Total miles", value: "~1,250" },
     { label: "Driving days", value: "9" }
   ],
 
@@ -34,8 +34,7 @@ window.TRIP = {
     { lat: 57.3700, lng: -6.0676, label: "Raasay",        nights: "6–8",   day: 6  },
     { lat: 57.5470, lng: -5.5100, label: "Torridon",      nights: "9",     day: 9  },
     { lat: 56.8198, lng: -5.1052, label: "Fort William",  nights: "10–12", day: 10 },
-    { lat: 55.8642, lng: -4.2518, label: "Glasgow",       nights: "13",    day: 13 },
-    { lat: 51.7520, lng: -1.2577, label: "Oxford",        nights: "drop-off", day: 14 }
+    { lat: 51.7520, lng: -1.2577, label: "Oxford",        nights: "drop-off", day: 13 }
   ],
 
   detours: [
@@ -74,7 +73,6 @@ window.TRIP = {
     { what: "Jacobite Steam Train",        dates: "Thu 30 Jul · Day 11 morning",         why: "Sells out months ahead in summer",                 url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
     { what: "Applecross Inn lunch",        dates: "Tue 28 Jul · Day 9 lunch",            why: "Famous pub, books up fast",                        url: "https://www.applecross.uk.com/inn/" },
     { what: "Edinburgh",                   dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",  why: "City centre fills up in July",                     url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
-    { what: "Glasgow",                     dates: "Sat 1 Aug → Sun 2 Aug · 1 night",     why: "Last night before the Oxford drive",               url: "https://www.booking.com/searchresults.html?ss=Glasgow" },
     { what: "Elgol boat trip (optional)",  dates: "Mon 27 Jul · Day 8",                  why: "Loch Coruisk — small boats, limited slots",        url: "https://bellajane.co.uk/" },
 
     { what: "Isle of Raasay Distillery",   dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the distillery — your Skye base", url: "https://raasaydistillery.com/visit/borodale-house/", done: true },
@@ -98,8 +96,7 @@ window.TRIP = {
   restaurantsToBook: [
     { name: "Isle of Raasay Distillery dinner", when: "Days 6–8 — for hotel guests; arrange at check-in", url: "https://raasaydistillery.com/" },
     { name: "Applecross Inn",       when: "Tue 28 Jul · Day 9 lunch", url: "https://www.applecross.uk.com/inn/" },
-    { name: "Jacobite Steam Train", when: "Thu 30 Jul · Day 11 morning", url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
-    { name: "Cail Bruich, Glasgow", when: "Sat 1 Aug · Day 13 dinner",  url: "https://www.cailbruich.co.uk" }
+    { name: "Jacobite Steam Train", when: "Thu 30 Jul · Day 11 morning", url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" }
   ],
 
   // Ferry logistics for the Raasay base + Skye day-trips (Days 6–9).
@@ -429,39 +426,16 @@ window.TRIP = {
 
     {
       num: 13, date: "Sat 1 Aug", weekday: "Saturday",
-      title: "Fort William → Glasgow via Loch Lomond",
-      leg: "A82 · Glencoe · Rannoch Moor · Loch Lomond · Luss",
-      route: "A82",
-      miles: "105", drive: "2.5–3 hrs",
-      overnight: "Glasgow",
-      checkin: "2026-08-01", checkout: "2026-08-02",
-      hero: "Loch_Lomond",
-      blurb: "Leave Fort William and drop down the A82 — back through Glencoe (one last look at the Three Sisters), across Rannoch Moor, then along the western shore of Loch Lomond. Lunch at Luss, then into Glasgow late afternoon for one final Scottish dinner — Cail Bruich or the Ubiquitous Chip.",
-      attractions: [
-        { name: "Luss village", wiki: "Luss", desc: "Picturesque estate cottages on the western shore of Loch Lomond. Pub lunch at the Luss Inn, short shoreline walk.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond" }
-      ],
-      hotels: [
-        { name: "Kimpton Blythswood Square", style: "5-star, 10-min walk to Glasgow Central", price: "£180–£230", url: "https://www.kimptonblythswoodsquare.com",        locale: "Glasgow" },
-        { name: "Hotel du Vin Glasgow",      style: "Boutique, great wine bar",               price: "£120–£160", url: "https://www.hotelduvin.com/locations/glasgow/",    locale: "Glasgow" },
-        { name: "Dakota Glasgow",            style: "Design hotel, excellent service",        price: "£130–£170", url: "https://www.dakotahotels.co.uk/glasgow/",          locale: "Glasgow" }
-      ],
-      restaurants: [
-        { name: "Cail Bruich",     note: "Michelin Bib Gourmand — book well ahead.",  url: "https://www.cailbruich.co.uk" },
-        { name: "Ubiquitous Chip", note: "Glasgow institution, beautiful courtyard.", url: "https://www.ubiquitouschip.co.uk" }
-      ]
-    },
-
-    {
-      num: 14, date: "Sun 2 Aug", weekday: "Sunday",
-      title: "Glasgow → Oxford",
-      leg: "M74 · M6 · M40 — handover day",
-      route: "M74 · M6 · M40",
-      miles: "350", drive: "5–5.5 hrs",
+      title: "Fort William → Oxford",
+      leg: "A82 · Loch Lomond · M74 · M6 · M40 — the long drive south",
+      route: "A82 · M74 · M6 · M40",
+      miles: "~555", drive: "9–9.5 hrs",
       overnight: "Oxford",
       hero: "Oxford",
-      blurb: "Depart Glasgow 07:00–07:30. M74 is clear on Sunday mornings. Join M6 at Carlisle, M40 at Birmingham, exit at J8A (Wheatley) for Oxford. Arrive 12:30–13:30 — comfortable for the afternoon check-in.",
+      blurb: "The big one — an early start. South down the A82 through Glencoe and along Loch Lomond (stretch your legs at Luss before the motorways), then the long haul: M74 past Glasgow, M6 to Birmingham, M40 into Oxford. The Highland road trip ends here — your daughter's residential course begins the next day.",
       attractions: [
-        { name: "Oxford city centre", wiki: "Oxford", desc: "Walk to your daughter's college, find lunch, drop the car.", locale: "Oxford" }
+        { name: "Luss village", wiki: "Luss", desc: "Loch Lomond leg-stretch to break the first hour — pretty estate cottages and a quick shoreline walk before the motorway grind.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond" },
+        { name: "Oxford", wiki: "Oxford", desc: "Journey's end. Settle in ahead of your daughter's residential course (2–15 Aug).", locale: "Oxford" }
       ],
       hotels: [],
       restaurants: []
