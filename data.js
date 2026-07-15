@@ -73,7 +73,6 @@ window.TRIP = {
   priorityBookings: [
     { what: "Jacobite Steam Train",        dates: "Thu 30 Jul · Day 11 morning",         why: "Sells out months ahead in summer",                 url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
     { what: "Applecross Inn lunch",        dates: "Tue 28 Jul · Day 9 lunch",            why: "Famous pub, books up fast",                        url: "https://www.applecross.uk.com/inn/" },
-    { what: "Edinburgh",                   dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",  why: "City centre fills up in July",                     url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
     { what: "Elgol boat trip (optional)",  dates: "Mon 27 Jul · Day 8",                  why: "Loch Coruisk — small boats, limited slots",        url: "https://bellajane.co.uk/" },
 
     { what: "Isle of Raasay Distillery",   dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the distillery — your Skye base", url: "https://raasaydistillery.com/visit/borodale-house/", done: true },
@@ -83,7 +82,8 @@ window.TRIP = {
     { what: "Fort William",                dates: "Wed 29 Jul → Sat 1 Aug · 3 nights",   why: "Clan MacDuff (night 1) + Beinn Brèagha 2-bed house (nights 2–3)", url: "https://www.clanmacduff.co.uk/", done: true },
     { what: "Car rental",                  dates: "Mon 20 Jul → Sun 2 Aug",              why: "Enterprise — Edinburgh Airport pickup, Oxford drop-off", url: "https://www.enterprise.co.uk", done: true },
     { what: "CalMac Sconser⇄Raasay ferry", dates: "Round trip · Sat 25 + Tue 28 Jul",     why: "Foot round trip booked (3 adults); day-trip hops 26/27 are turn-up-and-go", url: "https://ticketing.calmac.co.uk/B2C-Calmac/#/desktop/step1/destinations/single", done: true },
-    { what: "Lake District",               dates: "Sat 1 Aug → Sun 2 Aug · 1 night",     why: "The Waterhead / Lakehouse Rooms, Ambleside — lakeside", url: "https://www.englishlakes.co.uk/hotels/waterhead-hotel/", done: true }
+    { what: "Lake District",               dates: "Sat 1 Aug → Sun 2 Aug · 1 night",     why: "The Waterhead / Lakehouse Rooms, Ambleside — lakeside", url: "https://www.englishlakes.co.uk/hotels/waterhead-hotel/", done: true },
+    { what: "Edinburgh",                   dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",  why: "Booked — property details to be added", url: "https://www.booking.com/searchresults.html?ss=Edinburgh", done: true }
   ],
 
   practical: [
@@ -155,7 +155,7 @@ window.TRIP = {
       route: "—",
       miles: "10", drive: "20 min",
       overnight: "Edinburgh",
-      checkin: "2026-07-20", checkout: "2026-07-22",
+      checkin: "2026-07-20", checkout: "2026-07-22", booked: true,
       hero: "Edinburgh",
       blurb: "Pick up the hire car at Edinburgh Airport and drive to your city centre hotel. Park it — you will not need it for two days. Walk the Royal Mile in the evening and have dinner in the Grassmarket.",
       attractions: [
