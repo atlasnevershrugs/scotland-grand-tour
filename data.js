@@ -74,7 +74,6 @@ window.TRIP = {
     { what: "Jacobite Steam Train",        dates: "Thu 30 Jul · Day 11 morning",         why: "Sells out months ahead in summer",                 url: "https://www.westcoastrailways.co.uk/jacobite/jacobite-steam-train-trip" },
     { what: "Applecross Inn lunch",        dates: "Tue 28 Jul · Day 9 lunch",            why: "Famous pub, books up fast",                        url: "https://www.applecross.uk.com/inn/" },
     { what: "Edinburgh",                   dates: "Mon 20 Jul → Wed 22 Jul · 2 nights",  why: "City centre fills up in July",                     url: "https://www.booking.com/searchresults.html?ss=Edinburgh" },
-    { what: "Lake District",               dates: "Sat 1 Aug → Sun 2 Aug · 1 night",     why: "Overnight breaking the Fort William → Oxford drive — book a room for 3", url: "https://www.booking.com/searchresults.html?ss=Lake+District" },
     { what: "Elgol boat trip (optional)",  dates: "Mon 27 Jul · Day 8",                  why: "Loch Coruisk — small boats, limited slots",        url: "https://bellajane.co.uk/" },
 
     { what: "Isle of Raasay Distillery",   dates: "Sat 25 Jul → Tue 28 Jul · 3 nights",  why: "Borodale House at the distillery — your Skye base", url: "https://raasaydistillery.com/visit/borodale-house/", done: true },
@@ -83,7 +82,8 @@ window.TRIP = {
     { what: "Torridon (Ledgowan Lodge)",   dates: "Tue 28 Jul → Wed 29 Jul · 1 night",   why: "Four Poster + rollout bed, breakfast (Achnasheen)", url: "https://www.ledgowanlodge.co.uk/", done: true },
     { what: "Fort William",                dates: "Wed 29 Jul → Sat 1 Aug · 3 nights",   why: "Clan MacDuff (night 1) + Beinn Brèagha 2-bed house (nights 2–3)", url: "https://www.clanmacduff.co.uk/", done: true },
     { what: "Car rental",                  dates: "Mon 20 Jul → Sun 2 Aug",              why: "Enterprise — Edinburgh Airport pickup, Oxford drop-off", url: "https://www.enterprise.co.uk", done: true },
-    { what: "CalMac Sconser⇄Raasay ferry", dates: "Round trip · Sat 25 + Tue 28 Jul",     why: "Foot round trip booked (3 adults); day-trip hops 26/27 are turn-up-and-go", url: "https://ticketing.calmac.co.uk/B2C-Calmac/#/desktop/step1/destinations/single", done: true }
+    { what: "CalMac Sconser⇄Raasay ferry", dates: "Round trip · Sat 25 + Tue 28 Jul",     why: "Foot round trip booked (3 adults); day-trip hops 26/27 are turn-up-and-go", url: "https://ticketing.calmac.co.uk/B2C-Calmac/#/desktop/step1/destinations/single", done: true },
+    { what: "Lake District",               dates: "Sat 1 Aug → Sun 2 Aug · 1 night",     why: "The Waterhead / Lakehouse Rooms, Ambleside — lakeside", url: "https://www.englishlakes.co.uk/hotels/waterhead-hotel/", done: true }
   ],
 
   practical: [
@@ -433,7 +433,7 @@ window.TRIP = {
       route: "A82 · M74 · M6",
       miles: "~250", drive: "4–4.5 hrs",
       overnight: "Lake District",
-      checkin: "2026-08-01", checkout: "2026-08-02",
+      checkin: "2026-08-01", checkout: "2026-08-02", booked: true,
       hero: "Lake_District",
       blurb: "Break the long haul south. Down the A82 through Glencoe and along Loch Lomond (leg-stretch at Luss), then M74/M6 into Cumbria. An easy afternoon arrival in the Lake District — Windermere or Ambleside — for a lakeside evening before the final push to Oxford tomorrow.",
       attractions: [
