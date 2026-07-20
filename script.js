@@ -389,7 +389,6 @@
       });
     }
   }
-  buildPriority();
 
   /* ---------- CAR RENTAL ---------- */
   function buildCars() {
@@ -407,7 +406,6 @@
       u.appendChild(li);
     });
   }
-  buildCars();
 
   /* ===================================================================
      LIGHTBOX (built once, shared across days)
@@ -651,6 +649,63 @@
   }
 
   /* ===================================================================
+     ATTRACTION CARD — photo + name + badges + links, all together
+     =================================================================== */
+  function attractionCard(a, idx) {
+    const enrich = E.attractions[a.name] || {};
+    const card = document.createElement('div');
+    card.className = 'attr-card';
+
+    const fig = document.createElement('button');
+    fig.type = 'button';
+    fig.className = 'attr-card-photo attr-card-photo-loading';
+    fig.setAttribute('aria-label', a.name);
+    fig.innerHTML = `<span class="attr-card-photo-fallback">${a.name}</span>`;
+    card.appendChild(fig);
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting || fig.dataset.done) return;
+        fig.dataset.done = '1';
+        io.unobserve(fig);
+        if (!a.wiki) return;
+        fetchWikiImage(a.wiki).then(src => {
+          if (!src) return;
+          fig.classList.remove('attr-card-photo-loading');
+          fig.style.backgroundImage = `url("${src}")`;
+          fig.innerHTML = '';
+          fig.addEventListener('click', () => openLightbox([{ full: src, attractionName: a.name }], 0));
+        }).catch(() => {});
+      });
+    }, { rootMargin: '400px 0px' });
+    io.observe(fig);
+
+    const badges = `${a.mustDo ? '<span class="attr-key-badge attr-key-badge-must" title="A must-do stop">★ Non-negotiable</span>' : ''}${a.enroute ? '<span class="attr-key-badge" title="On the drive to your next hotel">En route</span>' : ''}`;
+
+    const chips = [];
+    chips.push(`<a class="chip chip-map" href="${googleMapsSearch(a.name + ', ' + (a.locale || ''))}" target="_blank" rel="noopener" title="Open location in Google Maps">Google Maps</a>`);
+    if (enrich.tripadvisor) chips.push(`<a class="chip chip-ta" href="${enrich.tripadvisor}" target="_blank" rel="noopener">TripAdvisor</a>`);
+    else chips.push(`<a class="chip chip-ta" href="${tripadvisorSearch(a.name + ' ' + (a.locale || ''))}" target="_blank" rel="noopener">TripAdvisor</a>`);
+    if (a.url) chips.push(`<a class="chip chip-site" href="${a.url}" target="_blank" rel="noopener">Official site</a>`);
+    (enrich.blogs || []).forEach(b => chips.push(`<a class="chip chip-blog" href="${b.url}" target="_blank" rel="noopener" title="${b.title}">${b.source}</a>`));
+    if (a.wiki) chips.push(`<a class="chip chip-wiki" href="${wikiPage(a.wiki)}" target="_blank" rel="noopener">Wikipedia</a>`);
+
+    const body = document.createElement('div');
+    body.className = 'attr-card-body';
+    body.innerHTML = `
+      <div class="attr-card-head">
+        <span class="attr-key-num">${idx + 1}</span>
+        <h5 class="attr-card-name">${a.name}</h5>
+        ${a.locale ? `<span class="attr-key-loc">${a.locale}</span>` : ''}
+      </div>
+      ${badges ? `<div class="attr-card-badges">${badges}</div>` : ''}
+      <p class="attr-card-desc">${a.desc || ''}</p>
+      <div class="attr-key-chips">${chips.join('')}</div>`;
+    card.appendChild(body);
+    return card;
+  }
+
+  /* ===================================================================
      BUILD ONE DAY SECTION
      =================================================================== */
   function buildDay(d) {
@@ -692,7 +747,7 @@
 
     sec.appendChild(topRow);
 
-    // See & do — mosaic + key
+    // See & do — one photo-linked card per attraction
     if (d.attractions && d.attractions.length) {
       const lab = document.createElement('h4');
       lab.className = 'day-section-label';
@@ -700,67 +755,12 @@
       sec.appendChild(lab);
 
       const grid = document.createElement('div');
-      grid.className = 'mosaic-grid';
-      grid.innerHTML = `<div class="mosaic-loading">Loading photos…</div>`;
+      grid.className = 'attr-card-grid';
+      d.attractions.forEach((a, i) => grid.appendChild(attractionCard(a, i)));
       sec.appendChild(grid);
-
-      const list = document.createElement('ol');
-      list.className = 'attr-key-list';
-      buildAttractionKey(list, d.attractions);
-      sec.appendChild(list);
-
-      // Lazy-build mosaic when day section is near viewport
-      const mosaicObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (!e.isIntersecting) return;
-          if (grid.dataset.initialised === 'true') return;
-          grid.dataset.initialised = 'true';
-          buildMosaic(grid, d.attractions);
-          mosaicObs.unobserve(grid);
-        });
-      }, { rootMargin: '500px 0px' });
-      mosaicObs.observe(grid);
     }
 
-    // Where to stay — Airbnb primary
-    const stays = (E.stays && E.stays[d.num]) || [];
-    const hotels = d.hotels || [];
-    if (stays.length || hotels.length) {
-      const lab = document.createElement('h4');
-      lab.className = 'day-section-label';
-      lab.textContent = 'Where to stay';
-      sec.appendChild(lab);
-
-      if (d.checkin && d.checkout) {
-        const meta = document.createElement('p');
-        meta.className = 'stay-meta';
-        meta.innerHTML = `
-          <span class="stay-meta-dates">${fmtDate(d.checkin)} → ${fmtDate(d.checkout)}</span>
-          <span class="stay-meta-sep">·</span>
-          <span class="stay-meta-party">${P.label || `${P.adults} guests · 1 room · max ${P.currency} ${P.priceMax}/night`}</span>`;
-        sec.appendChild(meta);
-      }
-
-      if (stays.length) {
-        const stayGrid = document.createElement('div');
-        stayGrid.className = 'stays-grid';
-        stays.forEach(s => stayGrid.appendChild(stayCard(s)));
-        sec.appendChild(stayGrid);
-      }
-
-      if (hotels.length) {
-        const details = document.createElement('details');
-        details.className = 'hotels-also';
-        const sum = document.createElement('summary');
-        sum.innerHTML = `Also nearby — <strong>${hotels.length} named hotel${hotels.length === 1 ? '' : 's'}</strong> from the original itinerary`;
-        details.appendChild(sum);
-        const strip = document.createElement('div');
-        strip.className = 'hotels-strip';
-        hotels.forEach(h => strip.appendChild(hotelMini(h, d.checkin, d.checkout)));
-        details.appendChild(strip);
-        sec.appendChild(details);
-      }
-    }
+    // (Accommodation is booked — options removed. Overnight town shows in the drive strip; full details on the private 🔒 page.)
 
     // Eat & drink
     if (d.restaurants && d.restaurants.length) {
@@ -921,7 +921,6 @@
       }
     });
   }
-  buildBookingGuide();
 
   /* ---------- FERRY & SKYE DAY-TRIP LOGISTICS ---------- */
   function buildFerry() {
@@ -970,7 +969,7 @@
 
     const bookingsBlock = (F.bookings && F.bookings.length) ? `
       <div class="ferry-block ferry-block-full">
-        <h4 class="ferry-block-title">Ferry crossings to book — Sconser ⇄ Raasay</h4>
+        <h4 class="ferry-block-title">Your ferry crossings — Sconser ⇄ Raasay</h4>
         <div class="ferry-table-wrap">
           <table class="ferry-table">
             <thead><tr><th>Ret.</th><th>Route</th><th>When</th><th>What it's for</th><th>Tickets</th></tr></thead>
@@ -978,16 +977,12 @@
           </table>
         </div>
         <p class="ferry-fine">${F.bookingsNote || ''}</p>
-        <a class="bk-search-btn ferry-book-btn" href="${F.ticketingUrl || F.bookingUrl}" target="_blank" rel="noopener">
-          Book crossings on CalMac<small>ticketing.calmac.co.uk · Turn Up &amp; Go route</small>
-        </a>
       </div>` : '';
 
     panel.innerHTML = `
       <div class="ferry-operator">
         <span>${F.operator}</span>
         <span class="ferry-cta-row">
-          <a class="chip chip-site" href="${F.ticketingUrl || F.bookingUrl}" target="_blank" rel="noopener">Book tickets ↗</a>
           <a class="chip" href="${F.bookingUrl}" target="_blank" rel="noopener">Route info ↗</a>
           <a class="chip" href="${F.timetableUrl}" target="_blank" rel="noopener">Timetable PDF ↗</a>
         </span>
