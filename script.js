@@ -535,6 +535,7 @@
       const li = document.createElement('li');
       li.className = 'attr-key';
       const chips = [];
+      chips.push(`<a class="chip chip-map" href="${googleMapsSearch(a.name + ', ' + (a.locale || ''))}" target="_blank" rel="noopener" title="Open location in Google Maps">Google Maps</a>`);
       if (enrich.tripadvisor) {
         chips.push(`<a class="chip chip-ta" href="${enrich.tripadvisor}" target="_blank" rel="noopener">TripAdvisor</a>`);
       } else {
