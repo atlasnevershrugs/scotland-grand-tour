@@ -459,6 +459,8 @@ window.TRIP_ENRICH = {
         type: "airbnb-area",
         url: "https://www.airbnb.co.uk/s/Drumnadrochit--Inverness--United-Kingdom/homes?checkin=2026-07-23&checkout=2026-07-25&adults=3&price_max=250&currency=GBP",
         why: "Entire flats and cottages on the loch shore — closest base to Urquhart Castle and the Loch Ness cruise pier.",
+        selfCatering: true,
+        note: "Full kitchen + microwave — do the big shop at Tesco Extra Inshes (Inverness), ~15 min before you arrive.",
         price: "£120–£230/night"
       },
       {
@@ -555,6 +557,8 @@ window.TRIP_ENRICH = {
         type: "airbnb-area",
         url: "https://www.airbnb.co.uk/s/Fort-William--United-Kingdom/homes?checkin=2026-07-29&checkout=2026-08-01&adults=3&price_max=250&currency=GBP",
         why: "Widest choice on the trip — apartments and houses near the centre, filtered for your 3-night window. Good if you'd rather self-cater and have a washing machine mid-trip.",
+        selfCatering: true,
+        note: "Full kitchen — stock up at Morrisons Blar Mhor on arrival (biggest supermarket in the west Highlands).",
         price: "£110–£220/night"
       },
       {

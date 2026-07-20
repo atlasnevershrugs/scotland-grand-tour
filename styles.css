@@ -918,6 +918,50 @@ details.bk-stop[open] .bk-summary { border-bottom: 1px solid var(--line); margin
 .rest-name { font-family: var(--serif); font-size: 17px; margin: 0 0 5px; color: var(--ink); }
 .rest-note { font-size: 13px; color: var(--ink-soft); margin: 0; }
 
+/* En-route badge on attractions + self-catering pill on stays + shop cards */
+.attr-key-badge {
+  font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  background: var(--whisky); color: #fff;
+  padding: 3px 9px; border-radius: 20px; font-weight: 700;
+  white-space: nowrap; font-family: var(--sans); margin-left: 6px;
+}
+.stay-badge-selfcater {
+  font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  background: var(--whisky); color: #fff;
+  padding: 4px 10px; border-radius: 20px; font-weight: 700;
+  white-space: nowrap; font-family: var(--sans);
+}
+.stay-note {
+  font-size: 13px; color: var(--ink); margin: 4px 0 0; line-height: 1.45;
+  padding: 8px 12px; border-radius: var(--radius);
+  background: rgba(184,118,62,.10); border: 1px solid rgba(184,118,62,.22);
+}
+.day-foodnote {
+  margin: 0 0 14px; padding: 12px 16px;
+  background: rgba(184,118,62,.08);
+  border: 1px solid rgba(184,118,62,.25);
+  border-radius: var(--radius);
+  font-size: 13.5px; line-height: 1.5; color: var(--ink-soft);
+}
+.shops-strip {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.shop-card {
+  display: block; text-decoration: none; color: inherit;
+  background: linear-gradient(180deg, var(--cream) 0%, rgba(255,252,244,.6) 100%);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--loch);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  transition: transform .25s ease, border-color .25s ease;
+}
+.shop-card:hover { transform: translateY(-2px); border-color: var(--whisky); }
+.shop-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.shop-name { font-family: var(--serif); font-size: 16px; margin: 0 0 4px; color: var(--ink); }
+.shop-maps { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--loch); font-weight: 700; white-space: nowrap; }
+.shop-note { font-size: 12.5px; color: var(--ink-soft); margin: 0; line-height: 1.45; }
+
 /* =========================================================================
    PRACTICAL NOTES
    ========================================================================= */

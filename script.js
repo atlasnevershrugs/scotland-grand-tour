@@ -45,6 +45,7 @@
     return `https://www.airbnb.com/s/${enc(loc)}/homes?${p}`;
   }
   const wikiPage = title => `https://en.wikipedia.org/wiki/${title}`;
+  const googleMapsSearch = q => `https://www.google.com/maps/search/?api=1&query=${enc(q)}`;
 
   function fmtDate(iso) {
     if (!iso) return "";
@@ -549,6 +550,7 @@
           <span class="attr-key-num">${idx + 1}</span>
           <h5 class="attr-key-name">${a.name}</h5>
           ${a.locale ? `<span class="attr-key-loc">${a.locale}</span>` : ''}
+          ${a.enroute ? `<span class="attr-key-badge" title="On the drive to your next hotel">En route</span>` : ''}
         </div>
         <p class="attr-key-desc">${a.desc || ''}</p>
         <div class="attr-key-chips">${chips.join('')}</div>`;
@@ -582,16 +584,20 @@
     const confirmedBadge = pick.confirmed
       ? `<span class="stay-badge-confirmed" title="Booking confirmed">✓ Booked</span>`
       : '';
+    const selfCaterBadge = pick.selfCatering
+      ? `<span class="stay-badge-selfcater" title="Self-catering — full kitchen">🍳 Self-catering</span>`
+      : '';
 
     a.innerHTML = `
       ${imgHtml}
       <div class="stay-body">
         <div class="stay-header-row">
           <span class="stay-type">${typeLabel}</span>
-          ${confirmedBadge}
+          ${confirmedBadge}${selfCaterBadge}
         </div>
         <h4 class="stay-title">${pick.title}</h4>
         <p class="stay-why">${pick.why || ''}</p>
+        ${pick.note ? `<p class="stay-note">${pick.note}</p>` : ''}
         <div class="stay-meta-row">
           ${pick.price ? `<span class="stay-price">${pick.price}</span>` : ''}
           <span class="stay-cta">${pick.confirmed ? 'Booking details' : 'View'} →</span>
@@ -630,6 +636,15 @@
     a.href = r.url || tripadvisorSearch(r.name);
     a.target = '_blank'; a.rel = 'noopener';
     a.innerHTML = `<h4 class="rest-name">${r.name}</h4><p class="rest-note">${r.note || ''}</p>`;
+    return a;
+  }
+
+  function shopCard(s) {
+    const a = document.createElement('a');
+    a.className = 'shop-card';
+    a.href = s.mapUrl || googleMapsSearch(s.name);
+    a.target = '_blank'; a.rel = 'noopener';
+    a.innerHTML = `<div class="shop-card-head"><h4 class="shop-name">${s.name}</h4><span class="shop-maps">Maps ↗</span></div><p class="shop-note">${s.note || ''}</p>`;
     return a;
   }
 
@@ -755,6 +770,27 @@
       grid.className = 'restaurants-strip';
       d.restaurants.forEach(r => grid.appendChild(restaurantCard(r)));
       sec.appendChild(grid);
+    }
+
+
+    // Stock up — supermarkets / shop stops with map links
+    if ((d.shops && d.shops.length) || d.foodNote) {
+      const lab = document.createElement('h4');
+      lab.className = 'day-section-label';
+      lab.textContent = 'Stock up';
+      sec.appendChild(lab);
+      if (d.foodNote) {
+        const note = document.createElement('p');
+        note.className = 'day-foodnote';
+        note.innerHTML = d.foodNote;
+        sec.appendChild(note);
+      }
+      if (d.shops && d.shops.length) {
+        const grid = document.createElement('div');
+        grid.className = 'shops-strip';
+        d.shops.forEach(s => grid.appendChild(shopCard(s)));
+        sec.appendChild(grid);
+      }
     }
 
     return sec;

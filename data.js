@@ -151,6 +151,12 @@ window.TRIP = {
     {
       num: 1, date: "Mon 20 Jul", weekday: "Monday",
       title: "Arrive Edinburgh",
+      foodNote: "Both self-catering stays (Cherrytrees on Day 4 and Beinn Brèagha on Day 10) have a big supermarket on the doorstep on arrival day — so you don't need to haul groceries from Edinburgh. Carry only a small non-perishable car pantry (tea/coffee, long-life milk, breakfast bars, snacks, water) for the drives and the remote Raasay & Torridon nights, plus any Indian or specialty items the Highland Co-ops won't stock.",
+      shops: [
+        { name: "M&S Food — Princes Street", note: "Central Edinburgh foodhall — salads & food-to-go for the car pantry.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Marks%20and%20Spencer%20Princes%20Street%20Edinburgh" },
+        { name: "Waitrose — Morningside", note: "Nearest Waitrose (~2 mi from Newington) — the last one until the Lakes.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Waitrose%20Morningside%20Edinburgh%20EH10%204AX" },
+        { name: "Tesco Extra — Corstorphine", note: "Large superstore on the west side for a full shop.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Corstorphine%20Edinburgh" }
+      ],
       leg: "Edinburgh Airport → city centre",
       route: "—",
       miles: "10", drive: "20 min",
@@ -198,15 +204,20 @@ window.TRIP = {
     {
       num: 3, date: "Wed 22 Jul", weekday: "Wednesday",
       title: "Edinburgh → Pitlochry",
-      leg: "A93 scenic via the Cairngorms",
-      route: "A93",
-      miles: "85", drive: "2–2.5 hrs",
+      shops: [
+        { name: "M&S Foodhall — Inveralmond, Perth", note: "Right on the A9 as you skirt Perth (~46 mi in; 26 mi / 35 min left to Pitlochry). Zero detour. Foodhall with salads & food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=M%26S%20Foodhall%20Inveralmond%20Perth%20PH1%203EE" },
+        { name: "Tesco Extra — Crieff Rd, Perth (24h)", note: "Big 24-hour superstore beside Inveralmond — fresh counters and salad/food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Crieff%20Road%20Perth%20PH1%202NR" },
+        { name: "Co-op — Pitlochry (West Moulin Rd)", note: "The only supermarket in Pitlochry itself — top-ups only.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Pitlochry%20West%20Moulin%20Road" }
+      ],
+      leg: "A9 north via Perth & Dunkeld",
+      route: "A9 · Perth",
+      miles: "72", drive: "~1h30",
       overnight: "Pitlochry",
       checkin: "2026-07-22", checkout: "2026-07-23", booked: true,
       hero: "Pitlochry",
-      blurb: "Take the A93 through Braemar instead of the A9. The Hermitage waterfall and Queen's View are unmissable; Balmoral and Blair Castle are picks based on your appetite.",
+      blurb: "Straight up the A9 via Perth — stock up at the Perth supermarkets on the way, as Pitlochry itself has only a Co-op. The Hermitage at Dunkeld is a lovely en-route waterfall walk; Queen's View, Blair Castle and (a longer detour east) Balmoral are optional scenic add-ons based on your appetite.",
       attractions: [
-        { name: "The Hermitage, Dunkeld", wiki: "The_Hermitage,_Dunkeld", desc: "20–30 min woodland walk to Ossian's Hall above a thundering falls. Free.", url: "https://www.forestryandland.gov.scot/visit/forest-parks/tay-forest-park/hermitage", locale: "Dunkeld" },
+        { name: "The Hermitage, Dunkeld", wiki: "The_Hermitage,_Dunkeld", desc: "20–30 min woodland walk to Ossian's Hall above a thundering falls. Free.", url: "https://www.forestryandland.gov.scot/visit/forest-parks/tay-forest-park/hermitage", locale: "Dunkeld", enroute: true },
         { name: "Queen's View",       wiki: "Queen%27s_View",  desc: "One of the most photographed views in Scotland, above Loch Tummel. Five-minute walk.", locale: "Pitlochry" },
         { name: "Balmoral Castle",    wiki: "Balmoral_Castle", desc: "The royal Highland retreat near Braemar. Check opening dates before detouring.", url: "https://www.balmoralcastle.com", locale: "Braemar" },
         { name: "Blair Castle",       wiki: "Blair_Castle",    desc: "Scotland's most-visited castle outside Edinburgh — Atholl Highlanders parade ground.", url: "https://www.blair-castle.co.uk", locale: "Blair Atholl" },
@@ -223,6 +234,12 @@ window.TRIP = {
     {
       num: 4, date: "Thu 23 Jul", weekday: "Thursday",
       title: "Pitlochry → Drumnadrochit",
+      foodNote: "Cherrytrees is self-catering (full kitchen + microwave) — do the big shop at Tesco Extra Inshes as you reach Inverness, about 15 min before arrival. It is also the last full-size supermarket before Skye & Raasay, so stock the car pantry for the island nights here too.",
+      shops: [
+        { name: "Tesco Extra — Inshes, Inverness", note: "On the A9 at Inshes roundabout, ~15 min before Cherrytrees. Big shop for the kitchen + the Skye/Raasay stock-up.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Inshes%20Inverness%20IV2%203TW" },
+        { name: "M&S — Eastgate, Inverness", note: "Central Inverness — M&S salads & food-to-go, ~5 min into town.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Marks%20and%20Spencer%20Eastgate%20Inverness" },
+        { name: "Morrisons — Inverness", note: "Full superstore with a café / salad counter.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Morrisons%20Inverness%20Millburn%20Road" }
+      ],
       leg: "A9 to Inverness, then A82 along Loch Ness",
       route: "A9 · A82",
       miles: "90", drive: "2 hrs",
@@ -231,9 +248,9 @@ window.TRIP = {
       hero: "Inverness",
       blurb: "The A9 climbs over the Pass of Drumochter (highest A-road in the UK at 460m). Continue past Inverness down the western shore of Loch Ness to Drumnadrochit — base for the next two nights, with Urquhart Castle a short drive away.",
       attractions: [
-        { name: "Rothiemurchus Estate",       wiki: "Rothiemurchus",              desc: "Ancient Caledonian pine forest, red squirrels, short waymarked walks. Free.", url: "https://www.rothiemurchus.net", locale: "Aviemore" },
-        { name: "Cairngorm Mountain Railway", wiki: "Cairngorm_Mountain_Railway", desc: "Funicular to a 1,097m summit. Spectacular on a clear day.", url: "https://www.cairngormmountain.org", locale: "Aviemore" },
-        { name: "Leakey's Bookshop",          wiki: "Leakey%27s_Bookshop",        desc: "Largest second-hand bookshop in Scotland, in a converted church. Worth a detour into Inverness.", url: "https://www.leakeysbookshop.com", locale: "Inverness" }
+        { name: "Rothiemurchus Estate",       wiki: "Rothiemurchus",              desc: "Ancient Caledonian pine forest, red squirrels, short waymarked walks. Free.", url: "https://www.rothiemurchus.net", locale: "Aviemore", enroute: true },
+        { name: "Cairngorm Mountain Railway", wiki: "Cairngorm_Mountain_Railway", desc: "Funicular to a 1,097m summit. Spectacular on a clear day.", url: "https://www.cairngormmountain.org", locale: "Aviemore", enroute: true },
+        { name: "Leakey's Bookshop",          wiki: "Leakey%27s_Bookshop",        desc: "Largest second-hand bookshop in Scotland, in a converted church. Worth a detour into Inverness.", url: "https://www.leakeysbookshop.com", locale: "Inverness", enroute: true }
       ],
       hotels: [
         { name: "Rocpool Reserve Hotel",  style: "5-star boutique (Inverness)",      price: "£180–£230", url: "https://www.rocpool.com/rocpool-reserve-hotel-inverness/", locale: "Inverness" },
@@ -272,6 +289,12 @@ window.TRIP = {
     {
       num: 6, date: "Sat 25 Jul", weekday: "Saturday",
       title: "Drumnadrochit → Raasay",
+      foodNote: "Raasay has only a small community shop, so this is a stock-up drive. Do your last real shop at Broadford Co-op — about 15 min before the Sconser ferry.",
+      shops: [
+        { name: "Broadford Co-op (Isle of Skye)", note: "Last proper shop before the ferry — only ~13 mi / 15 min before Sconser. Open 7am–10pm, car park. Fresh food & food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Broadford%20Isle%20of%20Skye%20IV49%209AE" },
+        { name: "Kyle of Lochalsh Co-op", note: "Right before the Skye Bridge (~20 mi before Sconser) — earlier top-up option.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Kyle%20of%20Lochalsh%20IV40%208BH" },
+        { name: "Co-op — Portree (Woodpark Rd)", note: "Skye's biggest shop, ~6 mi past Sconser — handy on your Skye day-trips (Days 7–8).", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Portree%20Woodpark%20Road%20IV51%209HQ" }
+      ],
       leg: "A82 · A87 · Eilean Donan · Skye Bridge · Sconser ferry",
       route: "A82 · A87",
       miles: "140", drive: "4 hrs + 25 min ferry",
@@ -280,9 +303,9 @@ window.TRIP = {
       hero: "Isle_of_Raasay",
       blurb: "The long drive west — A82 south then A87 through Kintail. Pause for Eilean Donan in the morning light and the Five Sisters through the windscreen. Over the Skye Bridge to Sconser, park the car, and cross to Raasay as foot passengers. Distillery tour and dinner on-site tonight.",
       attractions: [
-        { name: "Eilean Donan Castle",     wiki: "Eilean_Donan",            desc: "The most photographed castle in Scotland, on a tidal island where three sea lochs meet. Perfect mid-morning break on the long drive.", url: "https://www.eileandonancastle.com", locale: "Dornie" },
-        { name: "Five Sisters of Kintail", wiki: "Five_Sisters_of_Kintail", desc: "Scotland's most dramatic mountain drive — the scenery from the car IS the experience. Slow down on the A87 through Glen Shiel.", locale: "Glen Shiel" },
-        { name: "Skye Bridge",             wiki: "Skye_Bridge",             desc: "Free crossing onto Skye at Kyle of Lochalsh — you'll cross this several times over the coming days.", locale: "Kyle of Lochalsh" },
+        { name: "Eilean Donan Castle",     wiki: "Eilean_Donan",            desc: "The most photographed castle in Scotland, on a tidal island where three sea lochs meet. Perfect mid-morning break on the long drive.", url: "https://www.eileandonancastle.com", locale: "Dornie", enroute: true },
+        { name: "Five Sisters of Kintail", wiki: "Five_Sisters_of_Kintail", desc: "Scotland's most dramatic mountain drive — the scenery from the car IS the experience. Slow down on the A87 through Glen Shiel.", locale: "Glen Shiel", enroute: true },
+        { name: "Skye Bridge",             wiki: "Skye_Bridge",             desc: "Free crossing onto Skye at Kyle of Lochalsh — you'll cross this several times over the coming days.", locale: "Kyle of Lochalsh", enroute: true },
         { name: "Isle of Raasay Distillery", wiki: null, desc: "Your base for three nights — a working single-malt distillery opened 2017, the first on Raasay in 170+ years. Evening tour and tastings for guests.", url: "https://raasaydistillery.com/", locale: "Raasay" }
       ],
       hotels: [],
@@ -344,9 +367,9 @@ window.TRIP = {
       blurb: "A quick Raasay morning (Calum's Road drive, distillery shop), then the final ferry to Sconser and off the island. Over the Skye Bridge to the mainland and the legendary Bealach na Bà — the Pass of the Cattle — climbing 626m in hairpin bends. Lunch at the Applecross Inn, then north into Torridon.",
       attractions: [
         { name: "Calum's Road",     wiki: "Calum's_Road", desc: "Quick morning drive before the ferry — the two-mile single-track to Arnish, hand-built by one man over ten years. Brochel Castle ruins at the start.", locale: "Raasay" },
-        { name: "Bealach na Bà",    wiki: "Bealach_na_B%C3%A0", desc: "The Pass of the Cattle — 20% gradients, hairpins, and on a clear day a view back to Skye and the Outer Hebrides.", locale: "Applecross" },
-        { name: "Applecross village", wiki: "Applecross", desc: "Tiny west-coast village at the foot of the pass. The Applecross Inn is one of the most famous pubs in Scotland — langoustines, crab, haddock. Book lunch ahead.", url: "https://www.applecross.uk.com/inn/", locale: "Applecross" },
-        { name: "Shieldaig village", wiki: "Shieldaig", desc: "Small fishing village on Loch Torridon — a good coffee or photo stop as you come into Torridon.", locale: "Shieldaig" }
+        { name: "Bealach na Bà",    wiki: "Bealach_na_B%C3%A0", desc: "The Pass of the Cattle — 20% gradients, hairpins, and on a clear day a view back to Skye and the Outer Hebrides.", locale: "Applecross", enroute: true },
+        { name: "Applecross village", wiki: "Applecross", desc: "Tiny west-coast village at the foot of the pass. The Applecross Inn is one of the most famous pubs in Scotland — langoustines, crab, haddock. Book lunch ahead.", url: "https://www.applecross.uk.com/inn/", locale: "Applecross", enroute: true },
+        { name: "Shieldaig village", wiki: "Shieldaig", desc: "Small fishing village on Loch Torridon — a good coffee or photo stop as you come into Torridon.", locale: "Shieldaig", enroute: true }
       ],
       hotels: [
         { name: "The Torridon",        style: "5-star Victorian shooting lodge, lochside", price: "£220–£250", url: "https://www.thetorridon.com", locale: "Torridon" },
@@ -361,6 +384,12 @@ window.TRIP = {
     {
       num: 10, date: "Wed 29 Jul", weekday: "Wednesday",
       title: "Torridon walking day → Fort William",
+      foodNote: "Fort William nights 2–3 are self-catering (Beinn Brèagha — full kitchen, dishwasher, washing machine). Do the big shop at Morrisons Blar Mhor on arrival; it is the largest supermarket in the whole west Highlands.",
+      shops: [
+        { name: "Morrisons — Blar Mhor, Fort William", note: "The big shop for the self-catering house (Aldi & Lidl alongside). Café with a salad counter.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Morrisons%20Blar%20Mhor%20Fort%20William%20PH33%207PT" },
+        { name: "M&S Foodhall — Fort William", note: "Salads & food-to-go in town (Inverlochy).", mapUrl: "https://www.google.com/maps/search/?api=1&query=M%26S%20Foodhall%20Fort%20William" },
+        { name: "Tesco — Fort William", note: "Handy in-town top-ups.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Fort%20William" }
+      ],
       leg: "Beinn Eighe · Loch Maree · drive south to your 3-night base",
       route: "A896 · A87 · A82",
       miles: "95", drive: "2.5 hrs (after walks)",
@@ -429,6 +458,11 @@ window.TRIP = {
     {
       num: 13, date: "Sat 1 Aug", weekday: "Saturday",
       title: "Fort William → Lake District",
+      shops: [
+        { name: "Booths — Windermere", note: "The North's quality supermarket, by Windermere station — big fresh & deli range.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Booths%20Windermere" },
+        { name: "Co-op — Ambleside (Compston Rd)", note: "Central Ambleside for quick top-ups.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Ambleside%20Compston%20Road" },
+        { name: "Morrisons / M&S — Kendal", note: "Larger stores ~20 min south for a full shop.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Morrisons%20Kendal" }
+      ],
       leg: "A82 · Loch Lomond · M74 · M6 — halfway south to Cumbria",
       route: "A82 · M74 · M6",
       miles: "~250", drive: "4–4.5 hrs",
@@ -437,7 +471,7 @@ window.TRIP = {
       hero: "Lake_District",
       blurb: "Break the long haul south. Down the A82 through Glencoe and along Loch Lomond (leg-stretch at Luss), then M74/M6 into Cumbria. An easy afternoon arrival in the Lake District — Windermere or Ambleside — for a lakeside evening before the final push to Oxford tomorrow.",
       attractions: [
-        { name: "Luss village", wiki: "Luss", desc: "Loch Lomond leg-stretch on the way south — pretty estate cottages and a quick shoreline walk before the motorway.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond" },
+        { name: "Luss village", wiki: "Luss", desc: "Loch Lomond leg-stretch on the way south — pretty estate cottages and a quick shoreline walk before the motorway.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond", enroute: true },
         { name: "Windermere & Ambleside", wiki: "Windermere", desc: "England's largest lake. Late-afternoon arrival — a lakeside stroll or short cruise, then dinner in Ambleside or Bowness.", locale: "Lake District" }
       ],
       hotels: [
