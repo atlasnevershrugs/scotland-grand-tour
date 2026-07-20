@@ -550,6 +550,7 @@
           <span class="attr-key-num">${idx + 1}</span>
           <h5 class="attr-key-name">${a.name}</h5>
           ${a.locale ? `<span class="attr-key-loc">${a.locale}</span>` : ''}
+          ${a.mustDo ? `<span class="attr-key-badge attr-key-badge-must" title="A must-do stop">★ Non-negotiable</span>` : ''}
           ${a.enroute ? `<span class="attr-key-badge" title="On the drive to your next hotel">En route</span>` : ''}
         </div>
         <p class="attr-key-desc">${a.desc || ''}</p>

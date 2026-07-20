@@ -925,6 +925,7 @@ details.bk-stop[open] .bk-summary { border-bottom: 1px solid var(--line); margin
   padding: 3px 9px; border-radius: 20px; font-weight: 700;
   white-space: nowrap; font-family: var(--sans); margin-left: 6px;
 }
+.attr-key-badge-must { background: var(--heather); }
 .stay-badge-selfcater {
   font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
   background: var(--whisky); color: #fff;

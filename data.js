@@ -215,9 +215,9 @@ window.TRIP = {
       overnight: "Pitlochry",
       checkin: "2026-07-22", checkout: "2026-07-23", booked: true,
       hero: "Pitlochry",
-      blurb: "Straight up the A9 via Perth — stock up at the Perth supermarkets on the way, as Pitlochry itself has only a Co-op. The Hermitage at Dunkeld is a lovely en-route waterfall walk; Queen's View, Blair Castle and (a longer detour east) Balmoral are optional scenic add-ons based on your appetite.",
+      blurb: "Straight up the A9 via Perth — stock up at the Perth supermarkets on the way, as Pitlochry itself has only a Co-op. The magical forest walk at The Hermitage (Dunkeld) — towering Douglas firs to the thundering Black Linn Falls — is non-negotiable; Queen's View, Blair Castle and (a longer detour east) Balmoral are optional scenic add-ons based on your appetite.",
       attractions: [
-        { name: "The Hermitage, Dunkeld", wiki: "The_Hermitage,_Dunkeld", desc: "20–30 min woodland walk to Ossian's Hall above a thundering falls. Free.", url: "https://www.forestryandland.gov.scot/visit/forest-parks/tay-forest-park/hermitage", locale: "Dunkeld", enroute: true },
+        { name: "The Hermitage, Dunkeld", wiki: "The_Hermitage,_Dunkeld", desc: "A magical Perthshire forest walk beneath Britain's tallest Douglas firs to Ossian's Hall, perched above the thundering Black Linn Falls. 20–30 min loop, free — a non-negotiable stop.", url: "https://www.forestryandland.gov.scot/visit/forest-parks/tay-forest-park/hermitage", locale: "Dunkeld", enroute: true, mustDo: true },
         { name: "Queen's View",       wiki: "Queen%27s_View",  desc: "One of the most photographed views in Scotland, above Loch Tummel. Five-minute walk.", locale: "Pitlochry" },
         { name: "Balmoral Castle",    wiki: "Balmoral_Castle", desc: "The royal Highland retreat near Braemar. Check opening dates before detouring.", url: "https://www.balmoralcastle.com", locale: "Braemar" },
         { name: "Blair Castle",       wiki: "Blair_Castle",    desc: "Scotland's most-visited castle outside Edinburgh — Atholl Highlanders parade ground.", url: "https://www.blair-castle.co.uk", locale: "Blair Atholl" },
