@@ -62,10 +62,12 @@
   function dayHotel(dayNum) {
     const r = T.route.filter(x => x.day <= dayNum);
     let h = r.length ? r[r.length - 1] : null;
-    if ((dayNum === 7 || dayNum === 8) && h) h = SCONSER;  // Skye day-trips start at the ferry
+    if ((dayNum === 7 || dayNum === 8) && h) return SCONSER;  // Skye day-trips start at the ferry
+    const own = T.days.find(dd => dd.num === dayNum && dd.stay);
+    if (own) return { lat: own.stay.lat, lng: own.stay.lng, label: own.stay.name };
     if (h) {
-      const s = T.days.find(dd => dd.stay && dd.overnight === h.label);
-      if (s) h = { lat: s.stay.lat, lng: s.stay.lng, label: s.stay.name };
+      const prior = T.days.filter(dd => dd.stay && dd.overnight === h.label && dd.num <= dayNum).pop();
+      if (prior) return { lat: prior.stay.lat, lng: prior.stay.lng, label: prior.stay.name };
     }
     return h;
   }
@@ -794,6 +796,7 @@
         <span class="day-drive-route">${headline}</span>
         ${dirBtn}
       </div>
+      ${d.depart ? `<div class="day-drive-depart">\u23F0 ${d.depart}</div>` : ''}
       ${stats ? `<div class="day-drive-stats">${stats}</div>` : ''}
       ${d.leg ? `<div class="day-drive-leg">${d.leg}</div>` : ''}
       ${stayLine}`;

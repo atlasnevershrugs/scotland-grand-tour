@@ -165,6 +165,8 @@ window.TRIP = {
     {
       num: 1, date: "Mon 20 Jul", weekday: "Monday",
       title: "Arrive Edinburgh",
+      stay: { name: "Kildonan Lodge, Edinburgh", lat: 55.9316, lng: -3.1734, mapUrl: "https://www.google.com/maps/search/?api=1&query=Kildonan%20Lodge%20Hotel%20Edinburgh%20EH16%205PE" },
+      depart: "Land 06:25, collect the hire car ~07:30. Kildonan check-in is 15:00 — drop bags early and explore Edinburgh on foot.",
       foodNote: "Both self-catering stays (Cherrytrees on Day 4 and Beinn Brèagha on Day 10) have a big supermarket on the doorstep on arrival day — so you don't need to haul groceries from Edinburgh. Carry only a small non-perishable car pantry (tea/coffee, long-life milk, breakfast bars, snacks, water) for the drives and the remote Raasay & Torridon nights, plus any Indian or specialty items the Highland Co-ops won't stock.",
       shops: [
         { name: "M&S Food — Princes Street", note: "Central Edinburgh foodhall — salads & food-to-go for the car pantry.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Marks%20and%20Spencer%20Princes%20Street%20Edinburgh" },
@@ -218,6 +220,8 @@ window.TRIP = {
     {
       num: 3, date: "Wed 22 Jul", weekday: "Wednesday",
       title: "Edinburgh → Pitlochry",
+      stay: { name: "Rosemount Hotel, Pitlochry", lat: 56.7042, lng: -3.7276, mapUrl: "https://www.google.com/maps/search/?api=1&query=Rosemount%20Hotel%20Pitlochry%20PH16%205HT" },
+      depart: "Leave Edinburgh by ~10:00 — Scone Palace + The Hermitage en route; Rosemount check-in from 16:00.",
       shops: [
         { name: "M&S Foodhall — Inveralmond, Perth", note: "Right on the A9 as you skirt Perth (~46 mi in; 26 mi / 35 min left to Pitlochry). Zero detour. Foodhall with salads & food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=M%26S%20Foodhall%20Inveralmond%20Perth%20PH1%203EE" },
         { name: "Tesco Extra — Crieff Rd, Perth (24h)", note: "Big 24-hour superstore beside Inveralmond — fresh counters and salad/food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Crieff%20Road%20Perth%20PH1%202NR" },
@@ -248,6 +252,7 @@ window.TRIP = {
     {
       num: 4, date: "Thu 23 Jul", weekday: "Thursday",
       title: "Pitlochry → Drumnadrochit",
+      depart: "Leave Pitlochry by ~09:30 — the Cairngorms forest & funicular take time; shop at Tesco Inshes; Cherrytrees check-in 15:00.",
       foodNote: "Cherrytrees is self-catering (full kitchen + microwave) — do the big shop at Tesco Extra Inshes as you reach Inverness, about 15 min before arrival. It is also the last full-size supermarket before Skye & Raasay, so stock the car pantry for the island nights here too.",
       shops: [
         { name: "Tesco Extra — Inshes, Inverness", note: "On the A9 at Inshes roundabout, ~15 min before Cherrytrees. Big shop for the kitchen + the Skye/Raasay stock-up.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Inshes%20Inverness%20IV2%203TW" },
@@ -304,6 +309,8 @@ window.TRIP = {
     {
       num: 6, date: "Sat 25 Jul", weekday: "Saturday",
       title: "Drumnadrochit → Raasay",
+      stay: { name: "Isle of Raasay Distillery (Borodale House)", lat: 57.348, lng: -6.08, mapUrl: "https://www.google.com/maps/search/?api=1&query=Isle%20of%20Raasay%20Distillery%20Borodale%20House%20IV40%208PB" },
+      depart: "Leave Drumnadrochit by ~08:30 — ~4h drive + the Broadford shop; aim for an early-afternoon Sconser → Raasay ferry.",
       foodNote: "Raasay has only a small community shop, so this is a stock-up drive. Do your last real shop at Broadford Co-op — about 15 min before the Sconser ferry.",
       shops: [
         { name: "Broadford Co-op (Isle of Skye)", note: "Last proper shop before the ferry — only ~13 mi / 15 min before Sconser. Open 7am–10pm, car park. Fresh food & food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Broadford%20Isle%20of%20Skye%20IV49%209AE" },
@@ -329,6 +336,7 @@ window.TRIP = {
     {
       num: 7, date: "Sun 26 Jul", weekday: "Sunday",
       title: "Skye day-trip — Trotternish",
+      depart: "Catch the ~10:00 first Sunday ferry off Raasay — Sunday sailings are limited and the last one back is ~17:00.",
       leg: "Foot ferry to Sconser · north Skye",
       route: "Ferry + Skye A855 loop",
       miles: "70", drive: "—",
@@ -350,6 +358,7 @@ window.TRIP = {
     {
       num: 8, date: "Mon 27 Jul", weekday: "Monday",
       title: "Skye day-trip — Cuillin & West",
+      depart: "Catch the 07:55 ferry off Raasay — beat the crowds to the Fairy Pools.",
       leg: "Foot ferry to Sconser · west Skye",
       route: "Ferry + Skye west loop",
       miles: "90", drive: "—",
@@ -372,6 +381,8 @@ window.TRIP = {
     {
       num: 9, date: "Tue 28 Jul", weekday: "Tuesday",
       title: "Raasay → Torridon via Bealach na Bà",
+      stay: { name: "Ledgowan Lodge, Achnasheen", lat: 57.5765, lng: -5.085, mapUrl: "https://www.google.com/maps/search/?api=1&query=Ledgowan%20Lodge%20Hotel%20Achnasheen%20IV22%202EJ" },
+      depart: "Early ferry off Raasay (~09:00) — Bealach na Bà + Applecross lunch; Ledgowan check-in 15:00–23:00.",
       leg: "Ferry off · Skye Bridge · Bealach na Bà · Applecross",
       route: "A87 · A896 · Bealach na Bà",
       miles: "95", drive: "3.5 hrs",
@@ -398,6 +409,8 @@ window.TRIP = {
     {
       num: 10, date: "Wed 29 Jul", weekday: "Wednesday",
       title: "Torridon & Loch Maree → Fort William",
+      stay: { name: "Clan MacDuff Hotel, Fort William", lat: 56.7945, lng: -5.112, mapUrl: "https://www.google.com/maps/search/?api=1&query=Clan%20MacDuff%20Hotel%20Fort%20William%20PH33%206RW" },
+      depart: "Leave Torridon by ~10:00 — the Loch Maree drive south; Fort William / Clan MacDuff by mid-afternoon.",
       foodNote: "Fort William nights 2–3 are self-catering (Beinn Brèagha — full kitchen, dishwasher, washing machine). Do the big shop at Morrisons Blar Mhor on arrival; it is the largest supermarket in the whole west Highlands.",
       shops: [
         { name: "Morrisons — Blar Mhor, Fort William", note: "The big shop for the self-catering house (Aldi & Lidl alongside). Café with a salad counter.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Morrisons%20Blar%20Mhor%20Fort%20William%20PH33%207PT" },
@@ -430,6 +443,7 @@ window.TRIP = {
     {
       num: 11, date: "Thu 30 Jul", weekday: "Thursday",
       title: "Glenfinnan & the Road to the Isles",
+      stay: { name: "Beinn Brèagha House, Fort William", lat: 56.829, lng: -5.101, mapUrl: "https://www.google.com/maps/search/?api=1&query=13%20Lochy%20Road%20Fort%20William%20PH33%206NJ" },
       leg: "Day out from Fort William · Glenfinnan · Morar beaches · Mallaig",
       route: "A830 loop",
       miles: "40", drive: "—",
@@ -453,6 +467,7 @@ window.TRIP = {
     {
       num: 12, date: "Fri 31 Jul", weekday: "Friday",
       title: "Glencoe day-trip",
+      stay: { name: "Beinn Brèagha House, Fort William", lat: 56.829, lng: -5.101, mapUrl: "https://www.google.com/maps/search/?api=1&query=13%20Lochy%20Road%20Fort%20William%20PH33%206NJ" },
       leg: "Day out from Fort William · Three Sisters · Glen Etive · Lost Valley",
       route: "A82 · 30 min each way",
       miles: "60", drive: "—",
@@ -474,6 +489,8 @@ window.TRIP = {
     {
       num: 13, date: "Sat 1 Aug", weekday: "Saturday",
       title: "Fort William → Lake District",
+      stay: { name: "The Waterhead Inn, Ambleside", lat: 54.4232, lng: -2.964, mapUrl: "https://www.google.com/maps/search/?api=1&query=Waterhead%20Hotel%20Ambleside%20LA22%200HD" },
+      depart: "Leave Fort William by ~09:00 — long A82/M74/M6 run (~4.5h) + a Luss leg-stretch; Waterhead check-in 15:00–19:00.",
       shops: [
         { name: "Booths — Windermere", note: "The North's quality supermarket, by Windermere station — big fresh & deli range.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Booths%20Windermere" },
         { name: "Co-op — Ambleside (Compston Rd)", note: "Central Ambleside for quick top-ups.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Ambleside%20Compston%20Road" },
@@ -502,6 +519,7 @@ window.TRIP = {
     {
       num: 14, date: "Sun 2 Aug", weekday: "Sunday",
       title: "Lake District → Oxford",
+      depart: "Leave Ambleside by ~08:00 — ~4.5h to Oxford to make the 13:00 Enterprise car drop-off.",
       leg: "M6 · M40 — the final leg",
       route: "M6 · M40",
       miles: "~270", drive: "4.5–5 hrs",
