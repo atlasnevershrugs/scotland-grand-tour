@@ -585,6 +585,30 @@ details.bk-stop[open] .bk-summary { border-bottom: 1px solid var(--line); margin
   font-weight: 700; letter-spacing: .03em; color: var(--loch); background: rgba(44,95,102,.10);
   border: 1px solid rgba(44,95,102,.22); border-radius: 100px; padding: 2px 9px; white-space: nowrap; }
 
+/* Driving banner — leads each day card */
+.day-drive {
+  background: linear-gradient(180deg, rgba(107,78,140,.07), rgba(44,95,102,.05));
+  border: 1px solid var(--line); border-left: 4px solid var(--heather);
+  border-radius: var(--radius-lg); padding: 14px 18px; margin: 4px 0 16px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.day-drive-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.day-drive-route { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--ink); }
+.day-drive-dir {
+  font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .04em;
+  background: var(--heather); color: #fff; border-radius: 100px; padding: 7px 15px; white-space: nowrap;
+}
+.day-drive-dir:hover { background: var(--ink); }
+.day-drive-stats { font-size: 13px; font-weight: 700; color: var(--loch); letter-spacing: .02em; }
+.day-drive-leg { font-size: 13.5px; font-style: italic; color: var(--ink-soft); }
+.day-drive-stay {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; align-self: flex-start;
+  font-size: 13px; font-weight: 600; color: #0b6e4f;
+  background: rgba(11,110,79,.08); border: 1px solid rgba(11,110,79,.22);
+  border-radius: 8px; padding: 8px 12px;
+}
+.day-drive-stay:hover { background: rgba(11,110,79,.15); }
+
 .mini-pin {
   width: 16px; height: 16px;
   background: var(--heather);

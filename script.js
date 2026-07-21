@@ -63,6 +63,10 @@
     const r = T.route.filter(x => x.day <= dayNum);
     let h = r.length ? r[r.length - 1] : null;
     if ((dayNum === 7 || dayNum === 8) && h) h = SCONSER;  // Skye day-trips start at the ferry
+    if (h) {
+      const s = T.days.find(dd => dd.stay && dd.overnight === h.label);
+      if (s) h = { lat: s.stay.lat, lng: s.stay.lng, label: s.stay.name };
+    }
     return h;
   }
   function dayStart(dayNum) {
@@ -761,6 +765,42 @@
   }
 
   /* ===================================================================
+     DRIVING BANNER — leads each day (route + directions + tonight's stay)
+     =================================================================== */
+  function buildDriveBanner(d) {
+    const el = document.createElement('div');
+    el.className = 'day-drive';
+    const start = dayStart(d.num);
+    const hotel = dayHotel(d.num);
+    const isTransfer = !!start;
+    let dirBtn = '';
+    if (isTransfer && hotel) {
+      const origin = `${start.lat},${start.lng}`;
+      const dest = d.stay ? `${d.stay.lat},${d.stay.lng}` : `${hotel.lat},${hotel.lng}`;
+      const url = `https://www.google.com/maps/dir/?api=1&origin=${enc(origin)}&destination=${enc(dest)}&travelmode=driving`;
+      dirBtn = `<a class="day-drive-dir" href="${url}" target="_blank" rel="noopener">\uD83E\uDDED Directions \u2197</a>`;
+    }
+    const headline = isTransfer ? `\uD83D\uDE97 ${start.label} \u2192 ${d.overnight}` : `\uD83C\uDFE0 Based in ${d.overnight} \u2014 day-trip`;
+    const stats = [
+      (d.route && d.route !== '\u2014') ? d.route : null,
+      (d.miles && d.miles !== '\u2014') ? d.miles + ' mi' : null,
+      (d.drive && d.drive !== '\u2014') ? d.drive : null
+    ].filter(Boolean).join('  \u00B7  ');
+    const stayLine = d.stay
+      ? `<a class="day-drive-stay" href="${d.stay.mapUrl}" target="_blank" rel="noopener">\uD83C\uDFE0 Tonight's stay \u2014 ${d.stay.name} \u00B7 Open in Google Maps \u2197</a>`
+      : '';
+    el.innerHTML = `
+      <div class="day-drive-top">
+        <span class="day-drive-route">${headline}</span>
+        ${dirBtn}
+      </div>
+      ${stats ? `<div class="day-drive-stats">${stats}</div>` : ''}
+      ${d.leg ? `<div class="day-drive-leg">${d.leg}</div>` : ''}
+      ${stayLine}`;
+    return el;
+  }
+
+  /* ===================================================================
      BUILD ONE DAY SECTION
      =================================================================== */
   function buildDay(d) {
@@ -776,31 +816,27 @@
         <span class="day-num">Day ${String(d.num).padStart(2, '0')}</span>
         <span class="day-date">${d.weekday} · ${d.date}</span>
       </div>
-      <h3 class="day-title">${d.title}</h3>
-      <p class="day-blurb">${d.blurb}</p>`;
+      <h3 class="day-title">${d.title}</h3>`;
     sec.appendChild(head);
 
-    // Top row: minimap + drive strip
-    const topRow = document.createElement('div');
-    topRow.className = 'day-top-row';
+    // Driving banner leads the day
+    sec.appendChild(buildDriveBanner(d));
 
+    // Day narrative
+    if (d.blurb) {
+      const blurb = document.createElement('p');
+      blurb.className = 'day-blurb';
+      blurb.innerHTML = d.blurb;
+      sec.appendChild(blurb);
+    }
+
+    // Full-width numbered day map
     const mini = document.createElement('div');
     mini.className = 'day-minimap';
     mini.dataset.day = String(d.num);
     mini.id = `minimap-${d.num}`;
-    topRow.appendChild(mini);
+    sec.appendChild(mini);
     minimapObserver.observe(mini);
-
-    const strip = document.createElement('div');
-    strip.className = 'drive-strip';
-    strip.innerHTML = `
-      <div class="drive-stat"><div class="drive-stat-label">Route</div><div class="drive-stat-value">${d.route}</div></div>
-      <div class="drive-stat"><div class="drive-stat-label">Distance</div><div class="drive-stat-value">${d.miles}${d.miles !== '—' ? ' mi' : ''}</div></div>
-      <div class="drive-stat"><div class="drive-stat-label">Drive</div><div class="drive-stat-value">${d.drive}</div></div>
-      <div class="drive-stat"><div class="drive-stat-label">Overnight</div><div class="drive-stat-value">${d.overnight}</div></div>`;
-    topRow.appendChild(strip);
-
-    sec.appendChild(topRow);
 
     // See & do — one photo-linked card per attraction
     if (d.attractions && d.attractions.length) {

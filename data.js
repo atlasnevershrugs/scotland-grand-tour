@@ -199,7 +199,7 @@ window.TRIP = {
       miles: "—", drive: "—",
       overnight: "Edinburgh",
       hero: "Edinburgh_Castle",
-      blurb: "A key castle plus green space and important buildings. Edinburgh Castle in the morning, then out to nature — Arthur's Seat and Holyrood Park in the heart of the city, and the 100-acre Jupiter Artland sculpga garden on the edge of town. Add the mysterious Rosslyn Chapel and the panorama from Calton Hill.",
+      blurb: "A key castle plus green space and important buildings. Edinburgh Castle in the morning, then out to nature — Arthur's Seat and Holyrood Park in the heart of the city, and the 100-acre Jupiter Artland sculpture garden on the edge of town. Add the mysterious Rosslyn Chapel and the panorama from Calton Hill.",
       attractions: [
         { name: "Edinburgh Castle", lat: 55.9486, lng: -3.1999, wiki: "Edinburgh_Castle", desc: "The one castle not to miss — book online, opens 9:30am, allow two hours for the crown jewels and the view over the city.", url: "https://www.edinburghcastle.scot", locale: "Edinburgh", bookAhead: true, bookNote: "Timed entry — sells out weeks ahead in summer; book online." },
         { name: "Arthur's Seat & Holyrood Park", lat: 55.9441, lng: -3.1618, wiki: "Arthur%27s_Seat", desc: "An extinct volcano and wild park in the middle of the city — drive up to Dunsapie Loch for the view with barely a stroll, or amble the low paths. No kit needed.", locale: "Edinburgh" },
@@ -259,6 +259,7 @@ window.TRIP = {
       miles: "90", drive: "2 hrs",
       overnight: "Drumnadrochit",
       checkin: "2026-07-23", checkout: "2026-07-25", booked: true,
+      stay: { name: "Cherrytrees, Drumnadrochit (your Airbnb)", lat: 57.34032326116966, lng: -4.498363249003887, mapUrl: "https://www.google.com/maps/search/?api=1&query=57.34032326116966%2C-4.498363249003887" },
       hero: "Inverness",
       blurb: "The A9 climbs over the Pass of Drumochter and straight through the Cairngorms National Park — Britain's biggest — before dropping to Inverness and down the west shore of Loch Ness to Drumnadrochit, your base for two nights. Break the drive at Aviemore for ancient forest and a funicular ride to the mountain-top views.",
       attractions: [
