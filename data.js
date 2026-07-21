@@ -220,7 +220,7 @@ window.TRIP = {
       num: 3, date: "Wed 22 Jul", weekday: "Wednesday",
       title: "Edinburgh → Pitlochry",
       stay: { name: "Rosemount Hotel, Pitlochry", lat: 56.7042, lng: -3.7276, mapUrl: "https://www.google.com/maps/search/?api=1&query=Rosemount%20Hotel%20Pitlochry%20PH16%205HT" },
-      depart: "Leave Edinburgh by ~10:00 — Scone Palace + The Hermitage en route; Rosemount check-in from 16:00.",
+      depart: "Leave Edinburgh by ~10:00 — the Hermitage forest walk (Dunkeld) en route; Rosemount check-in from 16:00.",
       shops: [
         { name: "M&S Foodhall — Inveralmond, Perth", note: "Right on the A9 as you skirt Perth (~46 mi in; 26 mi / 35 min left to Pitlochry). Zero detour. Foodhall with salads & food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=M%26S%20Foodhall%20Inveralmond%20Perth%20PH1%203EE" },
         { name: "Tesco Extra — Crieff Rd, Perth (24h)", note: "Big 24-hour superstore beside Inveralmond — fresh counters and salad/food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Crieff%20Road%20Perth%20PH1%202NR" },
