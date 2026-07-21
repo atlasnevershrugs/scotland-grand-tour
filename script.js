@@ -654,7 +654,7 @@
   function attractionCard(a, idx) {
     const enrich = E.attractions[a.name] || {};
     const card = document.createElement('div');
-    card.className = 'attr-card';
+    card.className = 'attr-card' + (a.bookAhead ? ' attr-card-book' : '');
 
     const fig = document.createElement('button');
     fig.type = 'button';
@@ -680,13 +680,16 @@
     }, { rootMargin: '400px 0px' });
     io.observe(fig);
 
-    const badges = `${a.mustDo ? '<span class="attr-key-badge attr-key-badge-must" title="A must-do stop">★ Non-negotiable</span>' : ''}${a.enroute ? '<span class="attr-key-badge" title="On the drive to your next hotel">En route</span>' : ''}`;
+    const bookBadge = a.bookAhead ? `<span class="attr-key-badge attr-key-badge-book" title="${a.bookNote || 'Book tickets in advance'}">🎟 Book ahead</span>` : '';
+    const badges = `${bookBadge}${a.mustDo ? '<span class="attr-key-badge attr-key-badge-must" title="A must-do stop">★ Non-negotiable</span>' : ''}${a.enroute ? '<span class="attr-key-badge" title="On the drive to your next hotel">En route</span>' : ''}`;
 
     const chips = [];
     chips.push(`<a class="chip chip-map" href="${googleMapsSearch(a.name + ', ' + (a.locale || ''))}" target="_blank" rel="noopener" title="Open location in Google Maps">Google Maps</a>`);
     if (enrich.tripadvisor) chips.push(`<a class="chip chip-ta" href="${enrich.tripadvisor}" target="_blank" rel="noopener">TripAdvisor</a>`);
     else chips.push(`<a class="chip chip-ta" href="${tripadvisorSearch(a.name + ' ' + (a.locale || ''))}" target="_blank" rel="noopener">TripAdvisor</a>`);
-    if (a.url) chips.push(`<a class="chip chip-site" href="${a.url}" target="_blank" rel="noopener">Official site</a>`);
+    if (a.url) chips.push(a.bookAhead
+      ? `<a class="chip chip-book" href="${a.url}" target="_blank" rel="noopener">🎟 Book tickets ↗</a>`
+      : `<a class="chip chip-site" href="${a.url}" target="_blank" rel="noopener">Official site</a>`);
     (enrich.blogs || []).forEach(b => chips.push(`<a class="chip chip-blog" href="${b.url}" target="_blank" rel="noopener" title="${b.title}">${b.source}</a>`));
     if (a.wiki) chips.push(`<a class="chip chip-wiki" href="${wikiPage(a.wiki)}" target="_blank" rel="noopener">Wikipedia</a>`);
 
@@ -700,6 +703,7 @@
       </div>
       ${badges ? `<div class="attr-card-badges">${badges}</div>` : ''}
       <p class="attr-card-desc">${a.desc || ''}</p>
+      ${a.bookAhead && a.bookNote ? `<p class="attr-card-booknote">🎟 ${a.bookNote}</p>` : ''}
       <div class="attr-key-chips">${chips.join('')}</div>`;
     card.appendChild(body);
     return card;

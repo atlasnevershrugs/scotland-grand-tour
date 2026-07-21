@@ -101,6 +101,7 @@ window.TRIP = {
   ],
 
   practical: [
+    { title: "🎟 Pre-book these — they sell out", body: "Several stops need <strong>timed tickets booked online in advance</strong> (some sell out days ahead in peak summer): <strong>Edinburgh Castle</strong>, <strong>Rosslyn Chapel</strong> &amp; <strong>Jupiter Artland</strong> (Day 2); the <strong>Cairngorm funicular</strong> (Day 4); <strong>Urquhart Castle</strong> — book the timed slot AND a parking bay — plus the <strong>Loch Ness cruise</strong> &amp; <strong>Culloden</strong> (Day 5); <strong>Dunvegan Castle</strong> &amp; the <strong>Elgol / Loch Coruisk boat</strong> (Day 8). Look for the red 🎟 Book-ahead tag on those cards." },
     { title: "Leave the car on Skye", body: "Borodale is a 12-min walk from the Raasay pier and you tour Skye every day — so park the car at Sconser and cross as foot passengers (~£4 return vs ~£16 for the car). Confirm multi-day Sconser parking with CalMac / Borodale House, and ask Borodale about a luggage pickup at the pier." },
     { title: "Sconser ↔ Raasay ferry", body: "CalMac, 25-min crossing, ~9 sailings/day on weekdays (fewer on Sundays — first ~10am). As foot passengers you can turn up and go, but verify the timetable for your Skye day-trips at calmac.co.uk." },
     { title: "Fuel", body: "Fill up at every petrol station in the Highlands. Stations can be 30–40 miles apart and close by 6–7pm. Top up in Inverness, on Skye (Portree/Broadford), Lochcarron, and at Fort William." },
@@ -200,10 +201,10 @@ window.TRIP = {
       hero: "Edinburgh_Castle",
       blurb: "A key castle plus green space and important buildings. Edinburgh Castle in the morning, then out to nature — Arthur's Seat and Holyrood Park in the heart of the city, and the 100-acre Jupiter Artland sculpga garden on the edge of town. Add the mysterious Rosslyn Chapel and the panorama from Calton Hill.",
       attractions: [
-        { name: "Edinburgh Castle", wiki: "Edinburgh_Castle", desc: "The one castle not to miss — book online, opens 9:30am, allow two hours for the crown jewels and the view over the city.", url: "https://www.edinburghcastle.scot", locale: "Edinburgh" },
+        { name: "Edinburgh Castle", wiki: "Edinburgh_Castle", desc: "The one castle not to miss — book online, opens 9:30am, allow two hours for the crown jewels and the view over the city.", url: "https://www.edinburghcastle.scot", locale: "Edinburgh", bookAhead: true, bookNote: "Timed entry — sells out weeks ahead in summer; book online." },
         { name: "Arthur's Seat & Holyrood Park", wiki: "Arthur%27s_Seat", desc: "An extinct volcano and wild park in the middle of the city — drive up to Dunsapie Loch for the view with barely a stroll, or amble the low paths. No kit needed.", locale: "Edinburgh" },
-        { name: "Jupiter Artland", wiki: "Jupiter_Artland", desc: "Award-winning 100-acre sculpture garden of meadow and woodland just outside the city — 30+ works incl. Charles Jencks's landform. Relaxed, outdoors, no hiking.", url: "https://www.jupiterartland.org", locale: "Wilkieston" },
-        { name: "Rosslyn Chapel", wiki: "Rosslyn_Chapel", desc: "15th-century chapel famed for its mysterious stone carvings (the Da Vinci Code chapel), a 20-min drive south — an atmospheric half-hour indoors.", url: "https://www.rosslynchapel.com", locale: "Roslin" },
+        { name: "Jupiter Artland", wiki: "Jupiter_Artland", desc: "Award-winning 100-acre sculpture garden of meadow and woodland just outside the city — 30+ works incl. Charles Jencks's landform. Relaxed, outdoors, no hiking.", url: "https://www.jupiterartland.org", locale: "Wilkieston", bookAhead: true, bookNote: "Timed-entry tickets — pre-book online (10% off 48h ahead)." },
+        { name: "Rosslyn Chapel", wiki: "Rosslyn_Chapel", desc: "15th-century chapel famed for its mysterious stone carvings (the Da Vinci Code chapel), a 20-min drive south — an atmospheric half-hour indoors.", url: "https://www.rosslynchapel.com", locale: "Roslin", bookAhead: true, bookNote: "90-minute timed slots — book online to guarantee entry." },
         { name: "Calton Hill", wiki: "Calton_Hill", desc: "Acropolis-style monuments and the best easy panorama of the city — five minutes up from the street.", locale: "Edinburgh" },
         { name: "St Giles' Cathedral", wiki: "St_Giles%27_Cathedral", desc: "The High Kirk of Edinburgh on the Royal Mile — free to enter, with the exquisite Thistle Chapel.", url: "https://www.stgilescathedral.org.uk", locale: "Edinburgh" }
       ],
@@ -263,7 +264,7 @@ window.TRIP = {
       attractions: [
         { name: "Cairngorms National Park", wiki: "Cairngorms_National_Park", desc: "The UK's largest national park — you drive right through it on the A9. Ancient forest, mountains and moorland; pull off around Aviemore for the scenery.", locale: "Aviemore", enroute: true },
         { name: "Rothiemurchus Estate", wiki: "Rothiemurchus", desc: "Ancient Caledonian pine forest with red squirrels and gentle, flat trails around Loch an Eilein — a short, easy woodland stroll, free.", url: "https://www.rothiemurchus.net", locale: "Aviemore", enroute: true },
-        { name: "Cairngorm Mountain Railway", wiki: "Cairngorm_Mountain_Railway", desc: "A funicular carries you to a 1,097m viewpoint — huge Highland panoramas with no climbing. Spectacular on a clear day.", url: "https://www.cairngormmountain.org", locale: "Aviemore", enroute: true }
+        { name: "Cairngorm Mountain Railway", wiki: "Cairngorm_Mountain_Railway", desc: "A funicular carries you to a 1,097m viewpoint — huge Highland panoramas with no climbing. Spectacular on a clear day.", url: "https://www.cairngormmountain.org", locale: "Aviemore", enroute: true, bookAhead: true, bookNote: "Funicular runs to timed slots — book online in advance." }
       ],
       hotels: [
         { name: "Rocpool Reserve Hotel",  style: "5-star boutique (Inverness)",      price: "£180–£230", url: "https://www.rocpool.com/rocpool-reserve-hotel-inverness/", locale: "Inverness" },
@@ -285,11 +286,11 @@ window.TRIP = {
       hero: "Loch_Ness",
       blurb: "From Drumnadrochit, Urquhart Castle and a Loch Ness cruise are five minutes away. Loop down to Fort Augustus for the canal locks, or east to the ancient Clava Cairns and the moving Culloden battlefield, then out to Chanonry Point for a chance at wild dolphins in the afternoon.",
       attractions: [
-        { name: "Urquhart Castle", wiki: "Urquhart_Castle", desc: "Dramatic ruined castle on the shore of Loch Ness, 5 minutes from Drumnadrochit — one of the great Highland castle views, best from the tower.", url: "https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/", locale: "Drumnadrochit" },
-        { name: "Loch Ness Cruise", wiki: "Loch_Ness", desc: "See the legendary loch from the water — Jacobite Cruises leave from Drumnadrochit pier. An easy hour afloat, Nessie-spotting optional.", url: "https://www.jacobite.co.uk", locale: "Loch Ness" },
+        { name: "Urquhart Castle", wiki: "Urquhart_Castle", desc: "Dramatic ruined castle on the shore of Loch Ness, 5 minutes from Drumnadrochit — one of the great Highland castle views, best from the tower.", url: "https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/", locale: "Drumnadrochit", bookAhead: true, bookNote: "Pre-book a timed slot AND a parking bay — sells out ~a week ahead in summer; none sold at the gate once full." },
+        { name: "Loch Ness Cruise", wiki: "Loch_Ness", desc: "See the legendary loch from the water — Jacobite Cruises leave from Drumnadrochit pier. An easy hour afloat, Nessie-spotting optional.", url: "https://www.jacobite.co.uk", locale: "Loch Ness", bookAhead: true, bookNote: "Popular sailings — reserve your departure time ahead." },
         { name: "Fort Augustus", wiki: "Fort_Augustus", desc: "Pretty village at the south end of Loch Ness where the Caledonian Canal steps down through a flight of locks — watch the boats, no walking required.", locale: "Fort Augustus" },
         { name: "Clava Cairns", wiki: "Clava_Cairns", desc: "Atmospheric 4,000-year-old Bronze-Age burial cairns and standing stones (the Outlander inspiration) in a quiet copse — a short, flat wander, free.", url: "https://www.historicenvironment.scot/visit-a-place/places/clava-cairns/", locale: "Inverness" },
-        { name: "Culloden Battlefield", wiki: "Battle_of_Culloden", desc: "Moor where the 1746 Jacobite rising ended — an important, moving site with an outstanding visitor centre. Flat paths, allow two hours.", url: "https://www.nts.org.uk/visit/places/culloden", locale: "Inverness" },
+        { name: "Culloden Battlefield", wiki: "Battle_of_Culloden", desc: "Moor where the 1746 Jacobite rising ended — an important, moving site with an outstanding visitor centre. Flat paths, allow two hours.", url: "https://www.nts.org.uk/visit/places/culloden", locale: "Inverness", bookAhead: true, bookNote: "Timed entry (NTS) — book online; slots go by midday in summer." },
         { name: "Chanonry Point", wiki: "Chanonry_Point", desc: "One of the best spots in the UK to see wild bottlenose dolphins from the beach — best an hour after low tide. A short stroll from the car.", locale: "Fortrose" }
       ],
       hotels: [],
@@ -358,8 +359,8 @@ window.TRIP = {
         { name: "Fairy Pools", wiki: "Fairy_Pools", desc: "Crystal-clear turquoise pools and little waterfalls at the foot of the Cuillin — a flat 20–30 min there-and-back. Arrive early on the first ferry.", locale: "Glenbrittle" },
         { name: "Claigan Coral Beaches", wiki: "Claigan", desc: "Beaches of crushed white coralline algae glowing against turquoise water — an easy 30-min shoreline walk near Dunvegan.", locale: "Dunvegan" },
         { name: "Neist Point Lighthouse", wiki: "Neist_Point", desc: "Skye's westernmost tip — the clifftop viewpoint over the lighthouse and out to the Hebrides is a short walk from the car park.", locale: "Glendale" },
-        { name: "Dunvegan Castle & Gardens", wiki: "Dunvegan_Castle", desc: "Skye's key castle — seat of Clan MacLeod for 800 years, with lovely waterside gardens. A relaxed couple of hours.", url: "https://www.dunvegancastle.com", locale: "Dunvegan" },
-        { name: "Elgol & Loch Coruisk boat trip", wiki: "Loch_Coruisk", desc: "Optional small-boat trip from Elgol into Loch Coruisk beneath the Black Cuillin — seals en route. ~4 hours; book ahead.", url: "https://bellajane.co.uk/", locale: "Elgol" }
+        { name: "Dunvegan Castle & Gardens", wiki: "Dunvegan_Castle", desc: "Skye's key castle — seat of Clan MacLeod for 800 years, with lovely waterside gardens. A relaxed couple of hours.", url: "https://www.dunvegancastle.com", locale: "Dunvegan", bookAhead: true, bookNote: "Busy in summer — book online to skip the queue." },
+        { name: "Elgol & Loch Coruisk boat trip", wiki: "Loch_Coruisk", desc: "Optional small-boat trip from Elgol into Loch Coruisk beneath the Black Cuillin — seals en route. ~4 hours; book ahead.", url: "https://bellajane.co.uk/", locale: "Elgol", bookAhead: true, bookNote: "Tiny boats, only a few sailings a day — book well ahead." }
       ],
       hotels: [],
       restaurants: [

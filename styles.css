@@ -928,6 +928,15 @@ details.bk-stop[open] .bk-summary { border-bottom: 1px solid var(--line); margin
   white-space: nowrap; font-family: var(--sans); margin-left: 6px;
 }
 .attr-key-badge-must { background: var(--heather); }
+.attr-key-badge-book { background: #c0392b; }
+.attr-card-book { border-left: 3px solid #c0392b; }
+.chip-book    { background: rgba(192,57,43,.10); color: #c0392b; border-color: rgba(192,57,43,.22); }
+.chip-book:hover { background: #c0392b; color: #fff; }
+.attr-card-booknote {
+  font-size: 12.5px; line-height: 1.45; margin: 0; color: #922b21;
+  background: rgba(192,57,43,.08); border: 1px solid rgba(192,57,43,.20);
+  border-radius: var(--radius); padding: 7px 10px;
+}
 
 /* Attraction cards — photo + name + badges + links together */
 .attr-card-grid {
