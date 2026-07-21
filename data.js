@@ -41,7 +41,6 @@ window.TRIP = {
   detours: [
     { lat: 55.8556, lng: -3.1601, label: "Rosslyn Chapel",      day: 2  },
     { lat: 55.9057, lng: -3.4360, label: "Jupiter Artland",     day: 2  },
-    { lat: 56.4177, lng: -3.4392, label: "Scone Palace",        day: 3  },
     { lat: 56.5658, lng: -3.5900, label: "The Hermitage",       day: 3  },
     { lat: 56.6930, lng: -3.8760, label: "Queen's View",        day: 3  },
     { lat: 57.1200, lng: -3.6700, label: "Cairngorms NP",       day: 4  },
@@ -233,14 +232,15 @@ window.TRIP = {
       overnight: "Pitlochry",
       checkin: "2026-07-22", checkout: "2026-07-23", booked: true,
       hero: "Pitlochry",
-      blurb: "Straight up the A9 via Perth — pause at Scone Palace, the crowning place of Scottish kings, and stock up at the Perth supermarkets (Pitlochry has only a Co-op). The magical forest walk at The Hermitage, Dunkeld — towering Douglas firs to the thundering Black Linn Falls — is non-negotiable; Queen's View and the Pitlochry salmon ladder round out an easy day, with Blair Castle an optional add-on just up the road.",
+      blurb: "Straight up the A9 via Perth — stock up at the Perth supermarkets on the way (Pitlochry has only a Co-op). The magical forest walk at The Hermitage, Dunkeld — towering Douglas firs to the thundering Black Linn Falls — is non-negotiable. Around Pitlochry it is all gentle water and woodland: Queen's View over Loch Tummel, the salmon ladder in town, Faskally Wood and the Linn of Tummel by the loch, and the Garry Bridge gorge viewpoint.",
       attractions: [
         { name: "The Hermitage, Dunkeld", lat: 56.5658, lng: -3.59, wiki: "The_Hermitage,_Dunkeld", desc: "A magical Perthshire forest walk beneath Britain's tallest Douglas firs to Ossian's Hall, perched above the thundering Black Linn Falls. 20–30 min loop, free — a non-negotiable stop.", url: "https://www.forestryandland.gov.scot/visit/forest-parks/tay-forest-park/hermitage", locale: "Dunkeld", enroute: true, mustDo: true },
-        { name: "Scone Palace", lat: 56.4177, lng: -3.4392, wiki: "Scone_Palace", desc: "The crowning place of Scotland's kings, set in grand gardens and a wild-flower meadow with peacocks — an important, easy-to-visit house right on the A9 at Perth.", url: "https://scone-palace.co.uk", locale: "Perth", enroute: true },
         { name: "Queen's View", lat: 56.693, lng: -3.876, wiki: "Queen%27s_View", desc: "One of the most photographed views in Scotland, over Loch Tummel to Schiehallion. Five-minute walk from the car park.", locale: "Pitlochry" },
         { name: "Pitlochry Dam Fish Ladder", lat: 56.701, lng: -3.736, wiki: "Pitlochry_Dam", desc: "Watch salmon leap upstream in season from the glass-sided viewing chamber — free, right in town, no walking.", locale: "Pitlochry" },
         { name: "Faskally Wood", lat: 56.7230, lng: -3.7420, wiki: "Faskally_Forest", desc: "A gentle woodland walk around Loch Faskally, a mile north of Pitlochry — the easy-access Dunmore Trail loops the loch (herons, kingfishers, summer water lilies), and it's the home of the autumn Enchanted Forest. Flat, free, no climb.", url: "https://forestryandland.gov.scot/visit/forest-parks/tay-forest-park/faskally", locale: "Pitlochry" },
-        { name: "Blair Castle", lat: 56.766, lng: -3.848, wiki: "Blair_Castle", desc: "Optional add-on 10 min north — Scotland's most-visited castle outside Edinburgh, white-turreted with grand grounds and the Atholl Highlanders parade ground.", url: "https://www.blair-castle.co.uk", locale: "Blair Atholl" }
+        { name: "Linn of Tummel", lat: 56.7350, lng: -3.7720, wiki: null, desc: "A gentle NTS riverside walk to the rapids where the Tummel and Garry rivers meet — oak woodland, a Victorian bridge and salmon leaping in the linn. Flat paths, free.", url: "https://www.nts.org.uk/visit/places/linn-of-tummel", locale: "Pitlochry" },
+        { name: "Garry Bridge", lat: 56.7430, lng: -3.7770, wiki: null, desc: "A dramatic viewpoint over the wooded River Garry gorge just above Pitlochry (and a bungee-jump spot if anyone is brave). A two-minute stop from the car.", locale: "Killiecrankie" },
+        { name: "The Enchanted Forest", lat: 56.7235, lng: -3.7415, wiki: null, desc: "🍂 Autumn event only (mid-Oct to early Nov) — a spectacular sound-and-light show staged in Faskally Wood. NOT running during your July visit; listed for reference.", url: "https://enchantedforest.org.uk/", locale: "Pitlochry" },
       ],
       hotels: [
         { name: "Fonab Castle Hotel",    style: "4-star lochside castle hotel",      price: "£150–£190", url: "https://www.fonabcastlehotel.com",  locale: "Pitlochry" },
