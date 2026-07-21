@@ -179,8 +179,8 @@ window.TRIP = {
       hero: "Edinburgh",
       blurb: "Pick up the hire car at Edinburgh Airport and drive to your city centre hotel. Park it — you will not need it for two days. Walk the Royal Mile in the evening and have dinner in the Grassmarket.",
       attractions: [
-        { name: "Royal Mile",  wiki: "Royal_Mile",  desc: "The medieval spine of the Old Town, running from the Castle down to Holyrood.", locale: "Edinburgh" },
-        { name: "Grassmarket", wiki: "Grassmarket", desc: "Historic market square below the Castle rock — pubs, bistros, and the evening crowd.", locale: "Edinburgh" }
+        { name: "Royal Mile", lat: 55.9503, lng: -3.1899,  wiki: "Royal_Mile",  desc: "The medieval spine of the Old Town, running from the Castle down to Holyrood.", locale: "Edinburgh" },
+        { name: "Grassmarket", lat: 55.9478, lng: -3.1958, wiki: "Grassmarket", desc: "Historic market square below the Castle rock — pubs, bistros, and the evening crowd.", locale: "Edinburgh" }
       ],
       hotels: [
         { name: "The Balmoral Hotel",     style: "5-star landmark on Princes Street", price: "£200–£250", url: "https://www.booking.com/hotel/gb/the-balmoral.html", locale: "Edinburgh" },
@@ -201,12 +201,12 @@ window.TRIP = {
       hero: "Edinburgh_Castle",
       blurb: "A key castle plus green space and important buildings. Edinburgh Castle in the morning, then out to nature — Arthur's Seat and Holyrood Park in the heart of the city, and the 100-acre Jupiter Artland sculpga garden on the edge of town. Add the mysterious Rosslyn Chapel and the panorama from Calton Hill.",
       attractions: [
-        { name: "Edinburgh Castle", wiki: "Edinburgh_Castle", desc: "The one castle not to miss — book online, opens 9:30am, allow two hours for the crown jewels and the view over the city.", url: "https://www.edinburghcastle.scot", locale: "Edinburgh", bookAhead: true, bookNote: "Timed entry — sells out weeks ahead in summer; book online." },
-        { name: "Arthur's Seat & Holyrood Park", wiki: "Arthur%27s_Seat", desc: "An extinct volcano and wild park in the middle of the city — drive up to Dunsapie Loch for the view with barely a stroll, or amble the low paths. No kit needed.", locale: "Edinburgh" },
-        { name: "Jupiter Artland", wiki: "Jupiter_Artland", desc: "Award-winning 100-acre sculpture garden of meadow and woodland just outside the city — 30+ works incl. Charles Jencks's landform. Relaxed, outdoors, no hiking.", url: "https://www.jupiterartland.org", locale: "Wilkieston", bookAhead: true, bookNote: "Timed-entry tickets — pre-book online (10% off 48h ahead)." },
-        { name: "Rosslyn Chapel", wiki: "Rosslyn_Chapel", desc: "15th-century chapel famed for its mysterious stone carvings (the Da Vinci Code chapel), a 20-min drive south — an atmospheric half-hour indoors.", url: "https://www.rosslynchapel.com", locale: "Roslin", bookAhead: true, bookNote: "90-minute timed slots — book online to guarantee entry." },
-        { name: "Calton Hill", wiki: "Calton_Hill", desc: "Acropolis-style monuments and the best easy panorama of the city — five minutes up from the street.", locale: "Edinburgh" },
-        { name: "St Giles' Cathedral", wiki: "St_Giles%27_Cathedral", desc: "The High Kirk of Edinburgh on the Royal Mile — free to enter, with the exquisite Thistle Chapel.", url: "https://www.stgilescathedral.org.uk", locale: "Edinburgh" }
+        { name: "Edinburgh Castle", lat: 55.9486, lng: -3.1999, wiki: "Edinburgh_Castle", desc: "The one castle not to miss — book online, opens 9:30am, allow two hours for the crown jewels and the view over the city.", url: "https://www.edinburghcastle.scot", locale: "Edinburgh", bookAhead: true, bookNote: "Timed entry — sells out weeks ahead in summer; book online." },
+        { name: "Arthur's Seat & Holyrood Park", lat: 55.9441, lng: -3.1618, wiki: "Arthur%27s_Seat", desc: "An extinct volcano and wild park in the middle of the city — drive up to Dunsapie Loch for the view with barely a stroll, or amble the low paths. No kit needed.", locale: "Edinburgh" },
+        { name: "Jupiter Artland", lat: 55.9057, lng: -3.436, wiki: "Jupiter_Artland", desc: "Award-winning 100-acre sculpture garden of meadow and woodland just outside the city — 30+ works incl. Charles Jencks's landform. Relaxed, outdoors, no hiking.", url: "https://www.jupiterartland.org", locale: "Wilkieston", bookAhead: true, bookNote: "Timed-entry tickets — pre-book online (10% off 48h ahead)." },
+        { name: "Rosslyn Chapel", lat: 55.8556, lng: -3.1601, wiki: "Rosslyn_Chapel", desc: "15th-century chapel famed for its mysterious stone carvings (the Da Vinci Code chapel), a 20-min drive south — an atmospheric half-hour indoors.", url: "https://www.rosslynchapel.com", locale: "Roslin", bookAhead: true, bookNote: "90-minute timed slots — book online to guarantee entry." },
+        { name: "Calton Hill", lat: 55.9549, lng: -3.1826, wiki: "Calton_Hill", desc: "Acropolis-style monuments and the best easy panorama of the city — five minutes up from the street.", locale: "Edinburgh" },
+        { name: "St Giles' Cathedral", lat: 55.9497, lng: -3.1907, wiki: "St_Giles%27_Cathedral", desc: "The High Kirk of Edinburgh on the Royal Mile — free to enter, with the exquisite Thistle Chapel.", url: "https://www.stgilescathedral.org.uk", locale: "Edinburgh" }
       ],
       hotels: [],
       restaurants: [
@@ -231,11 +231,11 @@ window.TRIP = {
       hero: "Pitlochry",
       blurb: "Straight up the A9 via Perth — pause at Scone Palace, the crowning place of Scottish kings, and stock up at the Perth supermarkets (Pitlochry has only a Co-op). The magical forest walk at The Hermitage, Dunkeld — towering Douglas firs to the thundering Black Linn Falls — is non-negotiable; Queen's View and the Pitlochry salmon ladder round out an easy day, with Blair Castle an optional add-on just up the road.",
       attractions: [
-        { name: "The Hermitage, Dunkeld", wiki: "The_Hermitage,_Dunkeld", desc: "A magical Perthshire forest walk beneath Britain's tallest Douglas firs to Ossian's Hall, perched above the thundering Black Linn Falls. 20–30 min loop, free — a non-negotiable stop.", url: "https://www.forestryandland.gov.scot/visit/forest-parks/tay-forest-park/hermitage", locale: "Dunkeld", enroute: true, mustDo: true },
-        { name: "Scone Palace", wiki: "Scone_Palace", desc: "The crowning place of Scotland's kings, set in grand gardens and a wild-flower meadow with peacocks — an important, easy-to-visit house right on the A9 at Perth.", url: "https://scone-palace.co.uk", locale: "Perth", enroute: true },
-        { name: "Queen's View", wiki: "Queen%27s_View", desc: "One of the most photographed views in Scotland, over Loch Tummel to Schiehallion. Five-minute walk from the car park.", locale: "Pitlochry" },
-        { name: "Pitlochry Dam Fish Ladder", wiki: "Pitlochry_Dam", desc: "Watch salmon leap upstream in season from the glass-sided viewing chamber — free, right in town, no walking.", locale: "Pitlochry" },
-        { name: "Blair Castle", wiki: "Blair_Castle", desc: "Optional add-on 10 min north — Scotland's most-visited castle outside Edinburgh, white-turreted with grand grounds and the Atholl Highlanders parade ground.", url: "https://www.blair-castle.co.uk", locale: "Blair Atholl" }
+        { name: "The Hermitage, Dunkeld", lat: 56.5658, lng: -3.59, wiki: "The_Hermitage,_Dunkeld", desc: "A magical Perthshire forest walk beneath Britain's tallest Douglas firs to Ossian's Hall, perched above the thundering Black Linn Falls. 20–30 min loop, free — a non-negotiable stop.", url: "https://www.forestryandland.gov.scot/visit/forest-parks/tay-forest-park/hermitage", locale: "Dunkeld", enroute: true, mustDo: true },
+        { name: "Scone Palace", lat: 56.4177, lng: -3.4392, wiki: "Scone_Palace", desc: "The crowning place of Scotland's kings, set in grand gardens and a wild-flower meadow with peacocks — an important, easy-to-visit house right on the A9 at Perth.", url: "https://scone-palace.co.uk", locale: "Perth", enroute: true },
+        { name: "Queen's View", lat: 56.693, lng: -3.876, wiki: "Queen%27s_View", desc: "One of the most photographed views in Scotland, over Loch Tummel to Schiehallion. Five-minute walk from the car park.", locale: "Pitlochry" },
+        { name: "Pitlochry Dam Fish Ladder", lat: 56.701, lng: -3.736, wiki: "Pitlochry_Dam", desc: "Watch salmon leap upstream in season from the glass-sided viewing chamber — free, right in town, no walking.", locale: "Pitlochry" },
+        { name: "Blair Castle", lat: 56.766, lng: -3.848, wiki: "Blair_Castle", desc: "Optional add-on 10 min north — Scotland's most-visited castle outside Edinburgh, white-turreted with grand grounds and the Atholl Highlanders parade ground.", url: "https://www.blair-castle.co.uk", locale: "Blair Atholl" }
       ],
       hotels: [
         { name: "Fonab Castle Hotel",    style: "4-star lochside castle hotel",      price: "£150–£190", url: "https://www.fonabcastlehotel.com",  locale: "Pitlochry" },
@@ -262,9 +262,9 @@ window.TRIP = {
       hero: "Inverness",
       blurb: "The A9 climbs over the Pass of Drumochter and straight through the Cairngorms National Park — Britain's biggest — before dropping to Inverness and down the west shore of Loch Ness to Drumnadrochit, your base for two nights. Break the drive at Aviemore for ancient forest and a funicular ride to the mountain-top views.",
       attractions: [
-        { name: "Cairngorms National Park", wiki: "Cairngorms_National_Park", desc: "The UK's largest national park — you drive right through it on the A9. Ancient forest, mountains and moorland; pull off around Aviemore for the scenery.", locale: "Aviemore", enroute: true },
-        { name: "Rothiemurchus Estate", wiki: "Rothiemurchus", desc: "Ancient Caledonian pine forest with red squirrels and gentle, flat trails around Loch an Eilein — a short, easy woodland stroll, free.", url: "https://www.rothiemurchus.net", locale: "Aviemore", enroute: true },
-        { name: "Cairngorm Mountain Railway", wiki: "Cairngorm_Mountain_Railway", desc: "A funicular carries you to a 1,097m viewpoint — huge Highland panoramas with no climbing. Spectacular on a clear day.", url: "https://www.cairngormmountain.org", locale: "Aviemore", enroute: true, bookAhead: true, bookNote: "Funicular runs to timed slots — book online in advance." }
+        { name: "Cairngorms National Park", lat: 57.12, lng: -3.67, wiki: "Cairngorms_National_Park", desc: "The UK's largest national park — you drive right through it on the A9. Ancient forest, mountains and moorland; pull off around Aviemore for the scenery.", locale: "Aviemore", enroute: true },
+        { name: "Rothiemurchus Estate", lat: 57.167, lng: -3.828, wiki: "Rothiemurchus", desc: "Ancient Caledonian pine forest with red squirrels and gentle, flat trails around Loch an Eilein — a short, easy woodland stroll, free.", url: "https://www.rothiemurchus.net", locale: "Aviemore", enroute: true },
+        { name: "Cairngorm Mountain Railway", lat: 57.133, lng: -3.671, wiki: "Cairngorm_Mountain_Railway", desc: "A funicular carries you to a 1,097m viewpoint — huge Highland panoramas with no climbing. Spectacular on a clear day.", url: "https://www.cairngormmountain.org", locale: "Aviemore", enroute: true, bookAhead: true, bookNote: "Funicular runs to timed slots — book online in advance." }
       ],
       hotels: [
         { name: "Rocpool Reserve Hotel",  style: "5-star boutique (Inverness)",      price: "£180–£230", url: "https://www.rocpool.com/rocpool-reserve-hotel-inverness/", locale: "Inverness" },
@@ -286,12 +286,12 @@ window.TRIP = {
       hero: "Loch_Ness",
       blurb: "From Drumnadrochit, Urquhart Castle and a Loch Ness cruise are five minutes away. Loop down to Fort Augustus for the canal locks, or east to the ancient Clava Cairns and the moving Culloden battlefield, then out to Chanonry Point for a chance at wild dolphins in the afternoon.",
       attractions: [
-        { name: "Urquhart Castle", wiki: "Urquhart_Castle", desc: "Dramatic ruined castle on the shore of Loch Ness, 5 minutes from Drumnadrochit — one of the great Highland castle views, best from the tower.", url: "https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/", locale: "Drumnadrochit", bookAhead: true, bookNote: "Pre-book a timed slot AND a parking bay — sells out ~a week ahead in summer; none sold at the gate once full." },
-        { name: "Loch Ness Cruise", wiki: "Loch_Ness", desc: "See the legendary loch from the water — Jacobite Cruises leave from Drumnadrochit pier. An easy hour afloat, Nessie-spotting optional.", url: "https://www.jacobite.co.uk", locale: "Loch Ness", bookAhead: true, bookNote: "Popular sailings — reserve your departure time ahead." },
-        { name: "Fort Augustus", wiki: "Fort_Augustus", desc: "Pretty village at the south end of Loch Ness where the Caledonian Canal steps down through a flight of locks — watch the boats, no walking required.", locale: "Fort Augustus" },
-        { name: "Clava Cairns", wiki: "Clava_Cairns", desc: "Atmospheric 4,000-year-old Bronze-Age burial cairns and standing stones (the Outlander inspiration) in a quiet copse — a short, flat wander, free.", url: "https://www.historicenvironment.scot/visit-a-place/places/clava-cairns/", locale: "Inverness" },
-        { name: "Culloden Battlefield", wiki: "Battle_of_Culloden", desc: "Moor where the 1746 Jacobite rising ended — an important, moving site with an outstanding visitor centre. Flat paths, allow two hours.", url: "https://www.nts.org.uk/visit/places/culloden", locale: "Inverness", bookAhead: true, bookNote: "Timed entry (NTS) — book online; slots go by midday in summer." },
-        { name: "Chanonry Point", wiki: "Chanonry_Point", desc: "One of the best spots in the UK to see wild bottlenose dolphins from the beach — best an hour after low tide. A short stroll from the car.", locale: "Fortrose" }
+        { name: "Urquhart Castle", lat: 57.3239, lng: -4.4426, wiki: "Urquhart_Castle", desc: "Dramatic ruined castle on the shore of Loch Ness, 5 minutes from Drumnadrochit — one of the great Highland castle views, best from the tower.", url: "https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/", locale: "Drumnadrochit", bookAhead: true, bookNote: "Pre-book a timed slot AND a parking bay — sells out ~a week ahead in summer; none sold at the gate once full." },
+        { name: "Loch Ness Cruise", lat: 57.332, lng: -4.477, wiki: "Loch_Ness", desc: "See the legendary loch from the water — Jacobite Cruises leave from Drumnadrochit pier. An easy hour afloat, Nessie-spotting optional.", url: "https://www.jacobite.co.uk", locale: "Loch Ness", bookAhead: true, bookNote: "Popular sailings — reserve your departure time ahead." },
+        { name: "Fort Augustus", lat: 57.145, lng: -4.679, wiki: "Fort_Augustus", desc: "Pretty village at the south end of Loch Ness where the Caledonian Canal steps down through a flight of locks — watch the boats, no walking required.", locale: "Fort Augustus" },
+        { name: "Clava Cairns", lat: 57.473, lng: -4.074, wiki: "Clava_Cairns", desc: "Atmospheric 4,000-year-old Bronze-Age burial cairns and standing stones (the Outlander inspiration) in a quiet copse — a short, flat wander, free.", url: "https://www.historicenvironment.scot/visit-a-place/places/clava-cairns/", locale: "Inverness" },
+        { name: "Culloden Battlefield", lat: 57.4776, lng: -4.094, wiki: "Battle_of_Culloden", desc: "Moor where the 1746 Jacobite rising ended — an important, moving site with an outstanding visitor centre. Flat paths, allow two hours.", url: "https://www.nts.org.uk/visit/places/culloden", locale: "Inverness", bookAhead: true, bookNote: "Timed entry (NTS) — book online; slots go by midday in summer." },
+        { name: "Chanonry Point", lat: 57.5747, lng: -4.0936, wiki: "Chanonry_Point", desc: "One of the best spots in the UK to see wild bottlenose dolphins from the beach — best an hour after low tide. A short stroll from the car.", locale: "Fortrose" }
       ],
       hotels: [],
       restaurants: [
@@ -317,9 +317,9 @@ window.TRIP = {
       hero: "Isle_of_Raasay",
       blurb: "The long drive west — A82 south, then A87 through Kintail. Pause for Eilean Donan in the morning light and the Five Sisters through the windscreen. Over the Skye Bridge to Sconser, park the car and cross to Raasay as foot passengers for three island nights.",
       attractions: [
-        { name: "Eilean Donan Castle", wiki: "Eilean_Donan", desc: "The most photographed castle in Scotland, on a tidal island where three sea lochs meet — the perfect mid-morning stop on the drive west.", url: "https://www.eileandonancastle.com", locale: "Dornie", enroute: true },
-        { name: "Five Sisters of Kintail", wiki: "Five_Sisters_of_Kintail", desc: "Scotland's most dramatic mountain drive — the view through the windscreen IS the experience. Slow down on the A87 through Glen Shiel.", locale: "Glen Shiel", enroute: true },
-        { name: "Skye Bridge", wiki: "Skye_Bridge", desc: "The free sweep onto Skye at Kyle of Lochalsh — you'll cross it several times over the coming days.", locale: "Kyle of Lochalsh", enroute: true }
+        { name: "Eilean Donan Castle", lat: 57.274, lng: -5.5161, wiki: "Eilean_Donan", desc: "The most photographed castle in Scotland, on a tidal island where three sea lochs meet — the perfect mid-morning stop on the drive west.", url: "https://www.eileandonancastle.com", locale: "Dornie", enroute: true },
+        { name: "Five Sisters of Kintail", lat: 57.178, lng: -5.34, wiki: "Five_Sisters_of_Kintail", desc: "Scotland's most dramatic mountain drive — the view through the windscreen IS the experience. Slow down on the A87 through Glen Shiel.", locale: "Glen Shiel", enroute: true },
+        { name: "Skye Bridge", lat: 57.279, lng: -5.718, wiki: "Skye_Bridge", desc: "The free sweep onto Skye at Kyle of Lochalsh — you'll cross it several times over the coming days.", locale: "Kyle of Lochalsh", enroute: true }
       ],
       hotels: [],
       restaurants: []
@@ -335,10 +335,10 @@ window.TRIP = {
       hero: "Old_Man_of_Storr",
       blurb: "Ferry across to your Skye-parked car and drive the Trotternish loop. The Quiraing and Old Man of Storr are stunning straight from the roadside viewpoints; Kilt Rock is a five-minute stop; and the Fairy Glen near Uig is a gentle wander. Sunday ferries are limited (first ~10am, last back ~6pm) so watch the return sailing.",
       attractions: [
-        { name: "The Quiraing", wiki: "Quiraing", desc: "Otherworldly landslip of pinnacles and hidden plateaus — the roadside viewpoint at the Quiraing car park delivers the drama with no climb needed.", locale: "Staffin" },
-        { name: "Old Man of Storr", wiki: "Old_Man_of_Storr", desc: "Skye's iconic rock pinnacle — clearly seen from the roadside pull-offs and the lower path; skip the steep summit and just take the view.", locale: "Trotternish" },
-        { name: "Kilt Rock & Mealt Falls", wiki: "Kilt_Rock", desc: "A basalt sea cliff that looks like a pleated kilt, with a waterfall plunging to the sea — a five-minute viewpoint from the car park.", locale: "Trotternish" },
-        { name: "Fairy Glen", wiki: "Fairy_Glen,_Skye", desc: "A miniature landscape of grassy cones and spiral stone rings near Uig — a gentle 15-minute wander, wonderfully odd.", locale: "Uig" }
+        { name: "The Quiraing", lat: 57.6437, lng: -6.268, wiki: "Quiraing", desc: "Otherworldly landslip of pinnacles and hidden plateaus — the roadside viewpoint at the Quiraing car park delivers the drama with no climb needed.", locale: "Staffin" },
+        { name: "Old Man of Storr", lat: 57.507, lng: -6.1836, wiki: "Old_Man_of_Storr", desc: "Skye's iconic rock pinnacle — clearly seen from the roadside pull-offs and the lower path; skip the steep summit and just take the view.", locale: "Trotternish" },
+        { name: "Kilt Rock & Mealt Falls", lat: 57.6083, lng: -6.1636, wiki: "Kilt_Rock", desc: "A basalt sea cliff that looks like a pleated kilt, with a waterfall plunging to the sea — a five-minute viewpoint from the car park.", locale: "Trotternish" },
+        { name: "Fairy Glen", lat: 57.586, lng: -6.356, wiki: "Fairy_Glen,_Skye", desc: "A miniature landscape of grassy cones and spiral stone rings near Uig — a gentle 15-minute wander, wonderfully odd.", locale: "Uig" }
       ],
       hotels: [],
       restaurants: [
@@ -356,11 +356,11 @@ window.TRIP = {
       hero: "Neist_Point",
       blurb: "Catch the early weekday ferry to beat the crowds. Fairy Pools first thing, then the Coral Beaches and Neist Point lighthouse in the west, with Dunvegan Castle and its gardens to round the day. Prefer the sea? Swap in the Elgol boat trip into Loch Coruisk.",
       attractions: [
-        { name: "Fairy Pools", wiki: "Fairy_Pools", desc: "Crystal-clear turquoise pools and little waterfalls at the foot of the Cuillin — a flat 20–30 min there-and-back. Arrive early on the first ferry.", locale: "Glenbrittle" },
-        { name: "Claigan Coral Beaches", wiki: "Claigan", desc: "Beaches of crushed white coralline algae glowing against turquoise water — an easy 30-min shoreline walk near Dunvegan.", locale: "Dunvegan" },
-        { name: "Neist Point Lighthouse", wiki: "Neist_Point", desc: "Skye's westernmost tip — the clifftop viewpoint over the lighthouse and out to the Hebrides is a short walk from the car park.", locale: "Glendale" },
-        { name: "Dunvegan Castle & Gardens", wiki: "Dunvegan_Castle", desc: "Skye's key castle — seat of Clan MacLeod for 800 years, with lovely waterside gardens. A relaxed couple of hours.", url: "https://www.dunvegancastle.com", locale: "Dunvegan", bookAhead: true, bookNote: "Busy in summer — book online to skip the queue." },
-        { name: "Elgol & Loch Coruisk boat trip", wiki: "Loch_Coruisk", desc: "Optional small-boat trip from Elgol into Loch Coruisk beneath the Black Cuillin — seals en route. ~4 hours; book ahead.", url: "https://bellajane.co.uk/", locale: "Elgol", bookAhead: true, bookNote: "Tiny boats, only a few sailings a day — book well ahead." }
+        { name: "Fairy Pools", lat: 57.2493, lng: -6.2599, wiki: "Fairy_Pools", desc: "Crystal-clear turquoise pools and little waterfalls at the foot of the Cuillin — a flat 20–30 min there-and-back. Arrive early on the first ferry.", locale: "Glenbrittle" },
+        { name: "Claigan Coral Beaches", lat: 57.49, lng: -6.621, wiki: "Claigan", desc: "Beaches of crushed white coralline algae glowing against turquoise water — an easy 30-min shoreline walk near Dunvegan.", locale: "Dunvegan" },
+        { name: "Neist Point Lighthouse", lat: 57.4256, lng: -6.7876, wiki: "Neist_Point", desc: "Skye's westernmost tip — the clifftop viewpoint over the lighthouse and out to the Hebrides is a short walk from the car park.", locale: "Glendale" },
+        { name: "Dunvegan Castle & Gardens", lat: 57.449, lng: -6.59, wiki: "Dunvegan_Castle", desc: "Skye's key castle — seat of Clan MacLeod for 800 years, with lovely waterside gardens. A relaxed couple of hours.", url: "https://www.dunvegancastle.com", locale: "Dunvegan", bookAhead: true, bookNote: "Busy in summer — book online to skip the queue." },
+        { name: "Elgol & Loch Coruisk boat trip", lat: 57.145, lng: -6.113, wiki: "Loch_Coruisk", desc: "Optional small-boat trip from Elgol into Loch Coruisk beneath the Black Cuillin — seals en route. ~4 hours; book ahead.", url: "https://bellajane.co.uk/", locale: "Elgol", bookAhead: true, bookNote: "Tiny boats, only a few sailings a day — book well ahead." }
       ],
       hotels: [],
       restaurants: [
@@ -379,10 +379,10 @@ window.TRIP = {
       hero: "Bealach_na_B%C3%A0",
       blurb: "A quick Raasay morning — the Calum's Road drive to Arnish — then the final ferry to Sconser and off the island. Over the Skye Bridge to the mainland and the legendary Bealach na Bà, the Pass of the Cattle, climbing 626m in hairpins with Skye and the Hebrides behind you. Lunch at the Applecross Inn, then the coast road into Torridon.",
       attractions: [
-        { name: "Calum's Road",     wiki: "Calum's_Road", desc: "Quick morning drive before the ferry — the two-mile single-track to Arnish, hand-built by one man over ten years. Brochel Castle ruins at the start.", locale: "Raasay" },
-        { name: "Bealach na Bà",    wiki: "Bealach_na_B%C3%A0", desc: "The Pass of the Cattle — 20% gradients, hairpins, and on a clear day a view back to Skye and the Outer Hebrides.", locale: "Applecross", enroute: true },
-        { name: "Applecross village", wiki: "Applecross", desc: "Tiny west-coast village at the foot of the pass. The Applecross Inn is one of the most famous pubs in Scotland — langoustines, crab, haddock. Book lunch ahead.", url: "https://www.applecross.uk.com/inn/", locale: "Applecross", enroute: true },
-        { name: "Shieldaig village", wiki: "Shieldaig", desc: "Small fishing village on Loch Torridon — a good coffee or photo stop as you come into Torridon.", locale: "Shieldaig", enroute: true }
+        { name: "Calum's Road", lat: 57.44, lng: -6.04,     wiki: "Calum's_Road", desc: "Quick morning drive before the ferry — the two-mile single-track to Arnish, hand-built by one man over ten years. Brochel Castle ruins at the start.", locale: "Raasay" },
+        { name: "Bealach na Bà", lat: 57.42, lng: -5.7,    wiki: "Bealach_na_B%C3%A0", desc: "The Pass of the Cattle — 20% gradients, hairpins, and on a clear day a view back to Skye and the Outer Hebrides.", locale: "Applecross", enroute: true },
+        { name: "Applecross village", lat: 57.4344, lng: -5.816, wiki: "Applecross", desc: "Tiny west-coast village at the foot of the pass. The Applecross Inn is one of the most famous pubs in Scotland — langoustines, crab, haddock. Book lunch ahead.", url: "https://www.applecross.uk.com/inn/", locale: "Applecross", enroute: true },
+        { name: "Shieldaig village", lat: 57.523, lng: -5.656, wiki: "Shieldaig", desc: "Small fishing village on Loch Torridon — a good coffee or photo stop as you come into Torridon.", locale: "Shieldaig", enroute: true }
       ],
       hotels: [
         { name: "The Torridon",        style: "5-star Victorian shooting lodge, lochside", price: "£220–£250", url: "https://www.thetorridon.com", locale: "Torridon" },
@@ -411,8 +411,8 @@ window.TRIP = {
       hero: "Beinn_Eighe",
       blurb: "An easy morning in Wester Ross before the drive south. The A832 runs the length of beautiful Loch Maree with the great bulk of Slioch across the water; stop at the Beinn Eighe reserve viewpoints for the mountain scenery, then head down to Fort William — your single base for the next THREE nights (one unpack for the Road to the Isles and the Glencoe day-trip).",
       attractions: [
-        { name: "Loch Maree", wiki: "Loch_Maree", desc: "One of Scotland's most beautiful lochs — ancient pine islands and Slioch rising across the water. The A832 drive along its length is the highlight; pull off at the viewpoints.", locale: "Wester Ross", enroute: true },
-        { name: "Beinn Eighe viewpoints", wiki: "Beinn_Eighe", desc: "Britain's oldest national nature reserve. Stop at the roadside viewpoints and the visitor centre for the quartzite-topped mountain views — no climb required.", url: "https://www.nnr.scot/nnr/beinn-eighe/", locale: "Kinlochewe", enroute: true }
+        { name: "Loch Maree", lat: 57.69, lng: -5.47, wiki: "Loch_Maree", desc: "One of Scotland's most beautiful lochs — ancient pine islands and Slioch rising across the water. The A832 drive along its length is the highlight; pull off at the viewpoints.", locale: "Wester Ross", enroute: true },
+        { name: "Beinn Eighe viewpoints", lat: 57.61, lng: -5.35, wiki: "Beinn_Eighe", desc: "Britain's oldest national nature reserve. Stop at the roadside viewpoints and the visitor centre for the quartzite-topped mountain views — no climb required.", url: "https://www.nnr.scot/nnr/beinn-eighe/", locale: "Kinlochewe", enroute: true }
       ],
       hotels: [
         { name: "Clan Macduff Hotel",   style: "4★ family-run, Loch Linnhe views, breakfast incl.", price: "£150–£200", url: "https://www.clanmacduff.co.uk/", locale: "Fort William" },
@@ -436,12 +436,12 @@ window.TRIP = {
       hero: "Glenfinnan_Viaduct",
       blurb: "No packing today — you're based in Fort William. Take the A830 'Road to the Isles' west: the Glenfinnan Viaduct and Monument, then the Silver Sands of Morar — dazzling white beaches and turquoise water — out to the fishing port of Mallaig for lunch. Back near town, wander the locks of Neptune's Staircase beneath Ben Nevis. (The Jacobite steam train crosses the viaduct in summer if you'd rather ride than drive.)",
       attractions: [
-        { name: "Glenfinnan Viaduct", wiki: "Glenfinnan_Viaduct", desc: "The 21-arch Victorian viaduct of Harry Potter fame, curving above the glen — a 10-minute walk to the viewpoint, or watch the steam train cross if it's running.", locale: "Glenfinnan", enroute: true },
-        { name: "Glenfinnan Monument", wiki: "Glenfinnan_Monument", desc: "On the shore of Loch Shiel where Bonnie Prince Charlie raised his standard in 1745 — a short stroll to a classic Highland view.", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument", locale: "Glenfinnan", enroute: true },
-        { name: "Silver Sands of Morar", wiki: "Morar", desc: "Dazzling white-sand beaches and turquoise shallows along the Road to the Isles — pull over anywhere between Arisaig and Morar. The trip's best beaches.", locale: "Morar", enroute: true },
-        { name: "Mallaig", wiki: "Mallaig", desc: "Bustling little fishing port at the end of the road — fresh seafood, harbour views and ferries to the small isles. A relaxed lunch stop.", locale: "Mallaig", enroute: true },
-        { name: "Neptune's Staircase", wiki: "Neptune%27s_Staircase", desc: "Thomas Telford's eight-lock flight lifting the Caledonian Canal at Banavie, with Ben Nevis behind — an easy towpath potter, free.", locale: "Banavie" },
-        { name: "Ben Nevis", wiki: "Ben_Nevis", desc: "Britain's highest mountain (1,345m) — admire it from the Glen Nevis road at its foot; no climb.", locale: "Fort William" }
+        { name: "Glenfinnan Viaduct", lat: 56.8728, lng: -5.4357, wiki: "Glenfinnan_Viaduct", desc: "The 21-arch Victorian viaduct of Harry Potter fame, curving above the glen — a 10-minute walk to the viewpoint, or watch the steam train cross if it's running.", locale: "Glenfinnan", enroute: true },
+        { name: "Glenfinnan Monument", lat: 56.87, lng: -5.433, wiki: "Glenfinnan_Monument", desc: "On the shore of Loch Shiel where Bonnie Prince Charlie raised his standard in 1745 — a short stroll to a classic Highland view.", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument", locale: "Glenfinnan", enroute: true },
+        { name: "Silver Sands of Morar", lat: 56.96, lng: -5.832, wiki: "Morar", desc: "Dazzling white-sand beaches and turquoise shallows along the Road to the Isles — pull over anywhere between Arisaig and Morar. The trip's best beaches.", locale: "Morar", enroute: true },
+        { name: "Mallaig", lat: 57.006, lng: -5.828, wiki: "Mallaig", desc: "Bustling little fishing port at the end of the road — fresh seafood, harbour views and ferries to the small isles. A relaxed lunch stop.", locale: "Mallaig", enroute: true },
+        { name: "Neptune's Staircase", lat: 56.843, lng: -5.103, wiki: "Neptune%27s_Staircase", desc: "Thomas Telford's eight-lock flight lifting the Caledonian Canal at Banavie, with Ben Nevis behind — an easy towpath potter, free.", locale: "Banavie" },
+        { name: "Ben Nevis", lat: 56.7969, lng: -5.0037, wiki: "Ben_Nevis", desc: "Britain's highest mountain (1,345m) — admire it from the Glen Nevis road at its foot; no climb.", locale: "Fort William" }
       ],
       hotels: [],
       restaurants: [
@@ -459,10 +459,10 @@ window.TRIP = {
       hero: "Glen_Coe",
       blurb: "Glencoe is a 30-minute drive south down the A82 — an easy day-trip from Fort William. Pull over for the Three Sisters, get the story at the visitor centre, and drive the dead-end Glen Etive road into the mountains. Just north, the A82 crosses the wild expanse of Rannoch Moor — one of Europe's last true wildernesses. Lunch at the Clachaig Inn on the way back.",
       attractions: [
-        { name: "Three Sisters of Glencoe", wiki: "Glen_Coe", desc: "Scotland's most dramatic glen — the Three Sisters ridges tower over the A82. Pull into the viewpoint and take it in; 30 min south of Fort William.", locale: "Glencoe" },
-        { name: "Glencoe Visitor Centre", wiki: "Glen_Coe", desc: "The story of the glen and the 1692 massacre, plus an easy Signal Rock woodland loop behind it.", url: "https://www.nts.org.uk/visit/places/glencoe", locale: "Glencoe" },
-        { name: "Glen Etive", wiki: "Glen_Etive", desc: "A 12-mile dead-end road into a remote, beautiful glen (the Skyfall location) — one of Scotland's great scenic drives. Allow an hour round trip.", locale: "Glencoe" },
-        { name: "Rannoch Moor", wiki: "Rannoch_Moor", desc: "One of the last great wildernesses in Europe — a vast, empty sweep of bog, lochans and mountains that the A82 crosses just north of Glencoe. Stop at the laybys.", locale: "Rannoch Moor" }
+        { name: "Three Sisters of Glencoe", lat: 56.668, lng: -4.998, wiki: "Glen_Coe", desc: "Scotland's most dramatic glen — the Three Sisters ridges tower over the A82. Pull into the viewpoint and take it in; 30 min south of Fort William.", locale: "Glencoe" },
+        { name: "Glencoe Visitor Centre", lat: 56.674, lng: -5.101, wiki: "Glen_Coe", desc: "The story of the glen and the 1692 massacre, plus an easy Signal Rock woodland loop behind it.", url: "https://www.nts.org.uk/visit/places/glencoe", locale: "Glencoe" },
+        { name: "Glen Etive", lat: 56.6164, lng: -5.0034, wiki: "Glen_Etive", desc: "A 12-mile dead-end road into a remote, beautiful glen (the Skyfall location) — one of Scotland's great scenic drives. Allow an hour round trip.", locale: "Glencoe" },
+        { name: "Rannoch Moor", lat: 56.6, lng: -4.75, wiki: "Rannoch_Moor", desc: "One of the last great wildernesses in Europe — a vast, empty sweep of bog, lochans and mountains that the A82 crosses just north of Glencoe. Stop at the laybys.", locale: "Rannoch Moor" }
       ],
       hotels: [],
       restaurants: [
@@ -486,9 +486,9 @@ window.TRIP = {
       hero: "Lake_District",
       blurb: "Break the long haul south. Down the A82 through Glencoe and along Loch Lomond (leg-stretch at Luss), then M74/M6 into Cumbria. An easy afternoon arrival in the Lake District — Windermere or Ambleside — for a lakeside evening before the final push to Oxford tomorrow.",
       attractions: [
-        { name: "Loch Lomond & The Trossachs National Park", wiki: "Loch_Lomond_and_The_Trossachs_National_Park", desc: "The A82 hugs the bonnie banks of Loch Lomond for miles — Scotland's first national park. An easy scenic drive south with plenty of laybys.", locale: "Loch Lomond", enroute: true },
-        { name: "Luss village", wiki: "Luss", desc: "Postcard estate village on Loch Lomond's shore — pretty cottages and a quick shoreline stroll before the motorway.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond", enroute: true },
-        { name: "Windermere & Ambleside", wiki: "Windermere", desc: "England's largest lake — an easy late-afternoon arrival for a lakeside stroll or a short cruise, then dinner in Ambleside.", locale: "Lake District" }
+        { name: "Loch Lomond & The Trossachs National Park", lat: 56.24, lng: -4.62, wiki: "Loch_Lomond_and_The_Trossachs_National_Park", desc: "The A82 hugs the bonnie banks of Loch Lomond for miles — Scotland's first national park. An easy scenic drive south with plenty of laybys.", locale: "Loch Lomond", enroute: true },
+        { name: "Luss village", lat: 56.0959, lng: -4.6356, wiki: "Luss", desc: "Postcard estate village on Loch Lomond's shore — pretty cottages and a quick shoreline stroll before the motorway.", url: "https://www.lochlomond-trossachs.org/places/luss/", locale: "Loch Lomond", enroute: true },
+        { name: "Windermere & Ambleside", lat: 54.423, lng: -2.964, wiki: "Windermere", desc: "England's largest lake — an easy late-afternoon arrival for a lakeside stroll or a short cruise, then dinner in Ambleside.", locale: "Lake District" }
       ],
       hotels: [
         { name: "The Waterhead, Ambleside",       style: "Lakeside inn at Waterhead pier, family rooms", price: "£160–£230", url: "https://www.englishlakes.co.uk/hotels/waterhead-hotel/", locale: "Ambleside" },
@@ -508,7 +508,7 @@ window.TRIP = {
       hero: "Oxford",
       blurb: "The last stretch — M6 south, M40 into Oxford, arriving early-to-mid afternoon, comfortable for your daughter's course check-in. The Highland road trip ends here; the relaxed Oxford fortnight begins.",
       attractions: [
-        { name: "Oxford", wiki: "Oxford", desc: "Journey's end. Settle in ahead of your daughter's residential course (2–15 Aug).", locale: "Oxford" }
+        { name: "Oxford", lat: 51.752, lng: -1.2577, wiki: "Oxford", desc: "Journey's end. Settle in ahead of your daughter's residential course (2–15 Aug).", locale: "Oxford" }
       ],
       hotels: [],
       restaurants: []

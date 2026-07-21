@@ -47,6 +47,57 @@
   const wikiPage = title => `https://en.wikipedia.org/wiki/${title}`;
   const googleMapsSearch = q => `https://www.google.com/maps/search/?api=1&query=${enc(q)}`;
 
+  /* ---------- geo helpers: per-day ordering + signed distance ---------- */
+  const SCONSER = { lat: 57.3236, lng: -6.1083, label: 'Sconser (Skye ferry)' };
+  function haversineKm(a, b) {
+    const R = 6371, toRad = x => x * Math.PI / 180;
+    const dLat = toRad(b.lat - a.lat), dLng = toRad(b.lng - a.lng);
+    const h = Math.sin(dLat/2)**2 + Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng/2)**2;
+    return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
+  }
+  function toXY(p, refLat) {
+    const R = 6371, toRad = x => x * Math.PI / 180;
+    return { x: toRad(p.lng) * Math.cos(toRad(refLat)) * R, y: toRad(p.lat) * R };
+  }
+  function dayHotel(dayNum) {
+    const r = T.route.filter(x => x.day <= dayNum);
+    let h = r.length ? r[r.length - 1] : null;
+    if ((dayNum === 7 || dayNum === 8) && h) h = SCONSER;  // Skye day-trips start at the ferry
+    return h;
+  }
+  function dayStart(dayNum) {
+    const r = T.route.filter(x => x.day <= dayNum);
+    const cur = r[r.length - 1];
+    const isTransfer = cur && cur.day === dayNum && r.length >= 2;
+    return isTransfer ? r[r.length - 2] : null;
+  }
+  function dayAttractions(d) {
+    const list = (d.attractions || []).filter(a => isFinite(a.lat) && isFinite(a.lng));
+    const hotel = dayHotel(d.num);
+    if (!hotel) return list.map(a => ({ ...a }));
+    const start = dayStart(d.num);
+    const refLat = hotel.lat, H = toXY(hotel, refLat);
+    let dir = null;
+    if (start) {
+      const S = toXY(start, refLat);
+      const vx = H.x - S.x, vy = H.y - S.y, mag = Math.hypot(vx, vy) || 1;
+      dir = { x: vx / mag, y: vy / mag };
+    }
+    return list.map(a => {
+      const km = haversineKm(hotel, a);
+      let signed = km;
+      if (dir) { const A = toXY(a, refLat); signed = (A.x - H.x) * dir.x + (A.y - H.y) * dir.y; }
+      return { ...a, dist: { km, signed, transfer: !!dir } };
+    }).sort((p, q) => p.dist.signed - q.dist.signed);
+  }
+  function distLabel(dist) {
+    if (!dist) return '';
+    const km = Math.round(dist.km);
+    if (!dist.transfer) return `~${km} km from base`;
+    if (Math.abs(dist.signed) < 1.5) return 'by the hotel';
+    return `${dist.signed < 0 ? '−' : '+'}${km} km`;
+  }
+
   function fmtDate(iso) {
     if (!iso) return "";
     const [y, m, d] = iso.split("-").map(Number);
@@ -282,32 +333,31 @@
 
   function initMinimap(el, dayNum) {
     if (!window.L) return;
-    const pts = getDayRoute(dayNum);
-    if (!pts.length) return;
-    const map = L.map(el, {
-      scrollWheelZoom: false, dragging: false, doubleClickZoom: false,
-      zoomControl: false, attributionControl: false, keyboard: false, touchZoom: false
-    });
+    const d = T.days.find(x => x.num === dayNum);
+    if (!d) return;
+    const ordered = dayAttractions(d).filter(a => isFinite(a.lat) && isFinite(a.lng));
+    const hotel = dayHotel(dayNum), start = dayStart(dayNum);
+    if (!ordered.length && !hotel) return;
+    const map = L.map(el, { scrollWheelZoom: false, zoomControl: true, attributionControl: false });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 16 }).addTo(map);
-    const overnightPts = pts.filter(p => p.kind !== 'detour').map(p => [p.lat, p.lng]);
-    if (overnightPts.length >= 2) {
-      L.polyline(overnightPts, { color: '#6B4E8C', weight: 3, opacity: 0.9, dashArray: '5 6', lineCap: 'round' }).addTo(map);
+    const bounds = [];
+    if (start && hotel) {
+      L.polyline([[start.lat, start.lng], [hotel.lat, hotel.lng]], { color: '#6B4E8C', weight: 3, opacity: 0.6, dashArray: '5 6', lineCap: 'round' }).addTo(map);
+      bounds.push([start.lat, start.lng]);
     }
-    pts.forEach(p => {
-      const isDetour = p.kind === 'detour';
-      const cls = isDetour ? 'mini-pin mini-pin-detour' : 'mini-pin';
-      const icon = L.divIcon({
-        className: '',
-        html: `<div class="${cls}" title="${p.label}"></div>`,
-        iconSize: isDetour ? [10,10] : [16,16],
-        iconAnchor: isDetour ? [5,5] : [8,8]
-      });
-      L.marker([p.lat, p.lng], { icon, keyboard: false, interactive: false }).addTo(map);
+    if (hotel) {
+      const hIcon = L.divIcon({ className: '', html: `<div class="mini-hotel-pin" title="${hotel.label || 'Overnight'}">\uD83D\uDECF</div>`, iconSize: [26,26], iconAnchor: [13,13] });
+      L.marker([hotel.lat, hotel.lng], { icon: hIcon }).addTo(map).bindPopup(`<b>${hotel.label || 'Overnight'}</b><br/>Tonight's base`);
+      bounds.push([hotel.lat, hotel.lng]);
+    }
+    ordered.forEach((a, i) => {
+      const icon = L.divIcon({ className: '', html: `<div class="mini-num-pin">${i + 1}</div>`, iconSize: [26,26], iconAnchor: [13,13] });
+      L.marker([a.lat, a.lng], { icon }).addTo(map).bindPopup(
+        `<b>${i + 1}. ${a.name}</b>${a.locale ? '<br/>' + a.locale : ''}<br/><a href="${googleMapsSearch(a.name + ', ' + (a.locale || ''))}" target="_blank" rel="noopener">Open in Google Maps \u2197</a>`);
+      bounds.push([a.lat, a.lng]);
     });
-    const all = pts.map(p => [p.lat, p.lng]);
-    map.fitBounds(L.latLngBounds(all), { padding: [22, 22] });
-    // For single-point days (Edinburgh stay), zoom in a bit
-    if (pts.length === 1) map.setZoom(11);
+    if (bounds.length >= 2) map.fitBounds(L.latLngBounds(bounds), { padding: [28, 28] });
+    else if (bounds.length === 1) map.setView(bounds[0], 12);
   }
 
   const minimapObserver = new IntersectionObserver(entries => {
@@ -700,6 +750,7 @@
         <span class="attr-key-num">${idx + 1}</span>
         <h5 class="attr-card-name">${a.name}</h5>
         ${a.locale ? `<span class="attr-key-loc">${a.locale}</span>` : ''}
+        ${a.dist ? `<span class="attr-card-dist">${distLabel(a.dist)}</span>` : ''}
       </div>
       ${badges ? `<div class="attr-card-badges">${badges}</div>` : ''}
       <p class="attr-card-desc">${a.desc || ''}</p>
@@ -758,9 +809,10 @@
       lab.textContent = 'See & do';
       sec.appendChild(lab);
 
+      const ordered = dayAttractions(d);
       const grid = document.createElement('div');
       grid.className = 'attr-card-grid';
-      d.attractions.forEach((a, i) => grid.appendChild(attractionCard(a, i)));
+      ordered.forEach((a, i) => grid.appendChild(attractionCard(a, i)));
       sec.appendChild(grid);
     }
 
