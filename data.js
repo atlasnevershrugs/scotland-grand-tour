@@ -168,9 +168,9 @@ window.TRIP = {
       depart: "Land 06:25, collect the hire car ~07:30. Kildonan check-in is 15:00 — drop bags early and explore Edinburgh on foot.",
       foodNote: "Both self-catering stays (Cherrytrees on Day 4 and Beinn Brèagha on Day 10) have a big supermarket on the doorstep on arrival day — so you don't need to haul groceries from Edinburgh. Carry only a small non-perishable car pantry (tea/coffee, long-life milk, breakfast bars, snacks, water) for the drives and the remote Raasay & Torridon nights, plus any Indian or specialty items the Highland Co-ops won't stock.",
       shops: [
-        { name: "M&S Food — Princes Street", note: "Central Edinburgh foodhall — salads & food-to-go for the car pantry.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Marks%20and%20Spencer%20Princes%20Street%20Edinburgh" },
-        { name: "Waitrose — Morningside", note: "Nearest Waitrose (~2 mi from Newington) — the last one until the Lakes.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Waitrose%20Morningside%20Edinburgh%20EH10%204AX" },
-        { name: "Tesco Extra — Corstorphine", note: "Large superstore on the west side for a full shop.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Corstorphine%20Edinburgh" }
+        { name: "M&S Food — Princes Street", lat: 55.9526, lng: -3.1966, note: "Central Edinburgh foodhall — salads & food-to-go for the car pantry.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Marks%20and%20Spencer%20Princes%20Street%20Edinburgh" },
+        { name: "Waitrose — Morningside", lat: 55.9245, lng: -3.2093, note: "Nearest Waitrose (~2 mi from Newington) — the last one until the Lakes.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Waitrose%20Morningside%20Edinburgh%20EH10%204AX" },
+        { name: "Tesco Extra — Corstorphine", lat: 55.9425, lng: -3.286, note: "Large superstore on the west side for a full shop.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Corstorphine%20Edinburgh" }
       ],
       leg: "Edinburgh Airport → city centre",
       route: "—",
@@ -222,9 +222,9 @@ window.TRIP = {
       stay: { name: "Rosemount Hotel, Pitlochry", lat: 56.7042, lng: -3.7276, mapUrl: "https://www.google.com/maps/search/?api=1&query=Rosemount%20Hotel%20Pitlochry%20PH16%205HT" },
       depart: "Leave Edinburgh by ~10:00 — the Hermitage forest walk (Dunkeld) en route; Rosemount check-in from 16:00.",
       shops: [
-        { name: "M&S Foodhall — Inveralmond, Perth", note: "Right on the A9 as you skirt Perth (~46 mi in; 26 mi / 35 min left to Pitlochry). Zero detour. Foodhall with salads & food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=M%26S%20Foodhall%20Inveralmond%20Perth%20PH1%203EE" },
-        { name: "Tesco Extra — Crieff Rd, Perth (24h)", note: "Big 24-hour superstore beside Inveralmond — fresh counters and salad/food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Crieff%20Road%20Perth%20PH1%202NR" },
-        { name: "Co-op — Pitlochry (West Moulin Rd)", note: "The only supermarket in Pitlochry itself — top-ups only.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Pitlochry%20West%20Moulin%20Road" }
+        { name: "M&S Foodhall — Inveralmond, Perth", lat: 56.4205, lng: -3.4675, note: "Right on the A9 as you skirt Perth (~46 mi in; 26 mi / 35 min left to Pitlochry). Zero detour. Foodhall with salads & food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=M%26S%20Foodhall%20Inveralmond%20Perth%20PH1%203EE" },
+        { name: "Tesco Extra — Crieff Rd, Perth (24h)", lat: 56.403, lng: -3.461, note: "Big 24-hour superstore beside Inveralmond — fresh counters and salad/food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Crieff%20Road%20Perth%20PH1%202NR" },
+        { name: "Co-op — Pitlochry (West Moulin Rd)", lat: 56.7055, lng: -3.7285, note: "The only supermarket in Pitlochry itself — top-ups only.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Pitlochry%20West%20Moulin%20Road" }
       ],
       leg: "A9 north via Perth & Dunkeld",
       route: "A9 · Perth",
@@ -256,9 +256,9 @@ window.TRIP = {
       depart: "Leave Pitlochry by ~09:30 — the Cairngorms forest & funicular take time; shop at Tesco Inshes; Cherrytrees check-in 15:00.",
       foodNote: "Cherrytrees is self-catering (full kitchen + microwave) — do the big shop at Tesco Extra Inshes as you reach Inverness, about 15 min before arrival. It is also the last full-size supermarket before Skye & Raasay, so stock the car pantry for the island nights here too.",
       shops: [
-        { name: "Tesco Extra — Inshes, Inverness", note: "On the A9 at Inshes roundabout, ~15 min before Cherrytrees. Big shop for the kitchen + the Skye/Raasay stock-up.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Inshes%20Inverness%20IV2%203TW" },
-        { name: "M&S — Eastgate, Inverness", note: "Central Inverness — M&S salads & food-to-go, ~5 min into town.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Marks%20and%20Spencer%20Eastgate%20Inverness" },
-        { name: "Morrisons — Inverness", note: "Full superstore with a café / salad counter.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Morrisons%20Inverness%20Millburn%20Road" }
+        { name: "Tesco Extra — Inshes, Inverness", lat: 57.4625, lng: -4.1965, note: "On the A9 at Inshes roundabout, ~15 min before Cherrytrees. Big shop for the kitchen + the Skye/Raasay stock-up.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Extra%20Inshes%20Inverness%20IV2%203TW" },
+        { name: "M&S — Eastgate, Inverness", lat: 57.4775, lng: -4.2235, note: "Central Inverness — M&S salads & food-to-go, ~5 min into town.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Marks%20and%20Spencer%20Eastgate%20Inverness" },
+        { name: "Morrisons — Inverness", lat: 57.482, lng: -4.21, note: "Full superstore with a café / salad counter.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Morrisons%20Inverness%20Millburn%20Road" }
       ],
       leg: "A9 to Inverness, then A82 along Loch Ness",
       route: "A9 · A82",
@@ -314,9 +314,9 @@ window.TRIP = {
       depart: "Leave Drumnadrochit by ~08:30 — ~4h drive + the Broadford shop; aim for an early-afternoon Sconser → Raasay ferry.",
       foodNote: "Raasay has only a small community shop, so this is a stock-up drive. Do your last real shop at Broadford Co-op — about 15 min before the Sconser ferry.",
       shops: [
-        { name: "Broadford Co-op (Isle of Skye)", note: "Last proper shop before the ferry — only ~13 mi / 15 min before Sconser. Open 7am–10pm, car park. Fresh food & food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Broadford%20Isle%20of%20Skye%20IV49%209AE" },
-        { name: "Kyle of Lochalsh Co-op", note: "Right before the Skye Bridge (~20 mi before Sconser) — earlier top-up option.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Kyle%20of%20Lochalsh%20IV40%208BH" },
-        { name: "Co-op — Portree (Woodpark Rd)", note: "Skye's biggest shop, ~6 mi past Sconser — handy on your Skye day-trips (Days 7–8).", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Portree%20Woodpark%20Road%20IV51%209HQ" }
+        { name: "Broadford Co-op (Isle of Skye)", lat: 57.2405, lng: -5.913, note: "Last proper shop before the ferry — only ~13 mi / 15 min before Sconser. Open 7am–10pm, car park. Fresh food & food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Broadford%20Isle%20of%20Skye%20IV49%209AE" },
+        { name: "Kyle of Lochalsh Co-op", lat: 57.2805, lng: -5.713, note: "Right before the Skye Bridge (~20 mi before Sconser) — earlier top-up option.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Kyle%20of%20Lochalsh%20IV40%208BH" },
+        { name: "Co-op — Portree (Woodpark Rd)", lat: 57.411, lng: -6.1955, note: "Skye's biggest shop, ~6 mi past Sconser — handy on your Skye day-trips (Days 7–8).", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Portree%20Woodpark%20Road%20IV51%209HQ" }
       ],
       leg: "A82 · A87 · Eilean Donan · Skye Bridge · Sconser ferry",
       route: "A82 · A87",
@@ -414,9 +414,9 @@ window.TRIP = {
       depart: "Leave Torridon by ~10:00 — the Loch Maree drive south; Fort William / Clan MacDuff by mid-afternoon.",
       foodNote: "Fort William nights 2–3 are self-catering (Beinn Brèagha — full kitchen, dishwasher, washing machine). Do the big shop at Morrisons Blar Mhor on arrival; it is the largest supermarket in the whole west Highlands.",
       shops: [
-        { name: "Morrisons — Blar Mhor, Fort William", note: "The big shop for the self-catering house (Aldi & Lidl alongside). Café with a salad counter.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Morrisons%20Blar%20Mhor%20Fort%20William%20PH33%207PT" },
-        { name: "M&S Foodhall — Fort William", note: "Salads & food-to-go in town (Inverlochy).", mapUrl: "https://www.google.com/maps/search/?api=1&query=M%26S%20Foodhall%20Fort%20William" },
-        { name: "Tesco — Fort William", note: "Handy in-town top-ups.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Fort%20William" }
+        { name: "Morrisons — Blar Mhor, Fort William", lat: 56.8285, lng: -5.0955, note: "The big shop for the self-catering house (Aldi & Lidl alongside). Café with a salad counter.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Morrisons%20Blar%20Mhor%20Fort%20William%20PH33%207PT" },
+        { name: "M&S Foodhall — Fort William", lat: 56.827, lng: -5.101, note: "Salads & food-to-go in town (Inverlochy).", mapUrl: "https://www.google.com/maps/search/?api=1&query=M%26S%20Foodhall%20Fort%20William" },
+        { name: "Tesco — Fort William", lat: 56.8205, lng: -5.1085, note: "Handy in-town top-ups.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Tesco%20Fort%20William" }
       ],
       leg: "Loch Maree scenic drive · south to your 3-night base",
       route: "A896 · A87 · A82",
@@ -493,9 +493,9 @@ window.TRIP = {
       stay: { name: "The Waterhead Inn, Ambleside", lat: 54.4232, lng: -2.964, mapUrl: "https://www.google.com/maps/search/?api=1&query=Waterhead%20Hotel%20Ambleside%20LA22%200HD" },
       depart: "Leave Fort William by ~09:00 — long A82/M74/M6 run (~4.5h) + a Luss leg-stretch; Waterhead check-in 15:00–19:00.",
       shops: [
-        { name: "Booths — Windermere", note: "The North's quality supermarket, by Windermere station — big fresh & deli range.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Booths%20Windermere" },
-        { name: "Co-op — Ambleside (Compston Rd)", note: "Central Ambleside for quick top-ups.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Ambleside%20Compston%20Road" },
-        { name: "Morrisons / M&S — Kendal", note: "Larger stores ~20 min south for a full shop.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Morrisons%20Kendal" }
+        { name: "Booths — Windermere", lat: 54.4108, lng: -2.9075, note: "The North's quality supermarket, by Windermere station — big fresh & deli range.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Booths%20Windermere" },
+        { name: "Co-op — Ambleside (Compston Rd)", lat: 54.4288, lng: -2.9635, note: "Central Ambleside for quick top-ups.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Ambleside%20Compston%20Road" },
+        { name: "Morrisons / M&S — Kendal", lat: 54.328, lng: -2.747, note: "Larger stores ~20 min south for a full shop.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Morrisons%20Kendal" }
       ],
       leg: "A82 · Loch Lomond · M74 · M6 — halfway south to Cumbria",
       route: "A82 · M74 · M6",

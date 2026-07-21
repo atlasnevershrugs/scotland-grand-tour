@@ -362,6 +362,13 @@
         `<b>${i + 1}. ${a.name}</b>${a.locale ? '<br/>' + a.locale : ''}<br/><a href="${googleMapsSearch(a.name + ', ' + (a.locale || ''))}" target="_blank" rel="noopener">Open in Google Maps \u2197</a>`);
       bounds.push([a.lat, a.lng]);
     });
+    (d.shops || []).forEach(sh => {
+      if (!isFinite(sh.lat) || !isFinite(sh.lng)) return;
+      const icon = L.divIcon({ className: '', html: `<div class="mini-shop-pin" title="${sh.name}">\uD83D\uDED2</div>`, iconSize: [24,24], iconAnchor: [12,12] });
+      L.marker([sh.lat, sh.lng], { icon }).addTo(map).bindPopup(
+        `<b>\uD83D\uDED2 ${sh.name}</b>${sh.note ? '<br/>' + sh.note : ''}${sh.mapUrl ? '<br/><a href="' + sh.mapUrl + '" target="_blank" rel="noopener">Open in Google Maps \u2197</a>' : ''}`);
+      bounds.push([sh.lat, sh.lng]);
+    });
     if (bounds.length >= 2) map.fitBounds(L.latLngBounds(bounds), { padding: [28, 28] });
     else if (bounds.length === 1) map.setView(bounds[0], 12);
   }
@@ -840,6 +847,11 @@
     mini.id = `minimap-${d.num}`;
     sec.appendChild(mini);
     minimapObserver.observe(mini);
+
+    const legend = document.createElement('div');
+    legend.className = 'day-map-legend';
+    legend.innerHTML = `<span class="lg-item"><span class="lg lg-see">1</span>See &amp; do</span><span class="lg-item"><span class="lg lg-stay">\uD83D\uDECF</span>Tonight's stay</span>${(d.shops && d.shops.length) ? '<span class="lg-item"><span class="lg lg-shop">\uD83D\uDED2</span>Supermarket</span>' : ''}`;
+    sec.appendChild(legend);
 
     // See & do — one photo-linked card per attraction
     if (d.attractions && d.attractions.length) {

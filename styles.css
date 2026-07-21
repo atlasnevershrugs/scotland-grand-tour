@@ -606,6 +606,16 @@ details.bk-stop[open] .bk-summary { border-bottom: 1px solid var(--line); margin
   background: rgba(184,118,62,.12); border: 1px solid rgba(184,118,62,.28);
   border-radius: 8px; padding: 7px 11px;
 }
+.mini-shop-pin { width: 24px; height: 24px; border-radius: 50%; background: var(--whisky); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-size: 12px; border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(26,31,43,.4); }
+.day-map-legend { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin: 8px 0 2px; font-size: 12px; color: var(--ink-soft); }
+.day-map-legend .lg-item { display: inline-flex; align-items: center; gap: 6px; }
+.day-map-legend .lg { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px;
+  border-radius: 50%; color: #fff; font-size: 11px; font-weight: 700; }
+.lg-see { background: var(--heather); }
+.lg-stay { background: #0b6e4f; }
+.lg-shop { background: var(--whisky); }
 .day-drive-stay {
   display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; align-self: flex-start;
   font-size: 13px; font-weight: 600; color: #0b6e4f;
