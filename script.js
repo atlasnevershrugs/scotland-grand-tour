@@ -89,12 +89,14 @@
       const vx = H.x - S.x, vy = H.y - S.y, mag = Math.hypot(vx, vy) || 1;
       dir = { x: vx / mag, y: vy / mag };
     }
-    return list.map(a => {
+    const scored = list.map(a => {
       const km = haversineKm(hotel, a);
       let signed = km;
       if (dir) { const A = toXY(a, refLat); signed = (A.x - H.x) * dir.x + (A.y - H.y) * dir.y; }
       return { ...a, dist: { km, signed, transfer: !!dir } };
-    }).sort((p, q) => p.dist.signed - q.dist.signed);
+    });
+    if (scored.some(a => a.seq != null)) return scored.sort((p, q) => (p.seq ?? 99) - (q.seq ?? 99));
+    return scored.sort((p, q) => p.dist.signed - q.dist.signed);
   }
   function distLabel(dist) {
     if (!dist) return '';
@@ -743,7 +745,7 @@
     }, { rootMargin: '400px 0px' });
     io.observe(fig);
 
-    const bookBadge = a.bookAhead ? `<span class="attr-key-badge attr-key-badge-book" title="${a.bookNote || 'Book tickets in advance'}">🎟 Book ahead</span>` : '';
+    const bookBadge = a.booked ? `<span class="attr-key-badge attr-key-badge-booked" title="Booked">✓ Booked</span>` : (a.bookAhead ? `<span class="attr-key-badge attr-key-badge-book" title="${a.bookNote || 'Book tickets in advance'}">🎟 Book ahead</span>` : '');
     const badges = `${bookBadge}${a.mustDo ? '<span class="attr-key-badge attr-key-badge-must" title="A must-do stop">★ Non-negotiable</span>' : ''}${a.enroute ? '<span class="attr-key-badge" title="On the drive to your next hotel">En route</span>' : ''}`;
 
     const chips = [];
@@ -767,7 +769,7 @@
       </div>
       ${badges ? `<div class="attr-card-badges">${badges}</div>` : ''}
       <p class="attr-card-desc">${a.desc || ''}</p>
-      ${a.bookAhead && a.bookNote ? `<p class="attr-card-booknote">🎟 ${a.bookNote}</p>` : ''}
+      ${(a.booked || a.bookAhead) && a.bookNote ? `<p class="attr-card-booknote${a.booked ? ' booked' : ''}">${a.booked ? '' : '🎟 '}${a.bookNote}</p>` : ''}
       <div class="attr-key-chips">${chips.join('')}</div>`;
     card.appendChild(body);
     return card;

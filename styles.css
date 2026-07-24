@@ -990,6 +990,8 @@ details.bk-stop[open] .bk-summary { border-bottom: 1px solid var(--line); margin
 }
 .attr-key-badge-must { background: var(--heather); }
 .attr-key-badge-book { background: #c0392b; }
+.attr-key-badge-booked { background: #0b6e4f; color: #fff; }
+.attr-card-booknote.booked { color: #0b6e4f; background: rgba(11,110,79,.08); border-color: rgba(11,110,79,.2); }
 .attr-card-book { border-left: 3px solid #c0392b; }
 .chip-book    { background: rgba(192,57,43,.10); color: #c0392b; border-color: rgba(192,57,43,.22); }
 .chip-book:hover { background: #c0392b; color: #fff; }
