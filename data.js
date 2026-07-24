@@ -100,7 +100,7 @@ window.TRIP = {
   ],
 
   practical: [
-    { title: "🎟 Pre-book these — they sell out", body: "Several stops need <strong>timed tickets booked online in advance</strong> (some sell out days ahead in peak summer): <strong>Edinburgh Castle</strong>, <strong>Rosslyn Chapel</strong> &amp; <strong>Jupiter Artland</strong> (Day 2); <strong>Urquhart Castle</strong> — book the timed slot AND a parking bay — plus the <strong>Loch Ness cruise</strong> &amp; <strong>Culloden</strong> (Day 5); <strong>Dunvegan Castle</strong> &amp; the <strong>Elgol / Loch Coruisk boat</strong> (Day 8). Look for the red 🎟 Book-ahead tag on those cards." },
+    { title: "🎟 Pre-book these — they sell out", body: "Several stops need <strong>timed tickets booked online in advance</strong> (some sell out days ahead in peak summer): <strong>Edinburgh Castle</strong>, <strong>Rosslyn Chapel</strong> &amp; <strong>Jupiter Artland</strong> (Day 2); <strong>Urquhart Castle</strong> — book the timed slot AND a parking bay — plus the <strong>Loch Ness cruise</strong> &amp; <strong>Culloden</strong> (Day 5); <strong>Dunvegan Castle</strong> (Day 7) &amp; the <strong>Elgol / Loch Coruisk boat</strong> (Day 8). Look for the red 🎟 Book-ahead tag on those cards." },
     { title: "Leave the car on Skye", body: "Borodale is a 12-min walk from the Raasay pier and you tour Skye every day — so park the car at Sconser and cross as foot passengers (~£4 return vs ~£16 for the car). Confirm multi-day Sconser parking with CalMac / Borodale House, and ask Borodale about a luggage pickup at the pier." },
     { title: "Sconser ↔ Raasay ferry", body: "CalMac, 25-min crossing, ~9 sailings/day on weekdays (fewer on Sundays — first ~10am). As foot passengers you can turn up and go, but verify the timetable for your Skye day-trips at calmac.co.uk." },
     { title: "Fuel", body: "Fill up at every petrol station in the Highlands. Stations can be 30–40 miles apart and close by 6–7pm. Top up in Inverness, on Skye (Portree/Broadford), Lochcarron, and at Fort William." },
@@ -334,12 +334,14 @@ window.TRIP = {
       overnight: "Raasay",
       checkin: "2026-07-25", checkout: "2026-07-28", booked: true,
       hero: "Isle_of_Raasay",
-      blurb: "Leave Drumnadrochit ~9am for the long drive west — A82 south, then A87 through Kintail, pausing for Eilean Donan and the Five Sisters. You reach Skye early afternoon, well before the Raasay check-in, so run up the Trotternish coast for the Old Man of Storr and Kilt Rock, then drop back to Sconser, park, and cross to Raasay on an evening ferry (see the sailing table below).",
+      blurb: "Leave Drumnadrochit ~9am for the long drive west — A82 south, then A87 through Kintail, pausing for Eilean Donan and the Five Sisters. You reach Skye early afternoon, well before the Raasay check-in, so run the full Trotternish loop — Old Man of Storr, Kilt Rock, the Quiraing and the Fairy Glen — then drop back to Sconser, park, and cross to Raasay on an evening ferry. A late check-in lets you take your time (see the sailing table below).",
       attractions: [
         { name: "Eilean Donan Castle", lat: 57.274, lng: -5.5161, wiki: "Eilean_Donan", desc: "The most photographed castle in Scotland, on a tidal island where three sea lochs meet — the perfect mid-morning stop on the drive west.", url: "https://www.eileandonancastle.com", locale: "Dornie", enroute: true },
         { name: "Five Sisters of Kintail", lat: 57.178, lng: -5.34, wiki: "Five_Sisters_of_Kintail", desc: "Scotland's most dramatic mountain drive — the view through the windscreen IS the experience. Slow down on the A87 through Glen Shiel.", locale: "Glen Shiel", enroute: true },
         { name: "Old Man of Storr", lat: 57.507, lng: -6.1836, wiki: "Old_Man_of_Storr", desc: "Skye's iconic rock pinnacle, about 30 min north of Sconser — big views from the roadside pull-offs and the lower path. A perfect first Skye stop on the way over.", locale: "Trotternish" },
-        { name: "Kilt Rock & Mealt Falls", lat: 57.6083, lng: -6.1636, wiki: "Kilt_Rock", desc: "A basalt sea-cliff that looks like a pleated kilt, with a waterfall plunging straight into the sea — a five-minute viewpoint a little further up the Trotternish coast.", locale: "Trotternish" }
+        { name: "Kilt Rock & Mealt Falls", lat: 57.6083, lng: -6.1636, wiki: "Kilt_Rock", desc: "A basalt sea-cliff that looks like a pleated kilt, with a waterfall plunging straight into the sea — a five-minute viewpoint a little further up the Trotternish coast.", locale: "Trotternish" },
+        { name: "The Quiraing", lat: 57.6437, lng: -6.268, wiki: "Quiraing", desc: "Otherworldly landslip of pinnacles and hidden plateaus — the roadside viewpoint at the Quiraing car park delivers the drama with no climb needed.", locale: "Staffin" },
+        { name: "Fairy Glen", lat: 57.586, lng: -6.356, wiki: "Fairy_Glen,_Skye", desc: "A miniature landscape of grassy cones and spiral stone rings near Uig — a gentle 15-minute wander, wonderfully odd.", locale: "Uig" }
       ],
       hotels: [],
       restaurants: []
@@ -347,18 +349,19 @@ window.TRIP = {
 
     {
       num: 7, date: "Sun 26 Jul", weekday: "Sunday",
-      title: "Skye day-trip — Trotternish",
+      title: "Skye day-trip — Dunvegan & the West",
       ferryTimes: { heading: "Sunday ferry — Sconser \u21C4 Raasay (very limited!)", fromRaasay: ["10:00","12:15","16:30"], toRaasay: ["10:30","13:00","17:00"], note: "Only three sailings each way on Sundays — first off Raasay 10:00, and the LAST boat back to Raasay is 17:00. Plan around it. 25-min crossing; turn up & go." },
-      depart: "Catch the ~10:00 first Sunday ferry off Raasay — Sunday sailings are limited and the last one back is ~17:00.",
-      leg: "Foot ferry to Sconser · north Skye",
-      route: "Ferry + Skye A855 loop",
+      depart: "Catch the 10:00 first ferry off Raasay (→ Sconser 10:25). With only ~6 hrs before the 17:00 last boat back, pick two of the three western spots — Dunvegan Castle + Coral Beaches is the relaxed combo.",
+      leg: "Foot ferry to Sconser · west Skye (Dunvegan)",
+      route: "Ferry + west Skye",
       miles: "70", drive: "—",
       overnight: "Raasay",
-      hero: "Old_Man_of_Storr",
-      blurb: "Ferry across to your Skye-parked car for the far north of Trotternish — the otherworldly Quiraing and the Fairy Glen near Uig (you saw the Old Man of Storr and Kilt Rock on the way over yesterday). Sunday sailings are very limited — see the table below: the LAST boat back to Raasay is 17:00, so keep it relaxed and don't miss it.",
+      hero: "Dunvegan_Castle",
+      blurb: "Ferry across for the west of Skye — Dunvegan Castle and its waterside gardens (800 years of Clan MacLeod) and the glowing white Coral Beaches a few minutes north, plus the clifftop lighthouse at Neist Point if time allows. Sunday sailings are very limited (see the table): the last boat back to Raasay is 17:00 and you have only ~6 hrs, so realistically do two of the three — Dunvegan + Coral is the easy pick; Neist Point adds ~45 min each way.",
       attractions: [
-        { name: "The Quiraing", lat: 57.6437, lng: -6.268, wiki: "Quiraing", desc: "Otherworldly landslip of pinnacles and hidden plateaus — the roadside viewpoint at the Quiraing car park delivers the drama with no climb needed.", locale: "Staffin" },
-        { name: "Fairy Glen", lat: 57.586, lng: -6.356, wiki: "Fairy_Glen,_Skye", desc: "A miniature landscape of grassy cones and spiral stone rings near Uig — a gentle 15-minute wander, wonderfully odd.", locale: "Uig" }
+        { name: "Dunvegan Castle & Gardens", lat: 57.449, lng: -6.59, wiki: "Dunvegan_Castle", desc: "Skye's key castle — seat of Clan MacLeod for 800 years, with lovely waterside gardens. A relaxed couple of hours; about 1h15 from Sconser.", url: "https://www.dunvegancastle.com", locale: "Dunvegan", bookAhead: true, bookNote: "Busy in summer — book online to skip the queue." },
+        { name: "Claigan Coral Beaches", lat: 57.49, lng: -6.621, wiki: "Claigan", desc: "Beaches of crushed white coralline algae glowing against turquoise water — an easy 30-min shoreline walk about 10 min north of Dunvegan.", locale: "Dunvegan" },
+        { name: "Neist Point Lighthouse", lat: 57.4256, lng: -6.7876, wiki: "Neist_Point", desc: "Skye's westernmost tip — clifftop views over the lighthouse out to the Hebrides. Add only if time allows: it's ~45 min further west of Dunvegan.", locale: "Glendale" }
       ],
       hotels: [],
       restaurants: [
@@ -368,21 +371,18 @@ window.TRIP = {
 
     {
       num: 8, date: "Mon 27 Jul", weekday: "Monday",
-      title: "Skye day-trip — Cuillin & West",
+      title: "Skye day-trip — Fairy Pools & the Elgol boat",
       ferryTimes: { heading: "Monday ferry — Sconser \u21C4 Raasay", fromRaasay: ["07:55","08:55","09:55","10:55","12:15","14:30","15:30","17:00","18:05"], toRaasay: ["08:25","09:25","10:25","11:30","13:00","15:00","16:15","17:35","18:45"], note: "Weekday sailings — catch the 07:55 off Raasay for the Fairy Pools; last boat back to Raasay 18:45. 25-min crossing; turn up & go." },
-      depart: "Catch the 07:55 ferry off Raasay — beat the crowds to the Fairy Pools.",
-      leg: "Foot ferry to Sconser · west Skye",
-      route: "Ferry + Skye west loop",
+      depart: "Catch the 07:55 ferry off Raasay (→ Sconser 08:20). Fairy Pools first thing, then drive south to Elgol (~1h) for the Bella Jane boat — aim for the 14:00 sailing (3 hrs; ashore at Loch Coruisk; back 17:00), then the 18:45 ferry back to Raasay. Book the boat ahead.",
+      leg: "Foot ferry to Sconser · Cuillin & Elgol",
+      route: "Ferry + Cuillin & Elgol",
       miles: "90", drive: "—",
       overnight: "Raasay",
-      hero: "Neist_Point",
-      blurb: "Catch the early weekday ferry to beat the crowds. Fairy Pools first thing, then the Coral Beaches and Neist Point lighthouse in the west, with Dunvegan Castle and its gardens to round the day. Prefer the sea? Swap in the Elgol boat trip into Loch Coruisk.",
+      hero: "Loch_Coruisk",
+      blurb: "A full day on the early 07:55 ferry. The Fairy Pools first thing — turquoise pools at the foot of the Cuillin — then south to Elgol for the highlight: the Bella Jane boat into Loch Coruisk, hemmed in by the Black Cuillin. Book the sailing ahead; the exact plan and ferry times are below.",
       attractions: [
-        { name: "Fairy Pools", lat: 57.2493, lng: -6.2599, wiki: "Fairy_Pools", desc: "Crystal-clear turquoise pools and little waterfalls at the foot of the Cuillin — a flat 20–30 min there-and-back. Arrive early on the first ferry.", locale: "Glenbrittle" },
-        { name: "Claigan Coral Beaches", lat: 57.49, lng: -6.621, wiki: "Claigan", desc: "Beaches of crushed white coralline algae glowing against turquoise water — an easy 30-min shoreline walk near Dunvegan.", locale: "Dunvegan" },
-        { name: "Neist Point Lighthouse", lat: 57.4256, lng: -6.7876, wiki: "Neist_Point", desc: "Skye's westernmost tip — the clifftop viewpoint over the lighthouse and out to the Hebrides is a short walk from the car park.", locale: "Glendale" },
-        { name: "Dunvegan Castle & Gardens", lat: 57.449, lng: -6.59, wiki: "Dunvegan_Castle", desc: "Skye's key castle — seat of Clan MacLeod for 800 years, with lovely waterside gardens. A relaxed couple of hours.", url: "https://www.dunvegancastle.com", locale: "Dunvegan", bookAhead: true, bookNote: "Busy in summer — book online to skip the queue." },
-        { name: "Elgol & Loch Coruisk boat trip", lat: 57.145, lng: -6.113, wiki: "Loch_Coruisk", desc: "Optional small-boat trip from Elgol into Loch Coruisk beneath the Black Cuillin — seals en route. ~4 hours; book ahead.", url: "https://bellajane.co.uk/", locale: "Elgol", bookAhead: true, bookNote: "Tiny boats, only a few sailings a day — book well ahead." }
+        { name: "Fairy Pools", lat: 57.2493, lng: -6.2599, wiki: "Fairy_Pools", desc: "Crystal-clear turquoise pools and little waterfalls at the foot of the Cuillin — a flat 20–30 min there-and-back. First thing on the 07:55 ferry to beat the crowds.", locale: "Glenbrittle" },
+        { name: "Elgol & Loch Coruisk boat trip", lat: 57.145, lng: -6.113, wiki: "Loch_Coruisk", desc: "The day's highlight — the Bella Jane boat from Elgol pier into Loch Coruisk, ringed by the Black Cuillin, seals en route. ~1.5 hrs ashore, 3 hrs total. Summer sailings ~09:00 / 10:45 / 12:15 / 14:00 (the 14:00 pairs well after the Fairy Pools). Weather-dependent.", url: "https://bellajane.co.uk/", locale: "Elgol", bookAhead: true, bookNote: "Timed boat, ~4 sailings/day — weather-dependent and sells out; book online ahead and confirm the Mon 27 times." }
       ],
       hotels: [],
       restaurants: [
