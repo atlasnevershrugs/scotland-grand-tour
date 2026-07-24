@@ -811,6 +811,23 @@
   }
 
   /* ===================================================================
+     PER-DAY FERRY TIMES (Sconser <-> Raasay)
+     =================================================================== */
+  function buildFerryTimes(d) {
+    const f = d.ferryTimes;
+    const el = document.createElement('div');
+    el.className = 'day-ferry';
+    el.innerHTML = `
+      <div class="day-ferry-head">\u26F4 ${f.heading}</div>
+      <div class="day-ferry-cols">
+        <div class="day-ferry-col"><h6>Raasay \u2192 Sconser (off the island)</h6><p>${f.fromRaasay.join('  \u00B7  ')}</p></div>
+        <div class="day-ferry-col"><h6>Sconser \u2192 Raasay (back)</h6><p>${f.toRaasay.join('  \u00B7  ')}</p></div>
+      </div>
+      <p class="day-ferry-note">${f.note}</p>`;
+    return el;
+  }
+
+  /* ===================================================================
      BUILD ONE DAY SECTION
      =================================================================== */
   function buildDay(d) {
@@ -852,6 +869,8 @@
     legend.className = 'day-map-legend';
     legend.innerHTML = `<span class="lg-item"><span class="lg lg-see">1</span>See &amp; do</span><span class="lg-item"><span class="lg lg-stay">\uD83D\uDECF</span>Tonight's stay</span>${(d.shops && d.shops.length) ? '<span class="lg-item"><span class="lg lg-shop">\uD83D\uDED2</span>Supermarket</span>' : ''}`;
     sec.appendChild(legend);
+
+    if (d.ferryTimes) sec.appendChild(buildFerryTimes(d));
 
     // See & do — one photo-linked card per attraction
     if (d.attractions && d.attractions.length) {

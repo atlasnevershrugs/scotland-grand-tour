@@ -616,6 +616,19 @@ details.bk-stop[open] .bk-summary { border-bottom: 1px solid var(--line); margin
 .lg-see { background: var(--heather); }
 .lg-stay { background: #0b6e4f; }
 .lg-shop { background: var(--whisky); }
+
+/* Per-day ferry timetable */
+.day-ferry {
+  margin: 12px 0 6px; padding: 14px 18px;
+  background: rgba(44,95,102,.06); border: 1px solid var(--line); border-left: 4px solid var(--loch);
+  border-radius: var(--radius-lg);
+}
+.day-ferry-head { font-family: var(--serif); font-size: 16px; color: var(--ink); margin-bottom: 10px; }
+.day-ferry-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 560px) { .day-ferry-cols { grid-template-columns: 1fr; } }
+.day-ferry-col h6 { font-family: var(--sans); font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--loch); font-weight: 700; margin: 0 0 4px; }
+.day-ferry-col p { margin: 0; font-size: 13.5px; color: var(--ink); line-height: 1.7; font-variant-numeric: tabular-nums; }
+.day-ferry-note { margin: 10px 0 0; font-size: 12px; color: var(--ink-soft); line-height: 1.45; }
 .day-drive-stay {
   display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; align-self: flex-start;
   font-size: 13px; font-weight: 600; color: #0b6e4f;

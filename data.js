@@ -319,8 +319,9 @@ window.TRIP = {
     {
       num: 6, date: "Sat 25 Jul", weekday: "Saturday",
       title: "Drumnadrochit → Raasay",
+      ferryTimes: { heading: "Saturday ferry — Sconser \u21C4 Raasay", fromRaasay: ["07:55","08:55","09:55","10:55","12:15","14:30","15:30","17:00","18:05","19:30"], toRaasay: ["08:25","09:25","10:25","11:30","13:00","15:00","16:15","17:35","18:30","20:00"], note: "MV Hallaig \u00B7 25-min crossing \u00B7 turn up & go (be at the slip 10 min before). Saturday sailings; last boat over to Raasay 20:00. (CalMac summer 2026 timetable.)" },
       stay: { name: "Isle of Raasay Distillery (Borodale House)", lat: 57.348, lng: -6.08, mapUrl: "https://www.google.com/maps/search/?api=1&query=Isle%20of%20Raasay%20Distillery%20Borodale%20House%20IV40%208PB" },
-      depart: "Leave Drumnadrochit by ~08:30 — ~4h drive + the Broadford shop; aim for an early-afternoon Sconser → Raasay ferry.",
+      depart: "Leave Drumnadrochit ~09:00 — ~4h drive (Eilean Donan en route) + the Broadford shop puts you on Skye early afternoon; see Trotternish, then take an evening Sconser→Raasay ferry to your check-in.",
       foodNote: "Raasay has only a small community shop, so this is a stock-up drive. Do your last real shop at Broadford Co-op — about 15 min before the Sconser ferry.",
       shops: [
         { name: "Broadford Co-op (Isle of Skye)", lat: 57.2405, lng: -5.913, note: "Last proper shop before the ferry — only ~13 mi / 15 min before Sconser. Open 7am–10pm, car park. Fresh food & food-to-go.", mapUrl: "https://www.google.com/maps/search/?api=1&query=Co-op%20Broadford%20Isle%20of%20Skye%20IV49%209AE" },
@@ -333,11 +334,12 @@ window.TRIP = {
       overnight: "Raasay",
       checkin: "2026-07-25", checkout: "2026-07-28", booked: true,
       hero: "Isle_of_Raasay",
-      blurb: "The long drive west — A82 south, then A87 through Kintail. Pause for Eilean Donan in the morning light and the Five Sisters through the windscreen. Over the Skye Bridge to Sconser, park the car and cross to Raasay as foot passengers for three island nights.",
+      blurb: "Leave Drumnadrochit ~9am for the long drive west — A82 south, then A87 through Kintail, pausing for Eilean Donan and the Five Sisters. You reach Skye early afternoon, well before the Raasay check-in, so run up the Trotternish coast for the Old Man of Storr and Kilt Rock, then drop back to Sconser, park, and cross to Raasay on an evening ferry (see the sailing table below).",
       attractions: [
         { name: "Eilean Donan Castle", lat: 57.274, lng: -5.5161, wiki: "Eilean_Donan", desc: "The most photographed castle in Scotland, on a tidal island where three sea lochs meet — the perfect mid-morning stop on the drive west.", url: "https://www.eileandonancastle.com", locale: "Dornie", enroute: true },
         { name: "Five Sisters of Kintail", lat: 57.178, lng: -5.34, wiki: "Five_Sisters_of_Kintail", desc: "Scotland's most dramatic mountain drive — the view through the windscreen IS the experience. Slow down on the A87 through Glen Shiel.", locale: "Glen Shiel", enroute: true },
-        { name: "Skye Bridge", lat: 57.279, lng: -5.718, wiki: "Skye_Bridge", desc: "The free sweep onto Skye at Kyle of Lochalsh — you'll cross it several times over the coming days.", locale: "Kyle of Lochalsh", enroute: true }
+        { name: "Old Man of Storr", lat: 57.507, lng: -6.1836, wiki: "Old_Man_of_Storr", desc: "Skye's iconic rock pinnacle, about 30 min north of Sconser — big views from the roadside pull-offs and the lower path. A perfect first Skye stop on the way over.", locale: "Trotternish" },
+        { name: "Kilt Rock & Mealt Falls", lat: 57.6083, lng: -6.1636, wiki: "Kilt_Rock", desc: "A basalt sea-cliff that looks like a pleated kilt, with a waterfall plunging straight into the sea — a five-minute viewpoint a little further up the Trotternish coast.", locale: "Trotternish" }
       ],
       hotels: [],
       restaurants: []
@@ -346,17 +348,16 @@ window.TRIP = {
     {
       num: 7, date: "Sun 26 Jul", weekday: "Sunday",
       title: "Skye day-trip — Trotternish",
+      ferryTimes: { heading: "Sunday ferry — Sconser \u21C4 Raasay (very limited!)", fromRaasay: ["10:00","12:15","16:30"], toRaasay: ["10:30","13:00","17:00"], note: "Only three sailings each way on Sundays — first off Raasay 10:00, and the LAST boat back to Raasay is 17:00. Plan around it. 25-min crossing; turn up & go." },
       depart: "Catch the ~10:00 first Sunday ferry off Raasay — Sunday sailings are limited and the last one back is ~17:00.",
       leg: "Foot ferry to Sconser · north Skye",
       route: "Ferry + Skye A855 loop",
       miles: "70", drive: "—",
       overnight: "Raasay",
       hero: "Old_Man_of_Storr",
-      blurb: "Ferry across to your Skye-parked car and drive the Trotternish loop. The Quiraing and Old Man of Storr are stunning straight from the roadside viewpoints; Kilt Rock is a five-minute stop; and the Fairy Glen near Uig is a gentle wander. Sunday ferries are limited (first ~10am, last back ~6pm) so watch the return sailing.",
+      blurb: "Ferry across to your Skye-parked car for the far north of Trotternish — the otherworldly Quiraing and the Fairy Glen near Uig (you saw the Old Man of Storr and Kilt Rock on the way over yesterday). Sunday sailings are very limited — see the table below: the LAST boat back to Raasay is 17:00, so keep it relaxed and don't miss it.",
       attractions: [
         { name: "The Quiraing", lat: 57.6437, lng: -6.268, wiki: "Quiraing", desc: "Otherworldly landslip of pinnacles and hidden plateaus — the roadside viewpoint at the Quiraing car park delivers the drama with no climb needed.", locale: "Staffin" },
-        { name: "Old Man of Storr", lat: 57.507, lng: -6.1836, wiki: "Old_Man_of_Storr", desc: "Skye's iconic rock pinnacle — clearly seen from the roadside pull-offs and the lower path; skip the steep summit and just take the view.", locale: "Trotternish" },
-        { name: "Kilt Rock & Mealt Falls", lat: 57.6083, lng: -6.1636, wiki: "Kilt_Rock", desc: "A basalt sea cliff that looks like a pleated kilt, with a waterfall plunging to the sea — a five-minute viewpoint from the car park.", locale: "Trotternish" },
         { name: "Fairy Glen", lat: 57.586, lng: -6.356, wiki: "Fairy_Glen,_Skye", desc: "A miniature landscape of grassy cones and spiral stone rings near Uig — a gentle 15-minute wander, wonderfully odd.", locale: "Uig" }
       ],
       hotels: [],
@@ -368,6 +369,7 @@ window.TRIP = {
     {
       num: 8, date: "Mon 27 Jul", weekday: "Monday",
       title: "Skye day-trip — Cuillin & West",
+      ferryTimes: { heading: "Monday ferry — Sconser \u21C4 Raasay", fromRaasay: ["07:55","08:55","09:55","10:55","12:15","14:30","15:30","17:00","18:05"], toRaasay: ["08:25","09:25","10:25","11:30","13:00","15:00","16:15","17:35","18:45"], note: "Weekday sailings — catch the 07:55 off Raasay for the Fairy Pools; last boat back to Raasay 18:45. 25-min crossing; turn up & go." },
       depart: "Catch the 07:55 ferry off Raasay — beat the crowds to the Fairy Pools.",
       leg: "Foot ferry to Sconser · west Skye",
       route: "Ferry + Skye west loop",
