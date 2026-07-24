@@ -100,7 +100,7 @@ window.TRIP = {
   ],
 
   practical: [
-    { title: "🎟 Pre-book these — they sell out", body: "Several stops need <strong>timed tickets booked online in advance</strong> (some sell out days ahead in peak summer): <strong>Edinburgh Castle</strong>, <strong>Rosslyn Chapel</strong> &amp; <strong>Jupiter Artland</strong> (Day 2); <strong>Urquhart Castle</strong> — book the timed slot AND a parking bay — plus <strong>Culloden</strong> (Day 5) and the <strong>Loch Ness cruise</strong> (Day 4); <strong>Dunvegan Castle</strong> (Day 7) &amp; the <strong>Elgol / Loch Coruisk boat</strong> (Day 8). Look for the red 🎟 Book-ahead tag on those cards." },
+    { title: "🎟 Pre-book these — they sell out", body: "Several stops need <strong>timed tickets booked online in advance</strong> (some sell out days ahead in peak summer): <strong>Edinburgh Castle</strong>, <strong>Rosslyn Chapel</strong> &amp; <strong>Jupiter Artland</strong> (Day 2); <strong>Urquhart Castle</strong> — book the timed slot AND a parking bay — plus <strong>Culloden</strong> (Day 5) and the <strong>Loch Ness cruise</strong> (Day 4); <strong>Dunvegan Castle</strong> (Day 7) &amp; the <strong>Seaprobe glass-bottom boat</strong> (Day 8). Look for the red 🎟 Book-ahead tag on those cards." },
     { title: "Leave the car on Skye", body: "Borodale is a 12-min walk from the Raasay pier and you tour Skye every day — so park the car at Sconser and cross as foot passengers (~£4 return vs ~£16 for the car). Confirm multi-day Sconser parking with CalMac / Borodale House, and ask Borodale about a luggage pickup at the pier." },
     { title: "Sconser ↔ Raasay ferry", body: "CalMac, 25-min crossing, ~9 sailings/day on weekdays (fewer on Sundays — first ~10am). As foot passengers you can turn up and go, but verify the timetable for your Skye day-trips at calmac.co.uk." },
     { title: "Fuel", body: "Fill up at every petrol station in the Highlands. Stations can be 30–40 miles apart and close by 6–7pm. Top up in Inverness, on Skye (Portree/Broadford), Lochcarron, and at Fort William." },
@@ -370,18 +370,18 @@ window.TRIP = {
 
     {
       num: 8, date: "Mon 27 Jul", weekday: "Monday",
-      title: "Skye day-trip — Fairy Pools & the Elgol boat",
+      title: "Skye day-trip — Seaprobe glass-bottom boat & Fairy Pools",
       ferryTimes: { heading: "Monday ferry — Sconser \u21C4 Raasay", fromRaasay: ["07:55","08:55","09:55","10:55","12:15","14:30","15:30","17:00","18:05"], toRaasay: ["08:25","09:25","10:25","11:30","13:00","15:00","16:15","17:35","18:45"], note: "Weekday sailings — catch the 07:55 off Raasay for the Fairy Pools; last boat back to Raasay 18:45. 25-min crossing; turn up & go." },
-      depart: "Catch the 07:55 ferry off Raasay (→ Sconser 08:20). Do the Fairy Pools first (a short flat walk), then drive south to Elgol (~1h) for the Bella Jane boat — the 12:15 sailing fits nicely (3 hrs; ashore at Loch Coruisk; back ~15:15), leaving a relaxed drive to the 17:35 ferry back to Raasay. (14:00 is the later fallback.) Book the boat ahead; confirm Mon 27 sailings.",
-      leg: "Foot ferry to Sconser · Cuillin & Elgol",
-      route: "Ferry + Cuillin & Elgol",
+      depart: "Catch the 07:55 ferry off Raasay (→ Sconser 08:20). Over the Skye Bridge to Kyle of Lochalsh for the Seaprobe glass-bottom boat — the 10:15 sailing (1 hr) — then back onto Skye for the Fairy Pools, and an afternoon ferry home to Raasay (15:00 or 16:15). Book Seaprobe ahead — Saturday shows no availability, so Monday is the day.",
+      leg: "Foot ferry to Sconser · Kyle boat & Fairy Pools",
+      route: "Ferry + Kyle & Glenbrittle",
       miles: "90", drive: "—",
       overnight: "Raasay",
-      hero: "Loch_Coruisk",
-      blurb: "A full day on the early 07:55 ferry. The Fairy Pools first thing — turquoise pools at the foot of the Cuillin — then south to Elgol for the highlight: the Bella Jane boat into Loch Coruisk, hemmed in by the Black Cuillin. Book the sailing ahead; the exact plan and ferry times are below.",
+      hero: "Skye_Bridge",
+      blurb: "A full day on the early 07:55 ferry. Back over the Skye Bridge to Kyle of Lochalsh for the Seaprobe Atlantis — Britain's only semi-submersible glass-bottom boat — down in the underwater gallery to watch seals, Seal Island and the kelp forest. Then onto Skye for the Fairy Pools at the foot of the Cuillin. Book Seaprobe ahead (Saturday's unavailable, so Monday's the day); ferry times below.",
       attractions: [
-        { name: "Fairy Pools", lat: 57.2493, lng: -6.2599, wiki: "Fairy_Pools", desc: "Crystal-clear turquoise pools and little waterfalls at the foot of the Cuillin — a flat 20–30 min there-and-back. First thing on the 07:55 ferry to beat the crowds.", locale: "Glenbrittle" },
-        { name: "Elgol & Loch Coruisk boat trip", lat: 57.145, lng: -6.113, wiki: "Loch_Coruisk", desc: "The day's highlight — the Bella Jane boat from Elgol pier into Loch Coruisk, ringed by the Black Cuillin, seals en route. ~1.5 hrs ashore, 3 hrs total. Summer sailings ~09:00 / 10:45 / 12:15 / 14:00 — the 12:15 works well after a quick Fairy Pools (back ~15:15); 14:00 is the later option. Weather-dependent.", url: "https://bellajane.co.uk/", locale: "Elgol", bookAhead: true, bookNote: "Timed boat, ~4 sailings/day — weather-dependent and sells out; book online ahead and confirm the Mon 27 times." }
+        { name: "Fairy Pools", lat: 57.2493, lng: -6.2599, wiki: "Fairy_Pools", desc: "Crystal-clear turquoise pools and little waterfalls at the foot of the Cuillin — a flat 20–30 min there-and-back — an easy stop after the morning boat.", locale: "Glenbrittle" },
+        { name: "Seaprobe Atlantis (glass-bottom boat)", lat: 57.2810, lng: -5.7130, wiki: null, desc: "The day's highlight — Britain's only semi-submersible glass-bottom boat, from Kyle of Lochalsh out under the Skye Bridge. Take a seat in the below-water viewing gallery to watch the kelp forest, seals, Seal Island and a protected bird colony. 1 hr (a 2-hr wreck version runs on some tides). Monday sailings 10:15 / 14:15 / 16:00.", url: "https://www.seaprobeatlantis.com/boat-trips", locale: "Kyle of Lochalsh", bookAhead: true, bookNote: "Sat 25 Jul shows no availability — Monday is the day. £26.50 adult / £18.02 youth (13–15). Book online; weather/tide dependent." }
       ],
       hotels: [],
       restaurants: [
