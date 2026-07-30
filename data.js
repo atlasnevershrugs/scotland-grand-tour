@@ -65,13 +65,13 @@ window.TRIP = {
     { lat: 57.6100, lng: -5.3500, label: "Beinn Eighe",         day: 10 },
     { lat: 57.6900, lng: -5.4700, label: "Loch Maree",          day: 10 },
     { lat: 56.8728, lng: -5.4357, label: "Glenfinnan",          day: 11 },
-    { lat: 57.0060, lng: -5.8280, label: "Mallaig",             day: 11 },
-    { lat: 56.9600, lng: -5.8320, label: "Silver Sands of Morar", day: 11 },
-    { lat: 56.8430, lng: -5.1030, label: "Neptune's Staircase", day: 11 },
-    { lat: 56.7969, lng: -5.0037, label: "Ben Nevis",           day: 11 },
-    { lat: 56.6813, lng: -5.1006, label: "Glencoe (Three Sisters)", day: 12 },
-    { lat: 56.6164, lng: -5.0034, label: "Glen Etive",          day: 12 },
-    { lat: 56.6000, lng: -4.7500, label: "Rannoch Moor",        day: 12 },
+    { lat: 57.0060, lng: -5.8280, label: "Mallaig",             day: 12 },
+    { lat: 56.9600, lng: -5.8320, label: "Silver Sands of Morar", day: 12 },
+    { lat: 56.8430, lng: -5.1030, label: "Neptune's Staircase", day: 12 },
+    { lat: 56.7969, lng: -5.0037, label: "Ben Nevis",           day: 12 },
+    { lat: 56.6813, lng: -5.1006, label: "Glencoe (Three Sisters)", day: 11 },
+    { lat: 56.6164, lng: -5.0034, label: "Glen Etive",          day: 11 },
+    { lat: 56.6000, lng: -4.7500, label: "Rannoch Moor",        day: 11 },
     { lat: 56.0959, lng: -4.6356, label: "Luss",                day: 13 }
   ],
 
@@ -455,47 +455,47 @@ window.TRIP = {
 
     {
       num: 11, date: "Thu 30 Jul", weekday: "Thursday",
-      title: "Glenfinnan & the Road to the Isles",
+      title: "Glenfinnan Viaduct & Glencoe",
       stay: { name: "Beinn Brèagha House, Fort William", lat: 56.829, lng: -5.101, mapUrl: "https://www.google.com/maps/search/?api=1&query=13%20Lochy%20Road%20Fort%20William%20PH33%206NJ" },
-      leg: "Day out from Fort William · Glenfinnan · Morar beaches · Mallaig",
-      route: "A830 loop",
-      miles: "40", drive: "—",
+      leg: "Day out from Fort William · Glenfinnan (west) · Glencoe (south)",
+      route: "A830 west + A82 south",
+      miles: "90", drive: "—",
       overnight: "Fort William (night 2 of 3)",
       hero: "Glenfinnan_Viaduct",
-      blurb: "No packing today — you're based in Fort William. Take the A830 'Road to the Isles' west: the Glenfinnan Viaduct and Monument, then the Silver Sands of Morar — dazzling white beaches and turquoise water — out to the fishing port of Mallaig for lunch. Back near town, wander the locks of Neptune's Staircase beneath Ben Nevis. (The Jacobite steam train crosses the viaduct in summer if you'd rather ride than drive.)",
+      blurb: "The two-icon day — no packing, you're based in Fort William for two more nights. Head WEST first on the A830 'Road to the Isles' to the Glenfinnan Viaduct of Harry Potter fame (catch the Jacobite steam train crossing if you've timed it), then back through town and SOUTH on the A82 to Glencoe — Scotland's most dramatic glen — for the Three Sisters and the story of the 1692 massacre at the visitor centre. Two short drives in opposite directions, but you bag both bucket-list sights in one day. If daylight holds, the dead-end Glen Etive road and the wild sweep of Rannoch Moor sit right at the head of the glen.",
       attractions: [
-        { name: "Glenfinnan Viaduct", lat: 56.8728, lng: -5.4357, wiki: "Glenfinnan_Viaduct", desc: "The 21-arch Victorian viaduct of Harry Potter fame, curving above the glen — a 10-minute walk to the viewpoint, or watch the steam train cross if it's running.", locale: "Glenfinnan", enroute: true },
-        { name: "Glenfinnan Monument", lat: 56.87, lng: -5.433, wiki: "Glenfinnan_Monument", desc: "On the shore of Loch Shiel where Bonnie Prince Charlie raised his standard in 1745 — a short stroll to a classic Highland view.", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument", locale: "Glenfinnan", enroute: true },
-        { name: "Silver Sands of Morar", lat: 56.96, lng: -5.832, wiki: "Morar", desc: "Dazzling white-sand beaches and turquoise shallows along the Road to the Isles — pull over anywhere between Arisaig and Morar. The trip's best beaches.", locale: "Morar", enroute: true },
-        { name: "Mallaig", lat: 57.006, lng: -5.828, wiki: "Mallaig", desc: "Bustling little fishing port at the end of the road — fresh seafood, harbour views and ferries to the small isles. A relaxed lunch stop.", locale: "Mallaig", enroute: true },
-        { name: "Neptune's Staircase", lat: 56.843, lng: -5.103, wiki: "Neptune%27s_Staircase", desc: "Thomas Telford's eight-lock flight lifting the Caledonian Canal at Banavie, with Ben Nevis behind — an easy towpath potter, free.", locale: "Banavie" },
-        { name: "Ben Nevis", lat: 56.7969, lng: -5.0037, wiki: "Ben_Nevis", desc: "Britain's highest mountain (1,345m) — admire it from the Glen Nevis road at its foot; no climb.", locale: "Fort William" }
+        { name: "Glenfinnan Viaduct", seq: 1, lat: 56.8728, lng: -5.4357, wiki: "Glenfinnan_Viaduct", desc: "The 21-arch Victorian viaduct of Harry Potter fame, curving above the glen — a 10-minute walk to the viewpoint. Time it for the Jacobite steam train crossing (typically late morning, westbound, in summer).", locale: "Glenfinnan", enroute: true },
+        { name: "Glenfinnan Monument", seq: 2, lat: 56.87, lng: -5.433, wiki: "Glenfinnan_Monument", desc: "On the shore of Loch Shiel where Bonnie Prince Charlie raised his standard in 1745 — a short stroll to a classic Highland view, right by the viaduct.", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument", locale: "Glenfinnan", enroute: true },
+        { name: "Glencoe Visitor Centre", seq: 3, lat: 56.674, lng: -5.101, wiki: "Glen_Coe", desc: "First stop as you come into the glen from Fort William — the story of the 1692 massacre and an easy Signal Rock woodland loop behind it.", url: "https://www.nts.org.uk/visit/places/glencoe", locale: "Glencoe" },
+        { name: "Three Sisters of Glencoe", seq: 4, lat: 56.668, lng: -4.998, wiki: "Glen_Coe", desc: "Scotland's most dramatic glen — the Three Sisters ridges tower over the A82. Pull into the viewpoint and take it in; about 45 min south of Fort William.", locale: "Glencoe" },
+        { name: "Glen Etive (optional)", seq: 5, lat: 56.6164, lng: -5.0034, wiki: "Glen_Etive", desc: "Optional if you have the time — a 12-mile dead-end road into a remote, beautiful glen (the Skyfall location), off the A82 at the head of Glencoe. Allow an hour round trip.", locale: "Glencoe" },
+        { name: "Rannoch Moor (optional)", seq: 6, lat: 56.6, lng: -4.75, wiki: "Rannoch_Moor", desc: "Optional — one of Europe's last great wildernesses: a vast sweep of bog, lochans and mountains the A82 crosses just north of Glencoe. Stop at the laybys.", locale: "Rannoch Moor" }
       ],
       hotels: [],
       restaurants: [
-        { name: "Lochaber Larder / Fort William High St", note: "Plenty of casual dinner options back in town after the train.", url: "https://www.visitscotland.com/places-to-go/fort-william" }
+        { name: "Clachaig Inn (Boots Bar)", note: "Legendary Glencoe walkers' pub — a perfect late lunch or early dinner before the drive back to Fort William.", url: "https://www.clachaig.com" }
       ]
     },
 
     {
       num: 12, date: "Fri 31 Jul", weekday: "Friday",
-      title: "Glencoe day-trip",
+      title: "Road to the Isles beaches & Ben Nevis",
       stay: { name: "Beinn Brèagha House, Fort William", lat: 56.829, lng: -5.101, mapUrl: "https://www.google.com/maps/search/?api=1&query=13%20Lochy%20Road%20Fort%20William%20PH33%206NJ" },
-      leg: "Day out from Fort William · Three Sisters · Glen Etive · Lost Valley",
-      route: "A82 · 30 min each way",
-      miles: "60", drive: "—",
+      leg: "Day out from Fort William · Morar beaches · Mallaig · Ben Nevis",
+      route: "A830 west + Glen Nevis",
+      miles: "90", drive: "—",
       overnight: "Fort William (night 3 of 3)",
-      hero: "Glen_Coe",
-      blurb: "Glencoe is a 30-minute drive south down the A82 — an easy day-trip from Fort William. Pull over for the Three Sisters, get the story at the visitor centre, and drive the dead-end Glen Etive road into the mountains. Just north, the A82 crosses the wild expanse of Rannoch Moor — one of Europe's last true wildernesses. Lunch at the Clachaig Inn on the way back.",
+      hero: "Mallaig",
+      blurb: "A relaxed last full day, mostly one direction. Take the A830 west again — pause at Neptune's Staircase, the eight-lock canal flight at Banavie — then out to the Silver Sands of Morar, the trip's best white-sand beaches and turquoise shallows, and on to the little fishing port of Mallaig for a seafood lunch. On the way back, detour up the Glen Nevis road for the classic view of Ben Nevis, Britain's highest mountain, at its foot. An easy day to wind down before the long drive south tomorrow.",
       attractions: [
-        { name: "Three Sisters of Glencoe", lat: 56.668, lng: -4.998, wiki: "Glen_Coe", desc: "Scotland's most dramatic glen — the Three Sisters ridges tower over the A82. Pull into the viewpoint and take it in; 30 min south of Fort William.", locale: "Glencoe" },
-        { name: "Glencoe Visitor Centre", lat: 56.674, lng: -5.101, wiki: "Glen_Coe", desc: "The story of the glen and the 1692 massacre, plus an easy Signal Rock woodland loop behind it.", url: "https://www.nts.org.uk/visit/places/glencoe", locale: "Glencoe" },
-        { name: "Glen Etive", lat: 56.6164, lng: -5.0034, wiki: "Glen_Etive", desc: "A 12-mile dead-end road into a remote, beautiful glen (the Skyfall location) — one of Scotland's great scenic drives. Allow an hour round trip.", locale: "Glencoe" },
-        { name: "Rannoch Moor", lat: 56.6, lng: -4.75, wiki: "Rannoch_Moor", desc: "One of the last great wildernesses in Europe — a vast, empty sweep of bog, lochans and mountains that the A82 crosses just north of Glencoe. Stop at the laybys.", locale: "Rannoch Moor" }
+        { name: "Neptune's Staircase", seq: 1, lat: 56.843, lng: -5.103, wiki: "Neptune%27s_Staircase", desc: "Thomas Telford's eight-lock flight lifting the Caledonian Canal at Banavie, with Ben Nevis behind — an easy towpath potter right at the start of the road west. Free.", locale: "Banavie", enroute: true },
+        { name: "Silver Sands of Morar", seq: 2, lat: 56.96, lng: -5.832, wiki: "Morar", desc: "Dazzling white-sand beaches and turquoise shallows along the Road to the Isles — pull over anywhere between Arisaig and Morar. The trip's best beaches.", locale: "Morar", enroute: true },
+        { name: "Mallaig", seq: 3, lat: 57.006, lng: -5.828, wiki: "Mallaig", desc: "Bustling little fishing port at the end of the road — fresh seafood, harbour views and ferries to the small isles. A relaxed lunch stop and the turnaround point.", locale: "Mallaig", enroute: true },
+        { name: "Ben Nevis", seq: 4, lat: 56.7969, lng: -5.0037, wiki: "Ben_Nevis", desc: "Britain's highest mountain (1,345m) — admire it from the Glen Nevis road at its foot on the way back into town; no climb.", locale: "Fort William" }
       ],
       hotels: [],
       restaurants: [
-        { name: "Clachaig Inn (Boots Bar)", note: "Legendary Glencoe walkers' pub — perfect lunch stop mid-day-trip even though you're based in Fort William.", url: "https://www.clachaig.com" }
+        { name: "Mallaig harbour seafood", note: "Fresh-off-the-boat seafood at the Mallaig turnaround; or a casual dinner back on Fort William High St.", url: "https://www.visitscotland.com/places-to-go/mallaig" }
       ]
     },
 
