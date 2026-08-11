@@ -61,7 +61,14 @@ window.TRIP = {
     {
       num: 1, date: "Sat 15 Aug", weekday: "Saturday",
       title: "Arrive Bath — a Georgian evening",
-      stay: { name: "Bath — central base (nights 1–4)", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
+      stay: { name: "Bath — your base · night 1 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
+      checkin: "2026-08-15", checkout: "2026-08-19",
+      hotels: [
+        { name: "The Francis Hotel", style: "Elegant 4★ on Georgian Queen Square — central, walk everywhere", price: "£140–£210", url: "https://www.francishotel.com/", locale: "Bath" },
+        { name: "Apex City of Bath Hotel", style: "Modern 4★ by the river; family rooms sleep 3", price: "£150–£240", url: "https://www.apexhotels.co.uk/hotels/bath/apex-city-of-bath-hotel", locale: "Bath" },
+        { name: "Harington’s Hotel", style: "Friendly boutique on a quiet central lane — good value", price: "£120–£185", url: "https://www.haringtonshotel.co.uk/", locale: "Bath" },
+        { name: "SACO Bath — serviced apartments", style: "Self-catering apartments — more space for three", price: "£150–£250", url: "https://www.sacoapartments.com/locations/bath/", locale: "Bath" }
+      ],
       transport: "train",
       depart: "Oxford’s already done — you reach Bath around 3pm and check in. Use the golden-hour evening for Bath’s free, ticket-free Georgian highlights on foot, then dinner. (Save the Roman Baths for a proper morning slot tomorrow.)",
       leg: "Arrive Bath ~15:00 · evening on foot",
@@ -82,6 +89,7 @@ window.TRIP = {
     {
       num: 2, date: "Sun 16 Aug", weekday: "Sunday",
       title: "Roman Baths + Castle Combe & Lacock",
+      stay: { name: "Bath — your base · night 2 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "car",
       depart: "Roman Baths open ~09:00 — book a slot and go first thing, then pick up the hire car around midday for two of England’s prettiest villages, both under 40 minutes away.",
       leg: "Roman Baths (AM) · Castle Combe & Lacock (PM, by car)",
@@ -102,6 +110,7 @@ window.TRIP = {
     {
       num: 3, date: "Mon 17 Aug", weekday: "Monday",
       title: "Avebury, Stonehenge & Salisbury",
+      stay: { name: "Bath — your base · night 3 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "car",
       depart: "The big day south — book your Stonehenge timed entry and aim to leave Bath by ~09:00. It runs as a line south: Avebury first, then Stonehenge, then Salisbury.",
       leg: "Bath → Avebury → Stonehenge → Salisbury → Bath",
@@ -122,6 +131,7 @@ window.TRIP = {
     {
       num: 4, date: "Tue 18 Aug", weekday: "Tuesday",
       title: "Cotswolds villages & Blenheim Palace",
+      stay: { name: "Bath — your base · night 4 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "car",
       depart: "The longest driving day — a Cotswolds loop northeast. Leave by ~08:30 to enjoy the villages before the crowds; return the hire car in Bath by evening. (If you’d rather a shorter, gentler day, swap this for Wells Cathedral + Cheddar Gorge — just say.)",
       leg: "Bath → Bibury → Bourton-on-the-Water → Blenheim → Bath",
@@ -142,7 +152,14 @@ window.TRIP = {
     {
       num: 5, date: "Wed 19 Aug", weekday: "Wednesday",
       title: "Bath → London, and first steps",
-      stay: { name: "London — central base (nights 5–9)", lat: 51.4952, lng: -0.1441, mapUrl: "https://www.google.com/maps/search/?api=1&query=Victoria%20Westminster%20London" },
+      stay: { name: "London — your base · night 1 of 5", lat: 51.4952, lng: -0.1441, mapUrl: "https://www.google.com/maps/search/?api=1&query=Victoria%20Westminster%20London" },
+      checkin: "2026-08-19", checkout: "2026-08-24",
+      hotels: [
+        { name: "Premier Inn London Victoria", style: "Reliable family rooms (sleep 3); 5 min to Victoria & the Gatwick Express", price: "£140–£210", url: "https://www.premierinn.com/gb/en/hotels/england/greater-london/london/london-victoria.html", locale: "Victoria, London" },
+        { name: "The Z Hotel Victoria", style: "Smart compact rooms, unbeatable location for Gatwick", price: "£120–£190", url: "https://www.thezhotels.com/hotels/victoria/", locale: "Victoria, London" },
+        { name: "DoubleTree by Hilton London Victoria", style: "4★ comfort by the station; connecting/family rooms", price: "£190–£300", url: "https://www.hilton.com/en/hotels/lonvidi-doubletree-london-victoria/", locale: "Victoria, London" },
+        { name: "SACO / Native — London serviced apartments", style: "Self-catering apartments — space for three, own kitchen", price: "£230–£350", url: "https://www.sacoapartments.com/locations/london/", locale: "London" }
+      ],
       transport: "train",
       depart: "A late-morning ~1h25 train from Bath Spa to London Paddington (GWR, frequent). Drop bags, then ease into the city with a riverside Westminster walk.",
       leg: "Bath Spa → London Paddington by train",
@@ -163,6 +180,7 @@ window.TRIP = {
     {
       num: 6, date: "Thu 20 Aug", weekday: "Thursday",
       title: "Royal & historic London",
+      stay: { name: "London — your base · night 2 of 5", lat: 51.4952, lng: -0.1441, mapUrl: "https://www.google.com/maps/search/?api=1&query=Victoria%20Westminster%20London" },
       transport: "tube",
       depart: "Start at the Tower at opening (~09:00) to beat the queues for the Crown Jewels, then work west along the river to Westminster.",
       leg: "Tower of London · Tower Bridge · Westminster",
@@ -184,8 +202,9 @@ window.TRIP = {
     {
       num: 7, date: "Fri 21 Aug", weekday: "Friday",
       title: "Great museums + a West End show",
+      stay: { name: "London — your base · night 3 of 5", lat: 51.4952, lng: -0.1441, mapUrl: "https://www.google.com/maps/search/?api=1&query=Victoria%20Westminster%20London" },
       transport: "tube",
-      depart: "Museums are free and busiest midday — arrive at the British Museum near opening (~10:00). Book your West End show for the evening well ahead.",
+      depart: "You have a meeting in London today — the museums are free and drop-in, so fit them around it, and the West End show is an evening thing. If the meeting is central, the British Museum (Bloomsbury) or the South Kensington museums slot in easily either side.",
       leg: "British Museum · South Kensington museums · Theatreland",
       route: "Tube & on foot", miles: "—", drive: "—",
       overnight: "London",
@@ -205,6 +224,7 @@ window.TRIP = {
     {
       num: 8, date: "Sat 22 Aug", weekday: "Saturday",
       title: "Rooftops, St Paul’s & the South Bank",
+      stay: { name: "London — your base · night 4 of 5", lat: 51.4952, lng: -0.1441, mapUrl: "https://www.google.com/maps/search/?api=1&query=Victoria%20Westminster%20London" },
       transport: "tube",
       depart: "It’s a Saturday — catch the Changing of the Guard at Buckingham Palace (~11:00, on set days) early, then work east to the City and finish along the South Bank at dusk. Book Sky Garden, St Paul’s and the London Eye ahead.",
       leg: "Buckingham Palace · the City · Bankside · South Bank",
@@ -227,6 +247,7 @@ window.TRIP = {
     {
       num: 9, date: "Sun 23 Aug", weekday: "Sunday",
       title: "Markets, villages-in-the-city & parks",
+      stay: { name: "London — your base · night 5 of 5", lat: 51.4952, lng: -0.1441, mapUrl: "https://www.google.com/maps/search/?api=1&query=Victoria%20Westminster%20London" },
       transport: "tube",
       depart: "A Sunday for markets and neighbourhoods. Columbia Road flower market is Sunday-only and best early (~09:00–14:00); build the rest of the day around it.",
       leg: "Columbia Road · Camden · Notting Hill · (or Greenwich)",

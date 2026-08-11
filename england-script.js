@@ -889,7 +889,17 @@
       sec.appendChild(grid);
     }
 
-    // (Accommodation is booked — options removed. Overnight town shows in the drive strip; full details on the private 🔒 page.)
+    // Where to stay — accommodation options (rendered on each base's first day)
+    if (d.hotels && d.hotels.length) {
+      const stayLab = document.createElement('h4');
+      stayLab.className = 'day-section-label';
+      stayLab.textContent = 'Where to stay in ' + d.overnight;
+      sec.appendChild(stayLab);
+      const stayGrid = document.createElement('div');
+      stayGrid.className = 'hotels-strip';
+      d.hotels.forEach(h => stayGrid.appendChild(hotelMini(h, d.checkin, d.checkout)));
+      sec.appendChild(stayGrid);
+    }
 
     // Eat & drink
     if (d.restaurants && d.restaurants.length) {
