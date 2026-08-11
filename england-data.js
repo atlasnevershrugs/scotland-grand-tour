@@ -30,11 +30,13 @@ window.TRIP = {
 
   // Day-trip waypoints (small dots on the overview map).
   detours: [
-    { lat: 51.4915, lng: -2.2270, label: "Castle Combe",  day: 2 },
-    { lat: 51.4155, lng: -2.1225, label: "Lacock",        day: 2 },
+    { lat: 51.2107, lng: -2.6440, label: "Wells",         day: 2 },
+    { lat: 51.2810, lng: -2.7660, label: "Cheddar Gorge", day: 2 },
+    { lat: 51.4155, lng: -2.1225, label: "Lacock",        day: 3 },
     { lat: 51.4286, lng: -1.8541, label: "Avebury",       day: 3 },
     { lat: 51.1789, lng: -1.8262, label: "Stonehenge",    day: 3 },
     { lat: 51.0649, lng: -1.7976, label: "Salisbury",     day: 3 },
+    { lat: 51.4915, lng: -2.2270, label: "Castle Combe",  day: 4 },
     { lat: 51.7595, lng: -1.8330, label: "Bibury",        day: 4 },
     { lat: 51.8875, lng: -1.7594, label: "Bourton",       day: 4 },
     { lat: 51.8414, lng: -1.3610, label: "Blenheim",      day: 4 }
@@ -46,11 +48,11 @@ window.TRIP = {
     { title: "Parking in Bath", body: "Bath’s centre is tight and largely permit/pay. Use a <strong>Park &amp; Ride</strong> (Lansdown, Newbridge or Odd Down) on the car days, or a hotel with parking. You won’t need the car for Bath itself — it’s a walking city." },
     { title: "London travel — just tap", body: "No need for paper tickets or an Oyster: <strong>tap a contactless card or phone</strong> on the yellow readers (Tube, bus, DLR, most rail). Daily fares are capped. A 15-year-old travels at child rate — ask at a station about a <strong>child Zip photocard</strong> if you’ll ride a lot." },
     { title: "Changing the Guard & market days", body: "<strong>Changing the Guard</strong> at Buckingham Palace runs on set mornings (~11:00) — check the exact days for your week and arrive early. Weekend markets: <strong>Portobello Road</strong> is biggest on Saturday; <strong>Columbia Road flower market</strong> is Sunday only; <strong>Borough Market</strong> is quietest/limited on Sundays." },
-    { title: "Getting to Gatwick", body: "From central London the <strong>Gatwick Express</strong> runs Victoria → Gatwick in ~30 min (every ~15 min); Thameslink from London Bridge/Blackfriars/St Pancras also serves Gatwick. Allow <strong>~3 hours</strong> before an international flight to Dubai. (Confirm your flight time so we can size the last morning.)" }
+    { title: "Your 9am flight — sleep at Gatwick", body: "For a <strong>9:00 departure</strong> be at your terminal by <strong>~06:00</strong> (long-haul check-in + August queues). The Gatwick Express (Victoria → Gatwick, ~30 min) barely starts early enough, so the easy move is to <strong>spend the night of the 23rd at a Gatwick airport hotel</strong> (see Day 10) and walk to check-in — rather than a ~04:45 dash from London. Check whether you fly from <strong>North or South Terminal</strong>; a free shuttle links them in ~3 min." }
   ],
 
   restaurantsToBook: [
-    { name: "A West End show", when: "Fri 21 Aug eve — book weeks ahead", url: "https://officiallondontheatre.com/" },
+    { name: "A West End show", when: "One London evening (Fri 21 or Sat 22) — book weeks ahead", url: "https://officiallondontheatre.com/" },
     { name: "Afternoon tea (London)", when: "Any afternoon — popular ones book out", url: "https://www.google.com/search?q=best+afternoon+tea+london+booking" },
     { name: "Sunday roast (London)", when: "Sun 23 Aug — good gastropubs fill up", url: "https://www.google.com/search?q=best+sunday+roast+london+booking" },
     { name: "Sally Lunn's / dinner in Bath", when: "One Bath evening", url: "https://www.sallylunns.co.uk/" }
@@ -88,18 +90,18 @@ window.TRIP = {
     /* ---------------- DAY 2 — Bath city + nearest villages ---------------- */
     {
       num: 2, date: "Sun 16 Aug", weekday: "Sunday",
-      title: "Roman Baths + Castle Combe & Lacock",
+      title: "Roman Baths + Wells & Cheddar Gorge",
       stay: { name: "Bath — your base · night 2 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "car",
-      depart: "Roman Baths open ~09:00 — book a slot and go first thing, then pick up the hire car around midday for two of England’s prettiest villages, both under 40 minutes away.",
-      leg: "Roman Baths (AM) · Castle Combe & Lacock (PM, by car)",
-      route: "By car (PM)", miles: "40", drive: "—",
+      depart: "Roman Baths open ~09:00 — book a slot and go first thing, then pick up the hire car around midday and head southwest for Wells and the dramatic Cheddar Gorge.",
+      leg: "Roman Baths (AM) · Wells & Cheddar Gorge (PM, by car)",
+      route: "By car (PM)", miles: "55", drive: "—",
       overnight: "Bath",
-      blurb: "The one big Bath ticket, then the countryside. Start at the Roman Baths — Britain’s best-preserved Roman spa, still fed by the hot spring. Collect the car around midday and slip out to Castle Combe, often called England’s prettiest village, and Lacock, a National-Trust-owned time capsule that stands in for period dramas and Harry Potter. Back in Bath for dinner. (You’ll already have walked the Abbey, Pulteney Bridge and the Royal Crescent last evening.)",
+      blurb: "The one big Bath ticket, then southwest into Somerset. Start at the Roman Baths — Britain’s best-preserved Roman spa, still fed by the hot spring. Collect the car around midday and drive out to Wells, England’s smallest city, for its extraordinary cathedral, then on to Cheddar Gorge — Britain’s biggest, a mile of limestone cliffs with show caves below. Back in Bath for dinner. (You’ll already have walked the Abbey, Pulteney Bridge and the Royal Crescent last evening.)",
       attractions: [
         { name: "Roman Baths", seq: 1, lat: 51.3811, lng: -2.3597, wiki: "Roman_Baths_(Bath)", desc: "Britain’s best-preserved Roman spa, still fed by the hot spring — the green Great Bath is unmissable. Pre-book a timed ticket; allow 1.5–2 hrs.", url: "https://www.romanbaths.co.uk/", locale: "Bath", mustDo: true, bookAhead: true, bookNote: "Book a timed entry online — August mornings sell out. A combined ticket with the Fashion Museum can be better value." },
-        { name: "Castle Combe", seq: 2, lat: 51.4915, lng: -2.2270, wiki: "Castle_Combe", desc: "A honey-stone Cotswold village with no visible modern buildings — a film favourite (War Horse, Downton). ~30 min from Bath; park at the top and walk down.", locale: "Wiltshire" },
-        { name: "Lacock", seq: 3, lat: 51.4155, lng: -2.1225, wiki: "Lacock", desc: "A whole National-Trust-owned village of medieval streets, plus Lacock Abbey — filming location for Harry Potter and Cranford. ~40 min from Bath.", url: "https://www.nationaltrust.org.uk/visit/wiltshire/lacock", locale: "Wiltshire" }
+        { name: "Wells Cathedral", seq: 2, lat: 51.2107, lng: -2.6440, wiki: "Wells_Cathedral", desc: "England’s smallest city has one of its finest medieval cathedrals — the great scissor arches and a 14th-century astronomical clock. ~30 min SW of Bath; the moated Bishop’s Palace is next door.", url: "https://www.wellscathedral.org.uk/", locale: "Wells", enroute: true },
+        { name: "Cheddar Gorge", seq: 3, lat: 51.2810, lng: -2.7660, wiki: "Cheddar_Gorge", desc: "Britain’s biggest gorge — a mile of 130 m limestone cliffs you drive right through, with show caves below and a clifftop walk. ~20 min beyond Wells; and yes, the home of cheddar.", url: "https://www.cheddargorge.co.uk/", locale: "Cheddar", bookAhead: true, bookNote: "The caves + lookout tower are a paid attraction — book online; the gorge road and clifftop views are free." }
       ],
       restaurants: [
         { name: "Dinner in Bath (book on weekends)", note: "The centre has plenty a short walk from the Abbey — e.g. The Scallop Shell (seafood) or a Walcot Street gastropub. Weekends fill up.", url: "https://www.google.com/maps/search/?api=1&query=restaurants%20central%20Bath" }
@@ -109,18 +111,19 @@ window.TRIP = {
     /* ---------------- DAY 3 — Stones & cathedral (car) ---------------- */
     {
       num: 3, date: "Mon 17 Aug", weekday: "Monday",
-      title: "Avebury, Stonehenge & Salisbury",
+      title: "Lacock, Avebury, Stonehenge & Salisbury",
       stay: { name: "Bath — your base · night 3 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "car",
-      depart: "The big day south — book your Stonehenge timed entry and aim to leave Bath by ~09:00. It runs as a line south: Avebury first, then Stonehenge, then Salisbury.",
-      leg: "Bath → Avebury → Stonehenge → Salisbury → Bath",
-      route: "By car", miles: "120", drive: "—",
+      depart: "The big day south — book your Stonehenge timed entry and leave Bath by ~09:00. It runs as a line south: Lacock first, then the two stone circles, then Salisbury.",
+      leg: "Bath → Lacock → Avebury → Stonehenge → Salisbury → Bath",
+      route: "By car", miles: "130", drive: "—",
       overnight: "Bath",
-      blurb: "Two very different stone circles and a soaring cathedral. Start at Avebury — the largest stone circle in the world, and one you can walk right up to and among, for free, with a village and pub in the middle. Then the icon: Stonehenge, on Salisbury Plain. Finish in Salisbury, whose cathedral has Britain’s tallest spire and an original 1215 Magna Carta.",
+      blurb: "A National-Trust village, two very different stone circles and a soaring cathedral. Start at Lacock — a whole medieval village owned by the Trust (a Harry Potter and Cranford filming location) — then Avebury, the largest stone circle in the world, which you can walk right among for free. Then the icon, Stonehenge, on Salisbury Plain; finish in Salisbury, whose cathedral has Britain’s tallest spire and an original 1215 Magna Carta.",
       attractions: [
-        { name: "Avebury Stone Circle", seq: 1, lat: 51.4286, lng: -1.8541, wiki: "Avebury", desc: "The world’s largest prehistoric stone circle — huge, uncrowded, and free to walk among (unlike Stonehenge). ~45 min from Bath; park in the NT car park.", url: "https://www.nationaltrust.org.uk/visit/wiltshire/avebury", locale: "Wiltshire", mustDo: true },
-        { name: "Stonehenge", seq: 2, lat: 51.1789, lng: -1.8262, wiki: "Stonehenge", desc: "The 5,000-year-old ring of standing stones — walk the path around the circle; the visitor centre and shuttle are included. ~40 min south of Avebury.", url: "https://www.english-heritage.org.uk/visit/places/stonehenge/", locale: "Wiltshire", mustDo: true, bookAhead: true, bookNote: "Book a timed-entry ticket online in advance — it’s much cheaper than the gate and August slots fill up. Members of English Heritage / National Trust still need to reserve a slot." },
-        { name: "Salisbury Cathedral", seq: 3, lat: 51.0649, lng: -1.7976, wiki: "Salisbury_Cathedral", desc: "Britain’s tallest spire (123 m) and the best-preserved 1215 Magna Carta, in the Chapter House. ~15 min from Stonehenge; lovely close and city to end the day.", url: "https://www.salisburycathedral.org.uk/", locale: "Salisbury" }
+        { name: "Lacock", seq: 1, lat: 51.4155, lng: -2.1225, wiki: "Lacock", desc: "A whole National-Trust-owned village of medieval streets, plus Lacock Abbey — a Harry Potter and Cranford filming location. ~25 min south of Bath, right on the way.", url: "https://www.nationaltrust.org.uk/visit/wiltshire/lacock", locale: "Wiltshire", enroute: true },
+        { name: "Avebury Stone Circle", seq: 2, lat: 51.4286, lng: -1.8541, wiki: "Avebury", desc: "The world’s largest prehistoric stone circle — huge, uncrowded, and free to walk among (unlike Stonehenge). ~45 min from Bath; park in the NT car park.", url: "https://www.nationaltrust.org.uk/visit/wiltshire/avebury", locale: "Wiltshire", mustDo: true },
+        { name: "Stonehenge", seq: 3, lat: 51.1789, lng: -1.8262, wiki: "Stonehenge", desc: "The 5,000-year-old ring of standing stones — walk the path around the circle; the visitor centre and shuttle are included. ~40 min south of Avebury.", url: "https://www.english-heritage.org.uk/visit/places/stonehenge/", locale: "Wiltshire", mustDo: true, bookAhead: true, bookNote: "Book a timed-entry ticket online in advance — it’s much cheaper than the gate and August slots fill up. Members of English Heritage / National Trust still need to reserve a slot." },
+        { name: "Salisbury Cathedral", seq: 4, lat: 51.0649, lng: -1.7976, wiki: "Salisbury_Cathedral", desc: "Britain’s tallest spire (123 m) and the best-preserved 1215 Magna Carta, in the Chapter House. ~15 min from Stonehenge; lovely close and city to end the day.", url: "https://www.salisburycathedral.org.uk/", locale: "Salisbury" }
       ],
       restaurants: [
         { name: "The Boston Tea Party / Salisbury cafés", note: "Grab a late lunch in Salisbury near the cathedral close before driving back to Bath.", url: "https://www.google.com/maps/search/?api=1&query=cafes%20near%20Salisbury%20Cathedral" }
@@ -133,15 +136,16 @@ window.TRIP = {
       title: "Cotswolds villages & Blenheim Palace",
       stay: { name: "Bath — your base · night 4 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "car",
-      depart: "The longest driving day — a Cotswolds loop northeast. Leave by ~08:30 to enjoy the villages before the crowds; return the hire car in Bath by evening. (If you’d rather a shorter, gentler day, swap this for Wells Cathedral + Cheddar Gorge — just say.)",
-      leg: "Bath → Bibury → Bourton-on-the-Water → Blenheim → Bath",
-      route: "By car", miles: "150", drive: "—",
+      depart: "The longest driving day — a Cotswolds loop northeast. Leave by ~08:30 to enjoy the villages before the crowds; return the hire car in Bath by evening. It’s a big day, so drop a village if you’d rather linger.",
+      leg: "Bath → Castle Combe → Bibury → Bourton → Blenheim → Bath",
+      route: "By car", miles: "160", drive: "—",
       overnight: "Bath",
-      blurb: "Storybook England. Bibury’s Arlington Row is one of the most photographed streets in the country; Bourton-on-the-Water is the ‘Venice of the Cotswolds’, with low bridges over the little River Windrush. Cap it at Blenheim Palace — Churchill’s birthplace and a vast baroque palace with Capability Brown parkland. It’s a full day of driving, so trim a village if you’d rather linger.",
+      blurb: "Storybook England. Start at Castle Combe, often called England’s prettiest village, then Bibury’s Arlington Row — one of the most photographed streets in the country — and Bourton-on-the-Water, the ‘Venice of the Cotswolds’. Cap it at Blenheim Palace, Churchill’s birthplace, a vast baroque palace with Capability Brown parkland. It’s a big day of driving, so drop a village if you’d rather slow down.",
       attractions: [
-        { name: "Bibury (Arlington Row)", seq: 1, lat: 51.7595, lng: -1.8330, wiki: "Bibury", desc: "Weavers’ cottages of golden stone along a water-meadow — the classic Cotswold postcard. ~1h15 from Bath; small, so park considerately and walk.", locale: "Cotswolds" },
-        { name: "Bourton-on-the-Water", seq: 2, lat: 51.8875, lng: -1.7594, wiki: "Bourton-on-the-Water", desc: "Low stone footbridges over the shallow Windrush running right through the green — tea rooms, a model village and easy strolling. ~25 min from Bibury.", locale: "Cotswolds" },
-        { name: "Blenheim Palace", seq: 3, lat: 51.8414, lng: -1.3610, wiki: "Blenheim_Palace", desc: "A monumental baroque palace and UNESCO site — Winston Churchill’s birthplace — with formal gardens and Capability Brown grounds. ~40 min from Bourton; allow 2–3 hrs.", url: "https://www.blenheimpalace.com/", locale: "Woodstock", bookAhead: true, bookNote: "Book online for the cheaper advance price; a Palace + Park + Gardens ticket can be used as an annual pass. Last admission is well before closing." }
+        { name: "Castle Combe", seq: 1, lat: 51.4915, lng: -2.2270, wiki: "Castle_Combe", desc: "Often called England’s prettiest village — honey-stone cottages and no visible modern buildings (War Horse, Downton). ~30 min NE of Bath, a quick stop on the way up.", locale: "Wiltshire", enroute: true },
+        { name: "Bibury (Arlington Row)", seq: 2, lat: 51.7595, lng: -1.8330, wiki: "Bibury", desc: "Weavers’ cottages of golden stone along a water-meadow — the classic Cotswold postcard. ~1h15 from Bath; small, so park considerately and walk.", locale: "Cotswolds" },
+        { name: "Bourton-on-the-Water", seq: 3, lat: 51.8875, lng: -1.7594, wiki: "Bourton-on-the-Water", desc: "Low stone footbridges over the shallow Windrush running right through the green — tea rooms, a model village and easy strolling. ~25 min from Bibury.", locale: "Cotswolds" },
+        { name: "Blenheim Palace", seq: 4, lat: 51.8414, lng: -1.3610, wiki: "Blenheim_Palace", desc: "A monumental baroque palace and UNESCO site — Winston Churchill’s birthplace — with formal gardens and Capability Brown grounds. ~40 min from Bourton; allow 2–3 hrs.", url: "https://www.blenheimpalace.com/", locale: "Woodstock", bookAhead: true, bookNote: "Book online for the cheaper advance price; a Palace + Park + Gardens ticket can be used as an annual pass. Last admission is well before closing." }
       ],
       restaurants: [
         { name: "A Cotswold pub lunch", note: "Bourton or a nearby village (Stow-on-the-Wold, Lower Slaughter) has plenty of classic pubs for lunch mid-loop.", url: "https://www.google.com/maps/search/?api=1&query=cotswolds%20pub%20lunch%20Bourton-on-the-Water" }
@@ -247,9 +251,9 @@ window.TRIP = {
     {
       num: 9, date: "Sun 23 Aug", weekday: "Sunday",
       title: "Markets, villages-in-the-city & parks",
-      stay: { name: "London — your base · night 5 of 5", lat: 51.4952, lng: -0.1441, mapUrl: "https://www.google.com/maps/search/?api=1&query=Victoria%20Westminster%20London" },
+      stay: { name: "London (last night) — or a Gatwick hotel, see Day 10", lat: 51.4952, lng: -0.1441, mapUrl: "https://www.google.com/maps/search/?api=1&query=Victoria%20Westminster%20London" },
       transport: "tube",
-      depart: "A Sunday for markets and neighbourhoods. Columbia Road flower market is Sunday-only and best early (~09:00–14:00); build the rest of the day around it.",
+      depart: "A Sunday for markets and neighbourhoods. Columbia Road flower market is Sunday-only and best early (~09:00–14:00); build the rest of the day around it. Heads-up: with a 9am flight tomorrow, consider ending today with an early-evening train down to a Gatwick airport hotel (see Day 10) rather than a 5am dash from London.",
       leg: "Columbia Road · Camden · Notting Hill · (or Greenwich)",
       route: "Tube & on foot", miles: "—", drive: "—",
       overnight: "London",
@@ -268,16 +272,21 @@ window.TRIP = {
     /* ---------------- DAY 10 — London → Gatwick → Dubai ---------------- */
     {
       num: 10, date: "Mon 24 Aug", weekday: "Monday",
-      title: "Last morning, then Gatwick → Dubai",
+      title: "Fly home — Gatwick → Dubai (9am)",
       transport: "train",
-      depart: "Sized to your flight (please confirm the time): allow ~3 hrs before departure. Gatwick Express from Victoria is ~30 min, every ~15 min. For an afternoon flight you have a relaxed morning; for a morning flight, head straight to Gatwick.",
-      leg: "London → Gatwick by train, fly to Dubai",
-      route: "Gatwick Express", miles: "—", drive: "~30 min",
-      overnight: "Gatwick ✈ Dubai",
-      blurb: "Home time. Depending on your flight, squeeze in one last London moment — a final breakfast, a riverside walk, or a quick market — then make your way to Victoria for the Gatwick Express. Give yourself a comfortable buffer for bag-drop and security on a busy August Monday.",
-      attractions: [
-        { name: "A last London stroll or breakfast", seq: 1, lat: 51.5055, lng: -0.0910, wiki: "Borough_Market", desc: "Optional, flight permitting — Borough Market (food stalls, open Monday) or simply a last walk near your hotel before heading to Victoria for the train.", url: "https://www.boroughmarket.org.uk/", locale: "London" }
+      checkin: "2026-08-23", checkout: "2026-08-24",
+      hotels: [
+        { name: "BLOC Hotel Gatwick", style: "Inside South Terminal — walk to check-in", price: "£110–£180", url: "https://www.blochotels.com/gatwick/", locale: "Gatwick Airport" },
+        { name: "YOTEL Gatwick", style: "Compact cabins inside South Terminal", price: "£90–£150", url: "https://www.yotel.com/en/hotels/yotel-gatwick-airport", locale: "Gatwick Airport" },
+        { name: "Sofitel London Gatwick", style: "4★, linked to North Terminal by a covered bridge", price: "£150–£240", url: "https://www.sofitel-gatwick.com/", locale: "Gatwick Airport" },
+        { name: "Premier Inn Gatwick Airport (North Terminal)", style: "Family rooms; short walk/shuttle to the terminals", price: "£95–£170", url: "https://www.premierinn.com/gb/en/hotels/england/west-sussex/gatwick/london-gatwick-airport-north-terminal.html", locale: "Gatwick Airport" }
       ],
+      depart: "A 9am flight means an early start — be at your Gatwick terminal by ~06:00 (long-haul check-in + August security queues). Easiest by far: sleep at Gatwick tonight (the 23rd) and walk to the terminal. Otherwise it’s a ~04:45 start from central London for the first fast train. Check whether you fly from North or South Terminal — a free shuttle links them in ~3 min.",
+      leg: "Gatwick → Dubai · 9:00 departure",
+      route: "9am flight", miles: "—", drive: "—",
+      overnight: "Gatwick",
+      blurb: "Home time — and an early one. With a 9am departure there’s no real London morning, so the priority is being airside in good time. For a stress-free finish, spend tonight at a Gatwick airport hotel (options below) rather than racing the dawn train down from London. Bags packed, passports out — safe travels to Dubai.",
+      attractions: [],
       restaurants: []
     }
   ]
