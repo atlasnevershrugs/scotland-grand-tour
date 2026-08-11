@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Scotland Grand Tour · 20 Jul – 2 Aug 2026</title>
-  <meta name="description" content="A 14-day road trip from Edinburgh to Oxford via the Highlands, Skye, Glencoe and Glasgow." />
+  <title>South of England · 15–24 Aug 2026</title>
+  <meta name="description" content="A 10-day trip from Oxford to London via Bath, Stonehenge, the Cotswolds and the capital." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,36 +20,34 @@
 <!-- =================== TOP NAV =================== -->
 <header class="topnav" id="topnav">
   <a class="brand" href="#top">
-    <span class="brand-mark">⛰</span>
-    <span class="brand-text">Scotland Grand Tour</span>
+    <span class="brand-mark">🏛</span>
+    <span class="brand-text">South of England</span>
   </a>
   <nav class="topnav-links">
     <a href="#map">Map</a>
-    <a href="#ferry">Ferry</a>
     <a href="#days">Itinerary</a>
     <a href="#practical">Notes</a>
-    <a href="england.html">🏛 England</a>
-    <a href="bookings.html" class="topnav-lock">🔒 My bookings</a>
+    <a href="index.html" class="topnav-lock">⛰ Scotland</a>
   </nav>
 </header>
 
 <!-- =================== HERO =================== -->
 <section class="hero" id="top">
   <div class="hero-inner">
-    <p class="kicker">A road trip · 20 Jul – 2 Aug 2026</p>
+    <p class="kicker">A rail &amp; road trip · 15–24 Aug 2026</p>
     <h1 class="hero-title">
-      <span class="serif italic">Scotland</span><br/>
-      Grand Tour
+      <span class="serif italic">South of</span><br/>
+      England
     </h1>
-    <p class="hero-sub">Edinburgh to Oxford, by the long way round —
-      Cairngorms, the far northwest, Skye, Glencoe and Glasgow.</p>
+    <p class="hero-sub">Oxford to London — Bath, Stonehenge, the Cotswolds
+      and every corner of the capital.</p>
 
     <div class="hero-stats" id="hero-stats"></div>
 
     <div class="hero-meta">
-      <div><span class="meta-label">Pickup</span><span class="meta-value">Edinburgh Airport · Mon 20 Jul</span></div>
-      <div><span class="meta-label">Drop-off</span><span class="meta-value">Oxford city centre · Sun 2 Aug</span></div>
-      <div><span class="meta-label">Travellers</span><span class="meta-value">2 adults</span></div>
+      <div><span class="meta-label">Start</span><span class="meta-value">Oxford · Sat 15 Aug</span></div>
+      <div><span class="meta-label">Fly out</span><span class="meta-value">Gatwick → Dubai · Mon 24 Aug</span></div>
+      <div><span class="meta-label">Travellers</span><span class="meta-value">2 adults + 1 (age 15)</span></div>
     </div>
 
     <a href="#map" class="hero-cta">See the route ↓</a>
@@ -60,12 +58,9 @@
 <section class="map-section" id="map">
   <div class="section-head">
     <p class="section-kicker">The route</p>
-    <h2 class="section-title">~1,100 miles · 12 driving days</h2>
-    <p class="section-lede">An illustrated overview, then a real interactive map to plan from.</p>
+    <h2 class="section-title">Oxford → London · 10 days</h2>
+    <p class="section-lede">Two bases — Bath and London — with the West Country by hire car and the capital on foot.</p>
   </div>
-
-  <!-- Stylised SVG hero map -->
-  <div class="illustrated-map" id="illustrated-map" aria-label="Illustrated route schematic"></div>
 
   <!-- Interactive Leaflet map -->
   <div class="leaflet-wrap">
@@ -75,31 +70,11 @@
 
   <!-- Quick reference table -->
   <div class="quick-ref">
-    <h3>Day-by-day driving overview</h3>
+    <h3>Day-by-day overview</h3>
     <div class="qref-table-wrap">
       <table class="qref-table" id="qref-table"></table>
     </div>
   </div>
-</section>
-
-<!-- =================== PRIVATE BOOKINGS (password) =================== -->
-<section class="dossier" id="dossier">
-  <div class="section-head">
-    <p class="section-kicker">All booked</p>
-    <h2 class="section-title">Every stay is confirmed</h2>
-    <p class="section-lede">Accommodation, the car and the ferry are all booked — so this site is now just the trip itself. Full references, addresses and confirmations live on your private page.</p>
-    <p class="doss-link-wrap"><a class="doss-link" href="bookings.html">🔒 View my private booking details — references, addresses, confirmations (password)</a></p>
-  </div>
-</section>
-
-<!-- =================== FERRY & SKYE LOGISTICS =================== -->
-<section class="ferry" id="ferry">
-  <div class="section-head">
-    <p class="section-kicker">Getting there</p>
-    <h2 class="section-title" id="ferry-title">Raasay ferry &amp; Skye day-trips</h2>
-    <p class="section-lede" id="ferry-lede"></p>
-  </div>
-  <div class="ferry-panel" id="ferry-panel"></div>
 </section>
 
 <!-- =================== DAY BY DAY =================== -->
@@ -107,8 +82,8 @@
   <div class="section-head">
     <p class="section-kicker">Day by day</p>
     <h2 class="section-title">The itinerary</h2>
-    <p class="section-lede">Each day shows the drive, the stops, where to stay, and where to eat.
-      Every link opens an external site — TripAdvisor, Booking.com, Airbnb, or the venue's own page.</p>
+    <p class="section-lede">Each day shows how you travel, the stops in order, and where to eat.
+      Every link opens an external site — the venue’s own page, TripAdvisor, or Google Maps.</p>
   </div>
 
   <div id="day-list"></div>
@@ -123,7 +98,7 @@
   <div class="practical-grid" id="practical-grid"></div>
 
   <div class="restaurant-checklist">
-    <h3>Restaurant &amp; train bookings to make from home</h3>
+    <h3>Bookings to make from home</h3>
     <ol id="restaurant-checklist"></ol>
   </div>
 </section>
@@ -133,7 +108,7 @@
   <div class="footer-inner">
     <p class="footer-title">Have a brilliant trip.</p>
     <p class="footer-sub">
-      External links to TripAdvisor, Booking.com, Airbnb and venue sites.<br/>
+      External links to venue sites, TripAdvisor and Google Maps.<br/>
       Images via Wikimedia Commons &amp; Wikipedia. Map data © OpenStreetMap contributors.
     </p>
   </div>
@@ -141,8 +116,7 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="data.js"></script>
-<script src="data-enrichment.js"></script>
-<script src="script.js"></script>
+<script src="england-data.js"></script>
+<script src="england-script.js"></script>
 </body>
 </html>
