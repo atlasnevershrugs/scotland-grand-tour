@@ -57,48 +57,44 @@ window.TRIP = {
   ],
 
   days: [
-    /* ---------------- DAY 1 — Oxford → Bath (train) ---------------- */
+    /* ---------------- DAY 1 — Arrive Bath (~3pm) + Georgian evening ---------------- */
     {
       num: 1, date: "Sat 15 Aug", weekday: "Saturday",
-      title: "Oxford, then the train to Bath",
+      title: "Arrive Bath — a Georgian evening",
       stay: { name: "Bath — central base (nights 1–4)", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "train",
-      depart: "Spend the morning in Oxford, then the ~1h15 train from Oxford to Bath Spa (GWR, roughly hourly). Aim for an early-afternoon train so you can settle into Bath before dinner.",
-      leg: "Oxford → Bath Spa by train",
-      route: "Train · GWR", miles: "—", drive: "~1h15",
+      depart: "Oxford’s already done — you reach Bath around 3pm and check in. Use the golden-hour evening for Bath’s free, ticket-free Georgian highlights on foot, then dinner. (Save the Roman Baths for a proper morning slot tomorrow.)",
+      leg: "Arrive Bath ~15:00 · evening on foot",
+      route: "Arrive ~15:00", miles: "—", drive: "—",
       overnight: "Bath",
-      blurb: "A morning in the dreaming spires before heading west. Oxford’s honey-stone colleges, the domed Radcliffe Camera and the Bodleian Library are all a short walk apart — Christ Church doubles as Hogwarts on screen. Grab lunch in the Covered Market, then take the direct train to Bath Spa and check into your base for the next four nights. Evening: a first wander past Bath Abbey and Pulteney Bridge.",
+      blurb: "Straight into Bath. Drop the bags around 3pm and take the honey-stone city on foot while the light is low: the Abbey and its busker-filled churchyard, Pulteney Bridge over its weir, and the great Georgian sweep of the Royal Crescent and The Circus — all free and only a few minutes apart. A relaxed first evening and dinner before three fuller days from this base.",
       attractions: [
-        { name: "Christ Church College", seq: 1, lat: 51.7503, lng: -1.2556, wiki: "Christ_Church,_Oxford", desc: "Oxford’s grandest college — its Great Hall and staircase were the model for Hogwarts, and the cathedral sits inside the college. Timed entry; busy on summer mornings.", url: "https://www.chch.ox.ac.uk/visiting-christ-church", locale: "Oxford", mustDo: true },
-        { name: "Bodleian Library & Divinity School", seq: 2, lat: 51.7542, lng: -1.2544, wiki: "Bodleian_Library", desc: "One of Europe’s oldest libraries; the fan-vaulted Divinity School featured as Hogwarts’ infirmary. Courtyard is free to wander; interiors by tour.", url: "https://visit.bodleian.ox.ac.uk/", locale: "Oxford" },
-        { name: "Radcliffe Camera & St Mary’s tower", seq: 3, lat: 51.7534, lng: -1.2540, wiki: "Radcliffe_Camera", desc: "The iconic round library on Radcliffe Square — you can’t go in, but climb the University Church of St Mary tower next door for the classic rooftop view.", locale: "Oxford" },
-        { name: "Punting on the Cherwell", seq: 4, lat: 51.7501, lng: -1.2470, wiki: "Punt_(boat)", desc: "Optional if you have time — hire a flat-bottomed punt from Magdalen Bridge Boathouse and pole along the river. Quintessentially Oxford.", url: "https://www.oxfordpunting.co.uk/", locale: "Oxford" }
+        { name: "Bath Abbey & Abbey Churchyard", seq: 1, lat: 51.3814, lng: -2.3590, wiki: "Bath_Abbey", desc: "The soaring fan-vaulted abbey and its lively square — admire the carved West Front and step inside if it’s still open (the tower climb and interior are best earlier in the day).", url: "https://www.bathabbey.org/", locale: "Bath" },
+        { name: "Pulteney Bridge & Parade Gardens", seq: 2, lat: 51.3846, lng: -2.3573, wiki: "Pulteney_Bridge", desc: "One of the world’s few bridges lined with shops on both sides, curving above the Pulteney Weir — best seen from Parade Gardens on the riverbank below.", locale: "Bath" },
+        { name: "Royal Crescent & The Circus", seq: 3, lat: 51.3873, lng: -2.3665, wiki: "Royal_Crescent", desc: "The great Georgian showpieces — a 30-house curved terrace and the ring of The Circus, glorious in evening light. Walk the lawn; No.1 Royal Crescent is a museum you can tour by day.", url: "https://no1royalcrescent.org.uk/", locale: "Bath" }
       ],
       restaurants: [
-        { name: "The Covered Market, Oxford", note: "Historic market for a quick lunch before the train — bakeries, delis and cafés.", url: "https://oxford-coveredmarket.co.uk/" }
+        { name: "Sally Lunn’s / dinner in Bath", note: "One of Bath’s oldest houses (the famous Sally Lunn bun), or any of the centre’s restaurants a short walk from the Abbey.", url: "https://www.sallylunns.co.uk/" }
       ]
     },
 
     /* ---------------- DAY 2 — Bath city + nearest villages ---------------- */
     {
       num: 2, date: "Sun 16 Aug", weekday: "Sunday",
-      title: "Bath on foot + Castle Combe & Lacock",
+      title: "Roman Baths + Castle Combe & Lacock",
       transport: "car",
-      depart: "Do Bath on foot first thing (Roman Baths open ~09:00 — book a slot), then pick up the hire car around midday for two of England’s prettiest villages, both under 40 minutes away.",
-      leg: "Bath centre (AM, walking) · Castle Combe & Lacock (PM, by car)",
+      depart: "Roman Baths open ~09:00 — book a slot and go first thing, then pick up the hire car around midday for two of England’s prettiest villages, both under 40 minutes away.",
+      leg: "Roman Baths (AM) · Castle Combe & Lacock (PM, by car)",
       route: "By car (PM)", miles: "40", drive: "—",
       overnight: "Bath",
-      blurb: "Start car-free in Bath — the steaming Roman Baths, the honey-coloured sweep of the Royal Crescent and The Circus, and the Abbey — all walkable. Collect the car at midday and slip out to Castle Combe, often called England’s prettiest village, and Lacock, a National-Trust-owned time capsule that stands in for period dramas and Harry Potter. Back in Bath for dinner.",
+      blurb: "The one big Bath ticket, then the countryside. Start at the Roman Baths — Britain’s best-preserved Roman spa, still fed by the hot spring. Collect the car around midday and slip out to Castle Combe, often called England’s prettiest village, and Lacock, a National-Trust-owned time capsule that stands in for period dramas and Harry Potter. Back in Bath for dinner. (You’ll already have walked the Abbey, Pulteney Bridge and the Royal Crescent last evening.)",
       attractions: [
         { name: "Roman Baths", seq: 1, lat: 51.3811, lng: -2.3597, wiki: "Roman_Baths_(Bath)", desc: "Britain’s best-preserved Roman spa, still fed by the hot spring — the green Great Bath is unmissable. Pre-book a timed ticket; allow 1.5–2 hrs.", url: "https://www.romanbaths.co.uk/", locale: "Bath", mustDo: true, bookAhead: true, bookNote: "Book a timed entry online — August mornings sell out. A combined ticket with the Fashion Museum can be better value." },
-        { name: "Bath Abbey", seq: 2, lat: 51.3814, lng: -2.3590, wiki: "Bath_Abbey", desc: "The soaring fan-vaulted abbey right beside the Roman Baths — free to step in (donation); tower climbs run through the day.", url: "https://www.bathabbey.org/", locale: "Bath" },
-        { name: "Royal Crescent & The Circus", seq: 3, lat: 51.3873, lng: -2.3665, wiki: "Royal_Crescent", desc: "The great Georgian showpieces — a 30-house curved terrace and the ring of The Circus. Walk the lawn; No.1 Royal Crescent is a museum you can tour.", url: "https://no1royalcrescent.org.uk/", locale: "Bath" },
-        { name: "Pulteney Bridge", seq: 4, lat: 51.3846, lng: -2.3573, wiki: "Pulteney_Bridge", desc: "One of the few bridges in the world lined with shops on both sides, above the Pulteney Weir — best photographed from Parade Gardens.", locale: "Bath" },
-        { name: "Castle Combe", seq: 5, lat: 51.4915, lng: -2.2270, wiki: "Castle_Combe", desc: "A honey-stone Cotswold village with no visible modern buildings — a film favourite (War Horse, Downton). ~30 min from Bath; park at the top and walk down.", locale: "Wiltshire" },
-        { name: "Lacock", seq: 6, lat: 51.4155, lng: -2.1225, wiki: "Lacock", desc: "A whole National-Trust-owned village of medieval streets, plus Lacock Abbey — filming location for Harry Potter and Cranford. ~40 min from Bath.", url: "https://www.nationaltrust.org.uk/visit/wiltshire/lacock", locale: "Wiltshire" }
+        { name: "Castle Combe", seq: 2, lat: 51.4915, lng: -2.2270, wiki: "Castle_Combe", desc: "A honey-stone Cotswold village with no visible modern buildings — a film favourite (War Horse, Downton). ~30 min from Bath; park at the top and walk down.", locale: "Wiltshire" },
+        { name: "Lacock", seq: 3, lat: 51.4155, lng: -2.1225, wiki: "Lacock", desc: "A whole National-Trust-owned village of medieval streets, plus Lacock Abbey — filming location for Harry Potter and Cranford. ~40 min from Bath.", url: "https://www.nationaltrust.org.uk/visit/wiltshire/lacock", locale: "Wiltshire" }
       ],
       restaurants: [
-        { name: "Sally Lunn’s, Bath", note: "One of Bath’s oldest houses — the famous Sally Lunn bun. Good for an early dinner back in the city.", url: "https://www.sallylunns.co.uk/" }
+        { name: "Dinner in Bath (book on weekends)", note: "The centre has plenty a short walk from the Abbey — e.g. The Scallop Shell (seafood) or a Walcot Street gastropub. Weekends fill up.", url: "https://www.google.com/maps/search/?api=1&query=restaurants%20central%20Bath" }
       ]
     },
 
