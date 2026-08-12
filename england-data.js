@@ -50,7 +50,7 @@ window.TRIP = {
     { title: "Parking in Bath", body: "Bath’s centre is tight and largely permit/pay. Use a <strong>Park &amp; Ride</strong> (Lansdown, Newbridge or Odd Down) on the car days, or a hotel with parking. You won’t need the car for Bath itself — it’s a walking city." },
     { title: "London travel — just tap", body: "No need for paper tickets or an Oyster: <strong>tap a contactless card or phone</strong> on the yellow readers (Tube, bus, DLR, most rail). Daily fares are capped. A 15-year-old travels at child rate — ask at a station about a <strong>child Zip photocard</strong> if you’ll ride a lot." },
     { title: "Changing the Guard & market days", body: "<strong>Changing the Guard</strong> at Buckingham Palace runs on set mornings (~11:00) — check the exact days for your week and arrive early. Weekend markets: <strong>Portobello Road</strong> is biggest on Saturday; <strong>Columbia Road flower market</strong> is Sunday only; <strong>Borough Market</strong> is quietest/limited on Sundays." },
-    { title: "Your 9am flight — sleep at Gatwick", body: "For a <strong>9:00 departure</strong> be at your terminal by <strong>~06:00</strong> (long-haul check-in + August queues). The Gatwick Express (Victoria → Gatwick, ~30 min) barely starts early enough, so the easy move is to <strong>spend the night of the 23rd at a Gatwick airport hotel</strong> (see Day 10) and walk to check-in — rather than a ~04:45 dash from London. Check whether you fly from <strong>North or South Terminal</strong>; a free shuttle links them in ~3 min." }
+    { title: "Your 9am flight — early Uber to Gatwick", body: "For a <strong>9:00 departure</strong>, be at your terminal by <strong>~06:00</strong> (long-haul check-in + August queues). You\u2019re keeping the London base and <strong>taking an Uber down on the morning of the 24th</strong> \u2014 pre-book/schedule it the night before for ~04:15\u201304:30; the ~45-mile run is usually 60\u201375 min at that hour, but leave traffic slack. Check whether you fly from <strong>North or South Terminal</strong>." }
   ],
 
   restaurantsToBook: [
@@ -95,15 +95,15 @@ window.TRIP = {
       title: "Bristol → Bath, via Wells & Cheddar",
       stay: { name: "Bath — your Airbnb (16–19 · night 1 of 3)", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "car",
-      depart: "Check out of Bristol and drift south to Bath — Cheddar Gorge and Wells sit right between the two, so do them on the way. Into Bath mid-afternoon to check into your Airbnb, then Bath on foot; the Roman Baths open late in summer, so they make a lovely torch-lit evening (or save them for the 19th before your train).",
+      depart: "Check out of Bristol and drift south to Bath — Cheddar Gorge and Wells sit right between the two, so do them on the way. Into Bath mid-afternoon to check into your Airbnb, then Bath on foot; the Roman Baths open late in summer, so the torch-lit evening slot is a treat.",
       leg: "Bristol → Cheddar → Wells → Bath (check in) → Bath on foot",
       route: "By car", miles: "60", drive: "—",
       overnight: "Bath",
-      blurb: "The prettiest way from Bristol to Bath. Drop south to Cheddar Gorge — Britain’s biggest, a mile of limestone cliffs with show caves — then Wells, England’s smallest city, for its extraordinary cathedral. Both are on the line to Bath, so you arrive by mid-afternoon to check in. Spend the evening on Bath’s free Georgian showpieces — the Abbey, Pulteney Bridge and the Royal Crescent — and, if you fancy it, the torch-lit Roman Baths. It’s a full day, so feel free to push the Roman Baths to the 19th morning.",
+      blurb: "The prettiest way from Bristol to Bath. Drop south to Cheddar Gorge — Britain’s biggest, a mile of limestone cliffs with show caves — then Wells, England’s smallest city, for its extraordinary cathedral. Both are on the line to Bath, so you arrive by mid-afternoon to check in. Spend the evening on Bath’s free Georgian showpieces — the Abbey, Pulteney Bridge and the Royal Crescent — and the torch-lit Roman Baths — book the evening slot. A full but lovely day.",
       attractions: [
         { name: "Cheddar Gorge", seq: 1, lat: 51.2810, lng: -2.7660, wiki: "Cheddar_Gorge", desc: "Britain’s biggest gorge — a mile of 130 m limestone cliffs you drive right through, with show caves below and a clifftop walk. ~40 min south of Bristol; and yes, the home of cheddar.", url: "https://www.cheddargorge.co.uk/", locale: "Cheddar", bookAhead: true, bookNote: "The caves + lookout tower are a paid attraction — book online; the gorge road and clifftop views are free.", enroute: true },
         { name: "Wells Cathedral", seq: 2, lat: 51.2107, lng: -2.6440, wiki: "Wells_Cathedral", desc: "England’s smallest city has one of its finest medieval cathedrals — the great scissor arches and a 14th-century astronomical clock. ~20 min from Cheddar; the moated Bishop’s Palace is next door.", url: "https://www.wellscathedral.org.uk/", locale: "Wells", enroute: true },
-        { name: "Roman Baths", seq: 3, lat: 51.3811, lng: -2.3597, wiki: "Roman_Baths_(Bath)", desc: "Britain’s best-preserved Roman spa, still fed by the hot spring — the green Great Bath is unmissable. In August it opens late (last entry ~9pm) for atmospheric torch-lit evenings. Pre-book a timed ticket.", url: "https://www.romanbaths.co.uk/", locale: "Bath", mustDo: true, bookAhead: true, bookNote: "Book a timed entry online. Evening torch-lit slots are lovely in summer; or do it on the 19th morning before your London train." },
+        { name: "Roman Baths", seq: 3, lat: 51.3811, lng: -2.3597, wiki: "Roman_Baths_(Bath)", desc: "Britain’s best-preserved Roman spa, still fed by the hot spring — the green Great Bath is unmissable. In August it opens late (last entry ~9pm) for atmospheric torch-lit evenings. Pre-book a timed ticket.", url: "https://www.romanbaths.co.uk/", locale: "Bath", mustDo: true, bookAhead: true, bookNote: "Book a timed entry online — the evening torch-lit slots are lovely in summer." },
         { name: "Bath Abbey & Abbey Churchyard", seq: 4, lat: 51.3814, lng: -2.3590, wiki: "Bath_Abbey", desc: "The soaring fan-vaulted abbey and its lively square — admire the carved West Front and step inside if it’s open.", url: "https://www.bathabbey.org/", locale: "Bath" },
         { name: "Pulteney Bridge & Parade Gardens", seq: 5, lat: 51.3846, lng: -2.3573, wiki: "Pulteney_Bridge", desc: "One of the world’s few bridges lined with shops on both sides, curving above the Pulteney Weir — best seen from Parade Gardens below.", locale: "Bath" },
         { name: "Royal Crescent & The Circus", seq: 6, lat: 51.3873, lng: -2.3665, wiki: "Royal_Crescent", desc: "The great Georgian showpieces — a 30-house curved terrace and the ring of The Circus, glorious in evening light. No.1 Royal Crescent is a museum you can tour by day.", url: "https://no1royalcrescent.org.uk/", locale: "Bath" }
@@ -170,7 +170,7 @@ window.TRIP = {
         { name: "SACO / Native — London serviced apartments", style: "Self-catering apartments — space for three, own kitchen", price: "£230–£350", url: "https://www.sacoapartments.com/locations/london/", locale: "London" }
       ],
       transport: "train",
-      depart: "Drop the hire car in Bath this morning (and do the Roman Baths, open at 9, if you saved them). Then a ~1h25 train from Bath Spa to London Paddington (GWR, frequent); drop bags and ease into the city with a riverside Westminster walk.",
+      depart: "Drop the hire car in Bath this morning, then a ~1h25 train from Bath Spa to London Paddington (GWR, frequent); drop bags and ease into the city with a riverside Westminster walk.",
       leg: "Bath Spa → London Paddington by train",
       route: "Train · GWR", miles: "—", drive: "~1h25",
       overnight: "London",
@@ -256,9 +256,9 @@ window.TRIP = {
     {
       num: 9, date: "Sun 23 Aug", weekday: "Sunday",
       title: "Markets, villages-in-the-city & parks",
-      stay: { name: "London (last night) — or a Gatwick hotel, see Day 10", lat: 51.4952, lng: -0.1441, mapUrl: "https://www.google.com/maps/search/?api=1&query=Victoria%20Westminster%20London" },
+      stay: { name: "London — your base · night 5 of 5", lat: 51.4952, lng: -0.1441, mapUrl: "https://www.google.com/maps/search/?api=1&query=Victoria%20Westminster%20London" },
       transport: "tube",
-      depart: "A Sunday for markets and neighbourhoods. Columbia Road flower market is Sunday-only and best early (~09:00–14:00); build the rest of the day around it. Heads-up: with a 9am flight tomorrow, consider ending today with an early-evening train down to a Gatwick airport hotel (see Day 10) rather than a 5am dash from London.",
+      depart: "A Sunday for markets and neighbourhoods. Columbia Road flower market is Sunday-only and best early (~09:00–14:00); build the rest of the day around it. Turn in early — tomorrow is a very early Uber to Gatwick.",
       leg: "Columbia Road · Camden · Notting Hill · (or Greenwich)",
       route: "Tube & on foot", miles: "—", drive: "—",
       overnight: "London",
@@ -278,19 +278,12 @@ window.TRIP = {
     {
       num: 10, date: "Mon 24 Aug", weekday: "Monday",
       title: "Fly home — Gatwick → Dubai (9am)",
-      transport: "train",
-      checkin: "2026-08-23", checkout: "2026-08-24",
-      hotels: [
-        { name: "BLOC Hotel Gatwick", style: "Inside South Terminal — walk to check-in", price: "£110–£180", url: "https://www.blochotels.com/gatwick/", locale: "Gatwick Airport" },
-        { name: "YOTEL Gatwick", style: "Compact cabins inside South Terminal", price: "£90–£150", url: "https://www.yotel.com/en/hotels/yotel-gatwick-airport", locale: "Gatwick Airport" },
-        { name: "Sofitel London Gatwick", style: "4★, linked to North Terminal by a covered bridge", price: "£150–£240", url: "https://www.sofitel-gatwick.com/", locale: "Gatwick Airport" },
-        { name: "Premier Inn Gatwick Airport (North Terminal)", style: "Family rooms; short walk/shuttle to the terminals", price: "£95–£170", url: "https://www.premierinn.com/gb/en/hotels/england/west-sussex/gatwick/london-gatwick-airport-north-terminal.html", locale: "Gatwick Airport" }
-      ],
-      depart: "A 9am flight means an early start — be at your Gatwick terminal by ~06:00 (long-haul check-in + August security queues). Easiest by far: sleep at Gatwick tonight (the 23rd) and walk to the terminal. Otherwise it’s a ~04:45 start from central London for the first fast train. Check whether you fly from North or South Terminal — a free shuttle links them in ~3 min.",
-      leg: "Gatwick → Dubai · 9:00 departure",
-      route: "9am flight", miles: "—", drive: "—",
-      overnight: "Gatwick",
-      blurb: "Home time — and an early one. With a 9am departure there’s no real London morning, so the priority is being airside in good time. For a stress-free finish, spend tonight at a Gatwick airport hotel (options below) rather than racing the dawn train down from London. Bags packed, passports out — safe travels to Dubai.",
+      transport: "car",
+      depart: "A 9am flight means a very early start — be at your Gatwick terminal by ~06:00 (long-haul check-in + August queues). Keeping the London base, so pre-book an Uber for ~04:15–04:30 the night before; the ~45-mile run to Gatwick is usually 60–75 min at that hour. Check whether you fly from North or South Terminal.",
+      leg: "London → Gatwick by Uber · 9:00 departure",
+      route: "Uber ~60–75 min", miles: "—", drive: "—",
+      overnight: "Gatwick ✈ Dubai",
+      blurb: "Home time — and an early one. With a 9am departure there’s no London morning; the priority is being airside in good time. You’re keeping the London base and taking an early, pre-booked Uber straight to the terminal — the simplest way down at that hour. Bags packed, passports out — safe travels to Dubai.",
       attractions: [],
       restaurants: []
     }
