@@ -6,30 +6,32 @@
    ============================================================ */
 window.TRIP = {
   title: "South of England",
-  subtitle: "Oxford to London — Bath, Stonehenge, the Cotswolds & the capital",
+  subtitle: "Bristol to London — Bath, Stonehenge, the Cotswolds & the capital",
   dates: "15–24 Aug 2026",
   travellers: "2 adults + 1 (age 15)",
-  pickup: "Start: Oxford · Sat 15 Aug",
+  pickup: "Start: Bristol · Sat 15 Aug",
   dropoff: "Fly out: Gatwick → Dubai · Mon 24 Aug",
 
   stats: [
     { label: "Days", value: "10" },
-    { label: "Bases", value: "Bath · London" },
-    { label: "Nights", value: "4 + 5" },
+    { label: "Bases", value: "Bristol · Bath · London" },
+    { label: "Nights", value: "1 + 3 + 5" },
     { label: "Travellers", value: "2 + 1" }
   ],
 
   // Overnight bases (numbered pins + line on the overview map).
-  // Oxford and Bath both carry day:1 so Day 1 reads as an Oxford→Bath transfer.
+  // Bristol (day 1) then Bath (day 2) — Day 2 reads as a Bristol→Bath transfer.
   route: [
-    { lat: 51.7520, lng: -1.2577, label: "Oxford",  nights: "start",    day: 1 },
-    { lat: 51.3811, lng: -2.3590, label: "Bath",    nights: "4",        day: 1 },
+    { lat: 51.4545, lng: -2.5879, label: "Bristol", nights: "1",        day: 1 },
+    { lat: 51.3811, lng: -2.3590, label: "Bath",    nights: "3",        day: 2 },
     { lat: 51.4952, lng: -0.1441, label: "London",  nights: "5",        day: 5 },
     { lat: 51.1537, lng: -0.1821, label: "Gatwick", nights: "drop-off", day: 10 }
   ],
 
   // Day-trip waypoints (small dots on the overview map).
   detours: [
+    { lat: 51.4550, lng: -2.6278, label: "Clifton Bridge", day: 1 },
+    { lat: 51.4490, lng: -2.6080, label: "Harbourside",    day: 1 },
     { lat: 51.2107, lng: -2.6440, label: "Wells",         day: 2 },
     { lat: 51.2810, lng: -2.7660, label: "Cheddar Gorge", day: 2 },
     { lat: 51.4155, lng: -2.1225, label: "Lacock",        day: 3 },
@@ -44,7 +46,7 @@ window.TRIP = {
 
   practical: [
     { title: "🎟 Pre-book these — they sell out", body: "Several stops need <strong>timed tickets booked online in advance</strong> in peak-summer August: <strong>Stonehenge</strong>, the <strong>Roman Baths</strong>, <strong>Blenheim Palace</strong>, the <strong>Tower of London</strong>, <strong>Westminster Abbey</strong>, the <strong>Churchill War Rooms</strong>, <strong>Sky Garden</strong> (free but ticketed), the <strong>London Eye</strong>, and your <strong>West End show</strong>. Look for the red 🎟 tag on those cards." },
-    { title: "The car is a Bath thing only", body: "Oxford→Bath and Bath→London are by <strong>train</strong>; London is all Tube and on foot. Hire a car <strong>in Bath</strong> for the three West-Country day-trips and <strong>return it in Bath</strong> — same pickup and drop-off, no one-way fee, and no car to park in London." },
+    { title: "Car for the West, train to London", body: "You’ll want a car for the West Country — from <strong>Bristol on the 16th</strong> (Cheddar &amp; Wells en route to Bath) and for the Bath day-trips. Then <strong>drop it before London</strong> and take the train (Bath Spa → Paddington, ~1h25); London is all Tube and on foot. Booking pick-up and drop-off at the same depot avoids a one-way fee." },
     { title: "Parking in Bath", body: "Bath’s centre is tight and largely permit/pay. Use a <strong>Park &amp; Ride</strong> (Lansdown, Newbridge or Odd Down) on the car days, or a hotel with parking. You won’t need the car for Bath itself — it’s a walking city." },
     { title: "London travel — just tap", body: "No need for paper tickets or an Oyster: <strong>tap a contactless card or phone</strong> on the yellow readers (Tube, bus, DLR, most rail). Daily fares are capped. A 15-year-old travels at child rate — ask at a station about a <strong>child Zip photocard</strong> if you’ll ride a lot." },
     { title: "Changing the Guard & market days", body: "<strong>Changing the Guard</strong> at Buckingham Palace runs on set mornings (~11:00) — check the exact days for your week and arrive early. Weekend markets: <strong>Portobello Road</strong> is biggest on Saturday; <strong>Columbia Road flower market</strong> is Sunday only; <strong>Borough Market</strong> is quietest/limited on Sundays." },
@@ -59,52 +61,55 @@ window.TRIP = {
   ],
 
   days: [
-    /* ---------------- DAY 1 — Arrive Bath (~3pm) + Georgian evening ---------------- */
+    /* ---------------- DAY 1 — Sat 15 · Bristol (cheaper base) ---------------- */
     {
       num: 1, date: "Sat 15 Aug", weekday: "Saturday",
-      title: "Arrive Bath — a Georgian evening",
-      stay: { name: "Bath — your base · night 1 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
-      checkin: "2026-08-15", checkout: "2026-08-19",
+      title: "Bristol — Clifton & the harbourside",
+      stay: { name: "Bristol · 1 night (cheaper base — near Clifton/centre)", lat: 51.4545, lng: -2.5879, mapUrl: "https://www.google.com/maps/search/?api=1&query=Clifton%20Bristol" },
+      checkin: "2026-08-15", checkout: "2026-08-16",
       hotels: [
-        { name: "The Francis Hotel", style: "Elegant 4★ on Georgian Queen Square — central, walk everywhere", price: "£140–£210", url: "https://www.francishotel.com/", locale: "Bath" },
-        { name: "Apex City of Bath Hotel", style: "Modern 4★ by the river; family rooms sleep 3", price: "£150–£240", url: "https://www.apexhotels.co.uk/hotels/bath/apex-city-of-bath-hotel", locale: "Bath" },
-        { name: "Harington’s Hotel", style: "Friendly boutique on a quiet central lane — good value", price: "£120–£185", url: "https://www.haringtonshotel.co.uk/", locale: "Bath" },
-        { name: "SACO Bath — serviced apartments", style: "Self-catering apartments — more space for three", price: "£150–£250", url: "https://www.sacoapartments.com/locations/bath/", locale: "Bath" }
+        { name: "Berkeley Square Hotel (Clifton)", style: "Georgian townhouse hotel by Clifton — walk to the bridge", price: "£150–£210", url: "https://www.thebristol.co.uk/berkeley-square-hotel/", locale: "Clifton, Bristol" },
+        { name: "Bristol Harbour Hotel", style: "Boutique rooms in old bank buildings, harbourside", price: "£170–£260", url: "https://www.harbourhotels.co.uk/bristol", locale: "Bristol" },
+        { name: "Mercure Bristol Grand", style: "Grand central hotel near the harbourside", price: "£150–£230", url: "https://www.mercurebristol.co.uk/", locale: "Bristol" },
+        { name: "Premier Inn / easyHotel Bristol", style: "Budget rooms — the cheapest way to save vs Bath", price: "£90–£160", url: "https://www.premierinn.com/gb/en/hotels/england/bristol.html", locale: "Bristol" }
       ],
-      transport: "train",
-      depart: "Oxford’s already done — you reach Bath around 3pm and check in. Use the golden-hour evening for Bath’s free, ticket-free Georgian highlights on foot, then dinner. (Save the Roman Baths for a proper morning slot tomorrow.)",
-      leg: "Arrive Bath ~15:00 · evening on foot",
+      transport: "car",
+      depart: "Skip Bath’s steep Saturday prices — stay in Bristol tonight (about half the cost) and get a great city into the bargain. Arrive mid-afternoon, then Clifton and the harbourside for the evening.",
+      leg: "Arrive Bristol ~15:00 · Clifton & harbourside",
       route: "Arrive ~15:00", miles: "—", drive: "—",
-      overnight: "Bath",
-      blurb: "Straight into Bath. Drop the bags around 3pm and take the honey-stone city on foot while the light is low: the Abbey and its busker-filled churchyard, Pulteney Bridge over its weir, and the great Georgian sweep of the Royal Crescent and The Circus — all free and only a few minutes apart. A relaxed first evening and dinner before three fuller days from this base.",
+      overnight: "Bristol",
+      blurb: "A cheaper, livelier first night. Bristol’s rooms run well below Bath’s, and the city earns the stop: the Clifton Suspension Bridge striding across the Avon Gorge, the handsome Georgian streets of Clifton village, and a buzzing harbourside with Brunel’s SS Great Britain, street food and Banksy murals. Tomorrow you drift into Bath — via Cheddar and Wells, which sit right on the way.",
       attractions: [
-        { name: "Bath Abbey & Abbey Churchyard", seq: 1, lat: 51.3814, lng: -2.3590, wiki: "Bath_Abbey", desc: "The soaring fan-vaulted abbey and its lively square — admire the carved West Front and step inside if it’s still open (the tower climb and interior are best earlier in the day).", url: "https://www.bathabbey.org/", locale: "Bath" },
-        { name: "Pulteney Bridge & Parade Gardens", seq: 2, lat: 51.3846, lng: -2.3573, wiki: "Pulteney_Bridge", desc: "One of the world’s few bridges lined with shops on both sides, curving above the Pulteney Weir — best seen from Parade Gardens on the riverbank below.", locale: "Bath" },
-        { name: "Royal Crescent & The Circus", seq: 3, lat: 51.3873, lng: -2.3665, wiki: "Royal_Crescent", desc: "The great Georgian showpieces — a 30-house curved terrace and the ring of The Circus, glorious in evening light. Walk the lawn; No.1 Royal Crescent is a museum you can tour by day.", url: "https://no1royalcrescent.org.uk/", locale: "Bath" }
+        { name: "Clifton Suspension Bridge", seq: 1, lat: 51.4550, lng: -2.6278, wiki: "Clifton_Suspension_Bridge", desc: "Brunel’s masterpiece, 75 m above the Avon Gorge — walk across for the view (free), with a small visitor centre on the Leigh Woods side. Beautifully lit at night.", url: "https://cliftonbridge.org.uk/", locale: "Clifton", enroute: true },
+        { name: "Clifton Village", seq: 2, lat: 51.4620, lng: -2.6190, wiki: "Clifton,_Bristol", desc: "Elegant Georgian crescents and independent shops, cafés and pubs above the gorge — a lovely early-evening wander right by the bridge.", locale: "Clifton" },
+        { name: "Bristol Harbourside & SS Great Britain", seq: 3, lat: 51.4490, lng: -2.6080, wiki: "SS_Great_Britain", desc: "The regenerated floating harbour — waterside bars and food, the M Shed museum, and Brunel’s SS Great Britain, the ship that changed ocean travel.", url: "https://www.ssgreatbritain.org/", locale: "Bristol" }
       ],
       restaurants: [
-        { name: "Sally Lunn’s / dinner in Bath", note: "One of Bath’s oldest houses (the famous Sally Lunn bun), or any of the centre’s restaurants a short walk from the Abbey.", url: "https://www.sallylunns.co.uk/" }
+        { name: "Dinner in Bristol", note: "Clifton (Whiteladies Road) or the harbourside (Wapping Wharf’s Cargo containers) are both full of good, casual options.", url: "https://www.google.com/maps/search/?api=1&query=restaurants%20Wapping%20Wharf%20Bristol" }
       ]
     },
 
-    /* ---------------- DAY 2 — Bath city + nearest villages ---------------- */
+    /* ---------------- DAY 2 — Sun 16 · Bristol → Bath via Wells & Cheddar ---------------- */
     {
       num: 2, date: "Sun 16 Aug", weekday: "Sunday",
-      title: "Roman Baths + Wells & Cheddar Gorge",
-      stay: { name: "Bath — your base · night 2 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
+      title: "Bristol → Bath, via Wells & Cheddar",
+      stay: { name: "Bath — your Airbnb (16–19 · night 1 of 3)", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "car",
-      depart: "Roman Baths open ~09:00 — book a slot and go first thing, then pick up the hire car around midday and head southwest for Wells and the dramatic Cheddar Gorge.",
-      leg: "Roman Baths (AM) · Wells & Cheddar Gorge (PM, by car)",
-      route: "By car (PM)", miles: "55", drive: "—",
+      depart: "Check out of Bristol and drift south to Bath — Cheddar Gorge and Wells sit right between the two, so do them on the way. Into Bath mid-afternoon to check into your Airbnb, then Bath on foot; the Roman Baths open late in summer, so they make a lovely torch-lit evening (or save them for the 19th before your train).",
+      leg: "Bristol → Cheddar → Wells → Bath (check in) → Bath on foot",
+      route: "By car", miles: "60", drive: "—",
       overnight: "Bath",
-      blurb: "The one big Bath ticket, then southwest into Somerset. Start at the Roman Baths — Britain’s best-preserved Roman spa, still fed by the hot spring. Collect the car around midday and drive out to Wells, England’s smallest city, for its extraordinary cathedral, then on to Cheddar Gorge — Britain’s biggest, a mile of limestone cliffs with show caves below. Back in Bath for dinner. (You’ll already have walked the Abbey, Pulteney Bridge and the Royal Crescent last evening.)",
+      blurb: "The prettiest way from Bristol to Bath. Drop south to Cheddar Gorge — Britain’s biggest, a mile of limestone cliffs with show caves — then Wells, England’s smallest city, for its extraordinary cathedral. Both are on the line to Bath, so you arrive by mid-afternoon to check in. Spend the evening on Bath’s free Georgian showpieces — the Abbey, Pulteney Bridge and the Royal Crescent — and, if you fancy it, the torch-lit Roman Baths. It’s a full day, so feel free to push the Roman Baths to the 19th morning.",
       attractions: [
-        { name: "Roman Baths", seq: 1, lat: 51.3811, lng: -2.3597, wiki: "Roman_Baths_(Bath)", desc: "Britain’s best-preserved Roman spa, still fed by the hot spring — the green Great Bath is unmissable. Pre-book a timed ticket; allow 1.5–2 hrs.", url: "https://www.romanbaths.co.uk/", locale: "Bath", mustDo: true, bookAhead: true, bookNote: "Book a timed entry online — August mornings sell out. A combined ticket with the Fashion Museum can be better value." },
-        { name: "Wells Cathedral", seq: 2, lat: 51.2107, lng: -2.6440, wiki: "Wells_Cathedral", desc: "England’s smallest city has one of its finest medieval cathedrals — the great scissor arches and a 14th-century astronomical clock. ~30 min SW of Bath; the moated Bishop’s Palace is next door.", url: "https://www.wellscathedral.org.uk/", locale: "Wells", enroute: true },
-        { name: "Cheddar Gorge", seq: 3, lat: 51.2810, lng: -2.7660, wiki: "Cheddar_Gorge", desc: "Britain’s biggest gorge — a mile of 130 m limestone cliffs you drive right through, with show caves below and a clifftop walk. ~20 min beyond Wells; and yes, the home of cheddar.", url: "https://www.cheddargorge.co.uk/", locale: "Cheddar", bookAhead: true, bookNote: "The caves + lookout tower are a paid attraction — book online; the gorge road and clifftop views are free." }
+        { name: "Cheddar Gorge", seq: 1, lat: 51.2810, lng: -2.7660, wiki: "Cheddar_Gorge", desc: "Britain’s biggest gorge — a mile of 130 m limestone cliffs you drive right through, with show caves below and a clifftop walk. ~40 min south of Bristol; and yes, the home of cheddar.", url: "https://www.cheddargorge.co.uk/", locale: "Cheddar", bookAhead: true, bookNote: "The caves + lookout tower are a paid attraction — book online; the gorge road and clifftop views are free.", enroute: true },
+        { name: "Wells Cathedral", seq: 2, lat: 51.2107, lng: -2.6440, wiki: "Wells_Cathedral", desc: "England’s smallest city has one of its finest medieval cathedrals — the great scissor arches and a 14th-century astronomical clock. ~20 min from Cheddar; the moated Bishop’s Palace is next door.", url: "https://www.wellscathedral.org.uk/", locale: "Wells", enroute: true },
+        { name: "Roman Baths", seq: 3, lat: 51.3811, lng: -2.3597, wiki: "Roman_Baths_(Bath)", desc: "Britain’s best-preserved Roman spa, still fed by the hot spring — the green Great Bath is unmissable. In August it opens late (last entry ~9pm) for atmospheric torch-lit evenings. Pre-book a timed ticket.", url: "https://www.romanbaths.co.uk/", locale: "Bath", mustDo: true, bookAhead: true, bookNote: "Book a timed entry online. Evening torch-lit slots are lovely in summer; or do it on the 19th morning before your London train." },
+        { name: "Bath Abbey & Abbey Churchyard", seq: 4, lat: 51.3814, lng: -2.3590, wiki: "Bath_Abbey", desc: "The soaring fan-vaulted abbey and its lively square — admire the carved West Front and step inside if it’s open.", url: "https://www.bathabbey.org/", locale: "Bath" },
+        { name: "Pulteney Bridge & Parade Gardens", seq: 5, lat: 51.3846, lng: -2.3573, wiki: "Pulteney_Bridge", desc: "One of the world’s few bridges lined with shops on both sides, curving above the Pulteney Weir — best seen from Parade Gardens below.", locale: "Bath" },
+        { name: "Royal Crescent & The Circus", seq: 6, lat: 51.3873, lng: -2.3665, wiki: "Royal_Crescent", desc: "The great Georgian showpieces — a 30-house curved terrace and the ring of The Circus, glorious in evening light. No.1 Royal Crescent is a museum you can tour by day.", url: "https://no1royalcrescent.org.uk/", locale: "Bath" }
       ],
       restaurants: [
-        { name: "Dinner in Bath (book on weekends)", note: "The centre has plenty a short walk from the Abbey — e.g. The Scallop Shell (seafood) or a Walcot Street gastropub. Weekends fill up.", url: "https://www.google.com/maps/search/?api=1&query=restaurants%20central%20Bath" }
+        { name: "Sally Lunn’s / dinner in Bath", note: "One of Bath’s oldest houses (the famous Sally Lunn bun), or any of the centre’s restaurants a short walk from the Abbey.", url: "https://www.sallylunns.co.uk/" }
       ]
     },
 
@@ -112,7 +117,7 @@ window.TRIP = {
     {
       num: 3, date: "Mon 17 Aug", weekday: "Monday",
       title: "Lacock, Avebury, Stonehenge & Salisbury",
-      stay: { name: "Bath — your base · night 3 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
+      stay: { name: "Bath — your Airbnb (16–19 · night 2 of 3)", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "car",
       depart: "The big day south — book your Stonehenge timed entry and leave Bath by ~09:00. It runs as a line south: Lacock first, then the two stone circles, then Salisbury.",
       leg: "Bath → Lacock → Avebury → Stonehenge → Salisbury → Bath",
@@ -134,7 +139,7 @@ window.TRIP = {
     {
       num: 4, date: "Tue 18 Aug", weekday: "Tuesday",
       title: "Cotswolds villages & Blenheim Palace",
-      stay: { name: "Bath — your base · night 4 of 4", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
+      stay: { name: "Bath — your Airbnb (16–19 · night 3 of 3)", lat: 51.3811, lng: -2.3590, mapUrl: "https://www.google.com/maps/search/?api=1&query=Bath%20city%20centre%20Somerset" },
       transport: "car",
       depart: "The longest driving day — a Cotswolds loop northeast. Leave by ~08:30 to enjoy the villages before the crowds; return the hire car in Bath by evening. It’s a big day, so drop a village if you’d rather linger.",
       leg: "Bath → Castle Combe → Bibury → Bourton → Blenheim → Bath",
@@ -165,7 +170,7 @@ window.TRIP = {
         { name: "SACO / Native — London serviced apartments", style: "Self-catering apartments — space for three, own kitchen", price: "£230–£350", url: "https://www.sacoapartments.com/locations/london/", locale: "London" }
       ],
       transport: "train",
-      depart: "A late-morning ~1h25 train from Bath Spa to London Paddington (GWR, frequent). Drop bags, then ease into the city with a riverside Westminster walk.",
+      depart: "Optional first thing: the Roman Baths open at 9 if you didn’t do them on the 16th. Then a late-morning ~1h25 train from Bath Spa to London Paddington (GWR, frequent); drop bags and ease into the city with a riverside Westminster walk.",
       leg: "Bath Spa → London Paddington by train",
       route: "Train · GWR", miles: "—", drive: "~1h25",
       overnight: "London",
