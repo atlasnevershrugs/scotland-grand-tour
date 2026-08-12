@@ -46,7 +46,7 @@ window.TRIP = {
 
   practical: [
     { title: "🎟 Pre-book these — they sell out", body: "Several stops need <strong>timed tickets booked online in advance</strong> in peak-summer August: <strong>Stonehenge</strong>, the <strong>Roman Baths</strong>, <strong>Blenheim Palace</strong>, the <strong>Tower of London</strong>, <strong>Westminster Abbey</strong>, the <strong>Churchill War Rooms</strong>, <strong>Sky Garden</strong> (free but ticketed), the <strong>London Eye</strong>, and your <strong>West End show</strong>. Look for the red 🎟 tag on those cards." },
-    { title: "Car for the West, train to London", body: "You’ll want a car for the West Country — from <strong>Bristol on the 16th</strong> (Cheddar &amp; Wells en route to Bath) and for the Bath day-trips. Then <strong>drop it before London</strong> and take the train (Bath Spa → Paddington, ~1h25); London is all Tube and on foot. Booking pick-up and drop-off at the same depot avoids a one-way fee." },
+    { title: "One car, Dover through to Bath", body: "You’ve extended your Dover hire car all the way to Bath, <strong>dropping off in Bath on the 19th</strong> — so you drive the whole West Country: the 15th (to Bristol), the 16th (Bristol → Cheddar &amp; Wells → Bath) and the day-trips. Drop the car in Bath, then take the <strong>train to London</strong> (Bath Spa → Paddington, ~1h25). No car in London — it’s all Tube and on foot." },
     { title: "Parking in Bath", body: "Bath’s centre is tight and largely permit/pay. Use a <strong>Park &amp; Ride</strong> (Lansdown, Newbridge or Odd Down) on the car days, or a hotel with parking. You won’t need the car for Bath itself — it’s a walking city." },
     { title: "London travel — just tap", body: "No need for paper tickets or an Oyster: <strong>tap a contactless card or phone</strong> on the yellow readers (Tube, bus, DLR, most rail). Daily fares are capped. A 15-year-old travels at child rate — ask at a station about a <strong>child Zip photocard</strong> if you’ll ride a lot." },
     { title: "Changing the Guard & market days", body: "<strong>Changing the Guard</strong> at Buckingham Palace runs on set mornings (~11:00) — check the exact days for your week and arrive early. Weekend markets: <strong>Portobello Road</strong> is biggest on Saturday; <strong>Columbia Road flower market</strong> is Sunday only; <strong>Borough Market</strong> is quietest/limited on Sundays." },
@@ -170,7 +170,7 @@ window.TRIP = {
         { name: "SACO / Native — London serviced apartments", style: "Self-catering apartments — space for three, own kitchen", price: "£230–£350", url: "https://www.sacoapartments.com/locations/london/", locale: "London" }
       ],
       transport: "train",
-      depart: "Optional first thing: the Roman Baths open at 9 if you didn’t do them on the 16th. Then a late-morning ~1h25 train from Bath Spa to London Paddington (GWR, frequent); drop bags and ease into the city with a riverside Westminster walk.",
+      depart: "Drop the hire car in Bath this morning (and do the Roman Baths, open at 9, if you saved them). Then a ~1h25 train from Bath Spa to London Paddington (GWR, frequent); drop bags and ease into the city with a riverside Westminster walk.",
       leg: "Bath Spa → London Paddington by train",
       route: "Train · GWR", miles: "—", drive: "~1h25",
       overnight: "London",
